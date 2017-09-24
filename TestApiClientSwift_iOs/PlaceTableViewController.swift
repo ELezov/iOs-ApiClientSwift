@@ -9,11 +9,12 @@
 import UIKit
 import AlamofireObjectMapper
 import Alamofire
+import Kingfisher
 
 
 class PlaceTableViewController: UITableViewController {
 
-    let cellIdentifier = "PlaceTableViewController"
+    let cellIdentifier = "PlaceTableViewCell"
     var places = [Place]()
     var categories = [Category]()
 
@@ -25,6 +26,15 @@ class PlaceTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //loadSampleData()
+        loadDataFromNetwork()
+    }
+
+    func loadSampleData(){
+        let place1 = Place(name: "King's Castle", description: "There is cool")
+        let place2 = Place(name: "Soviet's House", description: "This is shit")
+        places += [place1,place2]
+
     }
 
     func loadDataFromNetwork(){
@@ -41,6 +51,8 @@ class PlaceTableViewController: UITableViewController {
                 let resultCategories = resultObject?.categories
 
                 self.places = resultPlaces!
+                self.tableView.reloadData()
+                print("Size places", self.places.count)
                 self.categories = resultCategories!
             case .failure(let error):
                 print(error)
@@ -72,8 +84,14 @@ class PlaceTableViewController: UITableViewController {
 
         let place = places[indexPath.row]
         let category = categories[(place.category_id?[0])!]
+        let url = BASE_URL_API + category.icon!
+        let urlTypeImage = URL(string: url)
+        
 
-        let urlTypeImage = category.icon
+        cell.categoryImageView.kf.setImage(with: urlTypeImage)
+        cell.categoryNameLabel.text = category.name
+        cell.placeNameLabel.text = place.name
+        cell.placeDescriptionLabel.text = place.description
         
 
 
