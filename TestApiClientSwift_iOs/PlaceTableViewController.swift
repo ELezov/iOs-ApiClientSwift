@@ -27,6 +27,9 @@ class PlaceTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //loadSampleData()
+
+       
+
         loadDataFromNetwork()
     }
 
@@ -57,6 +60,29 @@ class PlaceTableViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch (segue.identifier ?? "") {
+        case "ShowDetail":
+            guard let placeDetailViewController = segue.destination as? PlaceViewController  else {
+                fatalError("Unexpected destination:\(segue.destination)")
+            }
+
+            guard let selectedPlaceCell = sender as? PlaceTableViewCell else{
+                fatalError("The selected cell is not being displayed by the table")
+            }
+
+            guard let indexPath = tableView.indexPath(for: selectedPlaceCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+
+            let selectedPlace = places[indexPath.row]
+            placeDetailViewController.place = selectedPlace
+
+        default:
+            fatalError("Global prepare Error in PlaceTableViewController")
         }
     }
 
