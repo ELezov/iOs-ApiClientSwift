@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
+import Agrume
+import Kingfisher
 
 class PlaceViewController: UIViewController {
     @IBOutlet weak var namePlaceLabel: UILabel!
@@ -29,11 +31,36 @@ class PlaceViewController: UIViewController {
             navigationItem.title = place.name
             namePlaceLabel.text = place.name
             descriptionPlaceLabel.text = place.description
+            placeImageView.kf.setImage(with: URL(string: BASE_URL_API + (place.photos?[0])!))
+            ratingControl.rating = place.rate ?? 3
+
+            if let category = category{
+                categoryTypeImageView.kf.setImage(with: URL(string: BASE_URL_API + category.icon!))
+            }
         }
 
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.tappedMe))
+        placeImageView.addGestureRecognizer(tap)
+        placeImageView.isUserInteractionEnabled = true
 
+    }
 
+    
 
+    func tappedMe(){
+        print("HO-HO-HO")
+        let urls = place?.photos
+        let agrume = Agrume(imageUrls: convertStringToUrlArray(urls: (place?.photos)!))
+        agrume.showFrom(self)
+    }
+
+    func convertStringToUrlArray(urls: [String]) -> [URL] {
+        var urlArrays = [URL]()
+        for item in urls{
+            let url = URL(string: BASE_URL_API + item)
+            urlArrays.append(url!)
+        }
+        return urlArrays
     }
 
     override func didReceiveMemoryWarning() {

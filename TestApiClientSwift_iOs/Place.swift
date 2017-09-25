@@ -35,7 +35,7 @@ public class Place: Mappable{
         description_2 <- map["description_2"]
         latitude <- map["latitude"]
         longitude <- map["longtitude"]
-        rate <- map["rate"]
+        rate <- (map["rate"], TransformOf<Int,String>(fromJSON: { Int($0!)}, toJSON: {$0.map{String($0)}}))
         cost_sum <- map["cost_sum"]
         cost_text <- map["cost_text"]
         phone <- map["phone"]

@@ -8,6 +8,8 @@ target 'TestApiClientSwift_iOs' do
   pod 'ObjectMapper'
   pod 'AlamofireObjectMapper'
   pod 'Kingfisher', '3.13'
+  pod 'Agrume', '3'
+  pod 'MapleBacon', '3.1.0'
   # Pods for TestApiClientSwift_iOs
 
   target 'TestApiClientSwift_iOsTests' do

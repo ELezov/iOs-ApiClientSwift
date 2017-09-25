@@ -27,7 +27,7 @@
                                 <rect key="frame" x="-20" y="-20" width="360" height="588"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Музей" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWZ-Y7-BSD">
-                                        <rect key="frame" x="71" y="127" width="130" height="25"/>
+                                        <rect key="frame" x="70" y="210" width="130" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="166" id="XYM-Gl-QLa"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="aWm-Ev-0D7"/>
@@ -36,14 +36,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultBig" translatesAutoresizingMaskIntoConstraints="NO" id="4zF-x7-Qxx">
-                                        <rect key="frame" x="24" y="20" width="316" height="99"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="175" id="lEJ-PK-jal"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Название места" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJU-8f-FDh">
-                                        <rect key="frame" x="45" y="160" width="270" height="55"/>
+                                        <rect key="frame" x="44" y="243" width="270" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="RxK-ey-Nrv"/>
                                         </constraints>
@@ -51,35 +45,43 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-PB-FaS">
-                                        <rect key="frame" x="38" y="127" width="25" height="25"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="327" translatesAutoresizingMaskIntoConstraints="NO" id="jLF-Qi-p1F">
-                                        <rect key="frame" x="45" y="223" width="270" height="58"/>
+                                        <rect key="frame" x="44" y="306" width="270" height="58"/>
                                         <string key="text">Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipT-fa-orr" customClass="RatingControl" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
-                                        <rect key="frame" x="209" y="127" width="116" height="25"/>
+                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipT-fa-orr" customClass="RatingControl" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+                                        <rect key="frame" x="208" y="210" width="116" height="25"/>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultBig" translatesAutoresizingMaskIntoConstraints="NO" id="4zF-x7-Qxx">
+                                        <rect key="frame" x="21" y="20" width="319" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="175" id="lEJ-PK-jal"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-PB-FaS">
+                                        <rect key="frame" x="37" y="210" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="V2T-ZT-hfM"/>
+                                            <constraint firstAttribute="width" constant="25" id="j0t-Gr-G63"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="WJU-8f-FDh" firstAttribute="trailing" secondItem="jLF-Qi-p1F" secondAttribute="trailing" id="4is-gJ-kzh"/>
                                     <constraint firstItem="WJU-8f-FDh" firstAttribute="top" secondItem="aWZ-Y7-BSD" secondAttribute="bottom" constant="8" symbolic="YES" id="68y-gw-9OB"/>
                                     <constraint firstItem="4zF-x7-Qxx" firstAttribute="centerX" secondItem="WJU-8f-FDh" secondAttribute="centerX" id="7Nm-Fr-yi7"/>
-                                    <constraint firstItem="NfU-PB-FaS" firstAttribute="leading" secondItem="jmf-YO-4QD" secondAttribute="leading" constant="38" id="8aY-Vn-xZt"/>
                                     <constraint firstItem="aWZ-Y7-BSD" firstAttribute="leading" secondItem="jmf-YO-4QD" secondAttribute="leading" constant="88" id="8yu-cD-WFD"/>
                                     <constraint firstItem="jLF-Qi-p1F" firstAttribute="top" secondItem="WJU-8f-FDh" secondAttribute="bottom" constant="8" symbolic="YES" id="BYT-BE-XLy"/>
                                     <constraint firstAttribute="bottom" secondItem="jLF-Qi-p1F" secondAttribute="bottom" constant="228" id="EWZ-Ph-IMF"/>
-                                    <constraint firstItem="NfU-PB-FaS" firstAttribute="top" secondItem="4zF-x7-Qxx" secondAttribute="bottom" constant="8" id="Ncm-vC-JLa"/>
                                     <constraint firstItem="aWZ-Y7-BSD" firstAttribute="top" secondItem="4zF-x7-Qxx" secondAttribute="bottom" constant="8" symbolic="YES" id="ONT-mA-I6b"/>
-                                    <constraint firstAttribute="trailing" secondItem="NfU-PB-FaS" secondAttribute="trailing" constant="297" id="T48-Pz-8PG"/>
-                                    <constraint firstAttribute="trailing" secondItem="4zF-x7-Qxx" secondAttribute="trailing" constant="20" id="VaS-TO-X1D"/>
+                                    <constraint firstAttribute="trailing" secondItem="4zF-x7-Qxx" secondAttribute="trailing" id="VaS-TO-X1D"/>
                                     <constraint firstItem="WJU-8f-FDh" firstAttribute="top" secondItem="NfU-PB-FaS" secondAttribute="bottom" constant="8" id="aWg-GO-Alx"/>
                                     <constraint firstItem="WJU-8f-FDh" firstAttribute="leading" secondItem="jmf-YO-4QD" secondAttribute="leading" constant="45" id="hWb-Vp-NCy"/>
                                     <constraint firstAttribute="trailing" secondItem="ipT-fa-orr" secondAttribute="trailing" constant="35" id="kN3-hn-EPC"/>
+                                    <constraint firstItem="aWZ-Y7-BSD" firstAttribute="leading" secondItem="NfU-PB-FaS" secondAttribute="trailing" constant="8" id="kO9-Bq-Qfg"/>
                                     <constraint firstItem="4zF-x7-Qxx" firstAttribute="centerX" secondItem="jmf-YO-4QD" secondAttribute="centerX" id="nOV-QZ-svE"/>
                                     <constraint firstItem="WJU-8f-FDh" firstAttribute="leading" secondItem="jLF-Qi-p1F" secondAttribute="leading" id="q03-kh-WS6"/>
                                     <constraint firstItem="4zF-x7-Qxx" firstAttribute="top" secondItem="jmf-YO-4QD" secondAttribute="top" constant="20" id="qLW-AS-AhV"/>

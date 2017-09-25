@@ -56,6 +56,9 @@ class PlaceTableViewController: UITableViewController {
                 self.places = resultPlaces!
                 self.tableView.reloadData()
                 print("Size places", self.places.count)
+                for place in self.places{
+                    print(place.name ?? "", String(describing: place.rate))
+                }
                 self.categories = resultCategories!
             case .failure(let error):
                 print(error)
@@ -80,6 +83,7 @@ class PlaceTableViewController: UITableViewController {
 
             let selectedPlace = places[indexPath.row]
             placeDetailViewController.place = selectedPlace
+            placeDetailViewController.category = categories[(selectedPlace.category_id?[0])!]
 
         default:
             fatalError("Global prepare Error in PlaceTableViewController")
