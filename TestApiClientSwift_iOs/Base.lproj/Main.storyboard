@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CWh-Vj-22D">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Place-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestApiClientSwift_iOs" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,29 +20,104 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-YO-4QD">
+                                <rect key="frame" x="-20" y="44" width="360" height="524"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Музей" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWZ-Y7-BSD">
+                                        <rect key="frame" x="71" y="127" width="166" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="166" id="XYM-Gl-QLa"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="aWm-Ev-0D7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultBig" translatesAutoresizingMaskIntoConstraints="NO" id="4zF-x7-Qxx">
+                                        <rect key="frame" x="20" y="-56" width="320" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="175" id="lEJ-PK-jal"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Название места" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJU-8f-FDh">
+                                        <rect key="frame" x="45" y="160" width="270" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="RxK-ey-Nrv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-PB-FaS">
+                                        <rect key="frame" x="38" y="127" width="25" height="25"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="327" translatesAutoresizingMaskIntoConstraints="NO" id="jLF-Qi-p1F">
+                                        <rect key="frame" x="45" y="223" width="270" height="323"/>
+                                        <string key="text">Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  </string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WJU-8f-FDh" firstAttribute="trailing" secondItem="jLF-Qi-p1F" secondAttribute="trailing" id="4is-gJ-kzh"/>
+                                    <constraint firstItem="WJU-8f-FDh" firstAttribute="top" secondItem="aWZ-Y7-BSD" secondAttribute="bottom" constant="8" symbolic="YES" id="68y-gw-9OB"/>
+                                    <constraint firstItem="4zF-x7-Qxx" firstAttribute="centerX" secondItem="WJU-8f-FDh" secondAttribute="centerX" id="7Nm-Fr-yi7"/>
+                                    <constraint firstItem="NfU-PB-FaS" firstAttribute="leading" secondItem="jmf-YO-4QD" secondAttribute="leading" constant="38" id="8aY-Vn-xZt"/>
+                                    <constraint firstItem="aWZ-Y7-BSD" firstAttribute="leading" secondItem="jmf-YO-4QD" secondAttribute="leading" constant="88" id="8yu-cD-WFD"/>
+                                    <constraint firstItem="jLF-Qi-p1F" firstAttribute="top" secondItem="WJU-8f-FDh" secondAttribute="bottom" constant="8" symbolic="YES" id="BYT-BE-XLy"/>
+                                    <constraint firstAttribute="bottom" secondItem="jLF-Qi-p1F" secondAttribute="bottom" constant="228" id="EWZ-Ph-IMF"/>
+                                    <constraint firstItem="NfU-PB-FaS" firstAttribute="top" secondItem="4zF-x7-Qxx" secondAttribute="bottom" constant="8" id="Ncm-vC-JLa"/>
+                                    <constraint firstItem="aWZ-Y7-BSD" firstAttribute="top" secondItem="4zF-x7-Qxx" secondAttribute="bottom" constant="8" symbolic="YES" id="ONT-mA-I6b"/>
+                                    <constraint firstAttribute="trailing" secondItem="NfU-PB-FaS" secondAttribute="trailing" constant="297" id="T48-Pz-8PG"/>
+                                    <constraint firstAttribute="trailing" secondItem="4zF-x7-Qxx" secondAttribute="trailing" constant="20" id="VaS-TO-X1D"/>
+                                    <constraint firstItem="WJU-8f-FDh" firstAttribute="top" secondItem="NfU-PB-FaS" secondAttribute="bottom" constant="8" id="aWg-GO-Alx"/>
+                                    <constraint firstItem="WJU-8f-FDh" firstAttribute="leading" secondItem="jmf-YO-4QD" secondAttribute="leading" constant="45" id="hWb-Vp-NCy"/>
+                                    <constraint firstItem="4zF-x7-Qxx" firstAttribute="centerX" secondItem="jmf-YO-4QD" secondAttribute="centerX" id="nOV-QZ-svE"/>
+                                    <constraint firstItem="WJU-8f-FDh" firstAttribute="leading" secondItem="jLF-Qi-p1F" secondAttribute="leading" id="q03-kh-WS6"/>
+                                    <constraint firstItem="4zF-x7-Qxx" firstAttribute="top" secondItem="jmf-YO-4QD" secondAttribute="top" constant="20" id="qLW-AS-AhV"/>
+                                    <constraint firstItem="4zF-x7-Qxx" firstAttribute="leading" secondItem="jmf-YO-4QD" secondAttribute="leading" constant="20" id="sJf-P9-S4I"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jmf-YO-4QD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="44" id="5hi-rR-4jy"/>
+                            <constraint firstItem="jmf-YO-4QD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-36" id="B25-JB-mC3"/>
+                            <constraint firstAttribute="trailing" secondItem="jmf-YO-4QD" secondAttribute="trailing" constant="-20" id="E0e-xc-cXS"/>
+                            <constraint firstItem="jmf-YO-4QD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-20" id="VsS-Vq-dDZ"/>
+                            <constraint firstItem="jmf-YO-4QD" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="nrq-L3-Hkf"/>
+                            <constraint firstItem="jmf-YO-4QD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qIr-UJ-IHR"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Place" id="hUN-2A-kol">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="VnJ-tf-e1E"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelBtn" destination="VnJ-tf-e1E" id="6TW-Ah-5f2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="86"/>
+            <point key="canvasLocation" x="819.375" y="85.563380281690144"/>
         </scene>
         <!--Place Table View Controller-->
         <scene sceneID="hwB-lL-TpA">
             <objects>
                 <tableViewController id="CWh-Vj-22D" customClass="PlaceTableViewController" customModule="TestApiClientSwift_iOs" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" id="19B-dm-6mj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceTableViewCell" rowHeight="152" id="CUP-mj-iGG" customClass="PlaceTableViewCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="152"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="152"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CUP-mj-iGG" id="tUJ-Be-qCi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Названия места " lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSn-xc-lDt">
@@ -111,10 +186,29 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLd-pk-UOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="123.59154929577466"/>
+            <point key="canvasLocation" x="-1001" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="foi-Ck-l1Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zS5-lw-Ibc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZDe-ID-woO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tV5-x2-9ik"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCV-7r-FhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="475"/>
         </scene>
     </scenes>
     <resources>
         <image name="default" width="25" height="25"/>
+        <image name="defaultBig" width="1024" height="750"/>
     </resources>
 </document>

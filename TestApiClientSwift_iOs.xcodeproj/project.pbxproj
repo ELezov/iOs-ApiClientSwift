@@ -11,7 +11,6 @@
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C5D61AF91F77E58200D9142F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61AF81F77E58200D9142F /* AppDelegate.swift */; };
 		C5D61AFB1F77E58200D9142F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61AFA1F77E58200D9142F /* ViewController.swift */; };
-		C5D61AFE1F77E58200D9142F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D61AFC1F77E58200D9142F /* Main.storyboard */; };
 		C5D61B001F77E58200D9142F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D61AFF1F77E58200D9142F /* Assets.xcassets */; };
 		C5D61B031F77E58200D9142F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */; };
 		C5D61B0E1F77E58200D9142F /* TestApiClientSwift_iOsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61B0D1F77E58200D9142F /* TestApiClientSwift_iOsTests.swift */; };
@@ -20,6 +19,7 @@
 		C5D61B1D1F7818AD00D9142F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61B1C1F7818AD00D9142F /* Place.swift */; };
 		C5D61B1F1F781B8100D9142F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61B1E1F781B8100D9142F /* Category.swift */; };
 		C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61B201F781CDF00D9142F /* ApiBaseResult.swift */; };
+		C5F60FDB1F7947DA00F84A53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F60FD91F7947DA00F84A53 /* Main.storyboard */; };
 		EE546BBEE1D08EC47F0CFB12 /* Pods_TestApiClientSwift_iOs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0162BF77A8BF92A1FFC4C1C9 /* Pods_TestApiClientSwift_iOs.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,6 @@
 		C5D61AF51F77E58200D9142F /* TestApiClientSwift_iOs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApiClientSwift_iOs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D61AF81F77E58200D9142F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5D61AFA1F77E58200D9142F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C5D61AFD1F77E58200D9142F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5D61AFF1F77E58200D9142F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5D61B021F77E58200D9142F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5D61B041F77E58200D9142F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		C5D61B1C1F7818AD00D9142F /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C5D61B1E1F781B8100D9142F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C5D61B201F781CDF00D9142F /* ApiBaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiBaseResult.swift; sourceTree = "<group>"; };
+		C5F60FDA1F7947DA00F84A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D782F1ED142B13309858C789 /* Pods-TestApiClientSwift_iOsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOsTests/Pods-TestApiClientSwift_iOsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,8 +123,8 @@
 			children = (
 				C5D61B221F78273F00D9142F /* model */,
 				C5D61AF81F77E58200D9142F /* AppDelegate.swift */,
+				C5F60FD91F7947DA00F84A53 /* Main.storyboard */,
 				C5D61AFA1F77E58200D9142F /* ViewController.swift */,
-				C5D61AFC1F77E58200D9142F /* Main.storyboard */,
 				C5D61AFF1F77E58200D9142F /* Assets.xcassets */,
 				C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */,
 				C5D61B041F77E58200D9142F /* Info.plist */,
@@ -245,9 +245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F60FDB1F7947DA00F84A53 /* Main.storyboard in Resources */,
 				C5D61B031F77E58200D9142F /* LaunchScreen.storyboard in Resources */,
 				C5D61B001F77E58200D9142F /* Assets.xcassets in Resources */,
-				C5D61AFE1F77E58200D9142F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,20 +388,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C5D61AFC1F77E58200D9142F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5D61AFD1F77E58200D9142F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C5D61B021F77E58200D9142F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C5F60FD91F7947DA00F84A53 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5F60FDA1F7947DA00F84A53 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -12,8 +12,11 @@ import AlamofireObjectMapper
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var cancelBtn: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         let header : HTTPHeaders = ["Authorization" : "Token 88428fb28837e841dc949c13a0550c3e2c4645ad"]
         // Do any additional setup after loading the view, typically from a nib.
