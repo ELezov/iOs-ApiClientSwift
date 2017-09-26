@@ -11,6 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 import Agrume
 import Kingfisher
+import RealmSwift
 
 class PlaceViewController: UIViewController {
     @IBOutlet weak var namePlaceLabel: UILabel!
@@ -38,6 +39,18 @@ class PlaceViewController: UIViewController {
                 categoryTypeImageView.kf.setImage(with: URL(string: BASE_URL_API + category.icon!))
             }
         }
+
+//        let places = try! Realm().objects(PlaceRealm.self)
+//        print("Count Realm Places", String(describing: places.count))
+//
+//        for place in places{
+//            let categories = place.categories
+//            for category in categories{
+//                print(place.name, category.name)
+//            }
+//        }
+
+
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.tappedMe))
         placeImageView.addGestureRecognizer(tap)

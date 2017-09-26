@@ -46,7 +46,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="327" translatesAutoresizingMaskIntoConstraints="NO" id="jLF-Qi-p1F">
-                                        <rect key="frame" x="44" y="306" width="270" height="58"/>
+                                        <rect key="frame" x="44" y="306" width="270" height="75"/>
                                         <string key="text">Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  Описание места. Описание места. Описание места. Описание места.  </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>

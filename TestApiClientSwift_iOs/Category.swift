@@ -13,6 +13,10 @@ public class Category: Mappable {
         
     }
 
+    init() {
+        
+    }
+
     public func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]

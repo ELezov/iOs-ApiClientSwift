@@ -27,6 +27,10 @@ public class Place: Mappable{
 
     }
 
+    init() {
+
+    }
+
     public func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
@@ -40,7 +44,7 @@ public class Place: Mappable{
         cost_text <- map["cost_text"]
         phone <- map["phone"]
         site <- map["site"]
-        discount_max <- map["discount_max"]
+        discount_max <- (map["discount_max"], TransformOf<Int,String>(fromJSON: { Int($0!)}, toJSON: {$0.map{String($0)}}))
         max_people <- map["max_people"]
         photos <- map["photos"]
     }

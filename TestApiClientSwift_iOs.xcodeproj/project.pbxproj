@@ -20,6 +20,9 @@
 		C5D61B1D1F7818AD00D9142F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61B1C1F7818AD00D9142F /* Place.swift */; };
 		C5D61B1F1F781B8100D9142F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61B1E1F781B8100D9142F /* Category.swift */; };
 		C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61B201F781CDF00D9142F /* ApiBaseResult.swift */; };
+		C5DB4FE51F7A59AF0000600E /* CategoryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4FE41F7A59AF0000600E /* CategoryRealm.swift */; };
+		C5DB4FE71F7A5A640000600E /* PlaceRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4FE61F7A5A640000600E /* PlaceRealm.swift */; };
+		C5DB4FE91F7A8F980000600E /* CategoryListRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DB4FE81F7A8F980000600E /* CategoryListRealm.swift */; };
 		C5F60FDB1F7947DA00F84A53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F60FD91F7947DA00F84A53 /* Main.storyboard */; };
 		EE546BBEE1D08EC47F0CFB12 /* Pods_TestApiClientSwift_iOs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0162BF77A8BF92A1FFC4C1C9 /* Pods_TestApiClientSwift_iOs.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		C5D61B1C1F7818AD00D9142F /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C5D61B1E1F781B8100D9142F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C5D61B201F781CDF00D9142F /* ApiBaseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiBaseResult.swift; sourceTree = "<group>"; };
+		C5DB4FE41F7A59AF0000600E /* CategoryRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRealm.swift; sourceTree = "<group>"; };
+		C5DB4FE61F7A5A640000600E /* PlaceRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceRealm.swift; sourceTree = "<group>"; };
+		C5DB4FE81F7A8F980000600E /* CategoryListRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListRealm.swift; sourceTree = "<group>"; };
 		C5F60FDA1F7947DA00F84A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D782F1ED142B13309858C789 /* Pods-TestApiClientSwift_iOsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOsTests/Pods-TestApiClientSwift_iOsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,11 +156,30 @@
 		C5D61B221F78273F00D9142F /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C5DB4FE31F7A583E0000600E /* realm */,
+				C5DB4FE21F7A58330000600E /* api */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		C5DB4FE21F7A58330000600E /* api */ = {
+			isa = PBXGroup;
+			children = (
 				C5D61B201F781CDF00D9142F /* ApiBaseResult.swift */,
 				C5D61B1E1F781B8100D9142F /* Category.swift */,
 				C5D61B1C1F7818AD00D9142F /* Place.swift */,
 			);
-			name = model;
+			name = api;
+			sourceTree = "<group>";
+		};
+		C5DB4FE31F7A583E0000600E /* realm */ = {
+			isa = PBXGroup;
+			children = (
+				C5DB4FE41F7A59AF0000600E /* CategoryRealm.swift */,
+				C5DB4FE61F7A5A640000600E /* PlaceRealm.swift */,
+				C5DB4FE81F7A8F980000600E /* CategoryListRealm.swift */,
+			);
+			name = realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,11 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5DB4FE71F7A5A640000600E /* PlaceRealm.swift in Sources */,
+				C5DB4FE91F7A8F980000600E /* CategoryListRealm.swift in Sources */,
 				C5D61AFB1F77E58200D9142F /* PlaceViewController.swift in Sources */,
 				C5D61B1B1F7807E700D9142F /* PlaceTableViewController.swift in Sources */,
 				C5D61AF91F77E58200D9142F /* AppDelegate.swift in Sources */,
 				C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */,
 				C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */,
+				C5DB4FE51F7A59AF0000600E /* CategoryRealm.swift in Sources */,
 				C5D61B191F7807B200D9142F /* PlaceTableViewCell.swift in Sources */,
 				C5545B911F783FC5001C5DEF /* Const.swift in Sources */,
 				C5D61B1D1F7818AD00D9142F /* Place.swift in Sources */,
