@@ -47,42 +47,43 @@ class PlaceTableViewController: UITableViewController {
         let placesRealm = real.objects(PlaceRealm.self)
         let categoriesListReal = real.objects(CategoryListRealm.self)
         print("Size Realm Place One",String(describing: placesRealm.count))
-        if placesRealm.count == 0 {
+        //if placesRealm.count == 0 {
             print("Data From Network")
             loadDataFromNetwork()
-        } else{
-            print("Data From Realm")
-            for item in placesRealm{
-                let place = Place()
-                place.name = item.name
-                place.id = item.id
-                place.description = item.description_1
-                var photos = [String]()
-                for photo in item.photos{
-                    var photoUrl = ""
-                    photoUrl = photo.value
-                    photos.append(photoUrl)
-                }
-                place.photos = photos
 
-                var categoryList = [Int]()
-                for category in item.categories{
-                    categoryList.append(category.id)
-                }
-                place.category_id = categoryList
-                self.places.append(place)
-            }
-
-            for item in categoriesListReal{
-                var category = Category()
-                category.name = item.name
-                category.id = item.id
-                category.icon = item.icon
-                category.picture = item.picture
-                self.categories.append(category)
-            }
-            self.tableView.reloadData()
-        }
+//        } else{
+//            print("Data From Realm")
+//            for item in placesRealm{
+//                let place = Place()
+//                place.name = item.name
+//                place.id = item.id
+//                place.description = item.description_1
+//                var photos = [String]()
+//                for photo in item.photos{
+//                    var photoUrl = ""
+//                    photoUrl = photo.value
+//                    photos.append(photoUrl)
+//                }
+//                place.photos = photos
+//
+//                var categoryList = [Int]()
+//                for category in item.categories{
+//                    categoryList.append(category.id)
+//                }
+//                place.category_id = categoryList
+//                self.places.append(place)
+//            }
+//
+//            for item in categoriesListReal{
+//                var category = Category()
+//                category.name = item.name
+//                category.id = item.id
+//                category.icon = item.icon
+//                category.picture = item.picture
+//                self.categories.append(category)
+//            }
+//            self.tableView.reloadData()
+//        }
 
     }
 
@@ -102,14 +103,18 @@ class PlaceTableViewController: UITableViewController {
                 self.places = resultPlaces!
                 self.categories = resultCategories!
                 print("Size places", self.places.count)
-                self.saveDataByRealm()
+//                self.saveDataByRealm()
                 self.tableView.reloadData()
+
+                let place = self.places[0]
+                print("PLACE NAME",place.name,place.latitude, place.longitude)
             case .failure(let error):
                 print(error)
                 self.view.makeToast(error.localizedDescription, duration: 10.0, position: .center)
             }
         }
-    }
+
+            }
 
     func saveDataByRealm(){
         let realm = try! Realm()
