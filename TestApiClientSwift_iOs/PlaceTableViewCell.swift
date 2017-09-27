@@ -1,11 +1,3 @@
-//
-//  PlaceTableViewCell.swift
-//  TestApiClientSwift_iOs
-//
-//  Created by KODE_H6 on 24.09.17.
-//  Copyright © 2017 KODE. All rights reserved.
-//
-
 import UIKit
 
 class PlaceTableViewCell: UITableViewCell {
@@ -15,7 +7,14 @@ class PlaceTableViewCell: UITableViewCell {
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeDescriptionLabel: UILabel!
     
-
+    weak var viewModel: PlaceTableCellViewModel! {
+        didSet{
+            self.categoryImageView.kf.setImage(with: URL(string: BASE_URL_API+viewModel.categoryImgUrl))
+            self.categoryNameLabel.text = viewModel.categoryTitle
+            self.placeNameLabel.text = viewModel.placeTitle
+            self.placeDescriptionLabel.text = viewModel.placeDescription
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

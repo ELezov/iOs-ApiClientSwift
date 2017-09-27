@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  TestApiClientSwift_iOs
-//
-//  Created by KODE_H6 on 24.09.17.
-//  Copyright © 2017 KODE. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
@@ -20,38 +12,21 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var placeImageView: UIImageView!
 
-    var place: Place?
-    var category: Category?
+    weak var viewModel: PlaceDetailsViewModel!
+
     var identifity = "PlaceViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.navigationBar.isHidden = false
-        if let place = place{
-            navigationItem.title = place.name
-            namePlaceLabel.text = place.name
-            descriptionPlaceLabel.text = place.description
-            placeImageView.kf.setImage(with: URL(string: BASE_URL_API + (place.photos?[0])!))
-            ratingControl.rating = place.rate ?? 3
-
-            if let category = category{
-                categoryTypeImageView.kf.setImage(with: URL(string: BASE_URL_API + category.icon!))
-            }
-        }
-
-//        let places = try! Realm().objects(PlaceRealm.self)
-//        print("Count Realm Places", String(describing: places.count))
-//
-//        for place in places{
-//            let categories = place.categories
-//            for category in categories{
-//                print(place.name, category.name)
-//            }
-//        }
-
-
-
+        navigationItem.title = viewModel.placeTitle
+        namePlaceLabel.text = viewModel.placeTitle
+        descriptionPlaceLabel.text = viewModel.placeDescription
+        categoryTypeImageView.kf.setImage(with: URL(string: BASE_URL_API + viewModel.categoryImgUrl))
+        ratingControl.rating = viewModel.placeRate
+        placeImageView.kf.setImage(with: URL(string: BASE_URL_API+viewModel.placePhotos[0]))
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.tappedMe))
         placeImageView.addGestureRecognizer(tap)
         placeImageView.isUserInteractionEnabled = true
@@ -61,9 +36,8 @@ class PlaceViewController: UIViewController {
     
 
     func tappedMe(){
-        print("HO-HO-HO")
-        let urls = place?.photos
-        let agrume = Agrume(imageUrls: convertStringToUrlArray(urls: (place?.photos)!))
+        let urls = viewModel.placePhotos
+        let agrume = Agrume(imageUrls: convertStringToUrlArray(urls: urls!))
         agrume.showFrom(self)
     }
 

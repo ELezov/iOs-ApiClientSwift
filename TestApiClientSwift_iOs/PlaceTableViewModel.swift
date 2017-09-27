@@ -6,20 +6,25 @@ class PlaceTableViewModel{
     fileprivate var placeArray: [Place]!
     fileprivate var categoriesArray: [Category]!
     var detailsViewModel: PlaceDetailsViewModel!
+    var error: String?
 
-    func updateWeather(_ completion:@escaping () -> Void){
+    func updatePlace(_ completion:@escaping () -> Void){
         cellsArray.removeAll()
-        placeManager.getPlaces{(placeArray, categoriesArray) -> Void in
+        placeManager.getPlaces{(placeArray, categoriesArray, error) -> Void in
             self.placeArray = placeArray
             self.categoriesArray = categoriesArray
-            for placeObject in placeArray{
-                self.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: categoriesArray))
+            self.error = error
+            if self.error == nil{
+                for placeObject in placeArray!{
+                    self.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: categoriesArray!))
+                }
             }
+
             completion()
         }
     }
 
-    func numberOfCities() -> Int{
+    func numberOfPlaces() -> Int{
         return cellsArray.count
     }
 
@@ -28,7 +33,7 @@ class PlaceTableViewModel{
         return cellsArray[index]
     }
 
-    func detailsViewModel(_ index: Int) -> PlaceDetailsViewModel{
+    func getDetailsViewModel(_ index: Int) -> PlaceDetailsViewModel{
         self.detailsViewModel = PlaceDetailsViewModel(place: placeArray[index], categories: categoriesArray)
         return self.detailsViewModel
     }
