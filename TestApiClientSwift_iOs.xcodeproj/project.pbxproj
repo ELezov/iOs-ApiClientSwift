@@ -10,6 +10,10 @@
 		25CBC54291DD453104AFBF7C /* Pods_TestApiClientSwift_iOsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695F296720D4061EF0163247 /* Pods_TestApiClientSwift_iOsTests.framework */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
+		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
+		C58A2D1A1F7BE6E900382855 /* PlaceTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D191F7BE6E900382855 /* PlaceTableViewModel.swift */; };
+		C58A2D1C1F7BE72400382855 /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D1B1F7BE72400382855 /* PlaceManager.swift */; };
+		C58A2D1E1F7BE8B100382855 /* PlaceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D1D1F7BE8B100382855 /* PlaceDetailsViewModel.swift */; };
 		C5D61AF91F77E58200D9142F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61AF81F77E58200D9142F /* AppDelegate.swift */; };
 		C5D61AFB1F77E58200D9142F /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61AFA1F77E58200D9142F /* PlaceViewController.swift */; };
 		C5D61B001F77E58200D9142F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D61AFF1F77E58200D9142F /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 		695F296720D4061EF0163247 /* Pods_TestApiClientSwift_iOsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApiClientSwift_iOsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
+		C58A2D191F7BE6E900382855 /* PlaceTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewModel.swift; sourceTree = "<group>"; };
+		C58A2D1B1F7BE72400382855 /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
+		C58A2D1D1F7BE8B100382855 /* PlaceDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewModel.swift; sourceTree = "<group>"; };
 		C5D61AF51F77E58200D9142F /* TestApiClientSwift_iOs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApiClientSwift_iOs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D61AF81F77E58200D9142F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5D61AFA1F77E58200D9142F /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +114,69 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C58A2D131F7BE43C00382855 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C5D61AFF1F77E58200D9142F /* Assets.xcassets */,
+				C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */,
+				C5D61B041F77E58200D9142F /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C58A2D141F7BE46C00382855 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C58A2D161F7BE48600382855 /* PlaceDetail */,
+				C58A2D151F7BE47500382855 /* PlaceTable */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		C58A2D151F7BE47500382855 /* PlaceTable */ = {
+			isa = PBXGroup;
+			children = (
+				C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */,
+				C58A2D191F7BE6E900382855 /* PlaceTableViewModel.swift */,
+			);
+			name = PlaceTable;
+			sourceTree = "<group>";
+		};
+		C58A2D161F7BE48600382855 /* PlaceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C58A2D1D1F7BE8B100382855 /* PlaceDetailsViewModel.swift */,
+			);
+			name = PlaceDetail;
+			sourceTree = "<group>";
+		};
+		C58A2D1F1F7BED0A00382855 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5F60FD91F7947DA00F84A53 /* Main.storyboard */,
+				C58A2D211F7BED3500382855 /* PlaceTable */,
+				C58A2D201F7BED2E00382855 /* PlaceDetail */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C58A2D201F7BED2E00382855 /* PlaceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C5D61AFA1F77E58200D9142F /* PlaceViewController.swift */,
+			);
+			name = PlaceDetail;
+			sourceTree = "<group>";
+		};
+		C58A2D211F7BED3500382855 /* PlaceTable */ = {
+			isa = PBXGroup;
+			children = (
+				C5D61B181F7807B200D9142F /* PlaceTableViewCell.swift */,
+				C5D61B1A1F7807E700D9142F /* PlaceTableViewController.swift */,
+			);
+			name = PlaceTable;
+			sourceTree = "<group>";
+		};
 		C5D61AEC1F77E58200D9142F = {
 			isa = PBXGroup;
 			children = (
@@ -129,15 +200,11 @@
 		C5D61AF71F77E58200D9142F /* TestApiClientSwift_iOs */ = {
 			isa = PBXGroup;
 			children = (
+				C58A2D1F1F7BED0A00382855 /* View */,
+				C58A2D141F7BE46C00382855 /* ViewModel */,
+				C58A2D131F7BE43C00382855 /* Resources */,
 				C5D61B221F78273F00D9142F /* model */,
 				C5D61AF81F77E58200D9142F /* AppDelegate.swift */,
-				C5F60FD91F7947DA00F84A53 /* Main.storyboard */,
-				C5D61AFA1F77E58200D9142F /* PlaceViewController.swift */,
-				C5D61AFF1F77E58200D9142F /* Assets.xcassets */,
-				C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */,
-				C5D61B041F77E58200D9142F /* Info.plist */,
-				C5D61B181F7807B200D9142F /* PlaceTableViewCell.swift */,
-				C5D61B1A1F7807E700D9142F /* PlaceTableViewController.swift */,
 				C5545B901F783FC5001C5DEF /* Const.swift */,
 				C556BDF31F798CAC00651DE1 /* RatingControl.swift */,
 			);
@@ -158,6 +225,7 @@
 			children = (
 				C5DB4FE31F7A583E0000600E /* realm */,
 				C5DB4FE21F7A58330000600E /* api */,
+				C58A2D1B1F7BE72400382855 /* PlaceManager.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -395,9 +463,13 @@
 				C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */,
 				C5DB4FE51F7A59AF0000600E /* CategoryRealm.swift in Sources */,
 				C5D61B191F7807B200D9142F /* PlaceTableViewCell.swift in Sources */,
+				C58A2D1A1F7BE6E900382855 /* PlaceTableViewModel.swift in Sources */,
 				C5545B911F783FC5001C5DEF /* Const.swift in Sources */,
 				C5D61B1D1F7818AD00D9142F /* Place.swift in Sources */,
 				C5D61B1F1F781B8100D9142F /* Category.swift in Sources */,
+				C58A2D1E1F7BE8B100382855 /* PlaceDetailsViewModel.swift in Sources */,
+				C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */,
+				C58A2D1C1F7BE72400382855 /* PlaceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
