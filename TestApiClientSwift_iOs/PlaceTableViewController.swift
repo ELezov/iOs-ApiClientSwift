@@ -8,21 +8,20 @@ import Toast_Swift
 
 class PlaceTableViewController: UITableViewController {
 
-    weak var viewModel : PlaceTableViewModel!
-//    {
-//        didSet {
-//            viewModel.updatePlace {
-//                if self.viewModel.error != nil{
-//                    self.view.makeToast(self.viewModel.error!, duration: 5.0, position: .center)
-//                } else{
-//                    print("Reload")
-//                    self.tableView.reloadData()
-//                }
-//
-//            }
-//
-//        }
-//    }
+
+    var viewModel : PlaceTableViewModel!
+   {
+       didSet {
+           viewModel.updatePlace {
+               if self.viewModel.error != nil{
+                  self.view.makeToast(self.viewModel.error!, duration: 5.0, position: .center)
+              } else {
+                    self.tableView.reloadData()
+                }
+            }
+
+        }
+    }
 
     let cellIdentifier = "PlaceTableViewCell"
 
@@ -30,14 +29,7 @@ class PlaceTableViewController: UITableViewController {
         super.viewDidLoad()
         let placeManager = PlaceManager()
         let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
-        print("ViewModel pre set")
         self.viewModel = placeTableViewModel
-        print("ViewModel Set")
-        viewModel.updatePlace {
-            self.tableView.reloadData()
-        }
-
-
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,7 +62,7 @@ class PlaceTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return self.viewModel.numberOfPlaces()
+        return self.viewModel.numberOfPlaces()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

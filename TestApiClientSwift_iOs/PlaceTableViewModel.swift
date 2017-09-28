@@ -10,7 +10,6 @@ class PlaceTableViewModel{
 
     func updatePlace(_ completion:@escaping () -> Void){
         cellsArray.removeAll()
-        print("UPDATE")
         placeManager.getPlaces{(placeArray, categoriesArray, error) -> Void in
             self.placeArray = placeArray
             self.categoriesArray = categoriesArray
@@ -26,7 +25,6 @@ class PlaceTableViewModel{
     }
 
     func numberOfPlaces() -> Int{
-        print("Size Cell",cellsArray.count)
         return cellsArray.count
     }
 
