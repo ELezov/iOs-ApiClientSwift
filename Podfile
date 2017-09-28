@@ -11,6 +11,7 @@ target 'TestApiClientSwift_iOs' do
   pod 'Agrume', '3'
   pod 'RealmSwift'
   pod 'Toast-Swift', '2'
+  pod 'SwiftLint'
   # Pods for TestApiClientSwift_iOs
 
   target 'TestApiClientSwift_iOsTests' do

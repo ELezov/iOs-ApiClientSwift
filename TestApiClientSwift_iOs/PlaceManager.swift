@@ -44,7 +44,7 @@ class PlaceManager{
                 places.append(place)
             }
             for item in categoriesListReal{
-                var category = Category()
+                let category = Category()
                 category.name = item.name
                 category.id = item.id
                 category.icon = item.icon
@@ -69,7 +69,7 @@ class PlaceManager{
                 let resultObject = response.result.value
                 let resultPlaces = resultObject?.places
                 let resultCategories = resultObject?.categories
-                print("Size places",resultPlaces?.count)
+                print("Size places", resultPlaces?.count ?? 0)
                 self.saveDataByRealm(places: resultPlaces!, categories: resultCategories!)
                 completion(resultPlaces!,resultCategories!, nil)
             case .failure(let error):

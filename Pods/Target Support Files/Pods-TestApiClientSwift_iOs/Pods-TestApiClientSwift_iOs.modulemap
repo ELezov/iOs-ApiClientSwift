@@ -1,0 +1,6 @@
+framework module Pods_TestApiClientSwift_iOs {
+  umbrella header "Pods-TestApiClientSwift_iOs-umbrella.h"
+
+  export *
+  module * { export * }
+}

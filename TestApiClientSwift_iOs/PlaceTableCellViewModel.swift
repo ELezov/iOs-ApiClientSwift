@@ -9,9 +9,6 @@ class PlaceTableCellViewModel{
     required init(place: Place, categories: [Category]){
         self.placeTitle = place.name
         self.placeDescription = place.description
-        //Bug
-        let i = categories.index(where: {$0.id == place.category_id?[0]})
-
         let category = categories.first(where: {$0.id == place.category_id?[0]})
         self.categoryTitle = category?.name
         self.categoryImgUrl = category?.icon
