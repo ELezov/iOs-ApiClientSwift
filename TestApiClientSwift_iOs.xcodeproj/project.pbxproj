@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25CBC54291DD453104AFBF7C /* Pods_TestApiClientSwift_iOsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695F296720D4061EF0163247 /* Pods_TestApiClientSwift_iOsTests.framework */; };
+		9503EC391F8EB21A002C1C17 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503EC381F8EB21A002C1C17 /* RatingView.swift */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -47,6 +48,7 @@
 		3A684DD6641F87A7D7EB17C3 /* Pods-TestApiClientSwift_iOs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOs/Pods-TestApiClientSwift_iOs.debug.xcconfig"; sourceTree = "<group>"; };
 		45AC3AA65F10DD71CACEDDDD /* Pods-TestApiClientSwift_iOsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOsTests/Pods-TestApiClientSwift_iOsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		695F296720D4061EF0163247 /* Pods_TestApiClientSwift_iOsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApiClientSwift_iOsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9503EC381F8EB21A002C1C17 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				C5D61AF81F77E58200D9142F /* AppDelegate.swift */,
 				C5545B901F783FC5001C5DEF /* Const.swift */,
 				C556BDF31F798CAC00651DE1 /* RatingControl.swift */,
+				9503EC381F8EB21A002C1C17 /* RatingView.swift */,
 			);
 			path = TestApiClientSwift_iOs;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				C5D61B191F7807B200D9142F /* PlaceTableViewCell.swift in Sources */,
 				C58A2D1A1F7BE6E900382855 /* PlaceTableViewModel.swift in Sources */,
 				C5545B911F783FC5001C5DEF /* Const.swift in Sources */,
+				9503EC391F8EB21A002C1C17 /* RatingView.swift in Sources */,
 				C5D61B1D1F7818AD00D9142F /* Place.swift in Sources */,
 				C5D61B1F1F781B8100D9142F /* Category.swift in Sources */,
 				C58A2D1E1F7BE8B100382855 /* PlaceDetailsViewModel.swift in Sources */,

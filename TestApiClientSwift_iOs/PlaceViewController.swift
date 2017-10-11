@@ -18,9 +18,16 @@ class PlaceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // делаем прозрачным navBar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
 
-        navigationController?.navigationBar.isHidden = false
-        navigationItem.title = viewModel.placeTitle
+        UITabBar.appearance().tintColor = UIColor.clear
+        UITabBar.appearance().backgroundColor = UIColor.clear
+        //navigationController?.navigationBar.isHidden = false
         namePlaceLabel.text = viewModel.placeTitle
         descriptionPlaceLabel.text = viewModel.placeDescription
         categoryTypeImageView.kf.setImage(with: URL(string: BASE_URL_API + viewModel.categoryImgUrl))
