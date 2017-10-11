@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		25CBC54291DD453104AFBF7C /* Pods_TestApiClientSwift_iOsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695F296720D4061EF0163247 /* Pods_TestApiClientSwift_iOsTests.framework */; };
 		9503EC391F8EB21A002C1C17 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503EC381F8EB21A002C1C17 /* RatingView.swift */; };
+		9503EC441F8EDFB7002C1C17 /* YesevaOne-Regular_v2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */; };
+		9503EC451F8EDFB7002C1C17 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -49,6 +51,8 @@
 		45AC3AA65F10DD71CACEDDDD /* Pods-TestApiClientSwift_iOsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOsTests/Pods-TestApiClientSwift_iOsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		695F296720D4061EF0163247 /* Pods_TestApiClientSwift_iOsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApiClientSwift_iOsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9503EC381F8EB21A002C1C17 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YesevaOne-Regular_v2.otf"; sourceTree = "<group>"; };
+		9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -116,6 +120,67 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9503EC3B1F8ECC74002C1C17 /* list_places */ = {
+			isa = PBXGroup;
+			children = (
+				9503EC3E1F8ECC8B002C1C17 /* viewModel */,
+				9503EC3D1F8ECC86002C1C17 /* view */,
+			);
+			name = list_places;
+			sourceTree = "<group>";
+		};
+		9503EC3C1F8ECC7C002C1C17 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				9503EC401F8ECCB6002C1C17 /* viewModel */,
+				9503EC3F1F8ECCB1002C1C17 /* view */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
+		9503EC3D1F8ECC86002C1C17 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C5D61B181F7807B200D9142F /* PlaceTableViewCell.swift */,
+				C5D61B1A1F7807E700D9142F /* PlaceTableViewController.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		9503EC3E1F8ECC8B002C1C17 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */,
+				C58A2D191F7BE6E900382855 /* PlaceTableViewModel.swift */,
+			);
+			name = viewModel;
+			sourceTree = "<group>";
+		};
+		9503EC3F1F8ECCB1002C1C17 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C5D61AFA1F77E58200D9142F /* PlaceViewController.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		9503EC401F8ECCB6002C1C17 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C58A2D1D1F7BE8B100382855 /* PlaceDetailsViewModel.swift */,
+			);
+			name = viewModel;
+			sourceTree = "<group>";
+		};
+		9503EC411F8EDF4F002C1C17 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */,
+				9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		C58A2D131F7BE43C00382855 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,59 +189,6 @@
 				C5D61B041F77E58200D9142F /* Info.plist */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		C58A2D141F7BE46C00382855 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C58A2D161F7BE48600382855 /* PlaceDetail */,
-				C58A2D151F7BE47500382855 /* PlaceTable */,
-			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
-		C58A2D151F7BE47500382855 /* PlaceTable */ = {
-			isa = PBXGroup;
-			children = (
-				C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */,
-				C58A2D191F7BE6E900382855 /* PlaceTableViewModel.swift */,
-			);
-			name = PlaceTable;
-			sourceTree = "<group>";
-		};
-		C58A2D161F7BE48600382855 /* PlaceDetail */ = {
-			isa = PBXGroup;
-			children = (
-				C58A2D1D1F7BE8B100382855 /* PlaceDetailsViewModel.swift */,
-			);
-			name = PlaceDetail;
-			sourceTree = "<group>";
-		};
-		C58A2D1F1F7BED0A00382855 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C5F60FD91F7947DA00F84A53 /* Main.storyboard */,
-				C58A2D211F7BED3500382855 /* PlaceTable */,
-				C58A2D201F7BED2E00382855 /* PlaceDetail */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		C58A2D201F7BED2E00382855 /* PlaceDetail */ = {
-			isa = PBXGroup;
-			children = (
-				C5D61AFA1F77E58200D9142F /* PlaceViewController.swift */,
-			);
-			name = PlaceDetail;
-			sourceTree = "<group>";
-		};
-		C58A2D211F7BED3500382855 /* PlaceTable */ = {
-			isa = PBXGroup;
-			children = (
-				C5D61B181F7807B200D9142F /* PlaceTableViewCell.swift */,
-				C5D61B1A1F7807E700D9142F /* PlaceTableViewController.swift */,
-			);
-			name = PlaceTable;
 			sourceTree = "<group>";
 		};
 		C5D61AEC1F77E58200D9142F = {
@@ -202,8 +214,10 @@
 		C5D61AF71F77E58200D9142F /* TestApiClientSwift_iOs */ = {
 			isa = PBXGroup;
 			children = (
-				C58A2D1F1F7BED0A00382855 /* View */,
-				C58A2D141F7BE46C00382855 /* ViewModel */,
+				C5F60FD91F7947DA00F84A53 /* Main.storyboard */,
+				9503EC411F8EDF4F002C1C17 /* fonts */,
+				9503EC3C1F8ECC7C002C1C17 /* detail */,
+				9503EC3B1F8ECC74002C1C17 /* list_places */,
 				C58A2D131F7BE43C00382855 /* Resources */,
 				C5D61B221F78273F00D9142F /* model */,
 				C5D61AF81F77E58200D9142F /* AppDelegate.swift */,
@@ -344,6 +358,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9503EC441F8EDFB7002C1C17 /* YesevaOne-Regular_v2.otf in Resources */,
+				9503EC451F8EDFB7002C1C17 /* OpenSans-Regular.ttf in Resources */,
 				C5F60FDB1F7947DA00F84A53 /* Main.storyboard in Resources */,
 				C5D61B031F77E58200D9142F /* LaunchScreen.storyboard in Resources */,
 				C5D61B001F77E58200D9142F /* Assets.xcassets in Resources */,
