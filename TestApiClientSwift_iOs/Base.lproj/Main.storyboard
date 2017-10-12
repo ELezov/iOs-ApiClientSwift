@@ -44,19 +44,19 @@
                                         <rect key="frame" x="20" y="187" width="375" height="436"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-PB-FaS">
-                                                <rect key="frame" x="18" y="24" width="24" height="23"/>
+                                                <rect key="frame" x="18" y="24" width="24" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="Gpq-3b-q95"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание места. " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="327" translatesAutoresizingMaskIntoConstraints="NO" id="jLF-Qi-p1F">
-                                                <rect key="frame" x="24" y="140" width="327" height="23.5"/>
+                                                <rect key="frame" x="24" y="142" width="327" height="20"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Музей" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWZ-Y7-BSD">
-                                                <rect key="frame" x="58" y="25" width="55" height="21"/>
+                                                <rect key="frame" x="58" y="25" width="55" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="55" id="Mdn-Qq-Gta"/>
                                                 </constraints>
@@ -69,7 +69,7 @@
                                                 <rect key="frame" x="270" y="28" width="80" height="16"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название места" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJU-8f-FDh">
-                                                <rect key="frame" x="24" y="61" width="313" height="64"/>
+                                                <rect key="frame" x="24" y="63" width="313" height="64"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="64" id="XdO-fO-cPn"/>
                                                 </constraints>
@@ -78,19 +78,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Режим работы: " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ape-hN-Byc">
-                                                <rect key="frame" x="24" y="189.5" width="327" height="23.5"/>
+                                                <rect key="frame" x="24" y="188" width="327" height="20"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стоимость посещения: " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNc-aM-IaA">
-                                                <rect key="frame" x="24" y="230" width="327" height="23.5"/>
+                                                <rect key="frame" x="24" y="225" width="327" height="20"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAg-rc-JlV">
-                                                <rect key="frame" x="0.0" y="265.5" width="375" height="72"/>
+                                                <rect key="frame" x="0.0" y="257" width="375" height="72"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="Taa-Ah-1m1">
                                                         <rect key="frame" x="24" y="24" width="24" height="24"/>
@@ -136,7 +136,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,8 км | ул. Черняховского, 25 " lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRn-Ef-aPi">
-                                                        <rect key="frame" x="64" y="23" width="287" height="25"/>
+                                                        <rect key="frame" x="64" y="27" width="287" height="21"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -232,6 +232,7 @@
                         <outlet property="phoneView" destination="cAg-rc-JlV" id="thI-tV-6Qr"/>
                         <outlet property="placeImageView" destination="4zF-x7-Qxx" id="NRL-EG-7lV"/>
                         <outlet property="ratingControl" destination="ipT-fa-orr" id="CLr-Ln-FJE"/>
+                        <outlet property="scrollViewDetails" destination="jmf-YO-4QD" id="sMo-k8-04f"/>
                         <outlet property="timeTableText" destination="Ape-hN-Byc" id="G6X-DR-Jdv"/>
                     </connections>
                 </viewController>

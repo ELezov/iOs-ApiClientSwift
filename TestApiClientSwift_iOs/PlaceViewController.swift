@@ -5,7 +5,7 @@ import Agrume
 import Kingfisher
 import RealmSwift
 
-class PlaceViewController: UIViewController {
+class PlaceViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var namePlaceLabel: UILabel!
     @IBOutlet weak var descriptionPlaceLabel: UILabel!
     @IBOutlet weak var categoryTypeImageView: UIImageView!
@@ -16,10 +16,80 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var phoneText: UILabel!
     @IBOutlet weak var phoneView: UIView!
 
+    @IBOutlet weak var scrollViewDetails: UIScrollView!
     weak var viewModel: PlaceDetailsViewModel!
 
     var identifity = "PlaceViewController"
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //self.navigationController?.hidesBarsOnSwipe = true
+        //scrollViewDidEndDragging(<#T##scrollView: UIScrollView##UIScrollView#>, willDecelerate: <#T##Bool#>)
+        scrollViewDetails.delegate = self
+            
+        
+    }
+    
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
+//            changeTabBar(hidden: true, animated: true)
+//        }else{
+//            changeTabBar(hidden: false, animated: true)
+//        }
+        
+        //let page = scrollView.contentOffset.y
+        //let page2 = scrollView.contentOffset.y / scrollView.frame.size.width
+        //print(page2, scrollView.contentOffset.y, scrollView.frame.size.width)
+        //print(velocity.y)
+        
+        if scrollView.contentOffset.y > 50{
+            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+                print("Hide")
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                print("Unhide")
+            }, completion: nil)
+        }
+        
+//        if(velocity.y>0) {
+//            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
+//            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+//                self.navigationController?.setNavigationBarHidden(true, animated: true)
+//                print("Hide")
+//            }, completion: nil)
+//            
+//        } else {
+//            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+//                self.navigationController?.setNavigationBarHidden(false, animated: true)
+//                print("Unhide")
+//            }, completion: nil)    
+//        }
+    }
+    
+    
+    func changeTabBar(hidden:Bool, animated: Bool){
+        let navigationBar = self.navigationController?.navigationBar
+        if navigationBar!.isHidden == hidden{ return }
+        let frame = navigationBar?.frame
+        let offset = (hidden ? (frame?.size.height)! : -(frame?.size.height)!)
+        let duration:TimeInterval = (animated ? 0.2 : 0.0)
+        navigationBar?.isHidden = false
+        if frame != nil
+        {
+            UIView.animate(withDuration: duration,
+                           animations: {navigationBar!.frame = frame!.offsetBy(dx: 0, dy: offset)},
+                           completion: {
+                            print($0)
+                            if $0 {navigationBar?.isHidden = hidden}
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
