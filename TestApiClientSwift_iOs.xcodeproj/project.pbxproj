@@ -11,6 +11,9 @@
 		9503EC391F8EB21A002C1C17 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503EC381F8EB21A002C1C17 /* RatingView.swift */; };
 		9503EC441F8EDFB7002C1C17 /* YesevaOne-Regular_v2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */; };
 		9503EC451F8EDFB7002C1C17 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */; };
+		95C370C71F8F54F100EF9245 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95C370C61F8F54DD00EF9245 /* OpenSans-Bold.ttf */; };
+		95C370C91F8F5B9900EF9245 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95C370C81F8F5B9300EF9245 /* OpenSans-Semibold.ttf */; };
+		95C370CB1F8F605B00EF9245 /* FavoriteControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C370CA1F8F605B00EF9245 /* FavoriteControl.swift */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -53,6 +56,9 @@
 		9503EC381F8EB21A002C1C17 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YesevaOne-Regular_v2.otf"; sourceTree = "<group>"; };
 		9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		95C370C61F8F54DD00EF9245 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		95C370C81F8F5B9300EF9245 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		95C370CA1F8F605B00EF9245 /* FavoriteControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteControl.swift; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -175,6 +181,8 @@
 		9503EC411F8EDF4F002C1C17 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				95C370C81F8F5B9300EF9245 /* OpenSans-Semibold.ttf */,
+				95C370C61F8F54DD00EF9245 /* OpenSans-Bold.ttf */,
 				9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */,
 				9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */,
 			);
@@ -184,6 +192,7 @@
 		C58A2D131F7BE43C00382855 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9503EC411F8EDF4F002C1C17 /* fonts */,
 				C5D61AFF1F77E58200D9142F /* Assets.xcassets */,
 				C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */,
 				C5D61B041F77E58200D9142F /* Info.plist */,
@@ -215,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				C5F60FD91F7947DA00F84A53 /* Main.storyboard */,
-				9503EC411F8EDF4F002C1C17 /* fonts */,
 				9503EC3C1F8ECC7C002C1C17 /* detail */,
 				9503EC3B1F8ECC74002C1C17 /* list_places */,
 				C58A2D131F7BE43C00382855 /* Resources */,
@@ -224,6 +232,7 @@
 				C5545B901F783FC5001C5DEF /* Const.swift */,
 				C556BDF31F798CAC00651DE1 /* RatingControl.swift */,
 				9503EC381F8EB21A002C1C17 /* RatingView.swift */,
+				95C370CA1F8F605B00EF9245 /* FavoriteControl.swift */,
 			);
 			path = TestApiClientSwift_iOs;
 			sourceTree = "<group>";
@@ -358,6 +367,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C370C91F8F5B9900EF9245 /* OpenSans-Semibold.ttf in Resources */,
+				95C370C71F8F54F100EF9245 /* OpenSans-Bold.ttf in Resources */,
 				9503EC441F8EDFB7002C1C17 /* YesevaOne-Regular_v2.otf in Resources */,
 				9503EC451F8EDFB7002C1C17 /* OpenSans-Regular.ttf in Resources */,
 				C5F60FDB1F7947DA00F84A53 /* Main.storyboard in Resources */,
@@ -490,6 +501,7 @@
 				C58A2D1E1F7BE8B100382855 /* PlaceDetailsViewModel.swift in Sources */,
 				C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */,
 				C58A2D1C1F7BE72400382855 /* PlaceManager.swift in Sources */,
+				95C370CB1F8F605B00EF9245 /* FavoriteControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

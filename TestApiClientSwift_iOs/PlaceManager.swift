@@ -28,6 +28,9 @@ class PlaceManager{
                 place.id = item.id
                 place.description = item.description_1
                 place.rate = item.rate
+                place.description_2 = item.description_2
+                place.cost_text = item.cost_text
+                place.phone = item.phone
                 var photos = [String]()
                 for photo in item.photos{
                     var photoUrl = ""
@@ -108,6 +111,9 @@ class PlaceManager{
                 placeRealm.name = place.name!
                 placeRealm.description_1 = place.description!
                 placeRealm.rate = place.rate!
+                placeRealm.description_2 = place.description_2!
+                placeRealm.phone = place.phone!
+                placeRealm.cost_text = place.cost_text!
                 let categoryListRealm = List<CategoryRealm>()
                 for item in place.category_id!{
                     if let i = categories.index( where: {$0.id == item}){

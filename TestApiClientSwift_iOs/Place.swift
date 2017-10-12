@@ -49,9 +49,14 @@ public class Place: Mappable{
         photos <- map["photos"]
     }
 
-    init(name: String, description: String) {
+    init(name: String, description: String, description2: String, categoryId: [Int], rate: Int, costText: String, phone: String) {
         self.name = name
         self.description = description
+        self.description_2 = description2
+        self.category_id = categoryId
+        self.rate = rate
+        self.cost_text = costText
+        self.phone = phone
     }
 
     

@@ -30,7 +30,9 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>OpenSans-Semibold.ttf</string>
 		<string>YesevaOne-Regular_v2.otf</string>
+		<string>OpenSans-Bold.ttf</string>
 		<string>OpenSans-Regular.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>

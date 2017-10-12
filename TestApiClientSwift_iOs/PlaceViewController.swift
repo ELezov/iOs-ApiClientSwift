@@ -11,6 +11,10 @@ class PlaceViewController: UIViewController {
     @IBOutlet weak var categoryTypeImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var placeImageView: UIImageView!
+    @IBOutlet weak var timeTableText: UILabel!
+    @IBOutlet weak var costText: UILabel!
+    @IBOutlet weak var phoneText: UILabel!
+    @IBOutlet weak var phoneView: UIView!
 
     weak var viewModel: PlaceDetailsViewModel!
 
@@ -34,7 +38,22 @@ class PlaceViewController: UIViewController {
         ratingControl.rating = viewModel.placeRate
         placeImageView.kf.setImage(with: URL(string: BASE_URL_API+viewModel.placePhotos[0]))
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.tappedMe))
+        let timeTableAttributedString = NSMutableAttributedString(string: "Режим работы: " + viewModel.timeTable)
+        timeTableAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: 12))
+        timeTableText.attributedText = timeTableAttributedString
+        
+        let costAttributedText = NSMutableAttributedString(string: "Стоимость посещения: "  + viewModel.costText)
+        costAttributedText.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: 19))
+        
+        costText.attributedText = costAttributedText
+        phoneText.text = viewModel.phoneText
+        //action for phone call
+        let tapCallPhone = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.makeCallPhone))
+        phoneView.addGestureRecognizer(tapCallPhone)
+        phoneView.isUserInteractionEnabled = true
+
+        //action for gallery
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.openGalleryAction))
         placeImageView.addGestureRecognizer(tap)
         placeImageView.isUserInteractionEnabled = true
 
@@ -42,10 +61,22 @@ class PlaceViewController: UIViewController {
 
     
 
-    func tappedMe(){
+    func openGalleryAction(){
         let urls = viewModel.placePhotos
         let agrume = Agrume(imageUrls: convertStringToUrlArray(urls: urls!))
         agrume.showFrom(self)
+    }
+    
+    func makeCallPhone(){
+        if let url = URL(string: "tel://\(viewModel.phoneText)"), UIApplication.shared.canOpenURL(url){
+            if #available(iOS 10, *){
+                UIApplication.shared.open(url)
+            }else {
+                UIApplication.shared.openURL(url)
+            }
+            print("1",url.description)
+        }
+        print(viewModel.phoneText)
     }
 
     func convertStringToUrlArray(urls: [String]) -> [URL] {
