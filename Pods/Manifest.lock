@@ -4,6 +4,7 @@ PODS:
   - AlamofireObjectMapper (4.1.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
+  - AMScrollingNavbar (3.0.0)
   - Kingfisher (3.13.0)
   - ObjectMapper (2.2.9)
   - Realm (2.10.2):
@@ -11,15 +12,16 @@ PODS:
   - Realm/Headers (2.10.2)
   - RealmSwift (2.10.2):
     - Realm (= 2.10.2)
-  - SwiftLint (0.22.0)
+  - SwiftLint (0.23.1)
   - Toast-Swift (2.0.0)
 
 DEPENDENCIES:
   - Agrume (= 3)
   - Alamofire
-  - AlamofireObjectMapper
+  - AlamofireObjectMapper (= 4.1.0)
+  - AMScrollingNavbar (= 3)
   - Kingfisher (= 3.13)
-  - ObjectMapper
+  - ObjectMapper (= 2.2.9)
   - RealmSwift
   - SwiftLint
   - Toast-Swift (= 2)
@@ -28,13 +30,14 @@ SPEC CHECKSUMS:
   Agrume: 3e941467d6437673bef7e1ec7e288f745c0cd037
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
+  AMScrollingNavbar: aa894c559c80ffa917d0fdc40d8b42be7c6efe15
   Kingfisher: 7eebf6000ac64401839f10da37f21eefa7d88970
   ObjectMapper: 63cfe41bc6f8e7c8f44344c49901b8ae7de14c52
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
-  SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
+  SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
   Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
 
-PODFILE CHECKSUM: c8a05ddd6ce0036a428f7a470c6ca950447a155d
+PODFILE CHECKSUM: a202b20ae7eb8f8c5a19837d808c24b9e282c2ab
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0

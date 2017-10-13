@@ -4,6 +4,7 @@ import AlamofireObjectMapper
 import Agrume
 import Kingfisher
 import RealmSwift
+import AMScrollingNavbar
 
 class PlaceViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var namePlaceLabel: UILabel!
@@ -21,11 +22,17 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
 
     var identifity = "PlaceViewController"
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let navigationController = navigationController as? ScrollingNavigationController{
+            navigationController.followScrollView(scrollViewDetails, delay: 25.0)
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        //реагирует на скорость
         //self.navigationController?.hidesBarsOnSwipe = true
-        //scrollViewDidEndDragging(<#T##scrollView: UIScrollView##UIScrollView#>, willDecelerate: <#T##Bool#>)
+        
         scrollViewDetails.delegate = self
             
         
@@ -39,22 +46,18 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
 //            changeTabBar(hidden: false, animated: true)
 //        }
         
-        //let page = scrollView.contentOffset.y
-        //let page2 = scrollView.contentOffset.y / scrollView.frame.size.width
-        //print(page2, scrollView.contentOffset.y, scrollView.frame.size.width)
-        //print(velocity.y)
-        
-        if scrollView.contentOffset.y > 50{
-            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
-                print("Hide")
-            }, completion: nil)
-        } else {
-            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(false, animated: true)
-                print("Unhide")
-            }, completion: nil)
-        }
+          //появление крайне тормознутое
+//        if scrollView.contentOffset.y > 50{
+//            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+//                self.navigationController?.setNavigationBarHidden(true, animated: true)
+//                print("Hide")
+//            }, completion: nil)
+//        } else {
+//            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+//                self.navigationController?.setNavigationBarHidden(false, animated: true)
+//                print("Unhide")
+//            }, completion: nil)
+//        }
         
 //        if(velocity.y>0) {
 //            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.

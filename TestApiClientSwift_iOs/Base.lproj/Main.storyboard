@@ -65,7 +65,7 @@
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                                             </label>
-                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipT-fa-orr" customClass="RatingView" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipT-fa-orr" customClass="RatingView" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
                                                 <rect key="frame" x="270" y="28" width="80" height="16"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название места" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJU-8f-FDh">
@@ -152,7 +152,7 @@
                                                     <constraint firstItem="z0k-Rb-hPq" firstAttribute="centerY" secondItem="phO-9D-bdR" secondAttribute="centerY" id="xTa-sE-OJC"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IUt-TK-Eo3" customClass="FavoriteControl" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IUt-TK-Eo3" customClass="FavoriteControl" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
                                                 <rect key="frame" x="248" y="24" width="20" height="20"/>
                                             </stackView>
                                         </subviews>
@@ -253,7 +253,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="152"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CUP-mj-iGG" id="tUJ-Be-qCi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="151.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Названия места " lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSn-xc-lDt">
@@ -326,12 +326,12 @@
             </objects>
             <point key="canvasLocation" x="-3.75" y="111.97183098591549"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Scrolling Navigation Controller-->
         <scene sceneID="4Qp-Ny-Ate">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
