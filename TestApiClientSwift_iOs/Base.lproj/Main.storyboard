@@ -251,6 +251,7 @@
                         <outlet property="categoryTypeImageView" destination="NfU-PB-FaS" id="uIa-kH-5F7"/>
                         <outlet property="costText" destination="tNc-aM-IaA" id="PAY-Bt-MN2"/>
                         <outlet property="descriptionPlaceLabel" destination="jLF-Qi-p1F" id="jLf-M7-uND"/>
+                        <outlet property="infoDetailsView" destination="JUS-7D-aDc" id="bwr-vv-2ON"/>
                         <outlet property="namePlaceLabel" destination="WJU-8f-FDh" id="EmM-AC-YFY"/>
                         <outlet property="phoneText" destination="VMS-V2-i22" id="sIg-PU-iFV"/>
                         <outlet property="phoneView" destination="cAg-rc-JlV" id="thI-tV-6Qr"/>

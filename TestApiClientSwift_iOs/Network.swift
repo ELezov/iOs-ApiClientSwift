@@ -1,11 +1,12 @@
 import Alamofire
+import ObjectMapper
 import AlamofireObjectMapper
 
 protocol NetworkErrorHandler {
     func networkRequest(request: URLRequest, error: Error)
 }
 
-typealias ResponseClosure = ((DataResponse<ApiBaseResult>) -> Void)
+typealias ResponseClosure = ((DataResponse<Any>) -> Void)
 
 struct Network {
     // You can set this to a var if you want
@@ -24,11 +25,12 @@ extension Network {
             parameters: endpoint.body,
             encoding: endpoint.encoding,
             headers: endpoint.headers
-            ).responseObject{ (response: DataResponse<ApiBaseResult>)  in
+            ).responseJSON { response in
                 
                 if response.result.isSuccess {
                     debugPrint(response.result.description)
                 } else {
+                    print("URL",response.request)
                     debugPrint(response.result.error ?? "Error")
                     // Can globably handle errors here if you want
                     if let urlRequest = response.request, let error = response.result.error {

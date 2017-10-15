@@ -1,23 +1,22 @@
 import Alamofire
 
 protocol Endpoint {
-    var baseURL: String { get } // https://example.com
-    var path: String { get } // /users/
-    var fullURL: String { get } // This will automatically be set. https://example.com/users/
-    var method: HTTPMethod { get } // .get
-    var encoding: ParameterEncoding { get } // URLEncoding.default
-    var body: Parameters { get } // ["foo" : "bar"]
-    var headers: HTTPHeaders { get } // ["Authorization" : "Bearer SOME_TOKEN"]
+    var baseURL: String { get }
+    var path: String { get }
+    var fullURL: String { get }
+    var method: HTTPMethod { get } 
+    var encoding: ParameterEncoding { get }
+    var body: Parameters { get }
+    var headers: HTTPHeaders { get }
 }
 
 extension Endpoint {
-    // The encoding's are set up so that all GET requests parameters
-    // will default to be url encoded and everything else to be json encoded
+    
+
     var encoding: ParameterEncoding {
         return method == .get ? URLEncoding.default : JSONEncoding.default
     }
     
-    // Should always be the same no matter what
     var fullURL: String {
         return baseURL + path
     }
@@ -27,4 +26,5 @@ extension Endpoint {
     var body: Parameters {
         return Parameters()
     }
+       
 }

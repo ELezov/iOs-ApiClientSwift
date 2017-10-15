@@ -17,6 +17,7 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var phoneText: UILabel!
     @IBOutlet weak var phoneView: UIView!
 
+    @IBOutlet weak var infoDetailsView: UIView!
     @IBOutlet weak var scrollViewDetails: UIScrollView!
     weak var viewModel: PlaceDetailsViewModel!
 
@@ -36,8 +37,7 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
         scrollViewDetails.delegate = self
             
         
-    }
-    
+    }    
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 //        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
@@ -104,12 +104,21 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
 
         UITabBar.appearance().tintColor = UIColor.clear
         UITabBar.appearance().backgroundColor = UIColor.clear
-        //navigationController?.navigationBar.isHidden = false
+        
+        infoDetailsView.layer.shadowColor = UIColor.blue.cgColor
+        infoDetailsView.layer.shadowOpacity = 1
+        infoDetailsView.layer.shadowOffset = CGSize.zero
+        infoDetailsView.layer.shadowRadius = 10
+        //infoDetailsView.layer.shadowPath = UIBezierPath(rect: infoDetailsView.bounds).cgPath
+        
+        
         namePlaceLabel.text = viewModel.placeTitle
         descriptionPlaceLabel.text = viewModel.placeDescription
         categoryTypeImageView.kf.setImage(with: URL(string: BASE_URL_API + viewModel.categoryImgUrl))
         ratingControl.rating = viewModel.placeRate
-        placeImageView.kf.setImage(with: URL(string: BASE_URL_API+viewModel.placePhotos[0]))
+        
+        let imagePlaceholder = UIImage(named: "placeholder")
+        placeImageView.kf.setImage(with: URL(string: BASE_URL_API+viewModel.placePhotos[0]),placeholder: imagePlaceholder)
         
         let timeTableAttributedString = NSMutableAttributedString(string: "Режим работы: " + viewModel.timeTable)
         timeTableAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: 12))

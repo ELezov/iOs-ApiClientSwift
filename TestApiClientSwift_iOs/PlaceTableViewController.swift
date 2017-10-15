@@ -30,6 +30,10 @@ class PlaceTableViewController: UITableViewController {
         let placeManager = PlaceManager()
         let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
         self.viewModel = placeTableViewModel
+        
+        let placeService = NetworkManager()
+        placeService.getInfoPlaceById(id: 1)
+        placeService.logIn(name: "boris", password: "XXX666xxx")
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
