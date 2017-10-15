@@ -65,8 +65,6 @@ extension LoginService: Endpoint{
         case .LogIn(let name, let password):
             parameters["username"] = name
             parameters["password"] = password
-        default:
-            break
         }
         
         return parameters

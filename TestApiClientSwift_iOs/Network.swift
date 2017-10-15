@@ -30,7 +30,6 @@ extension Network {
                 if response.result.isSuccess {
                     debugPrint(response.result.description)
                 } else {
-                    print("URL",response.request)
                     debugPrint(response.result.error ?? "Error")
                     // Can globably handle errors here if you want
                     if let urlRequest = response.request, let error = response.result.error {
