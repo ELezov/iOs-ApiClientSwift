@@ -20,6 +20,5 @@ class PlaceTableCellViewModel{
              self.saleString = "-".appending(String(describing: place.discount_max!) + "%")
         }
         
-        String(describing: place.discount_max)
     }
 }

@@ -73,7 +73,7 @@ class FavoriteControl: UIStackView {
         
         let emptyFavorite = UIImage(named: "emptyFavorite", in: bundle, compatibleWith: self.traitCollection)
         
-        for index in 0..<heartCount {
+        for _ in 0..<heartCount {
             let button = UIButton()
             
             

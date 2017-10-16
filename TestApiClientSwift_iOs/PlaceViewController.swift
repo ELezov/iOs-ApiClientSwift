@@ -31,8 +31,6 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //реагирует на скорость
-        //self.navigationController?.hidesBarsOnSwipe = true
         
         scrollViewDetails.delegate = self
             
@@ -100,12 +98,16 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
         costAttributedText.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: 19))
         
         costText.attributedText = costAttributedText
-        phoneText.text = viewModel.phoneText
-        //action for phone call
-        let tapCallPhone = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.makeCallPhone))
-        phoneView.addGestureRecognizer(tapCallPhone)
-        phoneView.isUserInteractionEnabled = true
-
+        if viewModel.phoneText! != ""{
+            phoneText.text = viewModel.phoneText
+            //action for phone call
+            let tapCallPhone = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.makeCallPhone))
+            phoneView.addGestureRecognizer(tapCallPhone)
+            phoneView.isUserInteractionEnabled = true
+        } else{
+            phoneView.isHidden = true
+        }
+        
         //action for gallery
         let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceViewController.openGalleryAction))
         placeImageView.addGestureRecognizer(tap)
