@@ -1,7 +1,8 @@
 import Foundation
 import RealmSwift
+import Realm
 
-public class PlaceRealm: Object{
+class PlaceRealm: Object, PrimaryKeyAware{
     dynamic var id : Int = 0
     dynamic var name : String = ""
     var categories = List<CategoryRealm>()
@@ -15,6 +16,10 @@ public class PlaceRealm: Object{
     dynamic var site : String = ""
     dynamic var discount_max : Int = 0
     var photos = List<StringObject>()
+
+    override static func primaryKey() -> String?{
+        return "id"
+    }
 }
 
 class StringObject: Object{

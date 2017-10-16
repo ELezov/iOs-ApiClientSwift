@@ -54,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SkyFloatingLabelTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Toast-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,7 +67,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>26BAD144ACB1D9B85976A796751A8331</key>
+		<key>28C260E9CE03273F113713B610FF66D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3CD63443A0BE172807A39CDD31878214</key>
+		<key>37A64C95D2B7AC9BBA5620129F3C1E81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE1BE8B0C2A81504AE431FB46F3CC192</key>
+		<key>C233E5B3330C02CE387B84F01BBB4C77</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2BC7774819806E9563061D47267BCBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB349E7378F28BA724428EA9781E807E</key>
+		<key>FDFAF177797AE5389BF074074F53CDC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

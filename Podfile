@@ -13,6 +13,7 @@ target 'TestApiClientSwift_iOs' do
   pod 'Toast-Swift', '2'
   pod 'SwiftLint'
   pod 'AMScrollingNavbar', '3'
+  pod 'SkyFloatingLabelTextField', '3'
   # Pods for TestApiClientSwift_iOs
 
   target 'TestApiClientSwift_iOsTests' do
