@@ -1,24 +1,24 @@
 //
-//  DescriptionDetailsViewCell.swift
+//  PhoneDetailsViewCell.swift
 //  TestApiClientSwift_iOs
 //
-//  Created by Nikolay on 14.10.17.
+//  Created by Nikolay on 16.10.17.
 //  Copyright © 2017 KODE. All rights reserved.
 //
 
 import UIKit
 
-class DescriptionDetailsViewCell: UITableViewCell {
+class PhoneDetailsViewCell: UITableViewCell {
 
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var phoneDetailsLabel: UILabel!
     
     var item: DetailsViewModelItem? {
         didSet {
-            guard  let item = item as? DetailsViewModelDescriptionItem else {
+            guard  let item = item as? DetailsViewModelPhoneItem else {
                 return
             }
             
-            descriptionLabel.text = item.descriptionText
+            phoneDetailsLabel.text = item.phoneText
         }
     }
     
@@ -29,7 +29,6 @@ class DescriptionDetailsViewCell: UITableViewCell {
     static var identifier: String {
         return String(describing: self)
     }
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

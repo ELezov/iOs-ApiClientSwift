@@ -1,24 +1,24 @@
 //
-//  DescriptionDetailsViewCell.swift
+//  TimeTableDetailsViewCell.swift
 //  TestApiClientSwift_iOs
 //
-//  Created by Nikolay on 14.10.17.
+//  Created by Nikolay on 16.10.17.
 //  Copyright © 2017 KODE. All rights reserved.
 //
 
 import UIKit
 
-class DescriptionDetailsViewCell: UITableViewCell {
+class TimeTableDetailsViewCell: UITableViewCell {
 
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var timeTableLabel: UILabel!
     
     var item: DetailsViewModelItem? {
         didSet {
-            guard  let item = item as? DetailsViewModelDescriptionItem else {
+            guard  let item = item as? DetailsViewModelTimeTableItem else {
                 return
             }
             
-            descriptionLabel.text = item.descriptionText
+            timeTableLabel.text = item.timeTable
         }
     }
     
@@ -30,7 +30,6 @@ class DescriptionDetailsViewCell: UITableViewCell {
         return String(describing: self)
     }
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

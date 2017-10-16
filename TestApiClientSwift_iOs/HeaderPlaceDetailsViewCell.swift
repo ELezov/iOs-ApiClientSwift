@@ -1,5 +1,5 @@
 //
-//  DescriptionDetailsViewCell.swift
+//  TableViewCell.swift
 //  TestApiClientSwift_iOs
 //
 //  Created by Nikolay on 14.10.17.
@@ -8,32 +8,39 @@
 
 import UIKit
 
-class DescriptionDetailsViewCell: UITableViewCell {
+class HeaderPlaceDetailsViewCell: UITableViewCell {
 
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var categoryImg: UIImageView!
+    @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var placeNameLabel: UILabel!
     
     var item: DetailsViewModelItem? {
-        didSet {
-            guard  let item = item as? DetailsViewModelDescriptionItem else {
+        didSet{
+            guard let item = item as? DetailsViewModelHeaderItem else {
                 return
             }
             
-            descriptionLabel.text = item.descriptionText
+            categoryImg.kf.setImage(with: URL(string:BASE_URL_API + item.categoryImgUrl))
+            categoryNameLabel.text = item.categoryName
+            placeNameLabel.text = item.placeName
         }
     }
     
-    static var nib:UINib {
+    static var nib: UINib{
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    static var identifier: String {
+    static var identifier: String{
         return String(describing: self)
     }
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        categoryImg.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

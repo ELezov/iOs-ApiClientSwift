@@ -68,6 +68,11 @@
                 </constraints>
                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryImg" destination="JC8-HZ-2KQ" id="kKf-Cm-Ngz"/>
+                <outlet property="categoryNameLabel" destination="yNp-Kx-Etm" id="PxW-kJ-CSK"/>
+                <outlet property="placeNameLabel" destination="V3S-bS-Snt" id="COz-xR-Vei"/>
+            </connections>
             <point key="canvasLocation" x="55.5" y="86"/>
         </tableViewCell>
     </objects>

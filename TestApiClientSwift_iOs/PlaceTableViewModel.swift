@@ -6,6 +6,7 @@ class PlaceTableViewModel{
     fileprivate var placeArray: [Place]!
     fileprivate var categoriesArray: [Category]!
     var detailsViewModel: PlaceDetailsViewModel!
+    var detailsNewViewModel: DetailsViewModel!
     var error: String?
 
     func updatePlace(_ completion:@escaping () -> Void){
@@ -36,6 +37,11 @@ class PlaceTableViewModel{
     func getDetailsViewModel(_ index: Int) -> PlaceDetailsViewModel{
         self.detailsViewModel = PlaceDetailsViewModel(place: placeArray[index], categories: categoriesArray)
         return self.detailsViewModel
+    }
+    
+    func getDetailsNewModel(_ index: Int) -> DetailsViewModel{
+        self.detailsNewViewModel = DetailsViewModel(place: placeArray[index], categories: categoriesArray)
+        return self.detailsNewViewModel
     }
 
     required init(placeManager: PlaceManager){
