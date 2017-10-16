@@ -19,7 +19,7 @@ class PlaceTableViewXibCell: UITableViewCell {
         didSet{
             self.categoryImg.kf.setImage(with: URL(string: BASE_URL_API+viewModel.categoryImgUrl!))
             self.categoryNameLabel.text = viewModel.categoryTitle
-            self.placeNameLabel.text = viewModel.placeTitle
+            self.placeNameLabel.text =  viewModel.placeTitle
             self.placeDescriptionLabel.text = viewModel.placeDescription
             self.saleLabel.text = viewModel.saleString
 

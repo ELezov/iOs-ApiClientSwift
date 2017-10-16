@@ -27,13 +27,13 @@ class PlaceTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nib = UINib(nibName: "PlaceTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "PlaceTableViewCellXib")
         let placeManager = PlaceManager()
         let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
+        
         self.viewModel = placeTableViewModel
         
-        let placeService = NetworkManager()
-        placeService.getInfoPlaceById(id: 1)
-        placeService.logIn(name: "boris", password: "XXX666xxx")
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,6 +65,10 @@ class PlaceTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfPlaces()
     }
@@ -73,6 +77,10 @@ class PlaceTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PlaceTableViewCell else{
             fatalError("The dequeued call is not an instance of PlaceTableViewCell")
         }
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceTableViewCellXib", for: indexPath) as? PlaceTableViewXibCell else{
+//            fatalError("PlaceTableViewCellXib doesn't exist")
+//        }
+        
         cell.viewModel = self.viewModel.cellViewModel(indexPath.row)
         
         return cell

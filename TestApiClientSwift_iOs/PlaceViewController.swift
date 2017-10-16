@@ -40,38 +40,7 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
     }    
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
-//            changeTabBar(hidden: true, animated: true)
-//        }else{
-//            changeTabBar(hidden: false, animated: true)
-//        }
-        
-          //появление крайне тормознутое
-//        if scrollView.contentOffset.y > 50{
-//            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
-//                self.navigationController?.setNavigationBarHidden(true, animated: true)
-//                print("Hide")
-//            }, completion: nil)
-//        } else {
-//            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
-//                self.navigationController?.setNavigationBarHidden(false, animated: true)
-//                print("Unhide")
-//            }, completion: nil)
-//        }
-        
-//        if(velocity.y>0) {
-//            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
-//            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
-//                self.navigationController?.setNavigationBarHidden(true, animated: true)
-//                print("Hide")
-//            }, completion: nil)
-//            
-//        } else {
-//            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: {
-//                self.navigationController?.setNavigationBarHidden(false, animated: true)
-//                print("Unhide")
-//            }, completion: nil)    
-//        }
+
     }
     
     
@@ -97,11 +66,14 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         // делаем прозрачным navBar
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clear
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true              
+        self.navigationController?.view.backgroundColor = UIColor.blue
 
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        
         UITabBar.appearance().tintColor = UIColor.clear
         UITabBar.appearance().backgroundColor = UIColor.clear
         
