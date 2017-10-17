@@ -45,7 +45,8 @@ class PlaceDetailsViewController: UIViewController {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.tableView?.contentInset = UIEdgeInsets(top: 250, left: 0, bottom: 0, right: 0)
+        self.tableView?.contentInset = UIEdgeInsets(top: 265, left: 0, bottom: 0, right: 0)
+        self.automaticallyAdjustsScrollViewInsets = true
         self.tableView?.layer.backgroundColor = UIColor.clear.cgColor
     }
 

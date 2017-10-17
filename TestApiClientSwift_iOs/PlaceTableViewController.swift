@@ -2,11 +2,12 @@ import UIKit
 import Kingfisher
 import Toast_Swift
 import AMScrollingNavbar
-
+import CZPicker
 
 class PlaceTableViewController: UITableViewController {
 
-
+    
+    var categories = [Category]()
     var viewModel : PlaceTableViewModel!
    {
        didSet {
@@ -14,6 +15,7 @@ class PlaceTableViewController: UITableViewController {
                if self.viewModel.error != nil{
                   self.view.makeToast(self.viewModel.error!, duration: 5.0, position: .center)
               } else {
+                    self.categories = self.viewModel.categoriesArray
                     self.tableView.reloadData()
                 }
             }
@@ -75,7 +77,17 @@ class PlaceTableViewController: UITableViewController {
             fatalError("Global prepare Error in PlaceTableViewController")
         }
     }
-
+    
+    
+    @IBAction func filterNavBarAction(_ sender: UIBarButtonItem) {
+        let picker = CZPickerView(headerTitle: "Выберите категории", cancelButtonTitle: "Отменить", confirmButtonTitle: "Подтвердить" )
+        picker?.delegate = self
+        picker?.dataSource = self
+        picker?.needFooterView = false
+        picker?.allowMultipleSelection = true
+        picker?.show()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -102,5 +114,35 @@ class PlaceTableViewController: UITableViewController {
         cell.viewModel = self.viewModel.cellViewModel(indexPath.row)
         
         return cell
+    }
+}
+
+extension PlaceTableViewController: CZPickerViewDelegate, CZPickerViewDataSource{
+    func numberOfRows(in pickerView: CZPickerView!) -> Int {
+        return categories.count
+    }
+    
+    func czpickerView(_ pickerView: CZPickerView!, titleForRow row: Int) -> String! {
+        return categories[row].name
+    }
+    
+    func czpickerView(_ pickerView: CZPickerView!, didConfirmWithItemAtRow row: Int) {
+        print(categories[row].name)
+        //self.navigationController?.setNavigationBarHidden((true), animated: true)
+        pickerView.isHidden = true
+    }
+    
+    func czpickerViewDidClickCancelButton(_ pickerView: CZPickerView!) {
+        //self.navigationController?.setNavigationBarHidden(true, animated: true)
+        pickerView.isHidden = true
+    }
+    
+    func czpickerView(_ pickerView: CZPickerView!, didConfirmWithItemsAtRows rows: [Any]!) {
+        for row in rows {
+            if let row = row as? Int {
+                print(categories[row].name)
+            }
+        }
+
     }
 }

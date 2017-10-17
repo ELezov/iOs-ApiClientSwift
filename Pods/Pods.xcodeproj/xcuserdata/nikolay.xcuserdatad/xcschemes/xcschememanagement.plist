@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CZPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,17 +77,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1C13DFA1AFF63B0A706E49D78BEB22AA</key>
+		<key>03435290C15A88D5E535BBD48815D32F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2948C321C01E42D277919F605EC1C36E</key>
+		<key>278A573D67BCC35CBA117C2A1973992B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CA800409E18DA4B1D464982E68A4E7B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>531B0974FA27EA90D67E037C9F2E5416</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5472DF5577F5AEE9F04A2E011688AAAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -93,11 +113,6 @@
 			<true/>
 		</dict>
 		<key>709B37C87082FC138C02EA729A3F8D0C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>721E73A90E6E0E02DF6C787CC2788F12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,22 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B20FD99E359AB1F01AF549C2207C31A0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CC85396ED001BA202B29020DFC44D174</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E5350A68CE633AA4C00C1B553707D115</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>EE7265B4ADCAC4066E67E3C991987858</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4D40AC26D9CA55D9FE8B434ED2A24FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD0EA4E3DD886BC6C7B27855C4BCD3EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

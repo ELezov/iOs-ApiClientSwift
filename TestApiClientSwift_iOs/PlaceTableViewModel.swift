@@ -4,7 +4,7 @@ class PlaceTableViewModel{
     weak var placeManager: PlaceManager!
     fileprivate var cellsArray = [PlaceTableCellViewModel]()
     fileprivate var placeArray: [Place]!
-    fileprivate var categoriesArray: [Category]!
+    var categoriesArray: [Category]!
     var detailsViewModel: PlaceDetailsViewModel!
     var detailsNewViewModel: DetailsViewModel!
     var error: String?

@@ -5,6 +5,7 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
   - AMScrollingNavbar (3.0.0)
+  - CZPicker (0.4.3)
   - Kingfisher (3.13.0)
   - ObjectMapper (2.2.9)
   - PopupDialog (0.5.4)
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper (= 4.1.0)
   - AMScrollingNavbar (= 3)
+  - CZPicker
   - Kingfisher (= 3.13)
   - ObjectMapper (= 2.2.9)
   - PopupDialog (= 0.5.4)
@@ -35,6 +37,7 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   AMScrollingNavbar: aa894c559c80ffa917d0fdc40d8b42be7c6efe15
+  CZPicker: 55aa1751ea26e209814552da1a9a08cba8bbf72a
   Kingfisher: 7eebf6000ac64401839f10da37f21eefa7d88970
   ObjectMapper: 63cfe41bc6f8e7c8f44344c49901b8ae7de14c52
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
@@ -44,6 +47,6 @@ SPEC CHECKSUMS:
   SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
   Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
 
-PODFILE CHECKSUM: 7dc320c5fd87af5a744ffe474ddc35568354a438
+PODFILE CHECKSUM: 1d406b27c73bb02d2489595681f1adb00033af47
 
 COCOAPODS: 1.2.0

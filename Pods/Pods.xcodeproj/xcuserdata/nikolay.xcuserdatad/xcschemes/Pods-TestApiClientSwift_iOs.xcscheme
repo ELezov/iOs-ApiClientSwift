@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2948C321C01E42D277919F605EC1C36E"
+               BlueprintIdentifier = "F4D40AC26D9CA55D9FE8B434ED2A24FD"
                BuildableName = "Pods_TestApiClientSwift_iOs.framework"
                BlueprintName = "Pods-TestApiClientSwift_iOs"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2948C321C01E42D277919F605EC1C36E"
+            BlueprintIdentifier = "F4D40AC26D9CA55D9FE8B434ED2A24FD"
             BuildableName = "Pods_TestApiClientSwift_iOs.framework"
             BlueprintName = "Pods-TestApiClientSwift_iOs"
             ReferencedContainer = "container:Pods.xcodeproj">
