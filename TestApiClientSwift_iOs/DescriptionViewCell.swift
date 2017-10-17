@@ -18,6 +18,7 @@ class DescriptionViewCell: UITableViewCell {
                 return
             }
             
+            descriptionLabel.text = ""
             descriptionLabel.text = item.descriptionText
         }
     }

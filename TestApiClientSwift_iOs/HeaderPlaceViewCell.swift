@@ -21,6 +21,8 @@ class HeaderPlaceViewCell: UITableViewCell {
             }
             
             categoryImg.kf.setImage(with: URL(string:BASE_URL_API + item.categoryImgUrl))
+            categoryNameLabel.text = ""
+            placeNameLabel.text = ""
             categoryNameLabel.text = item.categoryName
             placeNameLabel.text = item.placeName
         }

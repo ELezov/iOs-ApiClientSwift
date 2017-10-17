@@ -17,7 +17,7 @@ class PhoneViewCell: UITableViewCell {
             guard  let item = item as? DetailsViewModelPhoneItem else {
                 return
             }
-            
+            phoneDetailsLabel.text = ""
             phoneDetailsLabel.text = item.phoneText
         }
     }

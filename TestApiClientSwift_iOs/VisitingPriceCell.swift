@@ -17,7 +17,7 @@ class VisitingPriceCell: UITableViewCell {
             guard  let item = item as? DetailsViewModelVisitPriceItem else {
                 return
             }
-            
+            visitingPriceLabel.text = ""
             let costAttributedText = NSMutableAttributedString(string: "Стоимость посещения: "  + item.visitingPriceText)
             costAttributedText.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: 19))
             

@@ -40,15 +40,14 @@ class PlaceDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let navigationController = navigationController as? ScrollingNavigationController{
-            navigationController.followScrollView(tableView!, delay: 25.0)
+            navigationController.followScrollView(tableView!, delay: 15.0)
         }
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         self.tableView?.contentInset = UIEdgeInsets(top: 265, left: 0, bottom: 0, right: 0)
         self.automaticallyAdjustsScrollViewInsets = true
+    }
+    
+    override func viewWillLayoutSubviews() {
         self.tableView?.layer.backgroundColor = UIColor.clear.cgColor
     }
-
 
 }

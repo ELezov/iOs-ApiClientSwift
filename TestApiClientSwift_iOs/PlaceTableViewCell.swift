@@ -2,6 +2,7 @@ import UIKit
 
 class PlaceTableViewCell: UITableViewCell {
     @IBOutlet weak var saleLabel: UILabel!
+    @IBOutlet weak var saleBackgroundImage: UIImageView!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryImg: UIImageView!
 
@@ -11,18 +12,29 @@ class PlaceTableViewCell: UITableViewCell {
     
     weak var viewModel: PlaceTableCellViewModel! {
         didSet{
+            initView()
             self.categoryImg.kf.setImage(with: URL(string: BASE_URL_API+viewModel.categoryImgUrl!))
             self.categoryNameLabel.text = viewModel.categoryTitle
-            placeNameLabel.text = viewModel.placeTitle
-            placeDescriptionLabel.text = viewModel.placeDescription
-            if viewModel.saleString == "0"{
-                self.saleLabel.isHidden = false
+            self.placeNameLabel.text = viewModel.placeTitle
+            self.placeDescriptionLabel.text = viewModel.placeDescription
+            if viewModel.saleString == "0" {
+                self.saleLabel.isHidden = true
+                self.saleBackgroundImage.isHidden = true
             }
             else{
                 self.saleLabel.text = viewModel.saleString
             }
             
         }
+    }
+    
+    func initView(){
+        self.categoryNameLabel.text = ""
+        self.placeNameLabel.text = ""
+        self.placeDescriptionLabel.text = ""
+        self.saleLabel.text = ""
+        self.saleLabel.isHidden = false
+        self.saleBackgroundImage.isHidden = false
     }
 
     override func awakeFromNib() {
