@@ -15,19 +15,19 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LocationViewCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="Oxi-K4-bcH">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="Oxi-K4-bcH">
                         <rect key="frame" x="24" y="24" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="24" id="HQa-1e-mKF"/>
                             <constraint firstAttribute="height" constant="24" id="KMG-MH-kRt"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0,8 км | ул. Черняховского, 25 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slO-bW-3pV">
-                        <rect key="frame" x="62" y="26" width="289" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0,8 км | ул. Черняховского, 25 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slO-bW-3pV">
+                        <rect key="frame" x="62" y="24" width="289" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="xqM-WH-sJB"/>
                         </constraints>
@@ -35,13 +35,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcE-U9-CYL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                        <color key="backgroundColor" red="0.81568628549575806" green="0.81568628549575806" blue="0.81568628549575806" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="2Kh-d5-2vs"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="slO-bW-3pV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="Fnn-Gm-znE"/>
+                    <constraint firstItem="slO-bW-3pV" firstAttribute="top" secondItem="gcE-U9-CYL" secondAttribute="bottom" constant="23" id="1gi-3m-vf6"/>
+                    <constraint firstItem="gcE-U9-CYL" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="5X8-h9-gUY"/>
+                    <constraint firstItem="gcE-U9-CYL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="BOi-ar-NkO"/>
                     <constraint firstAttribute="bottomMargin" secondItem="slO-bW-3pV" secondAttribute="bottom" constant="24" id="Hez-hq-GuT"/>
+                    <constraint firstItem="gcE-U9-CYL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="UuL-0g-Mcv"/>
                     <constraint firstItem="Oxi-K4-bcH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="cWW-3v-IzI"/>
-                    <constraint firstItem="Oxi-K4-bcH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="fZ0-Kc-U7V"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Oxi-K4-bcH" secondAttribute="bottom" constant="24" id="jZ1-p4-DmS"/>
+                    <constraint firstItem="Oxi-K4-bcH" firstAttribute="top" secondItem="gcE-U9-CYL" secondAttribute="bottom" constant="23" id="lFk-7a-3ej"/>
                     <constraint firstItem="slO-bW-3pV" firstAttribute="leading" secondItem="Oxi-K4-bcH" secondAttribute="trailing" constant="16" id="lKg-0s-A0y"/>
                     <constraint firstAttribute="trailingMargin" secondItem="slO-bW-3pV" secondAttribute="trailing" constant="24" id="mW4-O2-ufV"/>
                 </constraints>

@@ -40,14 +40,24 @@
                         <color key="textColor" red="0.32156863808631897" green="0.3333333432674408" blue="0.34117648005485535" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMW-Xr-PMG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                        <color key="backgroundColor" red="0.81568628549575806" green="0.81568628549575806" blue="0.81568628549575806" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="FdH-Zx-j2h"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Pyj-m1-vZ7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="13n-fJ-HGe"/>
+                    <constraint firstItem="CMW-Xr-PMG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="BXa-Fs-EQ8"/>
+                    <constraint firstItem="0C5-Wh-DHI" firstAttribute="top" secondItem="CMW-Xr-PMG" secondAttribute="bottom" constant="23" id="C1b-BT-bri"/>
                     <constraint firstAttribute="bottomMargin" secondItem="0C5-Wh-DHI" secondAttribute="bottom" constant="23" id="K2S-XW-Cm6"/>
-                    <constraint firstItem="0C5-Wh-DHI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="TXg-km-WMV"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Pyj-m1-vZ7" secondAttribute="bottom" constant="24" id="Tgg-61-hhe"/>
+                    <constraint firstItem="Pyj-m1-vZ7" firstAttribute="top" secondItem="CMW-Xr-PMG" secondAttribute="bottom" constant="23" id="bRP-5M-6Bd"/>
                     <constraint firstItem="0C5-Wh-DHI" firstAttribute="leading" secondItem="Pyj-m1-vZ7" secondAttribute="trailing" constant="16" id="lkn-8f-ej8"/>
+                    <constraint firstItem="CMW-Xr-PMG" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="qIE-x8-1nt"/>
                     <constraint firstItem="Pyj-m1-vZ7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="tEe-8Q-2UZ"/>
+                    <constraint firstItem="CMW-Xr-PMG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="vyq-bz-lRD"/>
                 </constraints>
                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             </tableViewCellContentView>
