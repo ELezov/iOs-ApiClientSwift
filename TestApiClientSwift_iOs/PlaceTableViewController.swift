@@ -1,9 +1,7 @@
 import UIKit
-import AlamofireObjectMapper
-import Alamofire
 import Kingfisher
-import RealmSwift
 import Toast_Swift
+import AMScrollingNavbar
 
 
 class PlaceTableViewController: UITableViewController {
@@ -35,23 +33,43 @@ class PlaceTableViewController: UITableViewController {
         self.viewModel = placeTableViewModel
         
     }
-   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let navigationController = navigationController as? ScrollingNavigationController{
+            navigationController.followScrollView(tableView, delay: 25.0)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch (segue.identifier ?? "") {
         case "ShowDetail":
-            guard let placeDetailViewController = segue.destination as? PlaceViewController  else {
+//            guard let placeDetailViewController = segue.destination as? PlaceViewController  else {
+//                fatalError("Unexpected destination:\(segue.destination)")
+//            }
+//
+//            guard let selectedPlaceCell = sender as? PlaceTableViewCell else{
+//               fatalError("The selected cell is not being displayed by the table")
+//            }
+//
+//            guard let indexPath = tableView.indexPath(for: selectedPlaceCell) else {
+//                fatalError("The selected cell is not being displayed by the table")
+//            }
+//
+//            placeDetailViewController.viewModel = self.viewModel.getDetailsViewModel(indexPath.row)
+            
+            guard let placeDetailViewController = segue.destination as? PlaceDetailsViewController  else {
                 fatalError("Unexpected destination:\(segue.destination)")
             }
-
+            
             guard let selectedPlaceCell = sender as? PlaceTableViewCell else{
-               fatalError("The selected cell is not being displayed by the table")
+                fatalError("The selected cell is not being displayed by the table")
             }
-
+            
             guard let indexPath = tableView.indexPath(for: selectedPlaceCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-
-            placeDetailViewController.viewModel = self.viewModel.getDetailsViewModel(indexPath.row)
+            
+            placeDetailViewController.viewModel =  self.viewModel.getDetailsNewModel(indexPath.row)
 
         default:
             fatalError("Global prepare Error in PlaceTableViewController")

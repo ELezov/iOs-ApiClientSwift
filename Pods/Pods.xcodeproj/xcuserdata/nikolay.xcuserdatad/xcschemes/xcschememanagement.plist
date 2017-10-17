@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PopupDialog.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,17 +72,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>28C260E9CE03273F113713B610FF66D5</key>
+		<key>1C13DFA1AFF63B0A706E49D78BEB22AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2948C321C01E42D277919F605EC1C36E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>37A64C95D2B7AC9BBA5620129F3C1E81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -88,6 +93,11 @@
 			<true/>
 		</dict>
 		<key>709B37C87082FC138C02EA729A3F8D0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>721E73A90E6E0E02DF6C787CC2788F12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,22 +117,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C233E5B3330C02CE387B84F01BBB4C77</key>
+		<key>B20FD99E359AB1F01AF549C2207C31A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2BC7774819806E9563061D47267BCBD</key>
+		<key>CC85396ED001BA202B29020DFC44D174</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5350A68CE633AA4C00C1B553707D115</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>EE7265B4ADCAC4066E67E3C991987858</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FDFAF177797AE5389BF074074F53CDC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

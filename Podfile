@@ -9,11 +9,13 @@ target 'TestApiClientSwift_iOs' do
   pod 'AlamofireObjectMapper', '4.1.0'
   pod 'Kingfisher', '3.13'
   pod 'Agrume', '3'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '2.10.2'
   pod 'Toast-Swift', '2'
   pod 'SwiftLint'
   pod 'AMScrollingNavbar', '3'
   pod 'SkyFloatingLabelTextField', '3'
+  pod 'PopupDialog', '0.5.4'
+  pod 'CZPicker'
   # Pods for TestApiClientSwift_iOs
 
   target 'TestApiClientSwift_iOsTests' do

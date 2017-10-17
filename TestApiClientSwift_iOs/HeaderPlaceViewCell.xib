@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="YesevaOne-Regular_v2.otf">
+            <string>YesevaOne</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="HeaderPlaceViewCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBig" translatesAutoresizingMaskIntoConstraints="NO" id="JC8-HZ-2KQ">
+                        <rect key="frame" x="24" y="24" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="U9i-NK-xSA"/>
+                            <constraint firstAttribute="width" secondItem="JC8-HZ-2KQ" secondAttribute="height" multiplier="1:1" id="dah-Nw-B0M"/>
+                            <constraint firstAttribute="width" constant="24" id="uro-gd-rhs"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNp-Kx-Etm">
+                        <rect key="frame" x="64" y="25" width="192" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="JRD-qW-Xsj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                        <color key="textColor" red="0.48235294222831726" green="0.49803921580314636" blue="0.5058823823928833" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLh-M5-bM1" customClass="RatingView" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+                        <rect key="frame" x="271" y="28" width="80" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="2bc-Ps-ti6"/>
+                            <constraint firstAttribute="width" constant="80" id="QUf-de-TcV"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3S-bS-Snt">
+                        <rect key="frame" x="24" y="60" width="311" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="eQn-bG-ba7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="V3S-bS-Snt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="8Vy-jQ-NVL"/>
+                    <constraint firstItem="JC8-HZ-2KQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="Aq6-Ne-gkx"/>
+                    <constraint firstItem="V3S-bS-Snt" firstAttribute="top" secondItem="JC8-HZ-2KQ" secondAttribute="bottom" constant="12" id="Ip9-4i-nfI"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="V3S-bS-Snt" secondAttribute="bottom" constant="6" id="JHx-tS-xGH"/>
+                    <constraint firstItem="yNp-Kx-Etm" firstAttribute="leading" secondItem="JC8-HZ-2KQ" secondAttribute="trailing" constant="16" id="L6E-5Q-0zf"/>
+                    <constraint firstItem="VLh-M5-bM1" firstAttribute="leading" secondItem="yNp-Kx-Etm" secondAttribute="trailing" constant="16" id="MFj-dQ-IWb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VLh-M5-bM1" secondAttribute="trailing" constant="24" id="MIh-oy-Mhx"/>
+                    <constraint firstItem="yNp-Kx-Etm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="25" id="b8M-XV-QAM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="V3S-bS-Snt" secondAttribute="trailing" constant="40" id="dpl-tD-QsO"/>
+                    <constraint firstItem="JC8-HZ-2KQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="dr7-7k-YCw"/>
+                    <constraint firstItem="VLh-M5-bM1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="28" id="yXp-X6-dtk"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryImg" destination="JC8-HZ-2KQ" id="kKf-Cm-Ngz"/>
+                <outlet property="categoryNameLabel" destination="yNp-Kx-Etm" id="PxW-kJ-CSK"/>
+                <outlet property="placeNameLabel" destination="V3S-bS-Snt" id="COz-xR-Vei"/>
+            </connections>
+            <point key="canvasLocation" x="55.5" y="86"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="defaultBig" width="1024" height="750"/>
+    </resources>
+</document>

@@ -7,15 +7,11 @@
 //
 
 import UIKit
+import AMScrollingNavbar
 
 class PlaceDetailsViewController: UIViewController {
 
-    var viewModel: DetailsViewModel?{
-        didSet{
-            tableView?.dataSource = viewModel
-            tableView?.reloadData()
-        }
-    }
+    var viewModel: DetailsViewModel?
     
     
     @IBOutlet weak var placeImage: UIImageView!
@@ -25,33 +21,33 @@ class PlaceDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //tableView?.dataSource = viewModel
+        placeImage.kf.setImage(with: URL(string: BASE_URL_API + (viewModel?.placeImgUrl[0])!))
+        
+        tableView?.dataSource = viewModel
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
         
-        tableView?.register(HeaderPlaceDetailsViewCell.nib, forCellReuseIdentifier: HeaderPlaceDetailsViewCell.identifier)
-        tableView?.register(DescriptionDetailsViewCell.nib, forCellReuseIdentifier: DescriptionDetailsViewCell.identifier)
-        tableView?.register(TimeTableDetailsViewCell.nib, forCellReuseIdentifier: TimeTableDetailsViewCell.identifier)
-        tableView?.register(VisitingPriceDetailsCell.nib, forCellReuseIdentifier: VisitingPriceDetailsCell.identifier)
-        tableView?.register(PhoneDetailsViewCell.nib, forCellReuseIdentifier: PhoneDetailsViewCell.identifier)
+        tableView?.register(HeaderPlaceViewCell.nib, forCellReuseIdentifier: HeaderPlaceViewCell.identifier)
+        tableView?.register(DescriptionViewCell.nib, forCellReuseIdentifier: DescriptionViewCell.identifier)
+        tableView?.register(TimeTableViewCell.nib, forCellReuseIdentifier: TimeTableViewCell.identifier)
+        tableView?.register(VisitingPriceCell.nib, forCellReuseIdentifier: VisitingPriceCell.identifier)
+        tableView?.register(PhoneViewCell.nib, forCellReuseIdentifier: PhoneViewCell.identifier)
+        tableView?.register(LocationViewCell.nib, forCellReuseIdentifier: LocationViewCell.identifier)
+        
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        if let navigationController = navigationController as? ScrollingNavigationController{
+            navigationController.followScrollView(tableView!, delay: 25.0)
+        }
     }
-    */
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tableView?.contentInset = UIEdgeInsets(top: 250, left: 0, bottom: 0, right: 0)
+        self.tableView?.layer.backgroundColor = UIColor.clear.cgColor
+    }
+
 
 }

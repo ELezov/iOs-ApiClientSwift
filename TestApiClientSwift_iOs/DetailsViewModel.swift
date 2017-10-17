@@ -15,6 +15,7 @@ enum DetailsViewModelItemType{
     case timeTable
     case visitingPrice
     case phoneView
+    case location
 }
 
 protocol DetailsViewModelItem{
@@ -23,6 +24,7 @@ protocol DetailsViewModelItem{
 
 class DetailsViewModel: NSObject {
     var items = [DetailsViewModelItem]()
+    var placeImgUrl: [String]
     
     init(place: Place, categories: [Category]) {
         let category = categories[(place.category_id?[0])!]
@@ -30,12 +32,27 @@ class DetailsViewModel: NSObject {
         items.append(headerItem)
         let descriptionItem = DetailsViewModelDescriptionItem(description: place.description!)
         items.append(descriptionItem)
-        let timeItem = DetailsViewModelTimeTableItem(timeTable: place.description_2!)
-        items.append(timeItem)
-        let visitPrice = DetailsViewModelVisitPriceItem(visitingPrice: place.cost_text!)
-        items.append(visitPrice)
-        let phoneItem = DetailsViewModelPhoneItem(phoneText: place.phone!)
-        items.append(phoneItem)
+        
+        if place.description_2! != ""{
+            let timeItem = DetailsViewModelTimeTableItem(timeTable: place.description_2!)
+            items.append(timeItem)
+        }
+        
+        if place.cost_text! != ""{
+            let visitPrice = DetailsViewModelVisitPriceItem(visitingPrice: place.cost_text!)
+            items.append(visitPrice)
+        }
+        
+        if place.phone! != "" {
+            let phoneItem = DetailsViewModelPhoneItem(phoneText: place.phone!)
+            items.append(phoneItem)
+        }
+        
+        let locationItem = DetailsViewModelLocationItem()
+        items.append(locationItem)
+        
+        print("DetailsViewModel", items.count)
+        self.placeImgUrl = place.photos!
     }
 }
 
@@ -52,31 +69,39 @@ extension DetailsViewModel: UITableViewDataSource {
         let item = items[indexPath.section]
         switch item.type {
         case .header:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: HeaderPlaceDetailsViewCell.identifier, for: indexPath) as? HeaderPlaceDetailsViewCell{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: HeaderPlaceViewCell.identifier, for: indexPath) as? HeaderPlaceViewCell{
                 cell.item = item
+                cell.isUserInteractionEnabled = false
                 return cell
             }
         case .description:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionDetailsViewCell.identifier, for: indexPath) as? DescriptionDetailsViewCell{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionViewCell.identifier, for: indexPath) as? DescriptionViewCell{
                 cell.item = item
+                cell.isUserInteractionEnabled = false
                 return cell
             }
         case .timeTable:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TimeTableDetailsViewCell.identifier, for: indexPath) as? TimeTableDetailsViewCell{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: TimeTableViewCell.identifier, for: indexPath) as? TimeTableViewCell{
                 cell.item = item
+                cell.isUserInteractionEnabled = false
                 return cell
             }
         case .visitingPrice:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: VisitingPriceDetailsCell.identifier, for: indexPath) as? VisitingPriceDetailsCell{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: VisitingPriceCell.identifier, for: indexPath) as? VisitingPriceCell{
                 cell.item = item
+                cell.isUserInteractionEnabled = false
                 return cell
             }
         case .phoneView:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: PhoneDetailsViewCell.identifier, for: indexPath) as? PhoneDetailsViewCell{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: PhoneViewCell.identifier, for: indexPath) as? PhoneViewCell{
                 cell.item = item
                 return cell
             }
-            
+        case .location:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: LocationViewCell.identifier, for: indexPath) as? LocationViewCell{
+                cell.item = item
+                return cell
+            }
         }
         return UITableViewCell()
     }
@@ -143,6 +168,16 @@ class DetailsViewModelPhoneItem: DetailsViewModelItem{
     
     init(phoneText: String) {
         self.phoneText = phoneText
+    }
+}
+
+class DetailsViewModelLocationItem: DetailsViewModelItem{
+    var type: DetailsViewModelItemType{
+        return .location
+    }
+    
+    init() {
+        
     }
 }
 
