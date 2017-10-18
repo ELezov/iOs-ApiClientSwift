@@ -16,7 +16,10 @@ target 'TestApiClientSwift_iOs' do
   pod 'SkyFloatingLabelTextField', '3'
   pod 'CZPicker'
   pod 'YandexMapKit'
-  pod 'NYTPhotoViewer', '~> 1.1.0'
+  pod 'ImageViewer', '4.0'
+  #pod 'Optik'
+  pod 'FLAnimatedImage', '~> 1.0'
+  
   # Pods for TestApiClientSwift_iOs
 
   target 'TestApiClientSwift_iOsTests' do

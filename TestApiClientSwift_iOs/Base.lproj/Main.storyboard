@@ -210,7 +210,7 @@ Altes Haus — Hufen</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLd-pk-UOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-186.40000000000001" y="110.19490254872565"/>
+            <point key="canvasLocation" x="-468" y="114"/>
         </scene>
         <!--Place Details View Controller-->
         <scene sceneID="GoN-zu-eRH">
@@ -259,7 +259,7 @@ Altes Haus — Hufen</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6q-gI-pbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917.60000000000002" y="542.87856071964018"/>
+            <point key="canvasLocation" x="385" y="114"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dtx-N7-JPy">
@@ -292,7 +292,7 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOq-9O-h59">
-                                        <rect key="frame" x="0.0" y="19.5" width="6" height="6"/>
+                                        <rect key="frame" x="0.0" y="20" width="6" height="6"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="6" id="PnP-3j-pW8"/>
@@ -420,7 +420,7 @@ Altes Haus — Hufen</string>
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -9,22 +9,29 @@
 import UIKit
 import AMScrollingNavbar
 import Agrume
-import NYTPhotoViewer
+import ImageViewer
+import Kingfisher
+
+extension UIImageView
+{
+    func load(_ string: String){
+        self.kf.setImage(with: URL(string: BASE_URL_API+string))
+    }
+}
+
+extension UIImageView: DisplaceableView {}
 
 class PlaceDetailsViewController: UIViewController{
-    
     var viewModel: DetailsViewModel?
-    var photos = PhotosProvider().photos
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var tableView: UITableView?
+    var imagesUrl = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let buttonImage = UIImage(named: PrimaryImageName)
-        //imageButton?.setBackgroundImage(buttonImage, forState: .Normal)
-        
+        self.imagesUrl = (viewModel?.place.photos)!
         
         //action for gallery
         tableView?.dataSource = self//viewModel
@@ -133,6 +140,9 @@ extension PlaceDetailsViewController: UITableViewDataSource{
         case .location:
             if let cell = tableView.dequeueReusableCell(withIdentifier: LocationViewCell.identifier, for: indexPath) as? LocationViewCell{
                 cell.item = item
+                let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceDetailsViewController.showMailGallery))
+                cell.addGestureRecognizer(tap)
+                cell.isUserInteractionEnabled = true
                 return cell
             }
             
@@ -151,97 +161,88 @@ extension PlaceDetailsViewController: UITableViewDataSource{
         }
         print(viewModel?.place.phone)
     }
+    
+    func showMailGallery(){
+        let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
+        let headerView = CounterView(frame: frame, currentIndex: 0, count: imagesUrl.count)
+        let galleryViewController = GalleryViewController(startIndex: 0, itemsDatasource: self, configuration: galleryConfiguration())
+            
+        galleryViewController.headerView = headerView
+        galleryViewController.launchedCompletion = { print("LAUNCHED") }
+        galleryViewController.closedCompletion = { print("CLOSED") }
+        galleryViewController.swipedToDismissCompletion = { print("SWIPE-DISMISSED") }
+        
+        galleryViewController.landedPageAtIndexCompletion = { index in
+            
+            print("LANDED AT INDEX: \(index)")
+            
+            headerView.count = self.imagesUrl.count
+            headerView.currentIndex = index
+        }
+        
+        self.presentImageGallery(galleryViewController)
+    }
+    
+    func galleryConfiguration() -> GalleryConfiguration {
+        
+        return [
+            
+            //GalleryConfigurationItem.closeButtonMode(.builtIn),
+            GalleryConfigurationItem.closeButtonMode(.builtIn),
+            GalleryConfigurationItem.pagingMode(.standard),
+            GalleryConfigurationItem.presentationStyle(.displacement),
+            GalleryConfigurationItem.hideDecorationViewsOnLaunch(false),
+            GalleryConfigurationItem.overlayColor(UIColor(white: 0.035, alpha: 1)),
+            GalleryConfigurationItem.overlayColorOpacity(1),
+            GalleryConfigurationItem.overlayBlurOpacity(1),
+            GalleryConfigurationItem.overlayBlurStyle(UIBlurEffectStyle.light),
+            GalleryConfigurationItem.maximumZoolScale(8.0),
+            GalleryConfigurationItem.swipeToDismissThresholdVelocity(300),
+            GalleryConfigurationItem.doubleTapToZoomDuration(0.15),
+            GalleryConfigurationItem.blurPresentDuration(0.5),
+            GalleryConfigurationItem.blurPresentDelay(0),
+            GalleryConfigurationItem.colorPresentDuration(0.25),
+            GalleryConfigurationItem.colorPresentDelay(0),
+            
+            GalleryConfigurationItem.blurDismissDuration(0.1),
+            GalleryConfigurationItem.blurDismissDelay(0.4),
+            GalleryConfigurationItem.colorDismissDuration(0.45),
+            GalleryConfigurationItem.colorDismissDelay(0),
+            
+            GalleryConfigurationItem.itemFadeDuration(0.3),
+            GalleryConfigurationItem.decorationViewsFadeDuration(0.15),
+            GalleryConfigurationItem.rotationDuration(0.15),
+            
+            GalleryConfigurationItem.displacementDuration(0.55),
+            GalleryConfigurationItem.reverseDisplacementDuration(0.25),
+            GalleryConfigurationItem.displacementTransitionStyle(.springBounce(0.7)),
+            GalleryConfigurationItem.displacementTimingCurve(.linear),
+            GalleryConfigurationItem.thumbnailsButtonMode(.none),
+            GalleryConfigurationItem.statusBarHidden(true),
+            GalleryConfigurationItem.displacementKeepOriginalInPlace(false),
+            GalleryConfigurationItem.displacementInsetMargin(50)
+        ]
+    }
+    
+    
+    
 }
 
-//extension PlaceDetailsViewController: NYTPhotosViewControllerDelegate{
-//    
-//    
-//    func openNYTGalleryAction(){
-//        print("Haha", "oOops")
-//        let photosViewController = NYTPhotosViewController(photos: self.photos)
-//        photosViewController.delegate = self
-//        present(photosViewController, animated: true, completion: nil)
-//        
-//        let urls = viewModel?.placeImgUrl
-//        let converter = Converter()
-//        let agrume = Agrume(imageUrls: converter.convertStringToUrlArray(urls: urls!))
-//        agrume.showFrom(self)
-//    }
-//    
-//    func updateImagesOnPhotosViewController(photosViewController: NYTPhotosViewController, afterDelayWithPhotos: [ExamplePhoto]) {
-//        
-//        let delayTime = dispatch_time(dispatch_time_t(DispatchTime.now()), 5 * Int64(NSEC_PER_SEC))
-//        
-//        dispatch_after(delayTime, DispatchQueue.main) {
-//            for photo in self.photos {
-//                if photo.image == nil {
-//                    photo.image = UIImage(named: PrimaryImageName)
-//                    photosViewController.updateImage(for: photo)
-//                }
-//            }
-//        }
-//    }
-//    
-//    // MARK: - NYTPhotosViewControllerDelegate
-//    
-//    func photosViewController(photosViewController: NYTPhotosViewController, handleActionButtonTappedForPhoto photo: NYTPhoto) -> Bool {
-//        
-//        if UIDevice.current.userInterfaceIdiom == .Pad {
-//            
-//            guard let photoImage = photo.image else { return false }
-//            
-//            let shareActivityViewController = UIActivityViewController(activityItems: [photoImage], applicationActivities: nil)
-//            
-//            shareActivityViewController.completionWithItemsHandler = {(activityType: String?, completed: Bool, items: [AnyObject]?, error: NSError?) in
-//                if completed {
-//                    photosViewController.delegate?.photosViewController!(photosViewController, actionCompletedWithActivityType: activityType!)
-//                }
-//            }
-//            
-//            shareActivityViewController.popoverPresentationController?.barButtonItem = photosViewController.rightBarButtonItem
-//            photosViewController.present(shareActivityViewController, animated: true, completion: nil)
-//            
-//            return true
-//        }
-//        
-//        return false
-//    }
-//    
-//    func photosViewController(photosViewController: NYTPhotosViewController, referenceViewForPhoto photo: NYTPhoto) -> UIView? {
-//        if photo as? ExamplePhoto == photos[NoReferenceViewPhotoIndex] {
-//            return nil
-//        }
-//        return imageButton
-//    }
-//    
-//    func photosViewController(photosViewController: NYTPhotosViewController, loadingViewForPhoto photo: NYTPhoto) -> UIView? {
-//        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-//            let label = UILabel()
-//            label.text = "Custom Loading..."
-//            label.textColor = UIColor.green
-//            return label
-//        }
-//        return nil
-//    }
-//    
-//    func photosViewController(photosViewController: NYTPhotosViewController, captionViewForPhoto photo: NYTPhoto) -> UIView? {
-//        if photo as! ExamplePhoto == photos[CustomEverythingPhotoIndex] {
-//            let label = UILabel()
-//            label.text = "Custom Caption View"
-//            label.textColor = UIColor.white
-//            label.backgroundColor = UIColor.red
-//            return label
-//        }
-//        return nil
-//    }
-//    
-//    func photosViewController(photosViewController: NYTPhotosViewController, didNavigateToPhoto photo: NYTPhoto, atIndex photoIndex: UInt) {
-//        print("Did Navigate To Photo: \(photo) identifier: \(photoIndex)")
-//    }
-//    
-//    func photosViewController(photosViewController: NYTPhotosViewController, actionCompletedWithActivityType activityType: String?) {
-//        print("Action Completed With Activity Type: \(activityType)")
-//    }
-//
-//    
-//}
+
+extension PlaceDetailsViewController: GalleryItemsDatasource {
+    
+    func itemCount() -> Int {
+        
+        return imagesUrl.count
+    }
+    
+    func provideGalleryItem(_ index: Int) -> GalleryItem {
+        let url = URL(string: BASE_URL_API + self.imagesUrl[index])
+        return GalleryItem.image{ callback in
+            KingfisherManager.shared.retrieveImage(with: url!, options: [], progressBlock: nil, completionHandler: { (image, error, cacheType, url) in
+                    callback(image)
+            })
+        }
+        //return items[index].galleryItem
+    }
+}
