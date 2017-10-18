@@ -16,6 +16,7 @@ PODS:
   - SkyFloatingLabelTextField (3.0.0)
   - SwiftLint (0.23.1)
   - Toast-Swift (2.0.0)
+  - YandexMapKit (1.0.11)
 
 DEPENDENCIES:
   - Agrume (= 3)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField (= 3)
   - SwiftLint
   - Toast-Swift (= 2)
+  - YandexMapKit
 
 SPEC CHECKSUMS:
   Agrume: 3e941467d6437673bef7e1ec7e288f745c0cd037
@@ -43,7 +45,8 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 35bc0c2653ad73c5fd8b7a34cfedf09c94367a1a
   SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
   Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
+  YandexMapKit: 70c6e0819e88f742e3800711f7aedecaf3029300
 
-PODFILE CHECKSUM: 605de46cade0900b7e8e729a2e4ecbad23b5cd4d
+PODFILE CHECKSUM: d2e1f19b5021d5f29efeb6cf06bba38ef4df1757
 
 COCOAPODS: 1.2.0
