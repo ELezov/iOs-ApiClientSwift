@@ -8,14 +8,23 @@ class PlaceTableViewController: UITableViewController {
 
     
     var categories = [Category]()
+    
+    var selectedRows = [Int]()
+    
     var viewModel : PlaceTableViewModel!
-   {
+    {
        didSet {
            viewModel.updatePlace {
                if self.viewModel.error != nil{
                   self.view.makeToast(self.viewModel.error!, duration: 5.0, position: .center)
               } else {
                     self.categories = self.viewModel.categoriesArray
+                    let count = self.categories.count - 1
+                    for index in 0...count{
+                        self.selectedRows.append(index)
+                    }
+                
+                
                     self.tableView.reloadData()
                 }
             }
@@ -81,16 +90,12 @@ class PlaceTableViewController: UITableViewController {
     
     @IBAction func filterNavBarAction(_ sender: UIBarButtonItem) {
         let picker = CZPickerView(headerTitle: "Выберите категории", cancelButtonTitle: "Отменить", confirmButtonTitle: "Подтвердить" )
+        picker?.setSelectedRows(selectedRows)
         picker?.delegate = self
         picker?.dataSource = self
         picker?.needFooterView = false
         picker?.allowMultipleSelection = true
         picker?.show()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -126,23 +131,25 @@ extension PlaceTableViewController: CZPickerViewDelegate, CZPickerViewDataSource
         return categories[row].name
     }
     
-    func czpickerView(_ pickerView: CZPickerView!, didConfirmWithItemAtRow row: Int) {
-        print(categories[row].name)
-        //self.navigationController?.setNavigationBarHidden((true), animated: true)
-        pickerView.isHidden = true
-    }
-    
     func czpickerViewDidClickCancelButton(_ pickerView: CZPickerView!) {
-        //self.navigationController?.setNavigationBarHidden(true, animated: true)
         pickerView.isHidden = true
     }
     
     func czpickerView(_ pickerView: CZPickerView!, didConfirmWithItemsAtRows rows: [Any]!) {
+        
+        var ids = [Int]()
+        selectedRows = [Int]()
         for row in rows {
             if let row = row as? Int {
-                print(categories[row].name)
+                selectedRows.append(row)
+                ids.append(categories[row].id!)
             }
+        }
+        viewModel.updateFilter(ids: ids){
+            self.tableView.reloadData()
         }
 
     }
+    
+    
 }

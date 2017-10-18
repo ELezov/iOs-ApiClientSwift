@@ -1,7 +1,8 @@
 import Foundation
+import RealmSwift
 
 class PlaceTableViewModel{
-    weak var placeManager: PlaceManager!
+    var placeManager: PlaceManager!
     fileprivate var cellsArray = [PlaceTableCellViewModel]()
     fileprivate var placeArray: [Place]!
     var categoriesArray: [Category]!
@@ -24,6 +25,46 @@ class PlaceTableViewModel{
             completion()
         }
     }
+    
+    func updateFilter(ids: [Int], _ completion:@escaping () -> Void){
+        cellsArray.removeAll()
+        placeManager.getDataByFilter(ids: ids){ (places, categories) -> Void in
+            self.placeArray = places
+            self.categoriesArray = categories
+            for placeObject in self.placeArray!{
+                self.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: self.categoriesArray!))
+            }
+        
+        }
+        completion()
+    }
+    
+    func  getDataByFilter(ids: [Int], _ completion:@escaping () -> Void){
+        
+        cellsArray.removeAll()
+        let converter = Converter()
+        let realm = try! Realm()
+        let categoriesList = Array(realm.objects(CategoryListRealm.self))
+        let categories = converter.arrayRealmListCategoryToCategory(categoriesListRealm: categoriesList)
+        let placesRealm = Array(realm.objects(PlaceRealm.self))
+        let placesDB = converter.arrayRealmPlaceToPlace(placesRealm: placesRealm)
+        var places = [Place]()
+        for item in placesDB{
+            for id in ids{
+                if (item.category_id?.contains(id))!{
+                    places.append(item)
+                    break
+                }
+            }
+        }
+        self.placeArray = places
+        self.categoriesArray = categories
+        for placeObject in placeArray!{
+            self.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: categoriesArray!))
+        }
+        completion()
+    }
+    
 
     func numberOfPlaces() -> Int{
         return cellsArray.count

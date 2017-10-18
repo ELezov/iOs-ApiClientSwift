@@ -37,6 +37,34 @@ class Converter{
         return categoriesRealm
     }
     
+    func arrayCategoryRealmToRealmListCategory(categories: [CategoryRealm]) -> [CategoryListRealm]{
+        var categoriesRealm = [CategoryListRealm]()
+        for category in categories{
+            let categoryRealm = CategoryListRealm()
+            categoryRealm.id = category.id
+            categoryRealm.name = category.name
+            categoryRealm.icon = category.icon
+            categoryRealm.picture = category.picture
+            categoriesRealm.append(categoryRealm)
+        }
+        return categoriesRealm
+    }
+    
+    func arrayCategoryListRealmToRealmCategory(categories: [CategoryListRealm]) -> [CategoryRealm]{
+        var categoriesRealm = [CategoryRealm]()
+        for category in categories{
+            let categoryRealm = CategoryRealm()
+            categoryRealm.id = category.id
+            categoryRealm.name = category.name
+            categoryRealm.icon = category.icon
+            categoryRealm.picture = category.picture
+            categoriesRealm.append(categoryRealm)
+        }
+        return categoriesRealm
+    }
+
+
+    
     func arrayPlaceToRealmPlace(places: [Place], categories: [Category]) -> [PlaceRealm] {
         var placesRealm = [PlaceRealm]()
         for place in places{
