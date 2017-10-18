@@ -71,14 +71,14 @@ class Converter{
             let placeRealm = PlaceRealm()
             placeRealm.id = place.id!
             placeRealm.name = place.name!
-            placeRealm.description_1 = place.description!
+            placeRealm.description1 = place.description!
             placeRealm.rate = place.rate!
-            placeRealm.description_2 = place.description_2!
+            placeRealm.timeTable = place.timeTable!
             placeRealm.phone = place.phone!
-            placeRealm.cost_text = place.cost_text!
-            placeRealm.discount_max = place.discount_max!
+            placeRealm.costText = place.costText!
+            placeRealm.discountMax = place.discountMax!
             let categoryListRealm = List<CategoryRealm>()
-            for item in place.category_id!{
+            for item in place.categoryId!{
                 if let i = categories.index( where: {$0.id == item}){
                     let category = categories[i]
                     let categoryReal = CategoryRealm()
@@ -104,16 +104,16 @@ class Converter{
     
     func arrayRealmPlaceToPlace(placesRealm: [PlaceRealm]) -> [Place] {
         var places = [Place]()
-        for item in placesRealm{
+        for item in placesRealm {
             let place = Place()
             place.name = item.name
             place.id = item.id
-            place.description = item.description_1
+            place.description = item.description1
             place.rate = item.rate
-            place.description_2 = item.description_2
-            place.cost_text = item.cost_text
+            place.timeTable = item.timeTable
+            place.costText = item.costText
             place.phone = item.phone
-            place.discount_max = item.discount_max
+            place.discountMax = item.discountMax
             var photos = [String]()
             for photo in item.photos{
                 var photoUrl = ""
@@ -126,7 +126,7 @@ class Converter{
             for category in item.categories{
                 categoryList.append(category.id)
             }
-            place.category_id = categoryList
+            place.categoryId = categoryList
             places.append(place)
         }
         return places

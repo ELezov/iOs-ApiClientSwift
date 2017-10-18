@@ -75,7 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     // MARK: Action
-    @IBAction func LogIn(_ sender: Any) {
+    @IBAction func logIn(_ sender: Any) {
         AppDelegate.networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!){ flag in
             if flag == true{
                 let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

@@ -51,7 +51,7 @@ class PlaceTableViewModel{
         var places = [Place]()
         for item in placesDB{
             for id in ids{
-                if (item.category_id?.contains(id))!{
+                if (item.categoryId?.contains(id))!{
                     places.append(item)
                     break
                 }

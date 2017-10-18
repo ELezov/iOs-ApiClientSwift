@@ -32,16 +32,16 @@ class PlaceManager{
     
     func  getDataByFilter(ids: [Int], _ completion:@escaping ([Place]?, [Category]?) -> Void){
         let converter = Converter()
-        let realm = try! Realm()
-        let categoriesList = Array(realm.objects(CategoryListRealm.self))
+        let dbHelper = DbHelper()
+        let categoriesList = Array(dbHelper.getCategoriesList())
         let categories = converter.arrayRealmListCategoryToCategory(categoriesListRealm: categoriesList)
-        let placesRealm = Array(realm.objects(PlaceRealm.self))
+        let placesRealm = Array(dbHelper.getPlaces())
         let placesDB = converter.arrayRealmPlaceToPlace(placesRealm: placesRealm)
         var places = [Place]()
         for item in placesDB{
             for id in ids{
-                if (item.category_id?.contains(id))!{
-                    item.category_id = [id]
+                if (item.categoryId?.contains(id))!{
+                    item.categoryId = [id]
                     places.append(item)
                     break
                 }

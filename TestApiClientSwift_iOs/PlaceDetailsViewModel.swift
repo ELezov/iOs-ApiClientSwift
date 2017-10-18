@@ -17,12 +17,12 @@ class PlaceDetailsViewModel{
         self.placeDescription = place.description
         self.placeRate = place.rate
         self.placePhotos = place.photos
-        self.category = categories.first(where: {$0.id == place.category_id?[0]})
+        self.category = categories.first(where: {$0.id == place.categoryId?[0]})
         self.categoryTitle = self.category.name
         self.categoryImgUrl = self.category.icon
         //print(place.phone , place.cost_text, place.description_2)
         self.phoneText = place.phone
-        self.costText = place.cost_text
-        self.timeTable = place.description_2
+        self.costText = place.costText
+        self.timeTable = place.timeTable
     }
 }

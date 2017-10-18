@@ -10,14 +10,14 @@ class PlaceTableCellViewModel{
     required init(place: Place, categories: [Category]){
         self.placeTitle = place.name
         self.placeDescription = place.description
-        let category = categories.first(where: {$0.id == place.category_id?[0]})
+        let category = categories.first(where: {$0.id == place.categoryId?[0]})
         self.categoryTitle = category?.name
         self.categoryImgUrl = category?.icon
-        if ((place.discount_max == nil)||(place.discount_max==0)){
+        if ((place.discountMax == nil)||(place.discountMax==0)){
             self.saleString = "0"
         }
         else {
-             self.saleString = "-".appending(String(describing: place.discount_max!) + "%")
+             self.saleString = "-".appending(String(describing: place.discountMax!) + "%")
         }
         
     }

@@ -9,7 +9,6 @@ class NetworkManager{
             response in
             if response.result.isSuccess {
                 let baseresult = Mapper<ApiBaseResult>().map(JSONObject: response.result.value)
-                print("Data size", baseresult?.places?.count,baseresult?.categories?.count)
                 saveDataByRealm(places: (baseresult?.places)!, categories: (baseresult?.categories)!)
                 completion(baseresult?.places,baseresult?.categories, nil)
             } else{
@@ -28,12 +27,11 @@ class NetworkManager{
     }
     
     func logIn(name: String, password: String, _ completion:@escaping (Bool) -> Void){
-        let request = Network.shared.request(endpoint: LoginService.LogIn(name: name, password: password)){
+        let request = Network.shared.request(endpoint: LoginService.logIn(name: name, password: password)){
             response in
             if response.result.isSuccess{
                 do{
                     let json = try JSONSerialization.jsonObject(with: response.data!) as? [String: Any]
-                    print("LogIn JsoN", json)
                     let token = json?["token"] as? String
                     if  token != nil{
                         completion(true)

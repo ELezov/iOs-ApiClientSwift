@@ -14,7 +14,7 @@ class RealmStorage<T: Object> where T: PrimaryKeyAware {
     let realm: Realm
     
     init() {
-        realm = try! Realm()
+            realm = try! Realm()
     }
     
     func saveAll(_ objects: [T]){

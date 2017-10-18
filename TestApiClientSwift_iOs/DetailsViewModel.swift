@@ -27,19 +27,19 @@ class DetailsViewModel: NSObject {
     var placeImgUrl: [String]
     
     init(place: Place, categories: [Category]) {
-        let category = categories[(place.category_id?[0])!]
+        let category = categories[(place.categoryId?[0])!]
         let headerItem = DetailsViewModelHeaderItem(placeName: place.name!, categoryName: category.name!, categoryImgUrl: category.icon!)
         items.append(headerItem)
         let descriptionItem = DetailsViewModelDescriptionItem(description: place.description!)
         items.append(descriptionItem)
         
-        if place.description_2! != ""{
-            let timeItem = DetailsViewModelTimeTableItem(timeTable: place.description_2!)
+        if place.timeTable! != ""{
+            let timeItem = DetailsViewModelTimeTableItem(timeTable: place.timeTable!)
             items.append(timeItem)
         }
         
-        if place.cost_text! != ""{
-            let visitPrice = DetailsViewModelVisitPriceItem(visitingPrice: place.cost_text!)
+        if place.costText! != ""{
+            let visitPrice = DetailsViewModelVisitPriceItem(visitingPrice: place.costText!)
             items.append(visitPrice)
         }
         

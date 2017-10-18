@@ -10,7 +10,7 @@ import Alamofire
 import Foundation
 
 enum LoginService{
-    case LogIn(name: String, password: String)
+    case logIn(name: String, password: String)
 }
 
 extension LoginService: Endpoint{
@@ -21,13 +21,13 @@ extension LoginService: Endpoint{
     
     internal var method: HTTPMethod {
         switch self {
-        case .LogIn: return .post
+        case .logIn: return .post
         }
     }
     
     internal var path: String {
         switch self {
-        case .LogIn:
+        case .logIn:
             return "/login"
         }
     }
@@ -35,7 +35,7 @@ extension LoginService: Endpoint{
     var body: Parameters{
         var parameters: Parameters = Parameters()
         switch self {
-        case .LogIn(let name, let password):
+        case .logIn(let name, let password):
             parameters["username"] = name
             parameters["password"] = password
         }
@@ -45,7 +45,7 @@ extension LoginService: Endpoint{
     
     internal var baseURL: String {
         switch self {
-        case .LogIn:
+        case .logIn:
             return "http://138.68.68.166:9999/api/1"
         }
     }
