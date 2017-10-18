@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import Agrume
 import UIKit
 
-enum DetailsViewModelItemType{
+public enum DetailsViewModelItemType{
+    case placePhoto
     case header
     case description
     case timeTable
@@ -18,16 +20,24 @@ enum DetailsViewModelItemType{
     case location
 }
 
-protocol DetailsViewModelItem{
+public protocol DetailsViewModelItem{
     var type: DetailsViewModelItemType { get }
 }
 
 class DetailsViewModel: NSObject {
     var items = [DetailsViewModelItem]()
     var placeImgUrl: [String]
+    var place: Place
+    var phoneCell = PhotoDetailViewCell()
     
     init(place: Place, categories: [Category]) {
         let category = categories[(place.categoryId?[0])!]
+        self.place = place
+        self.placeImgUrl = place.photos!
+        
+        let placePhotoItem = DetailsViewModelPlacePhotoItem(photo: (place.photos?.first)!)
+        items.append(placePhotoItem)
+        
         let headerItem = DetailsViewModelHeaderItem(placeName: place.name!, categoryName: category.name!, categoryImgUrl: category.icon!)
         items.append(headerItem)
         let descriptionItem = DetailsViewModelDescriptionItem(description: place.description!)
@@ -68,6 +78,14 @@ extension DetailsViewModel: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.section]
         switch item.type {
+        case .placePhoto:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: PhotoDetailViewCell.identifier, for: indexPath) as? PhotoDetailViewCell{
+                self.phoneCell = cell
+                cell.item = item
+                
+                return cell
+            }
+
         case .header:
             if let cell = tableView.dequeueReusableCell(withIdentifier: HeaderPlaceViewCell.identifier, for: indexPath) as? HeaderPlaceViewCell{
                 cell.item = item
@@ -95,6 +113,9 @@ extension DetailsViewModel: UITableViewDataSource{
         case .phoneView:
             if let cell = tableView.dequeueReusableCell(withIdentifier: PhoneViewCell.identifier, for: indexPath) as? PhoneViewCell{
                 cell.item = item
+                let tap = UITapGestureRecognizer(target: self, action: #selector(DetailsViewModel.makeCallPhone))
+                cell.addGestureRecognizer(tap)
+                cell.isUserInteractionEnabled = true
                 return cell
             }
         case .location:
@@ -102,11 +123,48 @@ extension DetailsViewModel: UITableViewDataSource{
                 cell.item = item
                 return cell
             }
+        
         }
         return UITableViewCell()
     }
     
+    func makeCallPhone(){
+        if let url = URL(string: "tel://\(self.place.phone)"), UIApplication.shared.canOpenURL(url){
+            if #available(iOS 10, *){
+                UIApplication.shared.open(url)
+            }else {
+                UIApplication.shared.openURL(url)
+            }
+            print("1",url.description)
+        }
+        print(self.place.phone)
+    }
+    
+//    func openGalleryAction(){
+//        print("Haha", "oOops")
+//        let urls = placeImgUrl
+//        let converter = Converter()
+//        let agrume = Agrume(imageUrls: converter.convertStringToUrlArray(urls: urls))
+//        agrume.showFrom(PlaceDetailsViewController)
+//    }
+    
+    
+    
 }
+
+class DetailsViewModelPlacePhotoItem: DetailsViewModelItem{
+    var type: DetailsViewModelItemType{
+        return .placePhoto
+    }
+    
+    var photoUrl: String
+    
+    init(photo: String){
+        self.photoUrl = BASE_URL_API + photo
+    }
+}
+
+
 
 class DetailsViewModelHeaderItem: DetailsViewModelItem{
     var type: DetailsViewModelItemType{

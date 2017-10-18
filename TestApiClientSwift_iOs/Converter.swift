@@ -145,6 +145,14 @@ class Converter{
         return categories
     }
     
+    func convertStringToUrlArray(urls: [String]) -> [URL] {
+        var urlArrays = [URL]()
+        for item in urls{
+            let url = URL(string: BASE_URL_API + item)
+            urlArrays.append(url!)
+        }
+        return urlArrays
+    }
     
 
 }

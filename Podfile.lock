@@ -6,7 +6,15 @@ PODS:
     - ObjectMapper (~> 2.0)
   - AMScrollingNavbar (3.0.0)
   - CZPicker (0.4.3)
+  - FLAnimatedImage (1.0.12)
   - Kingfisher (3.13.0)
+  - NYTPhotoViewer (1.1.0):
+    - NYTPhotoViewer/AnimatedGifSupport (= 1.1.0)
+    - NYTPhotoViewer/Core (= 1.1.0)
+  - NYTPhotoViewer/AnimatedGifSupport (1.1.0):
+    - FLAnimatedImage (~> 1.0.8)
+    - NYTPhotoViewer/Core
+  - NYTPhotoViewer/Core (1.1.0)
   - ObjectMapper (2.2.9)
   - Realm (2.10.2):
     - Realm/Headers (= 2.10.2)
@@ -25,6 +33,7 @@ DEPENDENCIES:
   - AMScrollingNavbar (= 3)
   - CZPicker
   - Kingfisher (= 3.13)
+  - NYTPhotoViewer (~> 1.1.0)
   - ObjectMapper (= 2.2.9)
   - RealmSwift (= 2.10.2)
   - SkyFloatingLabelTextField (= 3)
@@ -38,7 +47,9 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   AMScrollingNavbar: aa894c559c80ffa917d0fdc40d8b42be7c6efe15
   CZPicker: 55aa1751ea26e209814552da1a9a08cba8bbf72a
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Kingfisher: 7eebf6000ac64401839f10da37f21eefa7d88970
+  NYTPhotoViewer: e80e8767f3780d2df37c6f72cbab15d6c7232911
   ObjectMapper: 63cfe41bc6f8e7c8f44344c49901b8ae7de14c52
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
@@ -47,6 +58,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
   YandexMapKit: 70c6e0819e88f742e3800711f7aedecaf3029300
 
-PODFILE CHECKSUM: d2e1f19b5021d5f29efeb6cf06bba38ef4df1757
+PODFILE CHECKSUM: 5cb3aa3e62580d9df2b36c752824991272773114
 
 COCOAPODS: 1.2.0

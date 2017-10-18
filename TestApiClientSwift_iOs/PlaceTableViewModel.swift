@@ -6,7 +6,6 @@ class PlaceTableViewModel{
     fileprivate var cellsArray = [PlaceTableCellViewModel]()
     fileprivate var placeArray: [Place]!
     var categoriesArray: [Category]!
-    var detailsViewModel: PlaceDetailsViewModel!
     var detailsNewViewModel: DetailsViewModel!
     var error: String?
 
@@ -73,11 +72,6 @@ class PlaceTableViewModel{
     func cellViewModel(_ index: Int) -> PlaceTableCellViewModel? {
         guard index < cellsArray.count else { return nil }
         return cellsArray[index]
-    }
-
-    func getDetailsViewModel(_ index: Int) -> PlaceDetailsViewModel{
-        self.detailsViewModel = PlaceDetailsViewModel(place: placeArray[index], categories: categoriesArray)
-        return self.detailsViewModel
     }
     
     func getDetailsNewModel(_ index: Int) -> DetailsViewModel{

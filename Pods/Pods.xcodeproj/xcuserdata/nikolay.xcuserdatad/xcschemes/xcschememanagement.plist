@@ -29,7 +29,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FLAnimatedImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NYTPhotoViewer-NYTPhotoViewer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NYTPhotoViewer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,22 +87,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>18B264EE516E158AC003FA4D7064F15E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5642EAC9D521CA029771E244F13558AA</key>
+		<key>634FAC33BA156D2E2B3DC28D8F6D68A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5FC4CC16844BFEDB6743EE1E2BDECD07</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>60AA9C6640AA26D2AAD056F38BC86079</key>
+		<key>6B34D198CD68742167B809AED25CE640</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -98,6 +113,16 @@
 			<true/>
 		</dict>
 		<key>709B37C87082FC138C02EA729A3F8D0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E24FF0DE2A4FD6526837F8E89541281</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83B5B60C676A8D31829A6AE91CE86A75</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +142,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB8CFCA0CEB00B3CA0A72570955A5247</key>
+		<key>B97720AEDDAEC6569BE907F8D81E7EB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D73944CC332BC050A6FFA05620F4651D</key>
+		<key>D85C3D5A275CC39B0CEEC53C5FA8F233</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E428217DA2750DC7431698ED97307B07</key>
 		<dict>
 			<key>primary</key>
 			<true/>
