@@ -56,7 +56,7 @@ class DetailsViewModel: NSObject {
     }
 }
 
-extension DetailsViewModel: UITableViewDataSource {
+extension DetailsViewModel: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
@@ -105,6 +105,7 @@ extension DetailsViewModel: UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
 }
 
 class DetailsViewModelHeaderItem: DetailsViewModelItem{

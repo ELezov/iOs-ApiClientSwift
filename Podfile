@@ -14,7 +14,6 @@ target 'TestApiClientSwift_iOs' do
   pod 'SwiftLint'
   pod 'AMScrollingNavbar', '3'
   pod 'SkyFloatingLabelTextField', '3'
-  pod 'PopupDialog', '0.5.4'
   pod 'CZPicker'
   # Pods for TestApiClientSwift_iOs
 

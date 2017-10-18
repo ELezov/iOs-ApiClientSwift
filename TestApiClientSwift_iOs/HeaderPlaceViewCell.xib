@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBig" translatesAutoresizingMaskIntoConstraints="NO" id="JC8-HZ-2KQ">
@@ -53,7 +53,7 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3S-bS-Snt">
-                        <rect key="frame" x="24" y="60" width="311" height="35"/>
+                        <rect key="frame" x="24" y="62" width="311" height="33"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="eQn-bG-ba7"/>
                         </constraints>
@@ -65,7 +65,6 @@
                 <constraints>
                     <constraint firstItem="V3S-bS-Snt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="8Vy-jQ-NVL"/>
                     <constraint firstItem="JC8-HZ-2KQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="Aq6-Ne-gkx"/>
-                    <constraint firstItem="V3S-bS-Snt" firstAttribute="top" secondItem="JC8-HZ-2KQ" secondAttribute="bottom" constant="12" id="Ip9-4i-nfI"/>
                     <constraint firstAttribute="bottomMargin" secondItem="V3S-bS-Snt" secondAttribute="bottom" constant="6" id="JHx-tS-xGH"/>
                     <constraint firstItem="yNp-Kx-Etm" firstAttribute="leading" secondItem="JC8-HZ-2KQ" secondAttribute="trailing" constant="16" id="L6E-5Q-0zf"/>
                     <constraint firstItem="VLh-M5-bM1" firstAttribute="leading" secondItem="yNp-Kx-Etm" secondAttribute="trailing" constant="16" id="MFj-dQ-IWb"/>
@@ -73,6 +72,7 @@
                     <constraint firstItem="yNp-Kx-Etm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="25" id="b8M-XV-QAM"/>
                     <constraint firstAttribute="trailingMargin" secondItem="V3S-bS-Snt" secondAttribute="trailing" constant="40" id="dpl-tD-QsO"/>
                     <constraint firstItem="JC8-HZ-2KQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="dr7-7k-YCw"/>
+                    <constraint firstItem="V3S-bS-Snt" firstAttribute="top" secondItem="yNp-Kx-Etm" secondAttribute="bottom" constant="16" id="so8-HU-uFD"/>
                     <constraint firstItem="VLh-M5-bM1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="28" id="yXp-X6-dtk"/>
                 </constraints>
                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>

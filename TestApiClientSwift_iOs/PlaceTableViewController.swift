@@ -37,9 +37,9 @@ class PlaceTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let navigationController = navigationController as? ScrollingNavigationController{
-            navigationController.followScrollView(tableView, delay: 25.0)
-        }
+//        if let navigationController = navigationController as? ScrollingNavigationController{
+//            navigationController.followScrollView(tableView, delay: 25.0)
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

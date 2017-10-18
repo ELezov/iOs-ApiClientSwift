@@ -11,6 +11,7 @@
 		9503EC391F8EB21A002C1C17 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503EC381F8EB21A002C1C17 /* RatingView.swift */; };
 		9503EC441F8EDFB7002C1C17 /* YesevaOne-Regular_v2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */; };
 		9503EC451F8EDFB7002C1C17 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */; };
+		9537ABFC1F96C57C000A98D5 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537ABFB1F96C57C000A98D5 /* UINavigationBarExtension.swift */; };
 		955C1A0D1F9276B7007A5EDC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A0C1F9276B7007A5EDC /* Network.swift */; };
 		955C1A0F1F927775007A5EDC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A0E1F927775007A5EDC /* Endpoint.swift */; };
 		955C1A111F927987007A5EDC /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A101F927987007A5EDC /* PlaceService.swift */; };
@@ -84,6 +85,7 @@
 		9503EC381F8EB21A002C1C17 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YesevaOne-Regular_v2.otf"; sourceTree = "<group>"; };
 		9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		9537ABFB1F96C57C000A98D5 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		955C1A0C1F9276B7007A5EDC /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		955C1A0E1F927775007A5EDC /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		955C1A101F927987007A5EDC /* PlaceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
@@ -261,6 +263,14 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
+		9537ABFA1F96C545000A98D5 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9537ABFB1F96C57C000A98D5 /* UINavigationBarExtension.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
 		955C1A0B1F927618007A5EDC /* network */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +337,7 @@
 		C5D61AF71F77E58200D9142F /* TestApiClientSwift_iOs */ = {
 			isa = PBXGroup;
 			children = (
+				9537ABFA1F96C545000A98D5 /* extensions */,
 				95B341B81F94DF4200AF43F4 /* login */,
 				955C1A141F9285A6007A5EDC /* realmDB */,
 				955C1A0B1F927618007A5EDC /* network */,
@@ -611,6 +622,7 @@
 				C5DB4FE91F7A8F980000600E /* CategoryListRealm.swift in Sources */,
 				956886A41F954FD8002F002C /* VisitingPriceCell.swift in Sources */,
 				C5D61AFB1F77E58200D9142F /* PlaceViewController.swift in Sources */,
+				9537ABFC1F96C57C000A98D5 /* UINavigationBarExtension.swift in Sources */,
 				955C1A161F9285B9007A5EDC /* realm.swift in Sources */,
 				956886A81F9550EF002F002C /* PhoneViewCell.swift in Sources */,
 				C5D61B1B1F7807E700D9142F /* PlaceTableViewController.swift in Sources */,
