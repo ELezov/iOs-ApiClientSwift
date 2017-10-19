@@ -1,6 +1,5 @@
 //
-//  AgrumeCell.swift
-//  Agrume
+//  Copyright © 2016 Schnaub. All rights reserved.
 //
 
 import UIKit
@@ -9,6 +8,7 @@ protocol AgrumeCellDelegate: class {
   
   func dismissAfterFlick()
   func dismissAfterTap()
+  func isSingleImageMode() -> Bool
   
 }
 
@@ -115,6 +115,9 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
   override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
     if let pan = gestureRecognizer as? UIPanGestureRecognizer, notZoomed() {
       let velocity = pan.velocity(in: scrollView)
+      if let delegate = delegate, delegate.isSingleImageMode() {
+        return true
+      }
       return abs(velocity.y) > abs(velocity.x)
     } else if let _ = gestureRecognizer as? UISwipeGestureRecognizer, notZoomed() {
       return false
@@ -133,28 +136,30 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
 
   @objc fileprivate func doubleTap(_ sender: UITapGestureRecognizer) {
     let point = scrollView.convert(sender.location(in: sender.view), from: sender.view)
-    let targetZoom: CGRect
-    let targetInsets: UIEdgeInsets
+    
     if notZoomed() {
-      let zoomWidth = contentView.bounds.width / AgrumeCell.targetZoomForDoubleTap
-      let zoomHeight = contentView.bounds.height / AgrumeCell.targetZoomForDoubleTap
-      targetZoom = CGRect(x: point.x - zoomWidth / 2, y: point.y / zoomWidth / 2, width: zoomWidth, height: zoomHeight)
-      targetInsets = contentInsetForScrollView(atScale: AgrumeCell.targetZoomForDoubleTap)
+      zoom(to: point, scale: AgrumeCell.targetZoomForDoubleTap)
     } else {
-      let zoomWidth = contentView.bounds.width * scrollView.zoomScale
-      let zoomHeight = contentView.bounds.height * scrollView.zoomScale
-      targetZoom = CGRect(x: point.x - zoomWidth / 2, y: point.y / zoomWidth / 2, width: zoomWidth, height: zoomHeight)
-      targetInsets = contentInsetForScrollView(atScale: 1)
+      zoom(to: .zero, scale: 1)
     }
+  }
+  
+  private func zoom(to point: CGPoint, scale: CGFloat) {
+    let factor = 1 / scrollView.zoomScale
+    let translatedZoom = CGPoint(x: (point.x + scrollView.contentOffset.x) * factor,
+                                 y: (point.y + scrollView.contentOffset.y) * factor)
+
+    let width = scrollView.frame.width / scale
+    let height = scrollView.frame.height / scale
+    let destination = CGRect(x: translatedZoom.x - width  / 2, y: translatedZoom.y - height / 2, width: width, height: height)
 
     contentView.isUserInteractionEnabled = false
-
+    
     CATransaction.begin()
     CATransaction.setCompletionBlock { [unowned self] in
-      self.scrollView.contentInset = targetInsets
       self.contentView.isUserInteractionEnabled = true
     }
-    scrollView.zoom(to: targetZoom, animated: true)
+    scrollView.zoom(to: destination, animated: true)
     CATransaction.commit()
   }
 
@@ -346,17 +351,17 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
     animator.addBehavior(attachmentBehavior!)
 
     let modifier = UIDynamicItemBehavior(items: [imageView])
-    modifier.angularResistance = angularResistance(view: imageView)
-    modifier.density = density(view: imageView)
+    modifier.angularResistance = angularResistance(in: imageView)
+    modifier.density = density(in: imageView)
     animator.addBehavior(modifier)
   }
 
-  fileprivate func angularResistance(view: UIView) -> CGFloat {
+  fileprivate func angularResistance(in view: UIView) -> CGFloat {
     let defaultResistance: CGFloat = 4
     return appropriateValue(defaultValue: defaultResistance) * factor(forView: view)
   }
 
-  fileprivate func density(view: UIView) -> CGFloat {
+  fileprivate func density(in view: UIView) -> CGFloat {
     let defaultDensity: CGFloat = 0.5
     return appropriateValue(defaultValue: defaultDensity) * factor(forView: view)
   }

@@ -12,9 +12,15 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
     @IBOutlet weak var closeButton: UIButton!
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    
+        //self.navigationController?.popViewController(animated: true)
+        let id = "idFirstSegueUnwind"
+        self.performSegue(withIdentifier: id , sender: self)
     }
+    
+    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
+        
+    }
+    
     
     @IBOutlet weak var yandexMapView: YMKMapView!
     

@@ -26,7 +26,7 @@
                             <constraint firstAttribute="height" constant="147" id="iqf-5l-mzy"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zF-DV-Lyo">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zF-DV-Lyo" customClass="MapViewCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>

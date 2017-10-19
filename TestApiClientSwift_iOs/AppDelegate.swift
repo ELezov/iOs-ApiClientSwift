@@ -6,7 +6,6 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    static let networkManager = NetworkManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         YMKConfiguration.sharedInstance().apiKey = "1234567890"

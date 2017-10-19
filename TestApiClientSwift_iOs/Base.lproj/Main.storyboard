@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jI4-vo-cJg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wZO-ji-Ylh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -207,6 +207,9 @@ Altes Haus — Hufen</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="hxG-3u-Q0o" kind="custom" identifier="showDetailCustom" id="980-PN-ecf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLd-pk-UOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -259,6 +262,7 @@ Altes Haus — Hufen</string>
                         <outlet property="placeImage" destination="3NU-ur-9P1" id="ifh-FL-Hah"/>
                         <outlet property="tableView" destination="75t-bq-ie2" id="IED-MR-ZeA"/>
                         <segue destination="qQJ-gR-DIb" kind="show" identifier="ShowMap" id="Kzi-hK-yMp"/>
+                        <segue destination="qQJ-gR-DIb" kind="custom" identifier="showMapCustom" customClass="FirstCustomSegue" customModule="TestApiClientSwift_iOs" customModuleProvider="target" id="0Js-fl-7T4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6q-gI-pbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,9 +311,11 @@ Altes Haus — Hufen</string>
                     <connections>
                         <outlet property="closeButton" destination="GbF-jh-XaT" id="ASp-3c-WWF"/>
                         <outlet property="yandexMapView" destination="Cpp-Vo-O1n" id="dTP-xD-aGL"/>
+                        <segue destination="wKn-vJ-aCt" kind="unwind" identifier="idFirstSegueUnwind" customClass="FirstCustomSegueUnwind" customModule="TestApiClientSwift_iOs" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="Xrq-dx-jRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MiL-vV-pjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wKn-vJ-aCt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1336.8" y="110.19490254872565"/>
         </scene>
@@ -344,7 +350,7 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOq-9O-h59">
-                                        <rect key="frame" x="0.0" y="19" width="6" height="6"/>
+                                        <rect key="frame" x="0.0" y="19.5" width="6" height="6"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="6" id="PnP-3j-pW8"/>
@@ -430,7 +436,7 @@ Altes Haus — Hufen</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="LogIn:" destination="wZO-ji-Ylh" eventType="touchUpInside" id="ebt-9Y-j4R"/>
+                                    <action selector="logIn:" destination="wZO-ji-Ylh" eventType="touchUpInside" id="fkC-Ac-uHN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -493,4 +499,8 @@ Altes Haus — Hufen</string>
         <image name="location" width="24" height="24"/>
         <image name="logo_black" width="35" height="36"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="980-PN-ecf"/>
+        <segue reference="0Js-fl-7T4"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FLAnimatedImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ImageViewer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,12 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E46A357586FFF746BAFA773928F1A54</key>
+		<key>381C27BBC87BF2DC50ACFB4929864E39</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6778FB694131399515D1138B2F211EA1</key>
+		<key>39D81D94A1AB8C9025D791F33B8B7F71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83548DB259CDDAF1722C21C80CD1F343</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>83B5B60C676A8D31829A6AE91CE86A75</key>
+		<key>725BACB7CD1086B4E4E476009D786B4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,17 +122,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A81860956B1B47B0FB77C6C9D6EA1533</key>
+		<key>AD74932E7F3E62A309D9254D2DBC8447</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B133EDB1FE7634061A018605C2F7E14E</key>
+		<key>AE690F37D3EE00739CDE2C26983C10ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB93D5F09F000C2DB866C5186FDFBEF5</key>
+		<key>B321F3A57D08F1D51B82D56CADFEFBDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

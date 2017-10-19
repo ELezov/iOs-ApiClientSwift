@@ -75,13 +75,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     // MARK: Action
-    @IBAction func logIn(_ sender: Any) {
-        AppDelegate.networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!){ flag in
+
+    @IBAction func logIn(_ sender: UIButton) {
+        let networkManager = NetworkManager()
+        networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!){ flag, error in
             if flag == true{
                 let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let scrollingNavController = mainStoryBoard.instantiateViewController(withIdentifier: "ScrollingNavigationController")
                 //let navController: UINavigationController = placeTableViewController.navigationController!
                 self.present(scrollingNavController, animated: true, completion: nil)
+            } else{
+                self.view.makeToast(error, duration: 10.0, position: .bottom)
             }
             
         }

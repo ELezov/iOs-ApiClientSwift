@@ -1,5 +1,6 @@
 import ObjectMapper
 import Alamofire
+import Toast_Swift
 
 
 class NetworkManager{
@@ -26,26 +27,27 @@ class NetworkManager{
         }
     }
     
-    func logIn(name: String, password: String, _ completion:@escaping (Bool) -> Void){
+    func logIn(name: String, password: String, _ completion:@escaping (Bool, String) -> Void){
         let request = Network.shared.request(endpoint: LoginService.logIn(name: name, password: password)){
             response in
-            if response.result.isSuccess{
+            switch(response.result){
+            case .success(let value):
                 do{
                     let json = try JSONSerialization.jsonObject(with: response.data!) as? [String: Any]
                     let token = json?["token"] as? String
                     if  token != nil{
-                        completion(true)
+                        completion(true, "")
                     } else{
-                        completion(false)
+                        completion(false, "Неверные данные")
                     }
                     
                 } catch{
                     print(error)
-                    completion(false)
+                    completion(false, "Неизвестная ошибка")
                 }
-            } else{
-                print(response.error)
-                completion(false)
+            case .failure(let error):
+                print(error)
+                completion(false, error.localizedDescription)
             }
         }
     }

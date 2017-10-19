@@ -7,15 +7,64 @@
 //
 
 import UIKit
+import CoreLocation
 
 class LocationViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var AddressLabel: UILabel!
     
     var item: DetailsViewModelItem? {
         didSet {
             guard  let item = item as? DetailsViewModelLocationItem else {
                 return
             }
+            
+            let myLocation = CLLocation(latitude: item.latitude , longitude: item.longitude)
+            getPlaceMark(forLocation: myLocation){
+                (originPlaceMark, error) in
+                if let err = error{
+                    print(err)
+                } else if let placemark = originPlaceMark{
+                    var address = ""
+                    
+                    if placemark.locality != nil{
+                        address += placemark.locality!
+                    }
+                    
+                    if placemark.thoroughfare != nil{
+                        address += ", " + placemark.thoroughfare!
+                    }
+                    
+                    if placemark.subThoroughfare != nil{
+                        address += " " + placemark.subThoroughfare!
+                    }
+                    self.AddressLabel.text = address
+                    //self.AddressLabel.text = placemark.locality! + ", " + placemark.thoroughfare! + " " + placemark.subThoroughfare!
+                }
+            }
+            
         }
+    }
+    
+    
+    func getPlaceMark(forLocation location: CLLocation, completionHandler: @escaping (CLPlacemark?, String?) -> ()) {
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location, completionHandler: {
+            placeMarks, error in
+            if let err = error{
+                completionHandler(nil,err.localizedDescription)
+            } else if let placemarkArray = placeMarks{
+                if let placemark = placemarkArray.first{
+                    completionHandler(placemark, nil)
+                } else {
+                    completionHandler(nil,"Placemark was nil")
+                }
+            }else{
+                completionHandler(nil,"Unknown error")
+            }
+        })
+        
     }
     
     static var nib:UINib {

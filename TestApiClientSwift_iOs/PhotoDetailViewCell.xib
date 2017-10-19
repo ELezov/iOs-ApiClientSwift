@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="2PQ-H8-jP6">
+                    <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2PQ-H8-jP6">
                         <rect key="frame" x="-0.35949367088608142" y="0.0" width="375" height="265"/>
                         <color key="backgroundColor" red="0.8156862855" green="0.8156862855" blue="0.8156862855" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -43,6 +43,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="crown" width="146" height="95"/>
+        <image name="placeholder" width="146" height="95"/>
     </resources>
 </document>

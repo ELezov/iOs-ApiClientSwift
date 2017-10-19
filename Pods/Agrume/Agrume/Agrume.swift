@@ -1,6 +1,5 @@
 //
-//  Agrume.swift
-//  Agrume
+//  Copyright © 2016 Schnaub. All rights reserved.
 //
 
 import UIKit
@@ -28,34 +27,44 @@ public final class Agrume: UIViewController {
   fileprivate var images: [UIImage]!
   fileprivate var imageUrls: [URL]!
   private var startIndex: Int?
-  private let backgroundBlurStyle: UIBlurEffectStyle
+  private let backgroundBlurStyle: UIBlurEffectStyle?
+  private let backgroundColor: UIColor?
   fileprivate let dataSource: AgrumeDataSource?
 
   public typealias DownloadCompletion = (_ image: UIImage?) -> Void
-    
+  
+  /// Optional closure to call whenever Agrume is dismissed.
   public var didDismiss: (() -> Void)?
+  /// Optional closure to call whenever Agrume scrolls to the next image in a collection. Passes the "page" index
   public var didScroll: ((_ index: Int) -> Void)?
-  public var download: ((_ url: URL, _ completion: DownloadCompletion) -> Void)?
+  /// An optional download handler. Passed the URL that is supposed to be loaded. Call the completion with the image
+  /// when the download is done.
+  public var download: ((_ url: URL, _ completion: @escaping DownloadCompletion) -> Void)?
+  /// Status bar style when presenting
   public var statusBarStyle: UIStatusBarStyle? {
     didSet {
       setNeedsStatusBarAppearanceUpdate()
     }
   }
+  /// Hide status bar when presenting. Defaults to `false`
+  public var hideStatusBar = false
 
   /// Initialize with a single image
   ///
   /// - Parameter image: The image to present
   /// - Parameter backgroundBlurStyle: The UIBlurEffectStyle to apply to the background when presenting
-  public convenience init(image: UIImage, backgroundBlurStyle: UIBlurEffectStyle? = .dark) {
-      self.init(image: image, imageUrl: nil, backgroundBlurStyle: backgroundBlurStyle)
+  /// - Parameter backgroundColor: The background color when presenting
+  public convenience init(image: UIImage, backgroundBlurStyle: UIBlurEffectStyle? = nil, backgroundColor: UIColor? = nil) {
+    self.init(image: image, imageUrl: nil, backgroundBlurStyle: backgroundBlurStyle, backgroundColor: backgroundColor)
   }
 
   /// Initialize with a single image url
   ///
   /// - Parameter imageUrl: The image url to present
   /// - Parameter backgroundBlurStyle: The UIBlurEffectStyle to apply to the background when presenting
-  public convenience init(imageUrl: URL, backgroundBlurStyle: UIBlurEffectStyle? = .dark) {
-      self.init(image: nil, imageUrl: imageUrl, backgroundBlurStyle: backgroundBlurStyle)
+  /// - Parameter backgroundColor: The background color when presenting
+  public convenience init(imageUrl: URL, backgroundBlurStyle: UIBlurEffectStyle? = .dark, backgroundColor: UIColor? = nil) {
+    self.init(image: nil, imageUrl: imageUrl, backgroundBlurStyle: backgroundBlurStyle, backgroundColor: backgroundColor)
   }
 
   /// Initialize with a data source
@@ -63,10 +72,11 @@ public final class Agrume: UIViewController {
   /// - Parameter dataSource: The `AgrumeDataSource` to use
   /// - Parameter startIndex: The optional start index when showing multiple images
   /// - Parameter backgroundBlurStyle: The UIBlurEffectStyle to apply to the background when presenting
+  /// - Parameter backgroundColor: The background color when presenting
 	public convenience init(dataSource: AgrumeDataSource, startIndex: Int? = nil,
-	                        backgroundBlurStyle: UIBlurEffectStyle? = .dark) {
+	                        backgroundBlurStyle: UIBlurEffectStyle? = .dark, backgroundColor: UIColor? = nil) {
 		self.init(image: nil, images: nil, dataSource: dataSource, startIndex: startIndex,
-		          backgroundBlurStyle: backgroundBlurStyle)
+		          backgroundBlurStyle: backgroundBlurStyle, backgroundColor: backgroundColor)
 	}
 	
   /// Initialize with an array of images
@@ -74,8 +84,11 @@ public final class Agrume: UIViewController {
   /// - Parameter images: The images to present
   /// - Parameter startIndex: The optional start index when showing multiple images
   /// - Parameter backgroundBlurStyle: The UIBlurEffectStyle to apply to the background when presenting
-  public convenience init(images: [UIImage], startIndex: Int? = nil, backgroundBlurStyle: UIBlurEffectStyle? = .dark) {
-      self.init(image: nil, images: images, startIndex: startIndex, backgroundBlurStyle: backgroundBlurStyle)
+  /// - Parameter backgroundColor: The background color when presenting
+  public convenience init(images: [UIImage], startIndex: Int? = nil, backgroundBlurStyle: UIBlurEffectStyle? = .dark,
+                          backgroundColor: UIColor? = nil) {
+    self.init(image: nil, images: images, startIndex: startIndex, backgroundBlurStyle: backgroundBlurStyle,
+              backgroundColor: backgroundColor)
   }
 
   /// Initialize with an array of image urls
@@ -83,14 +96,28 @@ public final class Agrume: UIViewController {
   /// - Parameter imageUrls: The image urls to present
   /// - Parameter startIndex: The optional start index when showing multiple images
   /// - Parameter backgroundBlurStyle: The UIBlurEffectStyle to apply to the background when presenting
-  public convenience init(imageUrls: [URL], startIndex: Int? = nil, backgroundBlurStyle: UIBlurEffectStyle? = .dark) {
-      self.init(image: nil, imageUrls: imageUrls, startIndex: startIndex, backgroundBlurStyle: backgroundBlurStyle)
+  /// - Parameter backgroundColor: The background color when presenting
+  public convenience init(imageUrls: [URL], startIndex: Int? = nil, backgroundBlurStyle: UIBlurEffectStyle? = .dark,
+                          backgroundColor: UIColor? = nil) {
+    self.init(image: nil, imageUrls: imageUrls, startIndex: startIndex, backgroundBlurStyle: backgroundBlurStyle,
+              backgroundColor: backgroundColor)
   }
 
 	private init(image: UIImage? = nil, imageUrl: URL? = nil, images: [UIImage]? = nil,
 	             dataSource: AgrumeDataSource? = nil, imageUrls: [URL]? = nil, startIndex: Int? = nil,
-	             backgroundBlurStyle: UIBlurEffectStyle? = .dark) {
-    assert(backgroundBlurStyle != nil)
+	             backgroundBlurStyle: UIBlurEffectStyle? = nil, backgroundColor: UIColor? = nil) {
+    switch (backgroundBlurStyle, backgroundColor) {
+    case (let blur, .none):
+      self.backgroundBlurStyle = blur
+      self.backgroundColor = nil
+    case (.none, let color):
+      self.backgroundColor = color
+      self.backgroundBlurStyle = nil
+    default:
+      self.backgroundBlurStyle = .dark
+      self.backgroundColor = nil
+    }
+
     self.images = images
     if let image = image {
       self.images = [image]
@@ -102,7 +129,6 @@ public final class Agrume: UIViewController {
 
 		self.dataSource = dataSource
     self.startIndex = startIndex
-    self.backgroundBlurStyle = backgroundBlurStyle!
     super.init(nibName: nil, bundle: nil)
     
     UIDevice.current.beginGeneratingDeviceOrientationNotifications()
@@ -143,6 +169,7 @@ public final class Agrume: UIViewController {
     if _blurContainerView == nil {
       let view = UIView(frame: self.view.frame)
       view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      view.backgroundColor = backgroundColor ?? .clear
       _blurContainerView = view
     }
     return _blurContainerView!
@@ -150,7 +177,7 @@ public final class Agrume: UIViewController {
   fileprivate var _blurView: UIVisualEffectView?
   private var blurView: UIVisualEffectView {
     if _blurView == nil {
-      let blurView = UIVisualEffectView(effect: UIBlurEffect(style: self.backgroundBlurStyle))
+      let blurView = UIVisualEffectView(effect: UIBlurEffect(style: self.backgroundBlurStyle!))
       blurView.frame = self.view.frame
       blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
       _blurView = blurView
@@ -223,7 +250,9 @@ public final class Agrume: UIViewController {
   }
   
   private func addSubviews() {
-    blurContainerView.addSubview(blurView)
+    if backgroundBlurStyle != nil {
+      blurContainerView.addSubview(blurView)
+    }
     view.addSubview(blurContainerView)
     view.addSubview(collectionView)
     if let index = startIndex {
@@ -275,6 +304,10 @@ public final class Agrume: UIViewController {
 			self.collectionView.reloadData()
 		}
 	}
+  
+  public override var prefersStatusBarHidden: Bool {
+    return hideStatusBar
+  }
 
   // MARK: Rotation
 
@@ -328,44 +361,44 @@ public final class Agrume: UIViewController {
     if initialOrientation == .portrait {
       switch (currentDeviceOrientation()) {
       case .landscapeLeft:
-        transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        transform = CGAffineTransform(rotationAngle: .pi / 2)
       case .landscapeRight:
-        transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        transform = CGAffineTransform(rotationAngle: -(.pi / 2))
       case .portraitUpsideDown:
-        transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+        transform = CGAffineTransform(rotationAngle: .pi)
       default:
         break
       }
     } else if initialOrientation == .portraitUpsideDown {
       switch (currentDeviceOrientation()) {
       case .landscapeLeft:
-        transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        transform = CGAffineTransform(rotationAngle: -(.pi / 2))
       case .landscapeRight:
-        transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        transform = CGAffineTransform(rotationAngle: .pi / 2)
       case .portrait:
-        transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+        transform = CGAffineTransform(rotationAngle: .pi)
       default:
         break
       }
     } else if initialOrientation == .landscapeLeft {
       switch (currentDeviceOrientation()) {
       case .landscapeRight:
-        transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+        transform = CGAffineTransform(rotationAngle: .pi)
       case .portrait:
-        transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        transform = CGAffineTransform(rotationAngle: -(.pi / 2))
       case .portraitUpsideDown:
-        transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        transform = CGAffineTransform(rotationAngle: .pi / 2)
       default:
         break
       }
     } else if initialOrientation == .landscapeRight {
       switch (currentDeviceOrientation()) {
       case .landscapeLeft:
-        transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
+        transform = CGAffineTransform(rotationAngle: .pi)
       case .portrait:
-        transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
+        transform = CGAffineTransform(rotationAngle: .pi / 2)
       case .portraitUpsideDown:
-        transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        transform = CGAffineTransform(rotationAngle: -(.pi / 2))
       default:
         break
       }
@@ -389,26 +422,10 @@ extension Agrume: UICollectionViewDataSource {
 
   public func collectionView(_ collectionView: UICollectionView,
                              cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    downloadTask?.cancel()
-
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Agrume.reuseIdentifier,
                                                   for: indexPath) as! AgrumeCell
     if let images = images {
       cell.image = images[indexPath.row]
-    } else if let imageUrls = imageUrls {
-      spinner.alpha = 1
-      let completion: DownloadCompletion = { [weak self] image in
-        cell.image = image
-        self?.spinner.alpha = 0
-      }
-
-      if let download = download {
-        download(imageUrls[indexPath.row], completion)
-      } else if let download = AgrumeServiceLocator.shared.downloadHandler {
-        download(imageUrls[indexPath.row], completion)
-      } else {
-        downloadImage(imageUrls[indexPath.row], completion: completion)
-      }
 		} else if let dataSource = dataSource {
 			spinner.alpha = 1
 			let index = indexPath.row
@@ -428,11 +445,7 @@ extension Agrume: UICollectionViewDataSource {
     return cell
   }
 
-  private func downloadImage(_ url: URL, completion: @escaping DownloadCompletion) {
-    downloadTask = ImageDownloader.downloadImage(url) { image in
-      completion(image)
-    }
-  }
+
 
 }
 
@@ -441,6 +454,23 @@ extension Agrume: UICollectionViewDelegate {
   public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
                              forItemAt indexPath: IndexPath) {
     didScroll?(indexPath.row)
+    
+    if let imageUrls = imageUrls {
+      let completion: DownloadCompletion = { [weak self] image in
+        (cell as! AgrumeCell).image = image
+        self?.spinner.alpha = 0
+      }
+      
+      if let download = download {
+        download(imageUrls[indexPath.row], completion)
+      } else if let download = AgrumeServiceLocator.shared.downloadHandler {
+        spinner.alpha = 1
+        download(imageUrls[indexPath.row], completion)
+      } else {
+        spinner.alpha = 1
+        downloadImage(imageUrls[indexPath.row], completion: completion)
+      }
+    }
 		
 		if let dataSource = dataSource {
       let collectionViewCount = collectionView.numberOfItems(inSection: 0)
@@ -456,6 +486,12 @@ extension Agrume: UICollectionViewDelegate {
 				reload()
 			}
 		}
+  }
+  
+  private func downloadImage(_ url: URL, completion: @escaping DownloadCompletion) {
+    downloadTask = ImageDownloader.downloadImage(url) { image in
+      completion(image)
+    }
   }
   
   private func hasDataSourceCountChanged(dataSourceCount: Int, collectionViewCount: Int) -> Bool {
@@ -514,6 +550,14 @@ extension Agrume: AgrumeCellDelegate {
                     self.collectionView.transform = CGAffineTransform(scaleX: scaling, y: scaling)
       }, completion: dismissCompletion)
   }
+  
+  func isSingleImageMode() -> Bool {
+    if let images = images, !images.isEmpty {
+      return images.count == 1
+    }
+    return imageUrls.count == 1
+  }
+  
 }
 
 extension Agrume {

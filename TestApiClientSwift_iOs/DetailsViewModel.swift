@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Agrume
 import UIKit
 
 public enum DetailsViewModelItemType{
@@ -32,7 +31,7 @@ class DetailsViewModel: NSObject {
     var phoneCell = PhotoDetailViewCell()
     
     init(place: Place, categories: [Category]) {
-        let category = categories[(place.categoryId?[0])!]
+        let category = categories[(place.categoryId?.first)!]
         self.place = place
         self.placeImgUrl = place.photos!
         
@@ -59,7 +58,7 @@ class DetailsViewModel: NSObject {
             items.append(phoneItem)
         }
         
-        let locationItem = DetailsViewModelLocationItem()
+        let locationItem = DetailsViewModelLocationItem(latitude: place.latitude!, longitude: place.longitude!)
         items.append(locationItem)
         
         let mapItem = DetailsViewModelMapItem(latitude: place.latitude!, longitude: place.longitude!)
@@ -229,8 +228,12 @@ class DetailsViewModelLocationItem: DetailsViewModelItem{
         return .location
     }
     
-    init() {
-        
+    var latitude: Double
+    var longitude: Double
+    
+    init(latitude: Double,longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }
 

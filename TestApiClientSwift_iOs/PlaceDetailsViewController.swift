@@ -8,7 +8,6 @@
 
 import UIKit
 import AMScrollingNavbar
-import Agrume
 import ImageViewer
 import Kingfisher
 
@@ -36,6 +35,10 @@ class PlaceDetailsViewController: UIViewController{
         self.imagesUrl = (viewModel?.place.photos)!
         
         //action for gallery
+            }
+    
+    func InitViews(){
+        
         tableView?.dataSource = self
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
@@ -48,22 +51,37 @@ class PlaceDetailsViewController: UIViewController{
         tableView?.register(PhoneViewCell.nib, forCellReuseIdentifier: PhoneViewCell.identifier)
         tableView?.register(LocationViewCell.nib, forCellReuseIdentifier: LocationViewCell.identifier)
         tableView?.register(MapViewCell.nib, forCellReuseIdentifier: MapViewCell.identifier)
-    }
-    
-    func InitViews(){
+        
+        
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         
         button.setImage(UIImage(named: "emptyFavorite"), for: .normal)
-        button.addTarget(self, action: Selector(("favoriteButtonAction")), for: .touchUpInside)
+        button.addTarget(self, action: #selector(PlaceDetailsViewController.favoriteButtonAction), for: .touchUpInside)
         
         let barButton = UIBarButtonItem()
         barButton.customView = button
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-    override func viewWillLayoutSubviews() {
-        self.tableView?.layer.backgroundColor = UIColor.clear.cgColor
+//    override func viewWillLayoutSubviews() {
+//        self.tableView?.layer.backgroundColor = UIColor.clear.cgColor
+//    }
+    
+    override func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {
+        if let id = identifier {
+            if id == "idFirstSegueUnwind"{
+                let unwindSegue = FirstCustomSegueUnwind(identifier: id, source: fromViewController, destination: toViewController, performHandler: {() -> Void in
+                    
+                })
+                return unwindSegue
+            }
+        }
+        return super.segueForUnwinding(to: toViewController, from: fromViewController, identifier: identifier)
+    }
+    
+    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -86,15 +104,6 @@ class PlaceDetailsViewController: UIViewController{
             navigationController.stopFollowingScrollView()
         }
     }
-    
-    func openGalleryAction(){
-        let urls = viewModel?.placeImgUrl
-        let converter = Converter()
-        let agrume = Agrume(imageUrls: converter.convertStringToUrlArray(urls: urls!))
-        agrume.showFrom(self)
-    }
-   
-    
   
     func favoriteButtonAction() {
         
@@ -107,85 +116,11 @@ class PlaceDetailsViewController: UIViewController{
            button.setImage(UIImage(named: "filledFavorite"), for: .normal)
             isFavorite = true
         }
-        button.addTarget(self, action: Selector(("favoriteButtonAction")), for: .touchUpInside)
+        button.addTarget(self, action: #selector(PlaceDetailsViewController.favoriteButtonAction), for: .touchUpInside)
         
         let barButton = UIBarButtonItem()
         barButton.customView = button
         self.navigationItem.rightBarButtonItem = barButton
-    }
-   
-    
-}
-
-extension PlaceDetailsViewController: UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return (viewModel?.items.count)!
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = viewModel?.items[indexPath.section]
-        let type = item?.type
-        switch type!{
-        case DetailsViewModelItemType.placePhoto:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: PhotoDetailViewCell.identifier, for: indexPath) as? PhotoDetailViewCell{
-                cell.item = item
-                let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceDetailsViewController.showMailGallery))
-                cell.addGestureRecognizer(tap)
-                cell.isUserInteractionEnabled = true
-                return cell
-            }
-            
-        case .header:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: HeaderPlaceViewCell.identifier, for: indexPath) as? HeaderPlaceViewCell{
-                cell.item = item
-                cell.isUserInteractionEnabled = false
-                return cell
-            }
-        case .description:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionViewCell.identifier, for: indexPath) as? DescriptionViewCell{
-                cell.item = item
-                cell.isUserInteractionEnabled = false
-                return cell
-            }
-        case .timeTable:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TimeTableViewCell.identifier, for: indexPath) as? TimeTableViewCell{
-                cell.item = item
-                cell.isUserInteractionEnabled = false
-                return cell
-            }
-        case .visitingPrice:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: VisitingPriceCell.identifier, for: indexPath) as? VisitingPriceCell{
-                cell.item = item
-                cell.isUserInteractionEnabled = false
-                return cell
-            }
-        case .phoneView:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: PhoneViewCell.identifier, for: indexPath) as? PhoneViewCell{
-                cell.item = item
-                let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceDetailsViewController.makeCallPhone))
-                cell.addGestureRecognizer(tap)
-                cell.isUserInteractionEnabled = true
-                return cell
-            }
-        case .location:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: LocationViewCell.identifier, for: indexPath) as? LocationViewCell{
-                cell.item = item
-                return cell
-            }
-        case .map:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MapViewCell.identifier, for: indexPath) as? MapViewCell{
-                cell.item = item
-                let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceDetailsViewController.openYandexMapView))
-                cell.addGestureRecognizer(tap)
-                cell.isUserInteractionEnabled = true
-                return cell
-            }
-        }
-        return UITableViewCell()
     }
     
     func makeCallPhone(){
@@ -197,34 +132,30 @@ extension PlaceDetailsViewController: UITableViewDataSource{
             }
             print("1",url.description)
         }
+        print(viewModel?.place.phone)
     }
     
     func openYandexMapView(){
-        //let id = "YandexMapViewController"
         print("OpenMap")
-        self.performSegue(withIdentifier: "ShowMap", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch (segue.identifier ?? "") {
-        case "ShowMap":
-            guard let yandexMapVC = segue.destination as? YandexMapViewController  else {
-                fatalError("Unexpected destination:\(segue.destination)")
-            }
-            
-            yandexMapVC.latitude = (viewModel?.place.latitude)!
-            yandexMapVC.longitude = (viewModel?.place.longitude)!
-            
-        default:
-            fatalError("Global prepare Error in PlaceTableViewController")
-        }
+        let id = "showMapCustom"
+        let identifier = "ShowMap"
+        self.performSegue(withIdentifier: id, sender: self)
+        
+        /*let vc = YandexMapViewController()
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromTop
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        self.navigationController?.pushViewController(vc, animated: false)*/
     }
     
     func showMailGallery(){
         let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
         let headerView = CounterView(frame: frame, currentIndex: 0, count: imagesUrl.count)
-        let galleryViewController = GalleryViewController(startIndex: 0, itemsDataSource: self, configuration: galleryConfiguration())
-            
+        let galleryViewController = GalleryViewController(startIndex: 0, itemsDatasource: self, configuration: galleryConfiguration())
+        
         galleryViewController.headerView = headerView
         galleryViewController.launchedCompletion = { print("LAUNCHED") }
         galleryViewController.closedCompletion = { print("CLOSED") }
@@ -238,63 +169,27 @@ extension PlaceDetailsViewController: UITableViewDataSource{
             headerView.currentIndex = index
         }
         
+        
         self.presentImageGallery(galleryViewController)
     }
     
-    func galleryConfiguration() -> GalleryConfiguration {
-        
-        return [
-            GalleryConfigurationItem.deleteButtonMode(.none),
-            GalleryConfigurationItem.closeButtonMode(.builtIn),
-            GalleryConfigurationItem.pagingMode(.standard),
-            GalleryConfigurationItem.presentationStyle(.displacement),
-            GalleryConfigurationItem.hideDecorationViewsOnLaunch(false),
-            GalleryConfigurationItem.overlayColor(UIColor(white: 0.035, alpha: 1)),
-            GalleryConfigurationItem.overlayColorOpacity(1),
-            GalleryConfigurationItem.overlayBlurOpacity(1),
-            GalleryConfigurationItem.overlayBlurStyle(UIBlurEffectStyle.light),
-            GalleryConfigurationItem.swipeToDismissThresholdVelocity(300),
-            GalleryConfigurationItem.doubleTapToZoomDuration(0.15),
-            GalleryConfigurationItem.blurPresentDuration(0.5),
-            GalleryConfigurationItem.blurPresentDelay(0),
-            GalleryConfigurationItem.colorPresentDuration(0.25),
-            GalleryConfigurationItem.colorPresentDelay(0),
-            GalleryConfigurationItem.blurDismissDuration(0.1),
-            GalleryConfigurationItem.blurDismissDelay(0.4),
-            GalleryConfigurationItem.colorDismissDuration(0.45),
-            GalleryConfigurationItem.colorDismissDelay(0),
-            GalleryConfigurationItem.itemFadeDuration(0.3),
-            GalleryConfigurationItem.decorationViewsFadeDuration(0.15),
-            GalleryConfigurationItem.rotationDuration(0.15),
-            GalleryConfigurationItem.displacementDuration(0.55),
-            GalleryConfigurationItem.reverseDisplacementDuration(0.25),
-            GalleryConfigurationItem.displacementTransitionStyle(.springBounce(0.7)),
-            GalleryConfigurationItem.displacementTimingCurve(.linear),
-            GalleryConfigurationItem.thumbnailsButtonMode(.none),
-            GalleryConfigurationItem.statusBarHidden(true),
-            GalleryConfigurationItem.displacementKeepOriginalInPlace(false),
-            GalleryConfigurationItem.displacementInsetMargin(50)
-        ]
-    }
-    
-    
-    
-}
-
-
-extension PlaceDetailsViewController: GalleryItemsDataSource{
-    
-    func itemCount() -> Int {
-        
-        return imagesUrl.count
-    }
-    
-    func provideGalleryItem(_ index: Int) -> GalleryItem {
-        let url = URL(string: BASE_URL_API + self.imagesUrl[index])
-        return GalleryItem.image{ callback in
-            KingfisherManager.shared.retrieveImage(with: url!, options: [], progressBlock: nil, completionHandler: { (image, error, cacheType, url) in
-                    callback(image)
-            })
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch (segue.identifier ?? "") {
+        case "ShowMap":
+            guard let yandexMapVC = segue.destination as? YandexMapViewController  else {
+                fatalError("Unexpected destination:\(segue.destination)")
+            }
+            
+            yandexMapVC.latitude = (viewModel?.place.latitude)!
+            yandexMapVC.longitude = (viewModel?.place.longitude)!
+        case "showMapCustom":
+            print("Custon")
+        default:
+            fatalError("Global prepare Error in PlaceTableViewController")
         }
     }
+
 }
+
+
+
