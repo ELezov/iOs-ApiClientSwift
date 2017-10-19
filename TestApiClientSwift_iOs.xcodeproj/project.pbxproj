@@ -17,6 +17,7 @@
 		9533A2081F97D6A10054214F /* PhotoDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9533A2061F97D6A10054214F /* PhotoDetailViewCell.xib */; };
 		9533A2161F9810510054214F /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533A2151F9810510054214F /* CounterView.swift */; };
 		9533A2181F9811260054214F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533A2171F9811260054214F /* UIImageViewExtension.swift */; };
+		953C22731F98D04500F31BA0 /* YandexMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C22721F98D04500F31BA0 /* YandexMapViewController.swift */; };
 		955C1A0D1F9276B7007A5EDC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A0C1F9276B7007A5EDC /* Network.swift */; };
 		955C1A0F1F927775007A5EDC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A0E1F927775007A5EDC /* Endpoint.swift */; };
 		955C1A111F927987007A5EDC /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A101F927987007A5EDC /* PlaceService.swift */; };
@@ -95,6 +96,7 @@
 		9533A2061F97D6A10054214F /* PhotoDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewCell.xib; sourceTree = "<group>"; };
 		9533A2151F9810510054214F /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		9533A2171F9811260054214F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		953C22721F98D04500F31BA0 /* YandexMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexMapViewController.swift; sourceTree = "<group>"; };
 		955C1A0C1F9276B7007A5EDC /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		955C1A0E1F927775007A5EDC /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		955C1A101F927987007A5EDC /* PlaceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
@@ -288,6 +290,14 @@
 			name = cells;
 			sourceTree = "<group>";
 		};
+		953C22711F98D02000F31BA0 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				953C22721F98D04500F31BA0 /* YandexMapViewController.swift */,
+			);
+			name = map;
+			sourceTree = "<group>";
+		};
 		955C1A0B1F927618007A5EDC /* network */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +364,7 @@
 		C5D61AF71F77E58200D9142F /* TestApiClientSwift_iOs */ = {
 			isa = PBXGroup;
 			children = (
+				953C22711F98D02000F31BA0 /* map */,
 				9533A20B1F97F3880054214F /* imageviewer */,
 				95B341B81F94DF4200AF43F4 /* login */,
 				955C1A141F9285A6007A5EDC /* realmDB */,
@@ -686,6 +697,7 @@
 				C58A2D1C1F7BE72400382855 /* PlaceManager.swift in Sources */,
 				95C370CB1F8F605B00EF9245 /* FavoriteControl.swift in Sources */,
 				9533A2001F9790320054214F /* MapViewCell.swift in Sources */,
+				953C22731F98D04500F31BA0 /* YandexMapViewController.swift in Sources */,
 				955C1A4E1F929E22007A5EDC /* DescriptionViewCell.swift in Sources */,
 				95EBB50A1F95228300711C03 /* LoginService.swift in Sources */,
 				9533A2161F9810510054214F /* CounterView.swift in Sources */,

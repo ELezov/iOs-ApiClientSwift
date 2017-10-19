@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let networkManager = NetworkManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        YMKConfiguration.sharedInstance().apiKey = "1234567890"
         
         //Realm Migration
         var config = Realm.Configuration()

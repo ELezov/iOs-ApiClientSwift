@@ -19,22 +19,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-oo-Oqk">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-oo-Oqk" customClass="YMKMapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="147" id="iqf-5l-mzy"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zF-DV-Lyo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="147" id="V9b-cj-ZEi"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="5zF-DV-Lyo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0F4-z9-fHZ"/>
                     <constraint firstItem="FGA-oo-Oqk" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="1nW-ZM-quo"/>
+                    <constraint firstItem="5zF-DV-Lyo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7kf-60-JJM"/>
                     <constraint firstItem="FGA-oo-Oqk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="DZZ-hn-UgQ"/>
                     <constraint firstItem="FGA-oo-Oqk" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="gdO-tK-JAt"/>
+                    <constraint firstItem="5zF-DV-Lyo" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="lho-0L-BOw"/>
+                    <constraint firstItem="5zF-DV-Lyo" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vqr-E4-lLP"/>
                     <constraint firstItem="FGA-oo-Oqk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="yK8-Lj-UTz"/>
                 </constraints>
                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             </tableViewCellContentView>
             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             <connections>
-                <outlet property="yandexMapView" destination="FGA-oo-Oqk" id="BdB-95-eRd"/>
+                <outlet property="yandexMapView" destination="FGA-oo-Oqk" id="89w-Mc-KcZ"/>
             </connections>
             <point key="canvasLocation" x="25.5" y="52"/>
         </tableViewCell>

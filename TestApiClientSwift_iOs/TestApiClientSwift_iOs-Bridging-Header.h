@@ -9,9 +9,7 @@
 #ifndef TestApiClientSwift_iOs_Bridging_Header_h
 #define TestApiClientSwift_iOs_Bridging_Header_h
 
-//#import "YandexMapKit.h"
-//#import "YMKAnnotationImage.h"
-//#import <Foundation/Foundation.h>
-//#import "YMKAnnotation.h"
+#import <UIKit/UIKit.h>
+#import "YandexMapKit/YandexMapKit.h"
 
 #endif /* TestApiClientSwift_iOs_Bridging_Header_h */

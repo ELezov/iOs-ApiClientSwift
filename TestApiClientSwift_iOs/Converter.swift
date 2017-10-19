@@ -77,6 +77,8 @@ class Converter{
             placeRealm.phone = place.phone!
             placeRealm.costText = place.costText!
             placeRealm.discountMax = place.discountMax!
+            placeRealm.latitude = place.latitude!
+            placeRealm.longitude = place.longitude!
             let categoryListRealm = List<CategoryRealm>()
             for item in place.categoryId!{
                 if let i = categories.index( where: {$0.id == item}){
@@ -114,6 +116,8 @@ class Converter{
             place.costText = item.costText
             place.phone = item.phone
             place.discountMax = item.discountMax
+            place.latitude = item.latitude
+            place.longitude = item.longitude
             var photos = [String]()
             for photo in item.photos{
                 var photoUrl = ""

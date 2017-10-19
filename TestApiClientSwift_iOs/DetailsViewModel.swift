@@ -18,6 +18,7 @@ public enum DetailsViewModelItemType{
     case visitingPrice
     case phoneView
     case location
+    case map
 }
 
 public protocol DetailsViewModelItem{
@@ -60,6 +61,9 @@ class DetailsViewModel: NSObject {
         
         let locationItem = DetailsViewModelLocationItem()
         items.append(locationItem)
+        
+        let mapItem = DetailsViewModelMapItem(latitude: place.latitude!, longitude: place.longitude!)
+        items.append(mapItem)
     }
 }
 
@@ -120,6 +124,12 @@ extension DetailsViewModel: UITableViewDataSource{
                 cell.item = item
                 return cell
             }
+        case .map:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MapViewCell.identifier, for: indexPath) as? MapViewCell{
+                cell.item = item
+                return cell
+            }
+
         
         }
         return UITableViewCell()
@@ -221,6 +231,21 @@ class DetailsViewModelLocationItem: DetailsViewModelItem{
     
     init() {
         
+    }
+}
+
+class DetailsViewModelMapItem: DetailsViewModelItem{
+    var type: DetailsViewModelItemType{
+        return .map
+    }
+    
+    var latitude: Double
+    var longitude: Double
+   // var phoneText: String
+    
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }
 

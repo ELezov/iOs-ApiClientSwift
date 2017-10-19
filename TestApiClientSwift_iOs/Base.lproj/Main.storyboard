@@ -258,11 +258,60 @@ Altes Haus — Hufen</string>
                     <connections>
                         <outlet property="placeImage" destination="3NU-ur-9P1" id="ifh-FL-Hah"/>
                         <outlet property="tableView" destination="75t-bq-ie2" id="IED-MR-ZeA"/>
+                        <segue destination="qQJ-gR-DIb" kind="show" identifier="ShowMap" id="Kzi-hK-yMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6q-gI-pbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="114"/>
+        </scene>
+        <!--Yandex Map View Controller-->
+        <scene sceneID="EHR-nz-bAw">
+            <objects>
+                <viewController storyboardIdentifier="YandexMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qQJ-gR-DIb" customClass="YandexMapViewController" customModule="TestApiClientSwift_iOs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="InF-ZP-taD"/>
+                        <viewControllerLayoutGuide type="bottom" id="lkN-UE-GWr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uNZ-k1-YMo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cpp-Vo-O1n" customClass="YMKMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbF-jh-XaT">
+                                <rect key="frame" x="305" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9e4-05-vh0"/>
+                                    <constraint firstAttribute="width" constant="40" id="kMM-w7-aVk"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                <state key="normal" title="Button" image="delete_icon"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="qQJ-gR-DIb" eventType="touchUpInside" id="wnZ-TH-eDr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cpp-Vo-O1n" firstAttribute="leading" secondItem="uNZ-k1-YMo" secondAttribute="leading" id="4eE-sX-YZP"/>
+                            <constraint firstItem="Cpp-Vo-O1n" firstAttribute="top" secondItem="uNZ-k1-YMo" secondAttribute="top" id="RyC-z1-h5w"/>
+                            <constraint firstItem="lkN-UE-GWr" firstAttribute="top" secondItem="Cpp-Vo-O1n" secondAttribute="bottom" id="YrX-aP-1zb"/>
+                            <constraint firstAttribute="trailing" secondItem="Cpp-Vo-O1n" secondAttribute="trailing" id="as7-iZ-ohz"/>
+                            <constraint firstItem="GbF-jh-XaT" firstAttribute="top" secondItem="uNZ-k1-YMo" secondAttribute="topMargin" constant="30" id="c1e-rB-AgK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GbF-jh-XaT" secondAttribute="trailing" constant="14" id="jA6-QP-kFF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="GbF-jh-XaT" id="ASp-3c-WWF"/>
+                        <outlet property="yandexMapView" destination="Cpp-Vo-O1n" id="dTP-xD-aGL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MiL-vV-pjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1336.8" y="110.19490254872565"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dtx-N7-JPy">
@@ -423,7 +472,7 @@ Altes Haus — Hufen</string>
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -438,6 +487,7 @@ Altes Haus — Hufen</string>
         </scene>
     </scenes>
     <resources>
+        <image name="delete_icon" width="50" height="50"/>
         <image name="filledFavorite" width="25" height="25"/>
         <image name="ic_sale" width="64" height="28"/>
         <image name="location" width="24" height="24"/>

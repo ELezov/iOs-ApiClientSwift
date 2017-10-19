@@ -47,6 +47,7 @@ class PlaceDetailsViewController: UIViewController{
         tableView?.register(VisitingPriceCell.nib, forCellReuseIdentifier: VisitingPriceCell.identifier)
         tableView?.register(PhoneViewCell.nib, forCellReuseIdentifier: PhoneViewCell.identifier)
         tableView?.register(LocationViewCell.nib, forCellReuseIdentifier: LocationViewCell.identifier)
+        tableView?.register(MapViewCell.nib, forCellReuseIdentifier: MapViewCell.identifier)
     }
     
     func InitViews(){
@@ -175,7 +176,14 @@ extension PlaceDetailsViewController: UITableViewDataSource{
                 cell.item = item
                 return cell
             }
-            
+        case .map:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MapViewCell.identifier, for: indexPath) as? MapViewCell{
+                cell.item = item
+                let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceDetailsViewController.openYandexMapView))
+                cell.addGestureRecognizer(tap)
+                cell.isUserInteractionEnabled = true
+                return cell
+            }
         }
         return UITableViewCell()
     }
@@ -188,6 +196,27 @@ extension PlaceDetailsViewController: UITableViewDataSource{
                 UIApplication.shared.openURL(url)
             }
             print("1",url.description)
+        }
+    }
+    
+    func openYandexMapView(){
+        //let id = "YandexMapViewController"
+        print("OpenMap")
+        self.performSegue(withIdentifier: "ShowMap", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch (segue.identifier ?? "") {
+        case "ShowMap":
+            guard let yandexMapVC = segue.destination as? YandexMapViewController  else {
+                fatalError("Unexpected destination:\(segue.destination)")
+            }
+            
+            yandexMapVC.latitude = (viewModel?.place.latitude)!
+            yandexMapVC.longitude = (viewModel?.place.longitude)!
+            
+        default:
+            fatalError("Global prepare Error in PlaceTableViewController")
         }
     }
     
