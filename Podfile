@@ -17,7 +17,6 @@ target 'TestApiClientSwift_iOs' do
   pod 'CZPicker'
   pod 'YandexMapKit'
   pod 'ImageViewer', '4.0'
-  #pod 'Optik'
   pod 'FLAnimatedImage', '~> 1.0'
   
   # Pods for TestApiClientSwift_iOs

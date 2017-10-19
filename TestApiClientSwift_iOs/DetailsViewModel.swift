@@ -60,9 +60,6 @@ class DetailsViewModel: NSObject {
         
         let locationItem = DetailsViewModelLocationItem()
         items.append(locationItem)
-        
-        print("DetailsViewModel", items.count)
-        self.placeImgUrl = place.photos!
     }
 }
 
@@ -139,17 +136,6 @@ extension DetailsViewModel: UITableViewDataSource{
         }
         print(self.place.phone)
     }
-    
-//    func openGalleryAction(){
-//        print("Haha", "oOops")
-//        let urls = placeImgUrl
-//        let converter = Converter()
-//        let agrume = Agrume(imageUrls: converter.convertStringToUrlArray(urls: urls))
-//        agrume.showFrom(PlaceDetailsViewController)
-//    }
-    
-    
-    
 }
 
 class DetailsViewModelPlacePhotoItem: DetailsViewModelItem{
@@ -163,8 +149,6 @@ class DetailsViewModelPlacePhotoItem: DetailsViewModelItem{
         self.photoUrl = BASE_URL_API + photo
     }
 }
-
-
 
 class DetailsViewModelHeaderItem: DetailsViewModelItem{
     var type: DetailsViewModelItemType{

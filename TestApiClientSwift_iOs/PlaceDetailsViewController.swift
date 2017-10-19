@@ -19,10 +19,11 @@ extension UIImageView
     }
 }
 
-extension UIImageView: DisplaceableView {}
+//extension UIImageView: DisplaceableView {}
 
 class PlaceDetailsViewController: UIViewController{
     var viewModel: DetailsViewModel?
+    var isFavorite = false
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var tableView: UITableView?
     var imagesUrl = [String]()
@@ -31,10 +32,11 @@ class PlaceDetailsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        InitViews()
         self.imagesUrl = (viewModel?.place.photos)!
         
         //action for gallery
-        tableView?.dataSource = self//viewModel
+        tableView?.dataSource = self
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
         
@@ -45,6 +47,18 @@ class PlaceDetailsViewController: UIViewController{
         tableView?.register(VisitingPriceCell.nib, forCellReuseIdentifier: VisitingPriceCell.identifier)
         tableView?.register(PhoneViewCell.nib, forCellReuseIdentifier: PhoneViewCell.identifier)
         tableView?.register(LocationViewCell.nib, forCellReuseIdentifier: LocationViewCell.identifier)
+    }
+    
+    func InitViews(){
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
+        button.setImage(UIImage(named: "emptyFavorite"), for: .normal)
+        button.addTarget(self, action: Selector(("favoriteButtonAction")), for: .touchUpInside)
+        
+        let barButton = UIBarButtonItem()
+        barButton.customView = button
+        self.navigationItem.rightBarButtonItem = barButton
     }
     
     override func viewWillLayoutSubviews() {
@@ -73,11 +87,30 @@ class PlaceDetailsViewController: UIViewController{
     }
     
     func openGalleryAction(){
-        print("Haha", "oOops")
         let urls = viewModel?.placeImgUrl
         let converter = Converter()
         let agrume = Agrume(imageUrls: converter.convertStringToUrlArray(urls: urls!))
         agrume.showFrom(self)
+    }
+   
+    
+  
+    func favoriteButtonAction() {
+        
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        if isFavorite {
+            button.setImage(UIImage(named: "emptyFavorite"), for: .normal)
+            isFavorite = false
+        }else{
+           button.setImage(UIImage(named: "filledFavorite"), for: .normal)
+            isFavorite = true
+        }
+        button.addTarget(self, action: Selector(("favoriteButtonAction")), for: .touchUpInside)
+        
+        let barButton = UIBarButtonItem()
+        barButton.customView = button
+        self.navigationItem.rightBarButtonItem = barButton
     }
    
     
@@ -99,7 +132,7 @@ extension PlaceDetailsViewController: UITableViewDataSource{
         case DetailsViewModelItemType.placePhoto:
             if let cell = tableView.dequeueReusableCell(withIdentifier: PhotoDetailViewCell.identifier, for: indexPath) as? PhotoDetailViewCell{
                 cell.item = item
-                let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceDetailsViewController.openGalleryAction))
+                let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceDetailsViewController.showMailGallery))
                 cell.addGestureRecognizer(tap)
                 cell.isUserInteractionEnabled = true
                 return cell
@@ -140,9 +173,6 @@ extension PlaceDetailsViewController: UITableViewDataSource{
         case .location:
             if let cell = tableView.dequeueReusableCell(withIdentifier: LocationViewCell.identifier, for: indexPath) as? LocationViewCell{
                 cell.item = item
-                let tap = UITapGestureRecognizer(target: self, action: #selector(PlaceDetailsViewController.showMailGallery))
-                cell.addGestureRecognizer(tap)
-                cell.isUserInteractionEnabled = true
                 return cell
             }
             
@@ -159,13 +189,12 @@ extension PlaceDetailsViewController: UITableViewDataSource{
             }
             print("1",url.description)
         }
-        print(viewModel?.place.phone)
     }
     
     func showMailGallery(){
         let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
         let headerView = CounterView(frame: frame, currentIndex: 0, count: imagesUrl.count)
-        let galleryViewController = GalleryViewController(startIndex: 0, itemsDatasource: self, configuration: galleryConfiguration())
+        let galleryViewController = GalleryViewController(startIndex: 0, itemsDataSource: self, configuration: galleryConfiguration())
             
         galleryViewController.headerView = headerView
         galleryViewController.launchedCompletion = { print("LAUNCHED") }
@@ -186,8 +215,7 @@ extension PlaceDetailsViewController: UITableViewDataSource{
     func galleryConfiguration() -> GalleryConfiguration {
         
         return [
-            
-            //GalleryConfigurationItem.closeButtonMode(.builtIn),
+            GalleryConfigurationItem.deleteButtonMode(.none),
             GalleryConfigurationItem.closeButtonMode(.builtIn),
             GalleryConfigurationItem.pagingMode(.standard),
             GalleryConfigurationItem.presentationStyle(.displacement),
@@ -196,23 +224,19 @@ extension PlaceDetailsViewController: UITableViewDataSource{
             GalleryConfigurationItem.overlayColorOpacity(1),
             GalleryConfigurationItem.overlayBlurOpacity(1),
             GalleryConfigurationItem.overlayBlurStyle(UIBlurEffectStyle.light),
-            GalleryConfigurationItem.maximumZoolScale(8.0),
             GalleryConfigurationItem.swipeToDismissThresholdVelocity(300),
             GalleryConfigurationItem.doubleTapToZoomDuration(0.15),
             GalleryConfigurationItem.blurPresentDuration(0.5),
             GalleryConfigurationItem.blurPresentDelay(0),
             GalleryConfigurationItem.colorPresentDuration(0.25),
             GalleryConfigurationItem.colorPresentDelay(0),
-            
             GalleryConfigurationItem.blurDismissDuration(0.1),
             GalleryConfigurationItem.blurDismissDelay(0.4),
             GalleryConfigurationItem.colorDismissDuration(0.45),
             GalleryConfigurationItem.colorDismissDelay(0),
-            
             GalleryConfigurationItem.itemFadeDuration(0.3),
             GalleryConfigurationItem.decorationViewsFadeDuration(0.15),
             GalleryConfigurationItem.rotationDuration(0.15),
-            
             GalleryConfigurationItem.displacementDuration(0.55),
             GalleryConfigurationItem.reverseDisplacementDuration(0.25),
             GalleryConfigurationItem.displacementTransitionStyle(.springBounce(0.7)),
@@ -229,7 +253,7 @@ extension PlaceDetailsViewController: UITableViewDataSource{
 }
 
 
-extension PlaceDetailsViewController: GalleryItemsDatasource {
+extension PlaceDetailsViewController: GalleryItemsDataSource{
     
     func itemCount() -> Int {
         
@@ -243,6 +267,5 @@ extension PlaceDetailsViewController: GalleryItemsDatasource {
                     callback(image)
             })
         }
-        //return items[index].galleryItem
     }
 }
