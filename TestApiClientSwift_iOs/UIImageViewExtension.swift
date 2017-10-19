@@ -1,10 +1,10 @@
-//
-//  UIImageViewExtension.swift
-//  TestApiClientSwift_iOs
-//
-//  Created by Nikolay on 19.10.17.
-//  Copyright © 2017 KODE. All rights reserved.
-//
+
 
 import Foundation
 
+extension UIImageView
+{
+    func load(_ string: String){
+        self.kf.setImage(with: URL(string: BASE_URL_API+string))
+    }
+}

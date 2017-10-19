@@ -11,15 +11,6 @@ import AMScrollingNavbar
 import ImageViewer
 import Kingfisher
 
-extension UIImageView
-{
-    func load(_ string: String){
-        self.kf.setImage(with: URL(string: BASE_URL_API+string))
-    }
-}
-
-//extension UIImageView: DisplaceableView {}
-
 class PlaceDetailsViewController: UIViewController{
     var viewModel: DetailsViewModel?
     var isFavorite = false
@@ -34,8 +25,7 @@ class PlaceDetailsViewController: UIViewController{
         InitViews()
         self.imagesUrl = (viewModel?.place.photos)!
         
-        //action for gallery
-            }
+    }
     
     func InitViews(){
         

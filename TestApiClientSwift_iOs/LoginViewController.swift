@@ -11,6 +11,7 @@ import SkyFloatingLabelTextField
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var leftPoint: UIView!
     @IBOutlet weak var rightPoint: UIView!
     
@@ -47,11 +48,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         SignInButton.isEnabled = false
         print("false")
+        if textField == passwordTextField{
+            scrollView.setContentOffset(CGPoint(x: 0, y: 150), animated: true)
+        }
+        
     }
+    
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         SignInButton.isEnabled = true
         print("true")
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -90,15 +97,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
