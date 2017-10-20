@@ -32,6 +32,7 @@ class NetworkManager{
             response in
             switch(response.result){
             case .success(let value):
+                
                 do{
                     let json = try JSONSerialization.jsonObject(with: response.data!) as? [String: Any]
                     let token = json?["token"] as? String

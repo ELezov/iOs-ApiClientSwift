@@ -14,25 +14,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var leftPoint: UIView!
     @IBOutlet weak var rightPoint: UIView!
-    
     @IBOutlet weak var SignInButton: UIButton!
-    
     @IBOutlet weak var mailTextField: SkyFloatingLabelTextField!
-    
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mailTextField.delegate = self
         mailTextField.errorColor = UIColor.red
         passwordTextField.delegate = self
-
         leftPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
         rightPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
-        
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,7 +37,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         if let token: String = UserDefaults.standard.object(forKey: "userToken") as! String? {
             //let id = "ShowList"
             // self.performSegue(withIdentifier: id, sender: self)
@@ -63,7 +55,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let id = identifier {
             if id == "idFirstSegueUnwind"{
                 let unwindSegue = FirstCustomSegueUnwind(identifier: id, source: fromViewController, destination: toViewController, performHandler: {() -> Void in
-                    
                 })
                 return unwindSegue
             }
@@ -89,17 +80,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         SignInButton.isEnabled = false
-        print("false")
         if textField == passwordTextField{
             scrollView.setContentOffset(CGPoint(x: 0, y: 150), animated: true)
         }
         
     }
     
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         SignInButton.isEnabled = true
-        print("true")
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
@@ -118,26 +106,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         default:
             break
         }
-        print(textField.tag)
         return true
     }
     
     
     // MARK: Action
-
+    //производим авторизацию
     @IBAction func logIn(_ sender: UIButton) {
         let networkManager = NetworkManager()
         networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!){ flag, error in
-            if flag == true{
+            if flag == true {
+                //Сохраняем токен
                 let userDafaults = UserDefaults.standard
                 userDafaults.set(error, forKey: "userToken")
                 userDafaults.synchronize()
-                
+                //анимируемый переход на следущий экран
                 self.pushAnimation()
-                
                 //let id = "ShowList"
                 //self.performSegue(withIdentifier: id, sender: self)
-            } else{
+            } else {
+                //показываем тост ошибки
                 self.view.makeToast(error, duration: 10.0, position: .bottom)
             }
             
@@ -153,6 +141,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         transition.type = kCAGravityBottom
         self.navigationController?.view.layer.add(transition,forKey: nil)
         self.navigationController?.pushViewController(vc, animated: false)
-        
     }
 }

@@ -118,13 +118,12 @@ class PlaceDetailsViewController: UIViewController{
             }
             print("1",url.description)
         }
-        print(viewModel?.place.phone)
     }
     
     func openYandexMapView(){
         print("OpenMap")
         let id = "showMapCustom"
-        let identifier = "ShowMap"
+        //let identifier = "ShowMap"
         self.performSegue(withIdentifier: id, sender: self)
     }
     
