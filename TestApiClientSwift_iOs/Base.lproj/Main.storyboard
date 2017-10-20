@@ -25,7 +25,7 @@
         <!--Place Table View Controller-->
         <scene sceneID="hwB-lL-TpA">
             <objects>
-                <tableViewController storyboardIdentifier="PlaceTableViewController" id="CWh-Vj-22D" customClass="PlaceTableViewController" customModule="TestApiClientSwift_iOs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PlaceTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CWh-Vj-22D" customClass="PlaceTableViewController" customModule="TestApiClientSwift_iOs" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="219" sectionHeaderHeight="28" sectionFooterHeight="28" id="19B-dm-6mj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="220"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="djw-8r-HSa" id="OOA-BU-NdM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oXc-2w-cgZ">
@@ -347,10 +347,10 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="57.5" y="166" width="259" height="44"/>
+                                        <rect key="frame" x="58" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
-                                                <rect key="frame" x="253" y="19" width="6" height="6"/>
+                                                <rect key="frame" x="252.5" y="19" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="9H1-iz-47n"/>
@@ -366,7 +366,7 @@ Altes Haus — Hufen</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amber card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IND-CW-K0T">
-                                                <rect key="frame" x="18" y="0.0" width="223" height="44"/>
+                                                <rect key="frame" x="18" y="0.0" width="222.5" height="44"/>
                                                 <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="38"/>
                                                 <color key="textColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -485,6 +485,7 @@ Altes Haus — Hufen</string>
                         <outlet property="rightPoint" destination="HpX-Zs-flE" id="SXH-Z3-JH5"/>
                         <outlet property="scrollView" destination="F0w-cy-wXx" id="bKs-qB-Tsy"/>
                         <segue destination="CWh-Vj-22D" kind="show" identifier="ShowList" id="qj4-O2-pvT"/>
+                        <segue destination="CWh-Vj-22D" kind="custom" identifier="ShowListCustom" customClass="FirstCustomSegue" customModule="TestApiClientSwift_iOs" customModuleProvider="target" id="Fnu-mC-JQg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lt-UX-hN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -519,6 +520,7 @@ Altes Haus — Hufen</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="980-PN-ecf"/>
+        <segue reference="Fnu-mC-JQg"/>
         <segue reference="0Js-fl-7T4"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -126,15 +126,6 @@ class PlaceDetailsViewController: UIViewController{
         let id = "showMapCustom"
         let identifier = "ShowMap"
         self.performSegue(withIdentifier: id, sender: self)
-        
-        /*let vc = YandexMapViewController()
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromTop
-        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-        self.navigationController?.pushViewController(vc, animated: false)*/
     }
     
     func showMailGallery(){

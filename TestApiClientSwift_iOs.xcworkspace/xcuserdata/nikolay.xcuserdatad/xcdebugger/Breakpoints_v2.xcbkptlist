@@ -514,11 +514,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/LoginViewController.swift"
-            timestampString = "530154743.976888"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1106,7 +1106,7 @@
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikolay/Desktop/iOs%20Swift/TestApiClientSwift_iOs/TestApiClientSwift_iOs/PlaceTableViewController.swift"
-                  timestampString = "530194384.12166"
+                  timestampString = "530196719.222267"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "150"
@@ -1121,7 +1121,7 @@
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikolay/Desktop/iOs%20Swift/TestApiClientSwift_iOs/TestApiClientSwift_iOs/PlaceTableViewController.swift"
-                  timestampString = "530194384.122999"
+                  timestampString = "530196719.223599"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "151"
@@ -1627,11 +1627,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/YandexMapViewController.swift"
-            timestampString = "530189729.33265"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "closeButtonAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1755,11 +1755,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/LoginViewController.swift"
-            timestampString = "530153942.216913"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1771,11 +1771,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/LoginViewController.swift"
-            timestampString = "530153942.216913"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1787,11 +1787,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/LoginViewController.swift"
-            timestampString = "530153942.216913"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1819,11 +1819,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/LoginViewController.swift"
-            timestampString = "530154743.976888"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "textFieldDidBeginEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1867,7 +1867,7 @@
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikolay/Desktop/iOs%20Swift/TestApiClientSwift_iOs/TestApiClientSwift_iOs/YandexMapViewController.swift"
-                  timestampString = "530194384.129121"
+                  timestampString = "530196719.229693"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1882,7 +1882,7 @@
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikolay/Desktop/iOs%20Swift/TestApiClientSwift_iOs/TestApiClientSwift_iOs/YandexMapViewController.swift"
-                  timestampString = "530194384.130392"
+                  timestampString = "530196719.230894"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -1897,7 +1897,7 @@
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikolay/Desktop/iOs%20Swift/TestApiClientSwift_iOs/TestApiClientSwift_iOs/YandexMapViewController.swift"
-                  timestampString = "530194384.131717"
+                  timestampString = "530196719.232073"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1912,7 +1912,7 @@
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikolay/Desktop/iOs%20Swift/TestApiClientSwift_iOs/TestApiClientSwift_iOs/YandexMapViewController.swift"
-                  timestampString = "530194384.132985"
+                  timestampString = "530196719.233249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1927,7 +1927,7 @@
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikolay/Desktop/iOs%20Swift/TestApiClientSwift_iOs/TestApiClientSwift_iOs/YandexMapViewController.swift"
-                  timestampString = "530194384.134286"
+                  timestampString = "530196719.234423"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -1960,7 +1960,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/YandexMapViewController.swift"
-            timestampString = "530191674.958528"
+            timestampString = "530197660.352839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "mapView(_:calloutViewFor:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/YandexMapViewController.swift"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -1972,15 +1988,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/YandexMapViewController.swift"
-            timestampString = "530191674.958528"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "mapView(_:calloutViewFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1992,43 +2008,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/YandexMapViewController.swift"
-            timestampString = "530191674.958528"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "mapView(_:calloutViewFor:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestApiClientSwift_iOs/YandexMapViewController.swift"
-            timestampString = "530191674.958528"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "mapView(_:calloutViewFor:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestApiClientSwift_iOs/YandexMapViewController.swift"
-            timestampString = "530191674.958528"
+            timestampString = "530197660.352839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
+            landmarkName = "mapView(_:calloutViewFor:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/YandexMapViewController.swift"
+            timestampString = "530197660.352839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "mapView(_:calloutViewFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2078,6 +2078,22 @@
             startingLineNumber = "38"
             endingLineNumber = "38"
             landmarkName = "init(place:categories:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/LoginViewController.swift"
+            timestampString = "530197660.352839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "pushAnimation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -14,7 +14,6 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
     var placeAnnotation = PointAnnotation()
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
-        //self.navigationController?.popViewController(animated: true)
         let id = "idFirstSegueUnwind"
         self.performSegue(withIdentifier: id , sender: self)
     }
@@ -71,17 +70,7 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
         print("Show")
         navigationController?.navigationBar.isHidden = false
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func configureMapView(){
         self.yandexMapView.showsUserLocation = false
@@ -95,7 +84,6 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
         self.placeAnnotation.setCoordinate(coordinate)
         self.placeAnnotation.setTitile("Metro")
         self.placeAnnotation.setSubTitle("станция Повелецкая")
-        //self.placeAnnotation.title()
         self.yandexMapView.addAnnotation(self.placeAnnotation)
         //self.yandexMapView.selectedAnnotation = self.placeAnnotation
     }

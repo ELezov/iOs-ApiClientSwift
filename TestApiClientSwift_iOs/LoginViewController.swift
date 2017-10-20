@@ -22,27 +22,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Login", "viewDidLoad")
         
         mailTextField.delegate = self
         mailTextField.errorColor = UIColor.red
         passwordTextField.delegate = self
 
-        
-        // Do any additional setup after loading the view.
         leftPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
         rightPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if let token: String = UserDefaults.standard.object(forKey: "userToken") as! String? {
-            
-            print("Token", token)
-             self.performSegue(withIdentifier: "ShowList", sender: self)
-        }
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,6 +41,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.text = ""
         mailTextField.errorMessage = ""
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let token: String = UserDefaults.standard.object(forKey: "userToken") as! String? {
+            //let id = "ShowList"
+            // self.performSegue(withIdentifier: id, sender: self)
+            pushAnimation()
+        }
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -131,11 +132,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let userDafaults = UserDefaults.standard
                 userDafaults.set(error, forKey: "userToken")
                 userDafaults.synchronize()
-                self.performSegue(withIdentifier: "ShowList", sender: self)
+                
+                self.pushAnimation()
+                
+                //let id = "ShowList"
+                //self.performSegue(withIdentifier: id, sender: self)
             } else{
                 self.view.makeToast(error, duration: 10.0, position: .bottom)
             }
             
         }
+    }
+    
+    func pushAnimation(){
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "PlaceTableViewController")
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCAGravityBottom
+        self.navigationController?.view.layer.add(transition,forKey: nil)
+        self.navigationController?.pushViewController(vc, animated: false)
+        
     }
 }
