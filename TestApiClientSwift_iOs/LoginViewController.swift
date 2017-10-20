@@ -22,6 +22,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let tok: String = UserDefaults.standard.object(forKey: "userTok") as! String? {
+            print("tok")
+        }else{
+            print("userTok nil")
+        }
+        
         
         mailTextField.delegate = self
         mailTextField.errorColor = UIColor.red
@@ -31,6 +37,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         leftPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
         rightPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let token: String = UserDefaults.standard.object(forKey: "userToken") as! String? {
+            
+            print("Token", token)
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let scrollingNavController = mainStoryBoard.instantiateViewController(withIdentifier: "ScrollingNavigationController")
+            self.present(scrollingNavController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,7 +106,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if flag == true{
                 let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let scrollingNavController = mainStoryBoard.instantiateViewController(withIdentifier: "ScrollingNavigationController")
-                //let navController: UINavigationController = placeTableViewController.navigationController!
+                let userDafaults = UserDefaults.standard
+                userDafaults.set(error, forKey: "userToken")
+                userDafaults.synchronize()
+                
                 self.present(scrollingNavController, animated: true, completion: nil)
             } else{
                 self.view.makeToast(error, duration: 10.0, position: .bottom)

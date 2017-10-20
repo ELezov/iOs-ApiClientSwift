@@ -110,6 +110,11 @@ class PlaceTableViewController: UITableViewController {
             cell.layer.transform = CATransform3DIdentity
         })
     }
+    
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
+        
+    }
+    
 }
 
 extension PlaceTableViewController: CZPickerViewDelegate, CZPickerViewDataSource{

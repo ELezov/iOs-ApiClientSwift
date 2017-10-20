@@ -8,7 +8,16 @@ enum PlaceService{
 extension PlaceService: Endpoint{
     
     internal var headers: HTTPHeaders{
-        return ["Authorization" : "Token 88428fb28837e841dc949c13a0550c3e2c4645ad"]
+        
+        var resultToken = "Token "
+        
+        if let token: String = UserDefaults.standard.object(forKey: "userToken") as! String? {
+            resultToken += token
+        }
+        
+        print("Token",resultToken)
+        
+        return ["Authorization" : resultToken]
     }
     
     var baseURL: String{

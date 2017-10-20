@@ -197,8 +197,11 @@ Altes Haus — Hufen</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="eYM-pb-pDq">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="location" style="plain" id="lQG-1E-Gwg">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Log out" style="plain" id="lQG-1E-Gwg">
                             <color key="tintColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="logOut:" destination="CWh-Vj-22D" id="IiS-VN-a4T"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Фильтровать места" id="pko-Cw-XLa">
                             <color key="tintColor" red="0.92941176891326904" green="0.14117647707462311" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
@@ -341,11 +344,11 @@ Altes Haus — Hufen</string>
                                             <constraint firstAttribute="height" constant="67" id="gfq-Cj-RXl"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="57" y="165" width="260" height="43"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
+                                        <rect key="frame" x="57.5" y="166" width="259" height="44"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
-                                                <rect key="frame" x="253" y="17" width="6" height="6"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
+                                                <rect key="frame" x="253" y="19" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="9H1-iz-47n"/>
@@ -360,8 +363,8 @@ Altes Haus — Hufen</string>
                                                     <constraint firstAttribute="height" constant="6" id="ws6-yv-UJt"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Amber card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IND-CW-K0T">
-                                                <rect key="frame" x="18" y="1" width="223" height="39"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amber card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IND-CW-K0T">
+                                                <rect key="frame" x="18" y="0.0" width="223" height="44"/>
                                                 <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="38"/>
                                                 <color key="textColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -378,8 +381,8 @@ Altes Haus — Hufen</string>
                                             <constraint firstItem="KOq-9O-h59" firstAttribute="leading" secondItem="55d-Ok-C9O" secondAttribute="leading" id="tRR-pV-087"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Скидки и акции для гостей Калининградской области" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-Hg-oMJ">
-                                        <rect key="frame" x="54" y="230" width="267" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скидки и акции для гостей Калининградской области" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-Hg-oMJ">
+                                        <rect key="frame" x="53.5" y="228" width="268" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="C8k-3G-7kL"/>
                                             <constraint firstAttribute="width" constant="268" id="su8-q5-3mL"/>
@@ -413,7 +416,7 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Пароль"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Пароль"/>
@@ -422,8 +425,8 @@ Altes Haus — Hufen</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="ScrollingNavigationController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mX-FM-lHy">
-                                        <rect key="frame" x="16" y="500" width="343" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ScrollingNavigationController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mX-FM-lHy">
+                                        <rect key="frame" x="16" y="488" width="343" height="48"/>
                                         <color key="backgroundColor" red="0.92941176889999999" green="0.1411764771" blue="0.19607843459999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="03y-hW-cAN"/>
@@ -489,7 +492,7 @@ Altes Haus — Hufen</string>
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

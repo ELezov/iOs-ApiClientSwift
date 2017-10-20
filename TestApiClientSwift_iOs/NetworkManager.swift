@@ -36,7 +36,7 @@ class NetworkManager{
                     let json = try JSONSerialization.jsonObject(with: response.data!) as? [String: Any]
                     let token = json?["token"] as? String
                     if  token != nil{
-                        completion(true, "")
+                        completion(true, token!)
                     } else{
                         completion(false, "Неверные данные")
                     }
