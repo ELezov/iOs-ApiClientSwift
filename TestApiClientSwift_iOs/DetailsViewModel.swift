@@ -31,7 +31,13 @@ class DetailsViewModel: NSObject {
     var phoneCell = PhotoDetailViewCell()
     
     init(place: Place, categories: [Category]) {
-        let category = categories[(place.categoryId?.first)!]
+        print("Place id",(place.categoryId?.first)!)
+        print("Place count cat", categories.count)
+        let category : Category
+        let index = categories.index(where: {$0.id == place.categoryId?.first})
+        category = categories[index!]
+        
+        //let category = categories[(place.categoryId?.first)! - 1]
         self.place = place
         self.placeImgUrl = place.photos!
         

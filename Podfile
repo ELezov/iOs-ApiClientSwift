@@ -14,7 +14,7 @@ target 'TestApiClientSwift_iOs' do
   pod 'AMScrollingNavbar', '3'
   pod 'SkyFloatingLabelTextField', '3'
   pod 'CZPicker'
-  pod 'YandexMapKit', '1.0.9'
+  pod 'YandexMapKit', '1.0.10'
   pod 'Agrume', '3.2.3'
   pod 'ImageViewer', '4.0'
   

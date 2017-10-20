@@ -54,10 +54,6 @@ class PlaceDetailsViewController: UIViewController{
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-//    override func viewWillLayoutSubviews() {
-//        self.tableView?.layer.backgroundColor = UIColor.clear.cgColor
-//    }
-    
     override func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {
         if let id = identifier {
             if id == "idFirstSegueUnwind"{
@@ -173,7 +169,12 @@ class PlaceDetailsViewController: UIViewController{
             yandexMapVC.latitude = (viewModel?.place.latitude)!
             yandexMapVC.longitude = (viewModel?.place.longitude)!
         case "showMapCustom":
-            print("Custon")
+            guard let yandexMapVC = segue.destination as? YandexMapViewController  else {
+                fatalError("Unexpected destination:\(segue.destination)")
+            }
+            
+            yandexMapVC.latitude = (viewModel?.place.latitude)!
+            yandexMapVC.longitude = (viewModel?.place.longitude)!
         default:
             fatalError("Global prepare Error in PlaceTableViewController")
         }

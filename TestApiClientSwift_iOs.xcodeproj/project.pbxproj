@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9500EAC81F9A0AA900677C75 /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500EAC71F9A0AA900677C75 /* PointAnnotation.swift */; };
 		9503EC391F8EB21A002C1C17 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503EC381F8EB21A002C1C17 /* RatingView.swift */; };
 		9503EC441F8EDFB7002C1C17 /* YesevaOne-Regular_v2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */; };
 		9503EC451F8EDFB7002C1C17 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */; };
@@ -90,6 +91,7 @@
 		54E95275B6AD346E4855229C /* Pods-TestApiClientSwift_iOsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOsTests/Pods-TestApiClientSwift_iOsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6104827709BB97F975CA0F4C /* Pods-TestApiClientSwift_iOs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOs.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOs/Pods-TestApiClientSwift_iOs.release.xcconfig"; sourceTree = "<group>"; };
 		613593FF77D265C9C7A86816 /* Pods-TestApiClientSwift_iOs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOs/Pods-TestApiClientSwift_iOs.debug.xcconfig"; sourceTree = "<group>"; };
+		9500EAC71F9A0AA900677C75 /* PointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		9503EC381F8EB21A002C1C17 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YesevaOne-Regular_v2.otf"; sourceTree = "<group>"; };
 		9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -199,6 +201,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9500EAC51F9A01F400677C75 /* Map Point Annotation Model */ = {
+			isa = PBXGroup;
+			children = (
+				9500EAC71F9A0AA900677C75 /* PointAnnotation.swift */,
+			);
+			name = "Map Point Annotation Model";
+			path = "../../../yandexmapkit-ios-master/YandexMapKitSample";
+			sourceTree = "<group>";
+		};
 		9503EC3B1F8ECC74002C1C17 /* list_places */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +303,7 @@
 		953C22711F98D02000F31BA0 /* map */ = {
 			isa = PBXGroup;
 			children = (
+				9500EAC51F9A01F400677C75 /* Map Point Annotation Model */,
 				953C22721F98D04500F31BA0 /* YandexMapViewController.swift */,
 			);
 			name = map;
@@ -687,6 +699,7 @@
 				C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */,
 				C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */,
 				955C1A131F9283C9007A5EDC /* NetworkManager.swift in Sources */,
+				9500EAC81F9A0AA900677C75 /* PointAnnotation.swift in Sources */,
 				955C1A4A1F9298CB007A5EDC /* HeaderPlaceViewCell.swift in Sources */,
 				C5DB4FE51F7A59AF0000600E /* CategoryRealm.swift in Sources */,
 				95EBB50E1F9524CA00711C03 /* DbHelper.swift in Sources */,
@@ -853,6 +866,10 @@
 				DEVELOPMENT_TEAM = WNZNG5YT8F;
 				INFOPLIST_FILE = TestApiClientSwift_iOs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestApiClientSwift_iOs",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -921,6 +938,10 @@
 				DEVELOPMENT_TEAM = WNZNG5YT8F;
 				INFOPLIST_FILE = TestApiClientSwift_iOs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestApiClientSwift_iOs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kode.TestApiClientSwift-iOs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nikolay/Desktop/iOs Swift/TestApiClientSwift_iOs/TestApiClientSwift_iOs/TestApiClientSwift_iOs-Bridging-Header.h";

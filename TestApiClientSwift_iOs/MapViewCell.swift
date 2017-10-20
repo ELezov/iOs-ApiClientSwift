@@ -13,37 +13,21 @@ class MapViewCell: UITableViewCell, YMKMapViewDelegate {
     
     @IBOutlet weak var yandexMapView: YMKMapView!
     
+    var latitude: Double?
+    var longitude : Double?
+    var placeAnnotation : PointAnnotation?
     var item: DetailsViewModelItem? {
         didSet {
             guard  let item = item as? DetailsViewModelMapItem else {
                 return
             }
             
-            let latitude = item.latitude
-            let longitude = item.longitude
-            
-            YMKConfiguration.init().apiKey = "1234567890"
-            yandexMapView.showsUserLocation = true
-            yandexMapView.canUseCompass = true
-            var coordinate = YMKMapCoordinate()
-            coordinate.latitude = latitude
-            coordinate.longitude = longitude
-            //let placeAnnotation = YMKAnnotation.coordinate(coordinate as! YMKAnnotation)
-            
-            
-            yandexMapView.tracksUserLocation = true
-            yandexMapView.showTraffic = false
-            yandexMapView.canUseCompass = true
-            yandexMapView.showsUserLocation = true
-            //yandexMapView.userLocationVisible=true
-    
-            YMKMapPoint.init(x:Int64(latitude), y: Int64(longitude))
-            yandexMapView.setCenter(coordinate, atZoomLevel: 15, animated: true)            //self.yandexMapView = self
-            
+            self.latitude = item.latitude
+            self.longitude = item.longitude
+
+            self.configureMapView()
+            self.configureAndInstallAnnotations()
         }
-       
-        //yandexMapView.mapView}
-        //yandexMapView
     }
     
    
@@ -65,6 +49,44 @@ class MapViewCell: UITableViewCell, YMKMapViewDelegate {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureMapView(){
+        self.yandexMapView.showsUserLocation = false
+        self.yandexMapView.showTraffic = false
+        self.yandexMapView.setCenter(YMKMapCoordinateMake(latitude!, longitude!), atZoomLevel: 15, animated: false)
+    }
+    
+    func configureAndInstallAnnotations(){
+        let coordinate = YMKMapCoordinateMake(latitude!, longitude!)
+        self.placeAnnotation = PointAnnotation()
+        self.placeAnnotation?.setCoordinate(coordinate)
+        self.placeAnnotation?.setTitile("Metro")
+        self.placeAnnotation?.setSubTitle("станция Повелецкая")
+        self.yandexMapView.addAnnotation(self.placeAnnotation)
+    }
+    
+    func mapView(_ mapView: YMKMapView!, viewFor annotation: YMKAnnotation!) -> YMKAnnotationView! {
+        let id = "pointAnnotation"
+        var point: YMKPinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id) as! YMKPinAnnotationView
+        if (point == nil){
+            point = YMKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
+            point.canShowCallout = true
+        }
+        
+        return point
+    }
+    
+    func mapView(_ mapView: YMKMapView!, calloutViewFor annotation: YMKAnnotation!) -> YMKCalloutView! {
+        let id = "pointCallout"
+        var callout: YMKDefaultCalloutView = mapView.dequeueReusableCalloutView(withIdentifier: id) as! YMKDefaultCalloutView
+        if (callout == nil){
+            callout = YMKDefaultCalloutView.init(reuseIdentifier: id)
+        }
+        callout.annotation = annotation
+        //let rightButton: UIButton = UIButton(type: .detailDisclosure)
+        //callout.rightView = rightButton
+        return callout
     }
     
 }

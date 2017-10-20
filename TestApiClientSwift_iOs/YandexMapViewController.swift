@@ -11,6 +11,8 @@ import UIKit
 class YandexMapViewController: UIViewController, YMKMapViewDelegate {
     @IBOutlet weak var closeButton: UIButton!
     
+    var placeAnnotation = PointAnnotation()
+    
     @IBAction func closeButtonAction(_ sender: UIButton) {
         //self.navigationController?.popViewController(animated: true)
         let id = "idFirstSegueUnwind"
@@ -29,18 +31,11 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var coordinate = YMKMapCoordinate()
-        coordinate.latitude = latitude
-        coordinate.longitude = longitude
-        yandexMapView.showTraffic = false
-        yandexMapView.setCenter(coordinate, atZoomLevel: 15, animated: true)
-        // Do any additional setup after loading the view.
+        self.configureMapView()
+        self.configureAndInstallAnnotations()
     }
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func mapView(_ mapView: YMKMapView!, viewFor annotation: YMKAnnotation!) -> YMKAnnotationView! {
         let id = "pointAnnotation"
@@ -51,6 +46,18 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
         }
         
         return point
+    }
+    
+    func mapView(_ mapView: YMKMapView!, calloutViewFor annotation: YMKAnnotation!) -> YMKCalloutView! {
+        let id = "pointCallout"
+        var callout: YMKDefaultCalloutView = mapView.dequeueReusableCalloutView(withIdentifier: id) as! YMKDefaultCalloutView
+        if (callout == nil){
+            callout = YMKDefaultCalloutView.init(reuseIdentifier: id)
+        }
+        callout.annotation = annotation
+        //let rightButton: UIButton = UIButton(type: .detailDisclosure)
+        //callout.rightView = rightButton
+        return callout
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,11 +86,18 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
     func configureMapView(){
         self.yandexMapView.showsUserLocation = false
         self.yandexMapView.showTraffic = false
-        self.yandexMapView.setCenter(YMKMapCoordinateMake(latitude, longitude), atZoomLevel: 13, animated: false)
+        self.yandexMapView.setCenter(YMKMapCoordinateMake(latitude, longitude), atZoomLevel: 15, animated: false)
     }
     
     func configureAndInstallAnnotations(){
         let coordinate = YMKMapCoordinateMake(latitude, longitude)
+        self.placeAnnotation = PointAnnotation()
+        self.placeAnnotation.setCoordinate(coordinate)
+        self.placeAnnotation.setTitile("Metro")
+        self.placeAnnotation.setSubTitle("станция Повелецкая")
+        //self.placeAnnotation.title()
+        self.yandexMapView.addAnnotation(self.placeAnnotation)
+        //self.yandexMapView.selectedAnnotation = self.placeAnnotation
     }
 
 }
