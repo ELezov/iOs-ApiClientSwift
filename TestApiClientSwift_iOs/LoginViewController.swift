@@ -22,17 +22,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let tok: String = UserDefaults.standard.object(forKey: "userTok") as! String? {
-            print("tok")
-        }else{
-            print("userTok nil")
-        }
-        
+        print("Login", "viewDidLoad")
         
         mailTextField.delegate = self
         mailTextField.errorColor = UIColor.red
         passwordTextField.delegate = self
 
+        
         // Do any additional setup after loading the view.
         leftPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
         rightPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
@@ -44,10 +40,38 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let token: String = UserDefaults.standard.object(forKey: "userToken") as! String? {
             
             print("Token", token)
-            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let scrollingNavController = mainStoryBoard.instantiateViewController(withIdentifier: "ScrollingNavigationController")
-            self.present(scrollingNavController, animated: true, completion: nil)
+             self.performSegue(withIdentifier: "ShowList", sender: self)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+        mailTextField.text = ""
+        passwordTextField.text = ""
+        mailTextField.errorMessage = ""
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+
+    
+    override func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {
+        if let id = identifier {
+            if id == "idFirstSegueUnwind"{
+                let unwindSegue = FirstCustomSegueUnwind(identifier: id, source: fromViewController, destination: toViewController, performHandler: {() -> Void in
+                    
+                })
+                return unwindSegue
+            }
+        }
+        return super.segueForUnwinding(to: toViewController, from: fromViewController, identifier: identifier)
+    }
+    
+    @IBAction func returnFromSegueActionsLogOut(sender: UIStoryboardSegue){
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,13 +128,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let networkManager = NetworkManager()
         networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!){ flag, error in
             if flag == true{
-                let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let scrollingNavController = mainStoryBoard.instantiateViewController(withIdentifier: "ScrollingNavigationController")
                 let userDafaults = UserDefaults.standard
                 userDafaults.set(error, forKey: "userToken")
                 userDafaults.synchronize()
-                
-                self.present(scrollingNavController, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "ShowList", sender: self)
             } else{
                 self.view.makeToast(error, duration: 10.0, position: .bottom)
             }

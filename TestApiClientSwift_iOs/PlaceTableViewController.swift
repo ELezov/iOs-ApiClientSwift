@@ -31,7 +31,10 @@ class PlaceTableViewController: UITableViewController {
 
         }
     }
-
+    
+    
+    
+    
     let cellIdentifier = "PlaceTableViewCell"
 
     override func viewDidLoad() {
@@ -61,7 +64,8 @@ class PlaceTableViewController: UITableViewController {
             }
             
             placeDetailViewController.viewModel =  self.viewModel.getDetailsNewModel(indexPath.row)
-
+        case "idSegueLogOut":
+            print("LogOut")
         default:
             fatalError("Global prepare Error in PlaceTableViewController")
         }
@@ -112,7 +116,10 @@ class PlaceTableViewController: UITableViewController {
     }
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
-        
+        let prefs = UserDefaults.standard
+        //keyValue = prefs.string(forKey:"TESTKEY")
+        prefs.removeObject(forKey:"userToken")
+        self.performSegue(withIdentifier: "idSegueLogOut" , sender: self)
     }
     
 }
