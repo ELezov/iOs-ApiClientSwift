@@ -345,7 +345,7 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="59" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
                                                 <rect key="frame" x="252.5" y="19" width="6" height="6"/>
@@ -491,7 +491,7 @@ Altes Haus — Hufen</string>
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
