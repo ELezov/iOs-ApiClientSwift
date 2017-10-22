@@ -28,6 +28,5 @@ class PlaceManager{
             categories = converter.arrayRealmListCategoryToCategory(categoriesListRealm: categoriesListRealm)
             completion(places,categories,nil)
         }
-        
     }
 }

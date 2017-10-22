@@ -20,11 +20,6 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
         self.performSegue(withIdentifier: YandexMapViewController.idSegueShowUnwind , sender: self)
     }
     
-//    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
-//        
-//    }
-    
-    
     @IBOutlet weak var yandexMapView: YMKMapView!
     
     var latitude = 54.709400
@@ -35,8 +30,6 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
         self.configureMapView()
         self.configureAndInstallAnnotations()
     }
-    
-
     
     func mapView(_ mapView: YMKMapView!, viewFor annotation: YMKAnnotation!) -> YMKAnnotationView! {
         let id = "pointAnnotation"

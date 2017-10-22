@@ -345,10 +345,10 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="70" y="166" width="235" height="44"/>
+                                        <rect key="frame" x="59" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
-                                                <rect key="frame" x="229" y="19" width="6" height="6"/>
+                                                <rect key="frame" x="252.5" y="19" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="9H1-iz-47n"/>
@@ -364,7 +364,7 @@ Altes Haus — Hufen</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amber card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IND-CW-K0T">
-                                                <rect key="frame" x="18" y="0.0" width="199" height="44"/>
+                                                <rect key="frame" x="18" y="0.0" width="222.5" height="44"/>
                                                 <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="38"/>
                                                 <color key="textColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

@@ -1745,5 +1745,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/common/utils/animationSegue/FlipPresentAnimationController.swift"
+            timestampString = "530393752.192982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/list_places/view/PlaceTableViewController.swift"
+            timestampString = "530399507.815675"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestApiClientSwift_iOs.PlaceTableViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "TestApiClientSwift_iOs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/list_places/view/PlaceTableViewController.swift"
+                  timestampString = "530396271.401153"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "207">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestApiClientSwift_iOs.PlaceTableViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "TestApiClientSwift_iOs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/list_places/view/PlaceTableViewController.swift"
+                  timestampString = "530396271.402478"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

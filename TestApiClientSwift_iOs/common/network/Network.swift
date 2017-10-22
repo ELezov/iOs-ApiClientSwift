@@ -25,8 +25,7 @@ extension Network {
             parameters: endpoint.body,
             encoding: endpoint.encoding,
             headers: endpoint.headers
-            ).responseJSON { response in
-                
+            ).validate().responseJSON { response in
                 if response.result.isSuccess {
                     debugPrint(response.result.description)
                 } else {
@@ -36,10 +35,9 @@ extension Network {
                         self.delegate?.networkRequest(request: urlRequest, error: error)
                     }
                 }
-                
                 completion(response)
         }
-        
         print(request.description)
         return request
-    }}
+    }
+}

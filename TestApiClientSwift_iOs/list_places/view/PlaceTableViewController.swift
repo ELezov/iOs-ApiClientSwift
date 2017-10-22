@@ -17,6 +17,7 @@ class PlaceTableViewController: UITableViewController {
     {
        didSet {
            viewModel.updatePlace {
+               LoadingIndicatorView.hide()
                if self.viewModel.error != nil{
                   self.view.makeToast(self.viewModel.error!, duration: 5.0, position: .center)
               } else {
@@ -33,8 +34,11 @@ class PlaceTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nib = UINib(nibName: "PlaceTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: PlaceTableViewXibCell.id)
         let placeManager = PlaceManager()
         let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
+        LoadingIndicatorView.show("Loading")
         self.viewModel = placeTableViewModel
     }
     
@@ -134,6 +138,5 @@ extension PlaceTableViewController: CZPickerViewDelegate, CZPickerViewDataSource
         }
 
     }
-    
     
 }

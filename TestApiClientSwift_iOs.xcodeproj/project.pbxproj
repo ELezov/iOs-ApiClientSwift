@@ -52,6 +52,9 @@
 		95EBB5181F954DD200711C03 /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB5161F954DD200711C03 /* TimeTableViewCell.xib */; };
 		95F1E64D1F9CCACD005F0482 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E64F1F9CCACD005F0482 /* Localizable.strings */; };
 		95F1E6561F9CECBE005F0482 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E6551F9CECBE005F0482 /* BaseTableViewCell.swift */; };
+		95F1E65E1F9D3941005F0482 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E65D1F9D3941005F0482 /* LoadingIndicatorView.swift */; };
+		95F1E6601F9D3DE6005F0482 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */; };
+		95F1E6621F9D3E1D005F0482 /* PlaceTableViewXibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -139,6 +142,9 @@
 		95F1E64E1F9CCACD005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95F1E6501F9CCAD5005F0482 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95F1E6551F9CECBE005F0482 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		95F1E65D1F9D3941005F0482 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewXibCell.swift; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -209,7 +215,6 @@
 				9503EC3D1F8ECC86002C1C17 /* view */,
 				9503EC3E1F8ECC8B002C1C17 /* viewModel */,
 			);
-			name = list_places;
 			path = list_places;
 			sourceTree = "<group>";
 		};
@@ -220,17 +225,17 @@
 				9503EC401F8ECCB6002C1C17 /* viewModel */,
 				95F1E6551F9CECBE005F0482 /* BaseTableViewCell.swift */,
 			);
-			name = detail;
 			path = detail;
 			sourceTree = "<group>";
 		};
 		9503EC3D1F8ECC86002C1C17 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */,
+				95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */,
 				C5D61B181F7807B200D9142F /* PlaceTableViewCell.swift */,
 				C5D61B1A1F7807E700D9142F /* PlaceTableViewController.swift */,
 			);
-			name = view;
 			path = view;
 			sourceTree = "<group>";
 		};
@@ -240,7 +245,6 @@
 				C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */,
 				C58A2D191F7BE6E900382855 /* PlaceTableViewModel.swift */,
 			);
-			name = viewModel;
 			path = viewModel;
 			sourceTree = "<group>";
 		};
@@ -251,7 +255,6 @@
 				953C22771F993FDA00F31BA0 /* PlaceDetailVCExtension.swift */,
 				956886AA1F955517002F002C /* PlaceDetailsViewController.swift */,
 			);
-			name = view;
 			path = view;
 			sourceTree = "<group>";
 		};
@@ -260,7 +263,6 @@
 			children = (
 				956886AC1F95566C002F002C /* DetailsViewModel.swift */,
 			);
-			name = viewModel;
 			path = viewModel;
 			sourceTree = "<group>";
 		};
@@ -272,7 +274,6 @@
 				95C370C81F8F5B9300EF9245 /* OpenSans-Semibold.ttf */,
 				9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */,
 			);
-			name = fonts;
 			path = fonts;
 			sourceTree = "<group>";
 		};
@@ -296,7 +297,6 @@
 				956886A21F954FD8002F002C /* VisitingPriceCell.swift */,
 				956886A31F954FD8002F002C /* VisitingPriceCell.xib */,
 			);
-			name = cells;
 			path = cells;
 			sourceTree = "<group>";
 		};
@@ -306,17 +306,16 @@
 				95EB53AE1F9A7E04004CAC56 /* PointAnnotation.swift */,
 				953C22721F98D04500F31BA0 /* YandexMapViewController.swift */,
 			);
-			name = map;
 			path = map;
 			sourceTree = "<group>";
 		};
-		953C22791F99460900F31BA0 /* animationSegue */ = {
+		953C22791F99460900F31BA0 /* animation */ = {
 			isa = PBXGroup;
 			children = (
 				953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */,
 				953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */,
 			);
-			name = animationSegue;
+			name = animation;
 			path = animationSegue;
 			sourceTree = "<group>";
 		};
@@ -331,7 +330,6 @@
 				C58A2D1B1F7BE72400382855 /* PlaceManager.swift */,
 				955C1A101F927987007A5EDC /* PlaceService.swift */,
 			);
-			name = network;
 			path = network;
 			sourceTree = "<group>";
 		};
@@ -344,7 +342,6 @@
 				95EBB5111F952A7100711C03 /* RealmStorage.swift */,
 				955C1A151F9285B9007A5EDC /* realm.swift */,
 			);
-			name = database;
 			path = database;
 			sourceTree = "<group>";
 		};
@@ -353,22 +350,21 @@
 			children = (
 				95B341B91F94DF6900AF43F4 /* LoginViewController.swift */,
 			);
-			name = login;
 			path = login;
 			sourceTree = "<group>";
 		};
 		95F1E6571F9CF7EB005F0482 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				953C22791F99460900F31BA0 /* animationSegue */,
+				953C22791F99460900F31BA0 /* animation */,
 				95EBB5131F95360800711C03 /* Converter.swift */,
 				9533A2151F9810510054214F /* CounterView.swift */,
 				95C370CA1F8F605B00EF9245 /* FavoriteControl.swift */,
 				C556BDF31F798CAC00651DE1 /* RatingControl.swift */,
 				9503EC381F8EB21A002C1C17 /* RatingView.swift */,
 				9533A2171F9811260054214F /* UIImageViewExtension.swift */,
+				95F1E65D1F9D3941005F0482 /* LoadingIndicatorView.swift */,
 			);
-			name = utils;
 			path = utils;
 			sourceTree = "<group>";
 		};
@@ -379,7 +375,6 @@
 				955C1A0B1F927618007A5EDC /* network */,
 				95F1E6571F9CF7EB005F0482 /* utils */,
 			);
-			name = common;
 			path = common;
 			sourceTree = "<group>";
 		};
@@ -392,7 +387,6 @@
 				C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */,
 				95F1E64F1F9CCACD005F0482 /* Localizable.strings */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -449,7 +443,6 @@
 				C5D61B1E1F781B8100D9142F /* Category.swift */,
 				C5D61B1C1F7818AD00D9142F /* Place.swift */,
 			);
-			name = model;
 			path = model;
 			sourceTree = "<group>";
 		};
@@ -461,7 +454,6 @@
 				C5DB4FE61F7A5A640000600E /* PlaceRealm.swift */,
 				95EBB50F1F95291F00711C03 /* PrimaryKeyAware.swift */,
 			);
-			name = model;
 			path = model;
 			sourceTree = "<group>";
 		};
@@ -563,6 +555,7 @@
 				95F1E64D1F9CCACD005F0482 /* Localizable.strings in Resources */,
 				9533A2081F97D6A10054214F /* PhotoDetailViewCell.xib in Resources */,
 				95C370C91F8F5B9900EF9245 /* OpenSans-Semibold.ttf in Resources */,
+				95F1E6601F9D3DE6005F0482 /* PlaceTableViewCell.xib in Resources */,
 				956886B11F95759A002F002C /* LocationViewCell.xib in Resources */,
 				95C370C71F8F54F100EF9245 /* OpenSans-Bold.ttf in Resources */,
 				9503EC441F8EDFB7002C1C17 /* YesevaOne-Regular_v2.otf in Resources */,
@@ -705,6 +698,7 @@
 				953C22781F993FDA00F31BA0 /* PlaceDetailVCExtension.swift in Sources */,
 				956886AB1F955517002F002C /* PlaceDetailsViewController.swift in Sources */,
 				95B341BA1F94DF6900AF43F4 /* LoginViewController.swift in Sources */,
+				95F1E65E1F9D3941005F0482 /* LoadingIndicatorView.swift in Sources */,
 				C5DB4FE71F7A5A640000600E /* PlaceRealm.swift in Sources */,
 				C5DB4FE91F7A8F980000600E /* CategoryListRealm.swift in Sources */,
 				956886A41F954FD8002F002C /* VisitingPriceCell.swift in Sources */,
@@ -715,6 +709,7 @@
 				C5D61AF91F77E58200D9142F /* AppDelegate.swift in Sources */,
 				953C227B1F99468400F31BA0 /* FirstCustomSegue.swift in Sources */,
 				95EBB50C1F9522F000711C03 /* RealmDAO.swift in Sources */,
+				95F1E6621F9D3E1D005F0482 /* PlaceTableViewXibCell.swift in Sources */,
 				95F1E6561F9CECBE005F0482 /* BaseTableViewCell.swift in Sources */,
 				C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */,
 				C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */,
