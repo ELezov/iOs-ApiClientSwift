@@ -40,7 +40,6 @@ class LocationViewCell: UITableViewCell {
                         address += " " + placemark.subThoroughfare!
                     }
                     self.AddressLabel.text = address
-                    //self.AddressLabel.text = placemark.locality! + ", " + placemark.thoroughfare! + " " + placemark.subThoroughfare!
                 }
             }
             

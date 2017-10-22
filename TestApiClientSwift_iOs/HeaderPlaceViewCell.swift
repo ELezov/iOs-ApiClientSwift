@@ -19,7 +19,6 @@ class HeaderPlaceViewCell: UITableViewCell {
             guard let item = item as? DetailsViewModelHeaderItem else {
                 return
             }
-            
             categoryImg.kf.setImage(with: URL(string:BASE_URL_API + item.categoryImgUrl))
             categoryNameLabel.text = ""
             placeNameLabel.text = ""

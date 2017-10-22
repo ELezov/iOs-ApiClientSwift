@@ -19,8 +19,9 @@ class TimeTableViewCell: UITableViewCell {
             }
             
             timeTableLabel.text = ""
-            let timeTableAttributedString = NSMutableAttributedString(string: "Режим работы: " + item.timeTable)
-            timeTableAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: 12))
+            let timeTitleString = NSLocalizedString("TIME_TABLE", comment: "Opening hours: ")
+            let timeTableAttributedString = NSMutableAttributedString(string: timeTitleString + item.timeTable)
+            timeTableAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: timeTitleString.characters.count))
             timeTableLabel.attributedText = timeTableAttributedString
         }
     }

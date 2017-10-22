@@ -17,7 +17,7 @@ class PlaceDetailsViewController: UIViewController{
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var tableView: UITableView?
     var imagesUrl = [String]()
-    
+    static let idSegueShow = "ShowDetail"    
     
     override func viewDidLoad() {
         super.viewDidLoad()

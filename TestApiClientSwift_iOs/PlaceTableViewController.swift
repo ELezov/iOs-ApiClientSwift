@@ -25,12 +25,9 @@ class PlaceTableViewController: UITableViewController {
                     for index in 0...count{
                         self.selectedRows.append(index)
                     }
-                
-                
                     self.tableView.reloadData()
                 }
             }
-
         }
     }
 
@@ -38,14 +35,12 @@ class PlaceTableViewController: UITableViewController {
         super.viewDidLoad()
         let placeManager = PlaceManager()
         let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
-        
         self.viewModel = placeTableViewModel
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch (segue.identifier ?? "") {
-        case "ShowDetail":
+        case PlaceDetailsViewController.idSegueShow:
             guard let placeDetailViewController = segue.destination as? PlaceDetailsViewController  else {
                 fatalError("Unexpected destination:\(segue.destination)")
             }
@@ -59,8 +54,6 @@ class PlaceTableViewController: UITableViewController {
             }
             
             placeDetailViewController.viewModel =  self.viewModel.getDetailsNewModel(indexPath.row)
-        case "idSegueLogOut":
-            print("LogOut")
         default:
             fatalError("Global prepare Error in PlaceTableViewController")
         }
@@ -68,7 +61,7 @@ class PlaceTableViewController: UITableViewController {
     
     
     @IBAction func filterNavBarAction(_ sender: UIBarButtonItem) {
-        let picker = CZPickerView(headerTitle: "Выберите категории", cancelButtonTitle: "Отменить", confirmButtonTitle: "Подтвердить" )
+        let picker = CZPickerView(headerTitle: NSLocalizedString("SELECT_CATEGORIES", comment: "Select categories"), cancelButtonTitle: NSLocalizedString("CANCEL", comment: "Cancel"), confirmButtonTitle: NSLocalizedString("CONFIRM", comment: "Confirm") )
         picker?.setSelectedRows(selectedRows)
         picker?.delegate = self
         picker?.dataSource = self
@@ -94,9 +87,7 @@ class PlaceTableViewController: UITableViewController {
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceTableViewCellXib", for: indexPath) as? PlaceTableViewXibCell else{
 //            fatalError("PlaceTableViewCellXib doesn't exist")
 //        }
-        
         cell.viewModel = self.viewModel.cellViewModel(indexPath.row)
-        
         return cell
     }
     

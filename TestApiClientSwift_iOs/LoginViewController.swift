@@ -31,7 +31,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
         mailTextField.text = ""
+        mailTextField.placeholder = NSLocalizedString("EMAIL_ENTER", comment: "Enter e-mail")
+        mailTextField.selectedTitle = NSLocalizedString("EMAIL", comment: "E-mail")
         passwordTextField.text = ""
+        passwordTextField.placeholder = NSLocalizedString("PASSWORD_ENTER", comment: "Enter password")
+        passwordTextField.selectedTitle = NSLocalizedString("PASSWORD", comment: "Password")
         mailTextField.errorMessage = ""
     }
     
@@ -79,7 +83,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if let text = textField.text{
                 if let floatingLabelTextField = textField as? SkyFloatingLabelTextField{
                     if (text.characters.count < 3 || !text.contains("@")) {
-                        floatingLabelTextField.errorMessage = "Invalid email"
+                        floatingLabelTextField.errorMessage = NSLocalizedString("INVALID_EMAIL", comment: "Invalid email")
                     } else{
                         floatingLabelTextField.errorMessage = ""
                     }
@@ -112,6 +116,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //Анимированный пееход на другой VC
     func pushAnimation(){
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
         let vc = mainStoryBoard.instantiateViewController(withIdentifier: PlaceTableViewController.id)

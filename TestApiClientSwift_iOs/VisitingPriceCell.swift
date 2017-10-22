@@ -18,8 +18,9 @@ class VisitingPriceCell: UITableViewCell {
                 return
             }
             visitingPriceLabel.text = ""
-            let costAttributedText = NSMutableAttributedString(string: "Стоимость посещения: "  + item.visitingPriceText)
-            costAttributedText.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: 19))
+            let costVisitTitle = NSLocalizedString("VISIT_COST", comment: "Cost of visit: ")
+            let costAttributedText = NSMutableAttributedString(string: costVisitTitle  + item.visitingPriceText)
+            costAttributedText.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: costVisitTitle.characters.count))
             
             visitingPriceLabel.attributedText = costAttributedText
         }

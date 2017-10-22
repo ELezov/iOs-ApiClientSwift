@@ -52,6 +52,7 @@
 		95EBB5181F954DD200711C03 /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB5161F954DD200711C03 /* TimeTableViewCell.xib */; };
 		95F1D2ED1F93F07400D5F598 /* PlaceTableViewXibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1D2EB1F93F07400D5F598 /* PlaceTableViewXibCell.swift */; };
 		95F1D2EE1F93F07400D5F598 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F1D2EC1F93F07400D5F598 /* PlaceTableViewCell.xib */; };
+		95F1E64D1F9CCACD005F0482 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E64F1F9CCACD005F0482 /* Localizable.strings */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -137,6 +138,9 @@
 		95EBB5161F954DD200711C03 /* TimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
 		95F1D2EB1F93F07400D5F598 /* PlaceTableViewXibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewXibCell.swift; sourceTree = "<group>"; };
 		95F1D2EC1F93F07400D5F598 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		95F1E64A1F9CC9AC005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		95F1E64E1F9CCACD005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95F1E6501F9CCAD5005F0482 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 				C5D61AFF1F77E58200D9142F /* Assets.xcassets */,
 				C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */,
 				C5D61B041F77E58200D9142F /* Info.plist */,
+				95F1E64F1F9CCACD005F0482 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F1E64D1F9CCACD005F0482 /* Localizable.strings in Resources */,
 				9533A2081F97D6A10054214F /* PhotoDetailViewCell.xib in Resources */,
 				95C370C91F8F5B9900EF9245 /* OpenSans-Semibold.ttf in Resources */,
 				956886B11F95759A002F002C /* LocationViewCell.xib in Resources */,
@@ -739,6 +745,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		95F1E64F1F9CCACD005F0482 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95F1E64E1F9CCACD005F0482 /* ru */,
+				95F1E6501F9CCAD5005F0482 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -751,6 +766,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C5F60FDA1F7947DA00F84A53 /* Base */,
+				95F1E64A1F9CC9AC005F0482 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -762,6 +778,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -811,6 +828,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

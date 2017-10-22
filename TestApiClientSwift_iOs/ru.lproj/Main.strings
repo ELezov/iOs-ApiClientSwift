@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "Зарегистрироваться"; ObjectID = "2mX-FM-lHy"; */
+"2mX-FM-lHy.normalTitle" = "Войти";
+
+/* Class = "UILabel"; text = "Скидки и акции для гостей Калининградской области"; ObjectID = "6fm-Hg-oMJ"; */
+"6fm-Hg-oMJ.text" = "Скидки и акции для гостей Калининградской области";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GPO-zY-MDK"; */
+"GPO-zY-MDK.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "GbF-jh-XaT"; */
+"GbF-jh-XaT.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Amber card"; ObjectID = "IND-CW-K0T"; */
+"IND-CW-K0T.text" = "Amber card";
+
+/* Class = "UILabel"; text = "-25%"; ObjectID = "ZQr-rL-dRZ"; */
+"ZQr-rL-dRZ.text" = "-25%";
+
+/* Class = "UIBarButtonItem"; title = "Log out"; ObjectID = "lQG-1E-Gwg"; */
+"lQG-1E-Gwg.title" = "Выйти";
+
+/* Class = "UIBarButtonItem"; title = "Фильтровать места"; ObjectID = "pko-Cw-XLa"; */
+"pko-Cw-XLa.title" = "Фильтровать места";
+
+/* Class = "UILabel"; text = "Музей-квартира \nAltes Haus — Hufen"; ObjectID = "shB-62-gmK"; */
+"shB-62-gmK.text" = "Музей-квартира \nAltes Haus — Hufen";
+
+/* Class = "UILabel"; text = "Музей показывает обстановку семейного быта семьи Густава"; ObjectID = "uaF-H0-QYn"; */
+"uaF-H0-QYn.text" = "Музей показывает обстановку семейного быта семьи Густава";

@@ -1,0 +1,18 @@
+//Login VC
+"INVALID_EMAIL" = "Invalid email";
+"EMAIL_ENTER" = "Enter e-mail";
+"PASSWORD_ENTER" = "Enter password";
+
+//ListPlace VC
+"SELECT_CATEGORIES" = "Select categories";
+//Details VC
+"TIME_TABLE" = "Opening hours: ";
+"VISIT_COST" = "Cost of visit: ";
+
+
+
+//Common
+"CANCEL" = "Cancel";
+"CONFIRM" = "Confirm";
+"PASSWORD" = "Password";
+"EMAIL" = "E-mail";

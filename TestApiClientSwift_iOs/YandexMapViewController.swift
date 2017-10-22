@@ -82,8 +82,8 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
         let coordinate = YMKMapCoordinateMake(latitude, longitude)
         self.placeAnnotation = PointAnnotation()
         self.placeAnnotation.setCoordinate(coordinate)
-        self.placeAnnotation.setTitile("Metro")
-        self.placeAnnotation.setSubTitle("станция Повелецкая")
+        self.placeAnnotation.setTitile("")
+        self.placeAnnotation.setSubTitle("")
         self.yandexMapView.addAnnotation(self.placeAnnotation)
         //self.yandexMapView.selectedAnnotation = self.placeAnnotation
     }

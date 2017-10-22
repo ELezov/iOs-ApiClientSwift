@@ -1,0 +1,20 @@
+//Login VC
+"INVALID_EMAIL" = "email должен содержать @";
+"EMAIL_ENTER" = "Введите электронную почту";
+"PASSWORD_ENTER" = "Введите пароль";
+
+//ListPlace VC
+"SELECT_CATEGORIES" = "Выберите категории";
+//Details VC
+"TIME_TABLE" = "Режим работы: ";
+"VISIT_COST" = "Стоимость посещения: ";
+
+
+
+
+
+//Common
+"CANCEL" = "Отменить";
+"CONFIRM" = "Подтвердить";
+"PASSWORD" = "Пароль";
+"EMAIL" = "Электронная почта";

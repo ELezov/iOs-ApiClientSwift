@@ -203,7 +203,7 @@ Altes Haus — Hufen</string>
                                 <action selector="logOut:" destination="CWh-Vj-22D" id="IiS-VN-a4T"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Фильтровать места" id="pko-Cw-XLa">
+                        <barButtonItem key="rightBarButtonItem" title="Filter places" id="pko-Cw-XLa">
                             <color key="tintColor" red="0.92941176891326904" green="0.14117647707462311" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="filterNavBarAction:" destination="CWh-Vj-22D" id="QZp-LJ-Owu"/>
@@ -345,10 +345,10 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="71" y="166" width="235" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
-                                                <rect key="frame" x="252.5" y="19.5" width="6" height="6"/>
+                                                <rect key="frame" x="229" y="19.5" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="9H1-iz-47n"/>
@@ -364,7 +364,7 @@ Altes Haus — Hufen</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amber card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IND-CW-K0T">
-                                                <rect key="frame" x="18" y="0.0" width="222.5" height="44"/>
+                                                <rect key="frame" x="18" y="0.0" width="199" height="44"/>
                                                 <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="38"/>
                                                 <color key="textColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -401,8 +401,7 @@ Altes Haus — Hufen</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="done"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Электронная почта"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Электронная почта"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                 <color key="value" red="0.8156862855" green="0.8156862855" blue="0.8156862855" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
@@ -418,8 +417,7 @@ Altes Haus — Hufen</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Пароль"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Пароль"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                 <color key="value" red="0.8156862855" green="0.8156862855" blue="0.8156862855" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
@@ -433,7 +431,7 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Зарегистрироваться">
+                                        <state key="normal" title="Log in">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
