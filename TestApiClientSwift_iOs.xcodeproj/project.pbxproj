@@ -135,7 +135,7 @@
 		95EBB5131F95360800711C03 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		95EBB5151F954DD200711C03 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		95EBB5161F954DD200711C03 /* TimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
-		95F1E64A1F9CC9AC005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		95F1E64A1F9CC9AC005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95F1E64E1F9CCACD005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95F1E6501F9CCAD5005F0482 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95F1E6551F9CECBE005F0482 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -206,20 +206,22 @@
 		9503EC3B1F8ECC74002C1C17 /* list_places */ = {
 			isa = PBXGroup;
 			children = (
-				9503EC3E1F8ECC8B002C1C17 /* viewModel */,
 				9503EC3D1F8ECC86002C1C17 /* view */,
+				9503EC3E1F8ECC8B002C1C17 /* viewModel */,
 			);
 			name = list_places;
+			path = list_places;
 			sourceTree = "<group>";
 		};
 		9503EC3C1F8ECC7C002C1C17 /* detail */ = {
 			isa = PBXGroup;
 			children = (
-				9503EC401F8ECCB6002C1C17 /* viewModel */,
 				9503EC3F1F8ECCB1002C1C17 /* view */,
+				9503EC401F8ECCB6002C1C17 /* viewModel */,
 				95F1E6551F9CECBE005F0482 /* BaseTableViewCell.swift */,
 			);
 			name = detail;
+			path = detail;
 			sourceTree = "<group>";
 		};
 		9503EC3D1F8ECC86002C1C17 /* view */ = {
@@ -229,6 +231,7 @@
 				C5D61B1A1F7807E700D9142F /* PlaceTableViewController.swift */,
 			);
 			name = view;
+			path = view;
 			sourceTree = "<group>";
 		};
 		9503EC3E1F8ECC8B002C1C17 /* viewModel */ = {
@@ -238,16 +241,18 @@
 				C58A2D191F7BE6E900382855 /* PlaceTableViewModel.swift */,
 			);
 			name = viewModel;
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		9503EC3F1F8ECCB1002C1C17 /* view */ = {
 			isa = PBXGroup;
 			children = (
 				9533A2101F97F4680054214F /* cells */,
-				956886AA1F955517002F002C /* PlaceDetailsViewController.swift */,
 				953C22771F993FDA00F31BA0 /* PlaceDetailVCExtension.swift */,
+				956886AA1F955517002F002C /* PlaceDetailsViewController.swift */,
 			);
 			name = view;
+			path = view;
 			sourceTree = "<group>";
 		};
 		9503EC401F8ECCB6002C1C17 /* viewModel */ = {
@@ -256,49 +261,53 @@
 				956886AC1F95566C002F002C /* DetailsViewModel.swift */,
 			);
 			name = viewModel;
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		9503EC411F8EDF4F002C1C17 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				95C370C81F8F5B9300EF9245 /* OpenSans-Semibold.ttf */,
 				95C370C61F8F54DD00EF9245 /* OpenSans-Bold.ttf */,
-				9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */,
 				9503EC431F8EDF8C002C1C17 /* OpenSans-Regular.ttf */,
+				95C370C81F8F5B9300EF9245 /* OpenSans-Semibold.ttf */,
+				9503EC421F8EDF63002C1C17 /* YesevaOne-Regular_v2.otf */,
 			);
 			name = fonts;
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		9533A2101F97F4680054214F /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				955C1A481F9298CB007A5EDC /* HeaderPlaceViewCell.swift */,
-				955C1A491F9298CB007A5EDC /* HeaderPlaceViewCell.xib */,
 				955C1A4C1F929E22007A5EDC /* DescriptionViewCell.swift */,
 				955C1A4D1F929E22007A5EDC /* DescriptionViewCell.xib */,
-				95EBB5151F954DD200711C03 /* TimeTableViewCell.swift */,
-				95EBB5161F954DD200711C03 /* TimeTableViewCell.xib */,
-				956886A21F954FD8002F002C /* VisitingPriceCell.swift */,
-				956886A31F954FD8002F002C /* VisitingPriceCell.xib */,
-				956886A61F9550EF002F002C /* PhoneViewCell.swift */,
-				956886A71F9550EF002F002C /* PhoneViewCell.xib */,
+				955C1A481F9298CB007A5EDC /* HeaderPlaceViewCell.swift */,
+				955C1A491F9298CB007A5EDC /* HeaderPlaceViewCell.xib */,
 				956886AE1F95759A002F002C /* LocationViewCell.swift */,
 				956886AF1F95759A002F002C /* LocationViewCell.xib */,
 				9533A1FE1F9790320054214F /* MapViewCell.swift */,
 				9533A1FF1F9790320054214F /* MapViewCell.xib */,
+				956886A61F9550EF002F002C /* PhoneViewCell.swift */,
+				956886A71F9550EF002F002C /* PhoneViewCell.xib */,
 				9533A2051F97D6A10054214F /* PhotoDetailViewCell.swift */,
 				9533A2061F97D6A10054214F /* PhotoDetailViewCell.xib */,
+				95EBB5151F954DD200711C03 /* TimeTableViewCell.swift */,
+				95EBB5161F954DD200711C03 /* TimeTableViewCell.xib */,
+				956886A21F954FD8002F002C /* VisitingPriceCell.swift */,
+				956886A31F954FD8002F002C /* VisitingPriceCell.xib */,
 			);
 			name = cells;
+			path = cells;
 			sourceTree = "<group>";
 		};
 		953C22711F98D02000F31BA0 /* map */ = {
 			isa = PBXGroup;
 			children = (
-				953C22721F98D04500F31BA0 /* YandexMapViewController.swift */,
 				95EB53AE1F9A7E04004CAC56 /* PointAnnotation.swift */,
+				953C22721F98D04500F31BA0 /* YandexMapViewController.swift */,
 			);
 			name = map;
+			path = map;
 			sourceTree = "<group>";
 		};
 		953C22791F99460900F31BA0 /* animationSegue */ = {
@@ -308,32 +317,35 @@
 				953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */,
 			);
 			name = animationSegue;
+			path = animationSegue;
 			sourceTree = "<group>";
 		};
 		955C1A0B1F927618007A5EDC /* network */ = {
 			isa = PBXGroup;
 			children = (
 				C5DB4FE21F7A58330000600E /* model */,
-				C58A2D1B1F7BE72400382855 /* PlaceManager.swift */,
-				955C1A0C1F9276B7007A5EDC /* Network.swift */,
 				955C1A0E1F927775007A5EDC /* Endpoint.swift */,
-				955C1A101F927987007A5EDC /* PlaceService.swift */,
-				955C1A121F9283C9007A5EDC /* NetworkManager.swift */,
 				95EBB5091F95228300711C03 /* LoginService.swift */,
+				955C1A0C1F9276B7007A5EDC /* Network.swift */,
+				955C1A121F9283C9007A5EDC /* NetworkManager.swift */,
+				C58A2D1B1F7BE72400382855 /* PlaceManager.swift */,
+				955C1A101F927987007A5EDC /* PlaceService.swift */,
 			);
 			name = network;
+			path = network;
 			sourceTree = "<group>";
 		};
 		955C1A141F9285A6007A5EDC /* database */ = {
 			isa = PBXGroup;
 			children = (
 				C5DB4FE31F7A583E0000600E /* model */,
-				955C1A151F9285B9007A5EDC /* realm.swift */,
-				95EBB50B1F9522F000711C03 /* RealmDAO.swift */,
 				95EBB50D1F9524CA00711C03 /* DbHelper.swift */,
+				95EBB50B1F9522F000711C03 /* RealmDAO.swift */,
 				95EBB5111F952A7100711C03 /* RealmStorage.swift */,
+				955C1A151F9285B9007A5EDC /* realm.swift */,
 			);
 			name = database;
+			path = database;
 			sourceTree = "<group>";
 		};
 		95B341B81F94DF4200AF43F4 /* login */ = {
@@ -342,30 +354,33 @@
 				95B341B91F94DF6900AF43F4 /* LoginViewController.swift */,
 			);
 			name = login;
+			path = login;
 			sourceTree = "<group>";
 		};
 		95F1E6571F9CF7EB005F0482 /* utils */ = {
 			isa = PBXGroup;
 			children = (
 				953C22791F99460900F31BA0 /* animationSegue */,
-				C556BDF31F798CAC00651DE1 /* RatingControl.swift */,
-				9503EC381F8EB21A002C1C17 /* RatingView.swift */,
+				95EBB5131F95360800711C03 /* Converter.swift */,
 				9533A2151F9810510054214F /* CounterView.swift */,
 				95C370CA1F8F605B00EF9245 /* FavoriteControl.swift */,
-				95EBB5131F95360800711C03 /* Converter.swift */,
+				C556BDF31F798CAC00651DE1 /* RatingControl.swift */,
+				9503EC381F8EB21A002C1C17 /* RatingView.swift */,
 				9533A2171F9811260054214F /* UIImageViewExtension.swift */,
 			);
 			name = utils;
+			path = utils;
 			sourceTree = "<group>";
 		};
 		95F1E6591F9D090F005F0482 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				95F1E6571F9CF7EB005F0482 /* utils */,
 				955C1A141F9285A6007A5EDC /* database */,
 				955C1A0B1F927618007A5EDC /* network */,
+				95F1E6571F9CF7EB005F0482 /* utils */,
 			);
 			name = common;
+			path = common;
 			sourceTree = "<group>";
 		};
 		C58A2D131F7BE43C00382855 /* Resources */ = {
@@ -373,21 +388,22 @@
 			children = (
 				9503EC411F8EDF4F002C1C17 /* fonts */,
 				C5D61AFF1F77E58200D9142F /* Assets.xcassets */,
-				C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */,
 				C5D61B041F77E58200D9142F /* Info.plist */,
+				C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */,
 				95F1E64F1F9CCACD005F0482 /* Localizable.strings */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C5D61AEC1F77E58200D9142F = {
 			isa = PBXGroup;
 			children = (
+				04141ACA85DB5C375E01AAB7 /* Frameworks */,
+				3081CD38B460DF742BF57C17 /* Pods */,
+				C5D61AF61F77E58200D9142F /* Products */,
 				C5D61AF71F77E58200D9142F /* TestApiClientSwift_iOs */,
 				C5D61B0C1F77E58200D9142F /* TestApiClientSwift_iOsTests */,
-				C5D61AF61F77E58200D9142F /* Products */,
-				3081CD38B460DF742BF57C17 /* Pods */,
-				04141ACA85DB5C375E01AAB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -403,15 +419,15 @@
 		C5D61AF71F77E58200D9142F /* TestApiClientSwift_iOs */ = {
 			isa = PBXGroup;
 			children = (
+				C58A2D131F7BE43C00382855 /* Resources */,
 				95F1E6591F9D090F005F0482 /* common */,
-				953C22711F98D02000F31BA0 /* map */,
-				95B341B81F94DF4200AF43F4 /* login */,
-				C5F60FD91F7947DA00F84A53 /* Main.storyboard */,
 				9503EC3C1F8ECC7C002C1C17 /* detail */,
 				9503EC3B1F8ECC74002C1C17 /* list_places */,
-				C58A2D131F7BE43C00382855 /* Resources */,
+				95B341B81F94DF4200AF43F4 /* login */,
+				953C22711F98D02000F31BA0 /* map */,
 				C5D61AF81F77E58200D9142F /* AppDelegate.swift */,
 				C5545B901F783FC5001C5DEF /* Const.swift */,
+				C5F60FD91F7947DA00F84A53 /* Main.storyboard */,
 				9533A2041F97A3640054214F /* TestApiClientSwift_iOs-Bridging-Header.h */,
 			);
 			path = TestApiClientSwift_iOs;
@@ -420,8 +436,8 @@
 		C5D61B0C1F77E58200D9142F /* TestApiClientSwift_iOsTests */ = {
 			isa = PBXGroup;
 			children = (
-				C5D61B0D1F77E58200D9142F /* TestApiClientSwift_iOsTests.swift */,
 				C5D61B0F1F77E58200D9142F /* Info.plist */,
+				C5D61B0D1F77E58200D9142F /* TestApiClientSwift_iOsTests.swift */,
 			);
 			path = TestApiClientSwift_iOsTests;
 			sourceTree = "<group>";
@@ -434,17 +450,19 @@
 				C5D61B1C1F7818AD00D9142F /* Place.swift */,
 			);
 			name = model;
+			path = model;
 			sourceTree = "<group>";
 		};
 		C5DB4FE31F7A583E0000600E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C5DB4FE81F7A8F980000600E /* CategoryListRealm.swift */,
 				C5DB4FE41F7A59AF0000600E /* CategoryRealm.swift */,
 				C5DB4FE61F7A5A640000600E /* PlaceRealm.swift */,
-				C5DB4FE81F7A8F980000600E /* CategoryListRealm.swift */,
 				95EBB50F1F95291F00711C03 /* PrimaryKeyAware.swift */,
 			);
 			name = model;
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -752,10 +770,11 @@
 		95F1E64F1F9CCACD005F0482 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				95F1E64E1F9CCACD005F0482 /* ru */,
 				95F1E6501F9CCAD5005F0482 /* en */,
+				95F1E64E1F9CCACD005F0482 /* ru */,
 			);
 			name = Localizable.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		C5D61B011F77E58200D9142F /* LaunchScreen.storyboard */ = {
@@ -764,6 +783,7 @@
 				C5D61B021F77E58200D9142F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		C5F60FD91F7947DA00F84A53 /* Main.storyboard */ = {
@@ -773,6 +793,7 @@
 				95F1E64A1F9CC9AC005F0482 /* ru */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -877,7 +898,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WNZNG5YT8F;
-				INFOPLIST_FILE = TestApiClientSwift_iOs/Info.plist;
+				INFOPLIST_FILE = TestApiClientSwift_iOs/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -949,7 +970,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WNZNG5YT8F;
-				INFOPLIST_FILE = TestApiClientSwift_iOs/Info.plist;
+				INFOPLIST_FILE = TestApiClientSwift_iOs/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
