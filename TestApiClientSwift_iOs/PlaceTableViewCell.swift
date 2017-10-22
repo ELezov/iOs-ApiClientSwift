@@ -9,6 +9,7 @@ class PlaceTableViewCell: UITableViewCell {
     @IBOutlet weak var placeDescriptionLabel: UILabel!
     @IBOutlet weak var placeNameLabel: UILabel!
     
+    static let id = "PlaceTableViewCell"    
     
     weak var viewModel: PlaceTableCellViewModel! {
         didSet{

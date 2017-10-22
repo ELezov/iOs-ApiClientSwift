@@ -12,15 +12,17 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
     @IBOutlet weak var closeButton: UIButton!
     
     var placeAnnotation = PointAnnotation()
+    //Segue
+    static let idSegueShow = "showMapCustom"
+    static let idSegueShowUnwind = "showMapCustomUnwind"
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
-        let id = "idFirstSegueUnwind"
-        self.performSegue(withIdentifier: id , sender: self)
+        self.performSegue(withIdentifier: YandexMapViewController.idSegueShowUnwind , sender: self)
     }
     
-    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
-        
-    }
+//    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
+//        
+//    }
     
     
     @IBOutlet weak var yandexMapView: YMKMapView!
@@ -61,13 +63,11 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Hiden")
         navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Show")
         navigationController?.navigationBar.isHidden = false
     }
 

@@ -37,9 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let token: String = UserDefaults.standard.object(forKey: "userToken") as! String? {
-            //let id = "ShowList"
-            // self.performSegue(withIdentifier: id, sender: self)
+        if let token: String = UserDefaults.standard.object(forKey: userToken) as! String? {
             pushAnimation()
         }
     }
@@ -48,22 +46,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
-    }
-
-    
-    override func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {
-        if let id = identifier {
-            if id == "idFirstSegueUnwind"{
-                let unwindSegue = FirstCustomSegueUnwind(identifier: id, source: fromViewController, destination: toViewController, performHandler: {() -> Void in
-                })
-                return unwindSegue
-            }
-        }
-        return super.segueForUnwinding(to: toViewController, from: fromViewController, identifier: identifier)
-    }
-    
-    @IBAction func returnFromSegueActionsLogOut(sender: UIStoryboardSegue){
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,12 +100,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if flag == true {
                 //Сохраняем токен
                 let userDafaults = UserDefaults.standard
-                userDafaults.set(error, forKey: "userToken")
+                userDafaults.set(error, forKey: userToken)
                 userDafaults.synchronize()
                 //анимируемый переход на следущий экран
                 self.pushAnimation()
-                //let id = "ShowList"
-                //self.performSegue(withIdentifier: id, sender: self)
             } else {
                 //показываем тост ошибки
                 self.view.makeToast(error, duration: 10.0, position: .bottom)
@@ -133,8 +113,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func pushAnimation(){
-        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "PlaceTableViewController")
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: PlaceTableViewController.id)
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)

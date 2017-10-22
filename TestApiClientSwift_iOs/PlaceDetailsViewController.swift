@@ -24,7 +24,6 @@ class PlaceDetailsViewController: UIViewController{
         
         InitViews()
         self.imagesUrl = (viewModel?.place.photos)!
-        
     }
     
     func InitViews(){
@@ -56,9 +55,8 @@ class PlaceDetailsViewController: UIViewController{
     
     override func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {
         if let id = identifier {
-            if id == "idFirstSegueUnwind"{
+            if id == YandexMapViewController.idSegueShowUnwind{
                 let unwindSegue = FirstCustomSegueUnwind(identifier: id, source: fromViewController, destination: toViewController, performHandler: {() -> Void in
-                    
                 })
                 return unwindSegue
             }
@@ -121,10 +119,7 @@ class PlaceDetailsViewController: UIViewController{
     }
     
     func openYandexMapView(){
-        print("OpenMap")
-        let id = "showMapCustom"
-        //let identifier = "ShowMap"
-        self.performSegue(withIdentifier: id, sender: self)
+        self.performSegue(withIdentifier: YandexMapViewController.idSegueShow, sender: self)
     }
     
     func showMailGallery(){
@@ -151,14 +146,7 @@ class PlaceDetailsViewController: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch (segue.identifier ?? "") {
-        case "ShowMap":
-            guard let yandexMapVC = segue.destination as? YandexMapViewController  else {
-                fatalError("Unexpected destination:\(segue.destination)")
-            }
-            
-            yandexMapVC.latitude = (viewModel?.place.latitude)!
-            yandexMapVC.longitude = (viewModel?.place.longitude)!
-        case "showMapCustom":
+        case YandexMapViewController.idSegueShow:
             guard let yandexMapVC = segue.destination as? YandexMapViewController  else {
                 fatalError("Unexpected destination:\(segue.destination)")
             }

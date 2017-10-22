@@ -211,7 +211,6 @@ Altes Haus — Hufen</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="hxG-3u-Q0o" kind="custom" identifier="showDetailCustom" id="980-PN-ecf"/>
                         <segue destination="O2h-rM-BJw" kind="unwind" identifier="idSegueLogOut" unwindAction="returnFromSegueActionsLogOutWithSender:" id="qHg-QQ-73H"/>
                     </connections>
                 </tableViewController>
@@ -266,7 +265,6 @@ Altes Haus — Hufen</string>
                     <connections>
                         <outlet property="placeImage" destination="3NU-ur-9P1" id="ifh-FL-Hah"/>
                         <outlet property="tableView" destination="75t-bq-ie2" id="IED-MR-ZeA"/>
-                        <segue destination="qQJ-gR-DIb" kind="show" identifier="ShowMap" id="Kzi-hK-yMp"/>
                         <segue destination="qQJ-gR-DIb" kind="custom" identifier="showMapCustom" customClass="FirstCustomSegue" customModule="TestApiClientSwift_iOs" customModuleProvider="target" id="0Js-fl-7T4"/>
                     </connections>
                 </viewController>
@@ -316,7 +314,7 @@ Altes Haus — Hufen</string>
                     <connections>
                         <outlet property="closeButton" destination="GbF-jh-XaT" id="ASp-3c-WWF"/>
                         <outlet property="yandexMapView" destination="Cpp-Vo-O1n" id="dTP-xD-aGL"/>
-                        <segue destination="wKn-vJ-aCt" kind="unwind" identifier="idFirstSegueUnwind" customClass="FirstCustomSegueUnwind" customModule="TestApiClientSwift_iOs" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="Xrq-dx-jRc"/>
+                        <segue destination="wKn-vJ-aCt" kind="unwind" identifier="showMapCustomUnwind" customClass="FirstCustomSegueUnwind" customModule="TestApiClientSwift_iOs" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="Xrq-dx-jRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MiL-vV-pjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,10 +345,10 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="58" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
-                                                <rect key="frame" x="252.5" y="19" width="6" height="6"/>
+                                                <rect key="frame" x="252.5" y="19.5" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="9H1-iz-47n"/>
@@ -358,7 +356,7 @@ Altes Haus — Hufen</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOq-9O-h59">
-                                                <rect key="frame" x="0.0" y="19" width="6" height="6"/>
+                                                <rect key="frame" x="0.0" y="19.5" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="6" id="PnP-3j-pW8"/>
@@ -384,7 +382,7 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скидки и акции для гостей Калининградской области" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-Hg-oMJ">
-                                        <rect key="frame" x="53.5" y="228" width="268" height="44"/>
+                                        <rect key="frame" x="54" y="228" width="268" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="C8k-3G-7kL"/>
                                             <constraint firstAttribute="width" constant="268" id="su8-q5-3mL"/>
@@ -484,8 +482,6 @@ Altes Haus — Hufen</string>
                         <outlet property="passwordTextField" destination="Qxy-9y-tcl" id="pUx-sl-Wte"/>
                         <outlet property="rightPoint" destination="HpX-Zs-flE" id="SXH-Z3-JH5"/>
                         <outlet property="scrollView" destination="F0w-cy-wXx" id="bKs-qB-Tsy"/>
-                        <segue destination="CWh-Vj-22D" kind="show" identifier="ShowList" id="qj4-O2-pvT"/>
-                        <segue destination="CWh-Vj-22D" kind="custom" identifier="ShowListCustom" customClass="FirstCustomSegue" customModule="TestApiClientSwift_iOs" customModuleProvider="target" id="Fnu-mC-JQg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lt-UX-hN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,7 +493,7 @@ Altes Haus — Hufen</string>
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -518,9 +514,4 @@ Altes Haus — Hufen</string>
         <image name="ic_sale" width="64" height="28"/>
         <image name="location" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="980-PN-ecf"/>
-        <segue reference="Fnu-mC-JQg"/>
-        <segue reference="0Js-fl-7T4"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,8 @@ class PlaceTableViewController: UITableViewController {
     
     var selectedRows = [Int]()
     
+    static let id = "PlaceTableViewController"
+    
     var viewModel : PlaceTableViewModel!
     {
        didSet {
@@ -31,16 +33,9 @@ class PlaceTableViewController: UITableViewController {
 
         }
     }
-    
-    
-    
-    
-    let cellIdentifier = "PlaceTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "PlaceTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "PlaceTableViewCellXib")
         let placeManager = PlaceManager()
         let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
         
@@ -93,7 +88,7 @@ class PlaceTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PlaceTableViewCell else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.id, for: indexPath) as? PlaceTableViewCell else{
             fatalError("The dequeued call is not an instance of PlaceTableViewCell")
         }
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceTableViewCellXib", for: indexPath) as? PlaceTableViewXibCell else{
@@ -117,9 +112,8 @@ class PlaceTableViewController: UITableViewController {
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         let prefs = UserDefaults.standard
-        //keyValue = prefs.string(forKey:"TESTKEY")
-        prefs.removeObject(forKey:"userToken")
-        self.performSegue(withIdentifier: "idSegueLogOut" , sender: self)
+        prefs.removeObject(forKey:userToken)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

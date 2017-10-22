@@ -22,15 +22,12 @@ extension PlaceDetailsViewController: GalleryItemsDatasource{
         let placeholder = UIImage(named: "logo_black")
         return GalleryItem.image{ callback in
             KingfisherManager.shared.retrieveImage(with: url!, options: [], progressBlock: nil, completionHandler: { (image, error, cacheType, url) in
-                
                 if error == nil{
                     callback(image)
                 }
                 else {
                     callback(placeholder)
                 }
-                
-                
             })
         }
     }
