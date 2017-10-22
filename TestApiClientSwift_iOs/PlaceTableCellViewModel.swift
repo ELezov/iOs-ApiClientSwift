@@ -8,6 +8,7 @@ class PlaceTableCellViewModel{
     var saleString: String?
 
     required init(place: Place, categories: [Category]){
+        // подготавливаем данные для отображения ячейки списка
         self.placeTitle = place.name
         self.placeDescription = place.description
         let category = categories.first(where: {$0.id == place.categoryId?[0]})

@@ -16,7 +16,7 @@ class PhotoDetailViewCell: UITableViewCell {
             guard  let item = item as? DetailsViewModelPlacePhotoItem else {
                 return
             }
-            let imagePlaceholder = UIImage(named: "placeholder")
+            let imagePlaceholder = UIImage(named: "crown_light")
             placeImageView.kf.setImage(with: URL(string: item.photoUrl), placeholder: imagePlaceholder)
         }
     }

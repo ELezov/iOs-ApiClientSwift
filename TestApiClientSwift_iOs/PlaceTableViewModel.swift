@@ -9,61 +9,35 @@ class PlaceTableViewModel{
     var detailsNewViewModel: DetailsViewModel!
     var error: String?
 
+    //Обращаемся за получением списка мест
     func updatePlace(_ completion:@escaping () -> Void){
         cellsArray.removeAll()
-        placeManager.getPlaces{(placeArray, categoriesArray, error) -> Void in
-            self.placeArray = placeArray
-            self.categoriesArray = categoriesArray
-            self.error = error
-            if self.error == nil{
+        placeManager.getPlaces{ [weak self] (placeArray, categoriesArray, error) -> Void in
+            self?.placeArray = placeArray
+            self?.categoriesArray = categoriesArray
+            self?.error = error
+            if self?.error == nil{
                 for placeObject in placeArray!{
-                    self.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: categoriesArray!))
+                    self?.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: categoriesArray!))
                 }
             }
-
             completion()
         }
     }
     
+    //обращаемся за получение фильтрованных данных
     func updateFilter(ids: [Int], _ completion:@escaping () -> Void){
         cellsArray.removeAll()
-        placeManager.getDataByFilter(ids: ids){ (places, categories) -> Void in
-            self.placeArray = places
-            self.categoriesArray = categories
-            for placeObject in self.placeArray!{
-                self.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: self.categoriesArray!))
+        let dbHelper = DbHelper()
+        dbHelper.getPlacesByIdsCategory(ids: ids){ [weak self] (places, categories) -> Void in
+            self?.placeArray = places
+            self?.categoriesArray = categories
+            for place in places!{
+                self?.cellsArray.append(PlaceTableCellViewModel(place: place, categories: categories!))
             }
-        
+            completion()
         }
-        completion()
     }
-    
-    func  getDataByFilter(ids: [Int], _ completion:@escaping () -> Void){
-        
-        cellsArray.removeAll()
-        let converter = Converter()
-        let realm = try! Realm()
-        let categoriesList = Array(realm.objects(CategoryListRealm.self))
-        let categories = converter.arrayRealmListCategoryToCategory(categoriesListRealm: categoriesList)
-        let placesRealm = Array(realm.objects(PlaceRealm.self))
-        let placesDB = converter.arrayRealmPlaceToPlace(placesRealm: placesRealm)
-        var places = [Place]()
-        for item in placesDB{
-            for id in ids{
-                if (item.categoryId?.contains(id))!{
-                    places.append(item)
-                    break
-                }
-            }
-        }
-        self.placeArray = places
-        self.categoriesArray = categories
-        for placeObject in placeArray!{
-            self.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: categoriesArray!))
-        }
-        completion()
-    }
-    
 
     func numberOfPlaces() -> Int{
         return cellsArray.count

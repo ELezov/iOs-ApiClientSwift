@@ -86,5 +86,23 @@ class DbHelper: PlaceDAO, CategoryDAO{
         storage.save(category)
     }
     
+    func  getPlacesByIdsCategory(ids: [Int], _ completion:@escaping ([Place]?, [Category]?) -> Void){
+        let converter = Converter()
+        let categoriesList = Array(getCategoriesList())
+        let categories = converter.arrayRealmListCategoryToCategory(categoriesListRealm: categoriesList)
+        let placesRealm = Array(getPlaces())
+        let placesDB = converter.arrayRealmPlaceToPlace(placesRealm: placesRealm)
+        var places = [Place]()
+        for item in placesDB{
+            for id in ids{
+                if (item.categoryId?.contains(id))!{
+                    item.categoryId = [id]
+                    places.append(item)
+                    break
+                }
+            }
+        }
+        completion(places, categories)
+    }
 
 }

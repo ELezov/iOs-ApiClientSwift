@@ -31,13 +31,12 @@ class DetailsViewModel: NSObject {
     var phoneCell = PhotoDetailViewCell()
     
     init(place: Place, categories: [Category]) {
-        print("Place id",(place.categoryId?.first)!)
-        print("Place count cat", categories.count)
+        
+        //Подготавливаем данные для отображения в TableView
+        
         let category : Category
         let index = categories.index(where: {$0.id == place.categoryId?.first})
         category = categories[index!]
-        
-        //let category = categories[(place.categoryId?.first)! - 1]
         self.place = place
         self.placeImgUrl = place.photos!
         
@@ -46,6 +45,7 @@ class DetailsViewModel: NSObject {
         
         let headerItem = DetailsViewModelHeaderItem(placeName: place.name!, categoryName: category.name!, categoryImgUrl: category.icon!)
         items.append(headerItem)
+        
         let descriptionItem = DetailsViewModelDescriptionItem(description: place.description!)
         items.append(descriptionItem)
         
@@ -72,86 +72,7 @@ class DetailsViewModel: NSObject {
     }
 }
 
-extension DetailsViewModel: UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.section]
-        switch item.type {
-        case .placePhoto:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: PhotoDetailViewCell.identifier, for: indexPath) as? PhotoDetailViewCell{
-                self.phoneCell = cell
-                cell.item = item
-                
-                return cell
-            }
-
-        case .header:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: HeaderPlaceViewCell.identifier, for: indexPath) as? HeaderPlaceViewCell{
-                cell.item = item
-                cell.isUserInteractionEnabled = false
-                return cell
-            }
-        case .description:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionViewCell.identifier, for: indexPath) as? DescriptionViewCell{
-                cell.item = item
-                cell.isUserInteractionEnabled = false
-                return cell
-            }
-        case .timeTable:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: TimeTableViewCell.identifier, for: indexPath) as? TimeTableViewCell{
-                cell.item = item
-                cell.isUserInteractionEnabled = false
-                return cell
-            }
-        case .visitingPrice:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: VisitingPriceCell.identifier, for: indexPath) as? VisitingPriceCell{
-                cell.item = item
-                cell.isUserInteractionEnabled = false
-                return cell
-            }
-        case .phoneView:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: PhoneViewCell.identifier, for: indexPath) as? PhoneViewCell{
-                cell.item = item
-                let tap = UITapGestureRecognizer(target: self, action: #selector(DetailsViewModel.makeCallPhone))
-                cell.addGestureRecognizer(tap)
-                cell.isUserInteractionEnabled = true
-                return cell
-            }
-        case .location:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: LocationViewCell.identifier, for: indexPath) as? LocationViewCell{
-                cell.item = item
-                return cell
-            }
-        case .map:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MapViewCell.identifier, for: indexPath) as? MapViewCell{
-                cell.item = item
-                return cell
-            }
-
-        
-        }
-        return UITableViewCell()
-    }
-    
-    func makeCallPhone(){
-        if let url = URL(string: "tel://\(self.place.phone)"), UIApplication.shared.canOpenURL(url){
-            if #available(iOS 10, *){
-                UIApplication.shared.open(url)
-            }else {
-                UIApplication.shared.openURL(url)
-            }
-            print("1",url.description)
-        }
-        print(self.place.phone)
-    }
-}
+//ViewModels для ячеек
 
 class DetailsViewModelPlacePhotoItem: DetailsViewModelItem{
     var type: DetailsViewModelItemType{

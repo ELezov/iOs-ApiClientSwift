@@ -29,4 +29,3 @@ func savePlaceByRealm(places: [Place], categories: [Category])  {
     dbHelper.savePlaces(places: placesRealm)
 }
 
-

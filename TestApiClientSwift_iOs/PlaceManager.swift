@@ -16,6 +16,7 @@ class PlaceManager{
         let converter = Converter()
         let placesRealm = dbHelper.getPlaces()
         let categoriesListRealm = dbHelper.getCategoriesList()
+        //Если данные в базе данных отсутствуют, то делаем запрос данных из сети.
         if placesRealm.count == 0{
             print("Data From Network")
             NetworkManager().getPlace(completion)
@@ -29,25 +30,4 @@ class PlaceManager{
         }
         
     }
-    
-    func  getDataByFilter(ids: [Int], _ completion:@escaping ([Place]?, [Category]?) -> Void){
-        let converter = Converter()
-        let dbHelper = DbHelper()
-        let categoriesList = Array(dbHelper.getCategoriesList())
-        let categories = converter.arrayRealmListCategoryToCategory(categoriesListRealm: categoriesList)
-        let placesRealm = Array(dbHelper.getPlaces())
-        let placesDB = converter.arrayRealmPlaceToPlace(placesRealm: placesRealm)
-        var places = [Place]()
-        for item in placesDB{
-            for id in ids{
-                if (item.categoryId?.contains(id))!{
-                    item.categoryId = [id]
-                    places.append(item)
-                    break
-                }
-            }
-        }
-        completion(places, categories)
-    }
-        
 }

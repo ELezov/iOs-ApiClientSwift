@@ -19,14 +19,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-oo-Oqk" customClass="YMKMapView">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-oo-Oqk" customClass="YMKMapView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="147" id="iqf-5l-mzy"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zF-DV-Lyo" customClass="MapViewCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zF-DV-Lyo" userLabel="View" customClass="MapViewCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>

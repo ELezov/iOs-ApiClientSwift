@@ -21,17 +21,17 @@ class PlaceDetailsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        InitViews()
         self.imagesUrl = (viewModel?.place.photos)!
+        InitViews()
     }
     
     func InitViews(){
-        
+        //настраиваем tableView
         tableView?.dataSource = self
+        tableView?.delegate = self
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
-        
+        //Регистрация XIB
         tableView?.register(PhotoDetailViewCell.nib, forCellReuseIdentifier: PhotoDetailViewCell.identifier)
         tableView?.register(HeaderPlaceViewCell.nib, forCellReuseIdentifier: HeaderPlaceViewCell.identifier)
         tableView?.register(DescriptionViewCell.nib, forCellReuseIdentifier: DescriptionViewCell.identifier)
@@ -40,14 +40,11 @@ class PlaceDetailsViewController: UIViewController{
         tableView?.register(PhoneViewCell.nib, forCellReuseIdentifier: PhoneViewCell.identifier)
         tableView?.register(LocationViewCell.nib, forCellReuseIdentifier: LocationViewCell.identifier)
         tableView?.register(MapViewCell.nib, forCellReuseIdentifier: MapViewCell.identifier)
-        
-        
+        //инициализируем кнопку добавления в Избранное
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        
         button.setImage(UIImage(named: "emptyFavorite"), for: .normal)
         button.addTarget(self, action: #selector(PlaceDetailsViewController.favoriteButtonAction), for: .touchUpInside)
-        
         let barButton = UIBarButtonItem()
         barButton.customView = button
         self.navigationItem.rightBarButtonItem = barButton
@@ -68,14 +65,9 @@ class PlaceDetailsViewController: UIViewController{
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        //включаем скролящийся navbar
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView!, delay: 0.0)
         }
@@ -83,14 +75,13 @@ class PlaceDetailsViewController: UIViewController{
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
+        //выключаем скролящийся navbar
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.stopFollowingScrollView()
         }
     }
-  
+    //функция добавления в избранное
     func favoriteButtonAction() {
-        
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         if isFavorite {
@@ -101,12 +92,11 @@ class PlaceDetailsViewController: UIViewController{
             isFavorite = true
         }
         button.addTarget(self, action: #selector(PlaceDetailsViewController.favoriteButtonAction), for: .touchUpInside)
-        
         let barButton = UIBarButtonItem()
         barButton.customView = button
         self.navigationItem.rightBarButtonItem = barButton
     }
-    
+    //функция совершения мобильного вызова
     func makeCallPhone(){
         if let url = URL(string: "tel://\(viewModel?.place.phone)"), UIApplication.shared.canOpenURL(url){
             if #available(iOS 10, *){
@@ -118,14 +108,16 @@ class PlaceDetailsViewController: UIViewController{
         }
     }
     
+    //открытие YandexMapViewVC
     func openYandexMapView(){
         self.performSegue(withIdentifier: YandexMapViewController.idSegueShow, sender: self)
     }
     
+    //Открытие галереи
     func showMailGallery(){
         let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
         let headerView = CounterView(frame: frame, currentIndex: 0, count: imagesUrl.count)
-        let galleryViewController = GalleryViewController(startIndex: 0, itemsDatasource: self, configuration: galleryConfiguration())
+        let galleryViewController = GalleryViewController(startIndex: 0, itemsDataSource: self, configuration: galleryConfiguration())
         
         galleryViewController.headerView = headerView
         galleryViewController.launchedCompletion = { print("LAUNCHED") }
@@ -133,14 +125,11 @@ class PlaceDetailsViewController: UIViewController{
         galleryViewController.swipedToDismissCompletion = { print("SWIPE-DISMISSED") }
         
         galleryViewController.landedPageAtIndexCompletion = { index in
-            
             print("LANDED AT INDEX: \(index)")
-            
             headerView.count = self.imagesUrl.count
             headerView.currentIndex = index
         }
-        
-        
+
         self.presentImageGallery(galleryViewController)
     }
     

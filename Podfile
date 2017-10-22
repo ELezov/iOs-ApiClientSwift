@@ -16,7 +16,7 @@ target 'TestApiClientSwift_iOs' do
   pod 'CZPicker'
   pod 'YandexMapKit', '1.0.10'
   pod 'Agrume', '3.2.3'
-  pod 'ImageViewer', '4.0'
+  pod 'ImageViewer', '4.1.0'
   
   
   # Pods for TestApiClientSwift_iOs
