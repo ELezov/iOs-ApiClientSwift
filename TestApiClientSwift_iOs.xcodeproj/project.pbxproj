@@ -55,6 +55,7 @@
 		95F1E65E1F9D3941005F0482 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E65D1F9D3941005F0482 /* LoadingIndicatorView.swift */; };
 		95F1E6601F9D3DE6005F0482 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */; };
 		95F1E6621F9D3E1D005F0482 /* PlaceTableViewXibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */; };
+		95F1E66B1F9D45F2005F0482 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -145,6 +146,7 @@
 		95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableViewXibCell.swift; sourceTree = "<group>"; };
 		95F1E6681F9D4354005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		95F1E6691F9D4355005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -231,10 +233,10 @@
 		9503EC3D1F8ECC86002C1C17 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				95F1E66C1F9D4EB2005F0482 /* deprecated */,
 				95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */,
 				95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */,
-				C5D61B181F7807B200D9142F /* PlaceTableViewCell.swift */,
-				C5D61B1A1F7807E700D9142F /* PlaceTableViewController.swift */,
+				95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -376,6 +378,15 @@
 				95F1E6571F9CF7EB005F0482 /* utils */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		95F1E66C1F9D4EB2005F0482 /* deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				C5D61B181F7807B200D9142F /* PlaceTableViewCell.swift */,
+				C5D61B1A1F7807E700D9142F /* PlaceTableViewController.swift */,
+			);
+			name = deprecated;
 			sourceTree = "<group>";
 		};
 		C58A2D131F7BE43C00382855 /* Resources */ = {
@@ -730,6 +741,7 @@
 				955C1A0D1F9276B7007A5EDC /* Network.swift in Sources */,
 				C5D61B1D1F7818AD00D9142F /* Place.swift in Sources */,
 				955C1A0F1F927775007A5EDC /* Endpoint.swift in Sources */,
+				95F1E66B1F9D45F2005F0482 /* PlaceListViewController.swift in Sources */,
 				C5D61B1F1F781B8100D9142F /* Category.swift in Sources */,
 				9533A2071F97D6A10054214F /* PhotoDetailViewCell.swift in Sources */,
 				C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */,

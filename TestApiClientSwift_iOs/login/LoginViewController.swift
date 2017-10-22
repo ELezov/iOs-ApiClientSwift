@@ -119,7 +119,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //Анимированный пееход на другой VC
     func pushAnimation(){
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
-        let vc = mainStoryBoard.instantiateViewController(withIdentifier: PlaceTableViewController.id)
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: PlaceListViewController.id)
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)

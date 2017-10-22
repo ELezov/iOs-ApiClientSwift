@@ -219,10 +219,57 @@ Altes Haus — Hufen</string>
             </objects>
             <point key="canvasLocation" x="-468" y="114"/>
         </scene>
+        <!--Place List View Controller-->
+        <scene sceneID="ekw-9G-aLe">
+            <objects>
+                <viewController storyboardIdentifier="PlaceListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="usm-xB-66b" customClass="PlaceListViewController" customModule="TestApiClientSwift_iOs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LtF-U9-gsv"/>
+                        <viewControllerLayoutGuide type="bottom" id="tNz-qH-gkl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oq5-Tp-Vmc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="225" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb7-gv-Uun">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tNz-qH-gkl" firstAttribute="top" secondItem="Gb7-gv-Uun" secondAttribute="bottom" id="3LV-gr-213"/>
+                            <constraint firstAttribute="trailing" secondItem="Gb7-gv-Uun" secondAttribute="trailing" id="VQc-wl-HH3"/>
+                            <constraint firstItem="Gb7-gv-Uun" firstAttribute="top" secondItem="Oq5-Tp-Vmc" secondAttribute="top" id="e78-Tn-Jrd"/>
+                            <constraint firstItem="Gb7-gv-Uun" firstAttribute="leading" secondItem="Oq5-Tp-Vmc" secondAttribute="leading" id="hKA-cg-rHr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Iw-h9-CVN">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="FLF-nr-xXz">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logOut:" destination="usm-xB-66b" id="qIo-Gy-Zea"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Filter places" id="6Te-51-BoJ">
+                            <color key="tintColor" red="0.92941176889999999" green="0.1411764771" blue="0.19607843459999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterAction:" destination="usm-xB-66b" id="VsU-Qd-bDF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Gb7-gv-Uun" id="Ht8-ub-8ES"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9MC-vG-KJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31.199999999999999" y="836.13193403298362"/>
+        </scene>
         <!--Place Details View Controller-->
         <scene sceneID="GoN-zu-eRH">
             <objects>
-                <viewController id="hxG-3u-Q0o" customClass="PlaceDetailsViewController" customModule="TestApiClientSwift_iOs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaceDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hxG-3u-Q0o" customClass="PlaceDetailsViewController" customModule="TestApiClientSwift_iOs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GBU-jh-CKy"/>
                         <viewControllerLayoutGuide type="bottom" id="VnX-jf-8Ge"/>
@@ -491,7 +538,7 @@ Altes Haus — Hufen</string>
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

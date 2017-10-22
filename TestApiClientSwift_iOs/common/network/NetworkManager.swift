@@ -46,6 +46,7 @@ class NetworkManager{
                     print(error)
                     completion(false, "Неизвестная ошибка")
                 }
+                
             case .failure(let error):
                 print(error)
                 completion(false, error.localizedDescription)

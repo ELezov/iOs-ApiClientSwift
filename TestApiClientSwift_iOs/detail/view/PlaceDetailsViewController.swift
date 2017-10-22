@@ -17,7 +17,8 @@ class PlaceDetailsViewController: UIViewController{
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var tableView: UITableView?
     var imagesUrl = [String]()
-    static let idSegueShow = "ShowDetail"    
+    static let idSegueShow = "ShowDetail"
+    static let id = "PlaceDetailsViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class PlaceDetailsViewController: UIViewController{
         tableView?.delegate = self
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.contentInset = UIEdgeInsets(top: 60.0, left: 0.0, bottom: 0.0, right: 0.0)
         //Регистрация XIB
         tableView?.register(PhotoDetailViewCell.nib, forCellReuseIdentifier: PhotoDetailViewCell.identifier)
         tableView?.register(HeaderPlaceViewCell.nib, forCellReuseIdentifier: HeaderPlaceViewCell.identifier)
