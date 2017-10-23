@@ -8,7 +8,6 @@
 
 import UIKit
 import AMScrollingNavbar
-import CZPicker
 
 class PlaceListViewController: UIViewController {
     
@@ -61,21 +60,16 @@ class PlaceListViewController: UIViewController {
     }
     
     @IBAction func filterAction(_ sender: UIBarButtonItem) {
-        let picker = CZPickerView(headerTitle: NSLocalizedString("SELECT_CATEGORIES", comment: "Select categories"), cancelButtonTitle: NSLocalizedString("CANCEL", comment: "Cancel"), confirmButtonTitle: NSLocalizedString("CONFIRM", comment: "Confirm") )
         let categories = self.viewModel.categoriesArray
-        let count = (categories?.count)! - 1
-        for index in 0...count{
-            self.selectedRows.append(index)
-        }
-        picker?.setSelectedRows(selectedRows)
-        picker?.delegate = self
-        picker?.dataSource = self
-        picker?.needFooterView = false
-        picker?.headerBackgroundColor = UIColor.lightGray
-        picker?.cancelButtonBackgroundColor = UIColor.lightGray
-        picker?.confirmButtonBackgroundColor = UIColor.gray
-        picker?.allowMultipleSelection = true
-        picker?.show()
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: PopUpFilterViewController.id) as! PopUpFilterViewController
+        vc.viewModel = FilterViewModel(categories: categories!)
+        vc.selectedRows = selectedRows
+        vc.delegate = self
+        self.addChildViewController(vc)
+        vc.view.frame = self.view.frame
+        self.view.addSubview(vc.view)
+        vc.didMove(toParentViewController: self)
     }
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
@@ -92,6 +86,12 @@ class PlaceListViewController: UIViewController {
                 self?.showError()
             } else {
                 self?.hideError()
+                self?.selectedRows = [Int]()
+                let categories = self?.viewModel.categoriesArray
+                let count = (categories?.count)! - 1
+                for index in 0...count{
+                    self?.selectedRows.append(index)
+                }
                 self?.tableView.reloadData()
             }
         }

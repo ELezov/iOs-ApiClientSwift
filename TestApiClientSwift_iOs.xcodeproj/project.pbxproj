@@ -55,12 +55,17 @@
 		95F1E6601F9D3DE6005F0482 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */; };
 		95F1E6621F9D3E1D005F0482 /* PlaceTableViewXibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */; };
 		95F1E66B1F9D45F2005F0482 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */; };
-		95F402B01F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402AF1F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift */; };
 		95F402B21F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */; };
 		95F402B41F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B31F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift */; };
 		95F402B61F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B51F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift */; };
 		95F402B81F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B71F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift */; };
 		95F402BA1F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B91F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift */; };
+		95F402BD1F9E4AA600DFCD52 /* PopUpFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402BC1F9E4AA600DFCD52 /* PopUpFilterViewController.swift */; };
+		95F402C01F9E4E0900DFCD52 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402BE1F9E4E0900DFCD52 /* FilterTableViewCell.swift */; };
+		95F402C11F9E4E0900DFCD52 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F402BF1F9E4E0900DFCD52 /* FilterTableViewCell.xib */; };
+		95F402C31F9E50C700DFCD52 /* FilterTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402C21F9E50C700DFCD52 /* FilterTableCellViewModel.swift */; };
+		95F402C51F9E52AA00DFCD52 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402C41F9E52AA00DFCD52 /* FilterViewModel.swift */; };
+		95F402C71F9E613900DFCD52 /* PlaceListViewControllerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402C61F9E613900DFCD52 /* PlaceListViewControllerFilter.swift */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -151,12 +156,17 @@
 		95F1E6681F9D4354005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		95F1E6691F9D4355005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
-		95F402AF1F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerPicker.swift; sourceTree = "<group>"; };
 		95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerTable.swift; sourceTree = "<group>"; };
 		95F402B31F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailsViewControllerGallery.swift; path = cells/PlaceDetailsViewControllerGallery.swift; sourceTree = "<group>"; };
 		95F402B51F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailsViewControllerTable.swift; path = cells/PlaceDetailsViewControllerTable.swift; sourceTree = "<group>"; };
 		95F402B71F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexMapViewControllerYMKDelegate.swift; sourceTree = "<group>"; };
 		95F402B91F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerUITextFieldDelegate.swift; sourceTree = "<group>"; };
+		95F402BC1F9E4AA600DFCD52 /* PopUpFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpFilterViewController.swift; sourceTree = "<group>"; };
+		95F402BE1F9E4E0900DFCD52 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		95F402BF1F9E4E0900DFCD52 /* FilterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
+		95F402C21F9E50C700DFCD52 /* FilterTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableCellViewModel.swift; sourceTree = "<group>"; };
+		95F402C41F9E52AA00DFCD52 /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		95F402C61F9E613900DFCD52 /* PlaceListViewControllerFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerFilter.swift; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -247,8 +257,8 @@
 				95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */,
 				95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */,
 				95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */,
-				95F402AF1F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift */,
 				95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */,
+				95F402C61F9E613900DFCD52 /* PlaceListViewControllerFilter.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -404,6 +414,34 @@
 			name = deprecated;
 			sourceTree = "<group>";
 		};
+		95F402BB1F9E4A9200DFCD52 /* filter */ = {
+			isa = PBXGroup;
+			children = (
+				95F402C91F9E632900DFCD52 /* viewModel */,
+				95F402C81F9E632300DFCD52 /* view */,
+			);
+			name = filter;
+			sourceTree = "<group>";
+		};
+		95F402C81F9E632300DFCD52 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				95F402BF1F9E4E0900DFCD52 /* FilterTableViewCell.xib */,
+				95F402BC1F9E4AA600DFCD52 /* PopUpFilterViewController.swift */,
+				95F402BE1F9E4E0900DFCD52 /* FilterTableViewCell.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		95F402C91F9E632900DFCD52 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				95F402C21F9E50C700DFCD52 /* FilterTableCellViewModel.swift */,
+				95F402C41F9E52AA00DFCD52 /* FilterViewModel.swift */,
+			);
+			name = viewModel;
+			sourceTree = "<group>";
+		};
 		C58A2D131F7BE43C00382855 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +477,7 @@
 		C5D61AF71F77E58200D9142F /* TestApiClientSwift_iOs */ = {
 			isa = PBXGroup;
 			children = (
+				95F402BB1F9E4A9200DFCD52 /* filter */,
 				C58A2D131F7BE43C00382855 /* Resources */,
 				95F1E6591F9D090F005F0482 /* common */,
 				9503EC3C1F8ECC7C002C1C17 /* detail */,
@@ -580,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F1E64D1F9CCACD005F0482 /* Localizable.strings in Resources */,
+				95F402C11F9E4E0900DFCD52 /* FilterTableViewCell.xib in Resources */,
 				9533A2081F97D6A10054214F /* PhotoDetailViewCell.xib in Resources */,
 				95C370C91F8F5B9900EF9245 /* OpenSans-Semibold.ttf in Resources */,
 				95F1E6601F9D3DE6005F0482 /* PlaceTableViewCell.xib in Resources */,
@@ -719,11 +759,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F402B01F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift in Sources */,
 				95F402B21F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift in Sources */,
 				95EBB5101F95291F00711C03 /* PrimaryKeyAware.swift in Sources */,
 				956886AD1F95566C002F002C /* DetailsViewModel.swift in Sources */,
 				95EBB5141F95360800711C03 /* Converter.swift in Sources */,
+				95F402C01F9E4E0900DFCD52 /* FilterTableViewCell.swift in Sources */,
 				95F402BA1F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift in Sources */,
 				956886AB1F955517002F002C /* PlaceDetailsViewController.swift in Sources */,
 				95B341BA1F94DF6900AF43F4 /* LoginViewController.swift in Sources */,
@@ -740,6 +780,7 @@
 				95EBB50C1F9522F000711C03 /* RealmDAO.swift in Sources */,
 				95F1E6621F9D3E1D005F0482 /* PlaceTableViewXibCell.swift in Sources */,
 				95F1E6561F9CECBE005F0482 /* BaseTableViewCell.swift in Sources */,
+				95F402C51F9E52AA00DFCD52 /* FilterViewModel.swift in Sources */,
 				C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */,
 				C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */,
 				955C1A131F9283C9007A5EDC /* NetworkManager.swift in Sources */,
@@ -757,6 +798,8 @@
 				956886B01F95759A002F002C /* LocationViewCell.swift in Sources */,
 				95EBB5121F952A7100711C03 /* RealmStorage.swift in Sources */,
 				9503EC391F8EB21A002C1C17 /* RatingView.swift in Sources */,
+				95F402C31F9E50C700DFCD52 /* FilterTableCellViewModel.swift in Sources */,
+				95F402C71F9E613900DFCD52 /* PlaceListViewControllerFilter.swift in Sources */,
 				955C1A0D1F9276B7007A5EDC /* Network.swift in Sources */,
 				C5D61B1D1F7818AD00D9142F /* Place.swift in Sources */,
 				955C1A0F1F927775007A5EDC /* Endpoint.swift in Sources */,
@@ -764,6 +807,7 @@
 				C5D61B1F1F781B8100D9142F /* Category.swift in Sources */,
 				9533A2071F97D6A10054214F /* PhotoDetailViewCell.swift in Sources */,
 				C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */,
+				95F402BD1F9E4AA600DFCD52 /* PopUpFilterViewController.swift in Sources */,
 				95F402B81F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift in Sources */,
 				955C1A111F927987007A5EDC /* PlaceService.swift in Sources */,
 				C58A2D1C1F7BE72400382855 /* PlaceManager.swift in Sources */,

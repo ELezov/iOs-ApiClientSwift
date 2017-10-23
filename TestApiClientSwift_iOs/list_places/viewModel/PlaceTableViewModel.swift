@@ -52,6 +52,11 @@ class PlaceTableViewModel{
         self.detailsNewViewModel = DetailsViewModel(place: placeArray[index], categories: categoriesArray)
         return self.detailsNewViewModel
     }
+    
+    func getFilterNewModel() -> FilterViewModel{
+        let filterViewModel = FilterViewModel(categories: self.categoriesArray)
+        return filterViewModel
+    }
 
     required init(placeManager: PlaceManager){
         self.placeManager = placeManager

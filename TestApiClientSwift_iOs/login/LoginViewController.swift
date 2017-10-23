@@ -90,5 +90,5 @@ class LoginViewController: UIViewController {
         transition.type = kCAGravityBottom
         self.navigationController?.view.layer.add(transition,forKey: nil)
         self.navigationController?.pushViewController(vc, animated: false)
-    }
+    }    
 }
