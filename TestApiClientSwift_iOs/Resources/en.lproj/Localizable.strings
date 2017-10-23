@@ -2,6 +2,9 @@
 "INVALID_EMAIL" = "Invalid email";
 "EMAIL_ENTER" = "Enter e-mail";
 "PASSWORD_ENTER" = "Enter password";
+"INTERNET_ERROR" = "У вас отстутствует подключение к интернету. Включите интернет и попробуйте еще раз";
+"USER_DATA_ERROR" = "Вы предоставили неверные данные. Попробуйте снова.";
+"UNKNOWN_ERROR" = "Неизвестная ошибка. Попробуйте позже.";
 
 //ListPlace VC
 "SELECT_CATEGORIES" = "Select categories";
@@ -16,3 +19,4 @@
 "CONFIRM" = "Confirm";
 "PASSWORD" = "Password";
 "EMAIL" = "E-mail";
+"CONNECTION_ERROR" = "Проблемы с подключение";

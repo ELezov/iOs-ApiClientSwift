@@ -231,17 +231,59 @@ Altes Haus — Hufen</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sad_cloud" translatesAutoresizingMaskIntoConstraints="NO" id="AnZ-tL-yuX">
+                                <rect key="frame" x="137" y="100" width="101" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3Pm-z4-48r"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXJ-CF-neQ">
+                                <rect key="frame" x="0.0" y="277" width="375" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="78" id="zoZ-O3-Aa0"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="19"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="225" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb7-gv-Uun">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pg-bb-LD4">
+                                <rect key="frame" x="150" y="567" width="72" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="aWl-SR-vnh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Try Again"/>
+                                <connections>
+                                    <action selector="tryAgainAction:" destination="usm-xB-66b" eventType="touchUpInside" id="0S7-J7-ivF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tNz-qH-gkl" firstAttribute="top" secondItem="Gb7-gv-Uun" secondAttribute="bottom" id="3LV-gr-213"/>
+                            <constraint firstItem="AnZ-tL-yuX" firstAttribute="top" secondItem="LtF-U9-gsv" secondAttribute="bottom" constant="80" id="Cbb-T9-ZES"/>
+                            <constraint firstItem="QXJ-CF-neQ" firstAttribute="top" secondItem="AnZ-tL-yuX" secondAttribute="bottom" constant="20" id="E00-JC-unp"/>
+                            <constraint firstItem="9Pg-bb-LD4" firstAttribute="centerX" secondItem="Oq5-Tp-Vmc" secondAttribute="centerX" id="Loq-IV-kG3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AnZ-tL-yuX" secondAttribute="trailing" constant="121" id="Pmt-he-O2v"/>
                             <constraint firstAttribute="trailing" secondItem="Gb7-gv-Uun" secondAttribute="trailing" id="VQc-wl-HH3"/>
+                            <constraint firstAttribute="trailing" secondItem="QXJ-CF-neQ" secondAttribute="trailing" constant="30" id="ZMa-RD-4A2"/>
                             <constraint firstItem="Gb7-gv-Uun" firstAttribute="top" secondItem="Oq5-Tp-Vmc" secondAttribute="top" id="e78-Tn-Jrd"/>
                             <constraint firstItem="Gb7-gv-Uun" firstAttribute="leading" secondItem="Oq5-Tp-Vmc" secondAttribute="leading" id="hKA-cg-rHr"/>
+                            <constraint firstItem="tNz-qH-gkl" firstAttribute="top" secondItem="9Pg-bb-LD4" secondAttribute="bottom" constant="100" id="omO-vM-Pzr"/>
+                            <constraint firstItem="AnZ-tL-yuX" firstAttribute="leading" secondItem="Oq5-Tp-Vmc" secondAttribute="leadingMargin" constant="121" id="sJC-rT-OGc"/>
+                            <constraint firstItem="QXJ-CF-neQ" firstAttribute="leading" secondItem="Oq5-Tp-Vmc" secondAttribute="leading" constant="30" id="xG9-sI-vZK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Iw-h9-CVN">
@@ -259,12 +301,16 @@ Altes Haus — Hufen</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterButton" destination="6Te-51-BoJ" id="XaT-UJ-IlZ"/>
+                        <outlet property="imageError" destination="AnZ-tL-yuX" id="5Bt-Ca-fsw"/>
                         <outlet property="tableView" destination="Gb7-gv-Uun" id="Ht8-ub-8ES"/>
+                        <outlet property="textErrorLabel" destination="QXJ-CF-neQ" id="7jg-eb-FHO"/>
+                        <outlet property="tryAgainButton" destination="9Pg-bb-LD4" id="ecd-Vh-mbd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9MC-vG-KJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31.199999999999999" y="836.13193403298362"/>
+            <point key="canvasLocation" x="-468" y="803.74812593703155"/>
         </scene>
         <!--Place Details View Controller-->
         <scene sceneID="GoN-zu-eRH">
@@ -392,7 +438,7 @@ Altes Haus — Hufen</string>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="59" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
                                                 <rect key="frame" x="252.5" y="19" width="6" height="6"/>
@@ -538,7 +584,7 @@ Altes Haus — Hufen</string>
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -556,6 +602,7 @@ Altes Haus — Hufen</string>
         <image name="crown" width="146" height="95"/>
         <image name="delete_icon" width="50" height="50"/>
         <image name="filledFavorite" width="25" height="25"/>
+        <image name="ic_sad_cloud" width="30" height="30"/>
         <image name="ic_sale" width="64" height="28"/>
         <image name="location" width="24" height="24"/>
     </resources>

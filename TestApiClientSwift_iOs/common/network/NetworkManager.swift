@@ -13,6 +13,7 @@ class NetworkManager{
                 saveDataByRealm(places: (baseresult?.places)!, categories: (baseresult?.categories)!)
                 completion(baseresult?.places,baseresult?.categories, nil)
             } else{
+                
                 completion(nil,nil, response.error?.localizedDescription)
             }
         }
@@ -39,17 +40,17 @@ class NetworkManager{
                     if  token != nil{
                         completion(true, token!)
                     } else{
-                        completion(false, "Неверные данные")
+                        completion(false, NSLocalizedString("USER_DATA_ERROR", comment: "Вы предоставили неверные данные. Попробуйте снова."))
                     }
                     
                 } catch{
                     print(error)
-                    completion(false, "Неизвестная ошибка")
+                    completion(false, NSLocalizedString("UNKNOWN_ERROR", comment: "Неизвестная ошибка. Попробуйте позже."))
                 }
                 
             case .failure(let error):
-                print(error)
-                completion(false, error.localizedDescription)
+                print(error.localizedDescription)
+                completion(false, NSLocalizedString("INTERNET_ERROR", comment: "У вас отстутствует подключение к интернету. Включите интернет и попробуйте еще раз"))
             }
         }
     }

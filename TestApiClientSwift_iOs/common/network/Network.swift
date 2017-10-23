@@ -25,7 +25,7 @@ extension Network {
             parameters: endpoint.body,
             encoding: endpoint.encoding,
             headers: endpoint.headers
-            ).validate().responseJSON { response in
+            ).responseJSON { response in
                 if response.result.isSuccess {
                     debugPrint(response.result.description)
                 } else {

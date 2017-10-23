@@ -56,6 +56,8 @@
 		95F1E6601F9D3DE6005F0482 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */; };
 		95F1E6621F9D3E1D005F0482 /* PlaceTableViewXibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */; };
 		95F1E66B1F9D45F2005F0482 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */; };
+		95F402B01F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402AF1F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift */; };
+		95F402B21F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -147,6 +149,8 @@
 		95F1E6681F9D4354005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		95F1E6691F9D4355005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
+		95F402AF1F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerPicker.swift; sourceTree = "<group>"; };
+		95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerTable.swift; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 				95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */,
 				95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */,
 				95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */,
+				95F402AF1F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift */,
+				95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -704,6 +710,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F402B01F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift in Sources */,
+				95F402B21F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift in Sources */,
 				95EBB5101F95291F00711C03 /* PrimaryKeyAware.swift in Sources */,
 				956886AD1F95566C002F002C /* DetailsViewModel.swift in Sources */,
 				95EBB5141F95360800711C03 /* Converter.swift in Sources */,

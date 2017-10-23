@@ -30,6 +30,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        if let token: String = UserDefaults.standard.object(forKey: userToken) as! String? {
+            pushAnimation()
+        }
         mailTextField.text = ""
         mailTextField.placeholder = NSLocalizedString("EMAIL_ENTER", comment: "Enter e-mail")
         mailTextField.selectedTitle = NSLocalizedString("EMAIL", comment: "E-mail")
@@ -41,9 +44,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let token: String = UserDefaults.standard.object(forKey: userToken) as! String? {
-            pushAnimation()
-        }
     }
     
     
@@ -110,7 +110,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.pushAnimation()
             } else {
                 //показываем тост ошибки
-                self.view.makeToast(error, duration: 10.0, position: .bottom)
+                var alert = UIAlertController(title: NSLocalizedString("CONNECTION_ERROR", comment: "Проблемы с подключение"), message: error, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancel"), style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                //self.view.makeToast(error, duration: 10.0, position: .bottom)
             }
             
         }

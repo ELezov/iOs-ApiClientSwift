@@ -1775,36 +1775,68 @@
             endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewControllerPicker.swift"
+            timestampString = "530460352.260746"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "PlaceListViewController"
+            landmarkType = "4">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
+            timestampString = "530462239.132657"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "filterAction(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TestApiClientSwift_iOs.PlaceTableViewController.viewDidLoad () -&gt; ()"
+                  symbolName = "TestApiClientSwift_iOs.PlaceListViewController.filterAction (__ObjC.UIBarButtonItem) -&gt; ()"
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/list_places/view/PlaceTableViewController.swift"
-                  timestampString = "530396271.401153"
+                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
+                  timestampString = "530462576.446673"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "207">
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1598">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TestApiClientSwift_iOs.PlaceTableViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  symbolName = "TestApiClientSwift_iOs.PlaceListViewController.filterAction (__ObjC.UIBarButtonItem) -&gt; ()"
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/list_places/view/PlaceTableViewController.swift"
-                  timestampString = "530396271.402478"
+                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
+                  timestampString = "530462576.447928"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "4438">
                </Location>
             </Locations>
          </BreakpointContent>
