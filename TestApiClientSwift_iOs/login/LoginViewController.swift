@@ -9,7 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var leftPoint: UIView!
@@ -20,6 +20,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViews()
+    }
+    
+    func initViews(){
         mailTextField.delegate = self
         mailTextField.errorColor = UIColor.red
         passwordTextField.delegate = self
@@ -33,6 +37,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let token: String = UserDefaults.standard.object(forKey: userToken) as! String? {
             pushAnimation()
         }
+        resetTextFields()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    // MARK: Action
+    //производим авторизацию
+    @IBAction func logIn(_ sender: UIButton) {
+        let networkManager = NetworkManager()
+        networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!){ [weak self] flag, error in
+            if flag == true {
+                //Сохраняем токен
+                let userDafaults = UserDefaults.standard
+                userDafaults.set(error, forKey: userToken)
+                userDafaults.synchronize()
+                //анимируемый переход на следущий экран
+                self?.pushAnimation()
+            } else {
+                self?.showError(error)
+            }
+            
+        }
+    }
+    
+    func showError(_ error: String){
+        var alert = UIAlertController(title: NSLocalizedString("CONNECTION_ERROR", comment: "Проблемы с подключение"), message: error, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancel"), style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func resetTextFields(){
         mailTextField.text = ""
         mailTextField.placeholder = NSLocalizedString("EMAIL_ENTER", comment: "Enter e-mail")
         mailTextField.selectedTitle = NSLocalizedString("EMAIL", comment: "E-mail")
@@ -40,83 +78,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.placeholder = NSLocalizedString("PASSWORD_ENTER", comment: "Enter password")
         passwordTextField.selectedTitle = NSLocalizedString("PASSWORD", comment: "Password")
         mailTextField.errorMessage = ""
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: UITextFieldDelegate
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        SignInButton.isEnabled = false
-        if textField == passwordTextField{
-            scrollView.setContentOffset(CGPoint(x: 0, y: 150), animated: true)
-        }
-        
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        SignInButton.isEnabled = true
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        switch textField.tag {
-        case 1:
-            if let text = textField.text{
-                if let floatingLabelTextField = textField as? SkyFloatingLabelTextField{
-                    if (text.characters.count < 3 || !text.contains("@")) {
-                        floatingLabelTextField.errorMessage = NSLocalizedString("INVALID_EMAIL", comment: "Invalid email")
-                    } else{
-                        floatingLabelTextField.errorMessage = ""
-                    }
-                }
-            }
-        default:
-            break
-        }
-        return true
-    }
-    
-    
-    // MARK: Action
-    //производим авторизацию
-    @IBAction func logIn(_ sender: UIButton) {
-        let networkManager = NetworkManager()
-        networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!){ flag, error in
-            if flag == true {
-                //Сохраняем токен
-                let userDafaults = UserDefaults.standard
-                userDafaults.set(error, forKey: userToken)
-                userDafaults.synchronize()
-                //анимируемый переход на следущий экран
-                self.pushAnimation()
-            } else {
-                //показываем тост ошибки
-                var alert = UIAlertController(title: NSLocalizedString("CONNECTION_ERROR", comment: "Проблемы с подключение"), message: error, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancel"), style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                //self.view.makeToast(error, duration: 10.0, position: .bottom)
-            }
-            
-        }
     }
     
     //Анимированный пееход на другой VC

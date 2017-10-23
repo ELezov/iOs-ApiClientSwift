@@ -16,23 +16,30 @@ class PlaceDetailsViewController: UIViewController{
     var isFavorite = false
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var tableView: UITableView?
-    var imagesUrl = [String]()
     static let idSegueShow = "ShowDetail"
     static let id = "PlaceDetailsViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imagesUrl = (viewModel?.place.photos)!
         InitViews()
     }
     
     func InitViews(){
+        initTable()
+        registerXIBs()
+        initFavoriteButton()
+    }
+    
+    func initTable(){
         //настраиваем tableView
         tableView?.dataSource = self
         tableView?.delegate = self
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.contentInset = UIEdgeInsets(top: 60.0, left: 0.0, bottom: 0.0, right: 0.0)
+    }
+    
+    func registerXIBs(){
         //Регистрация XIB
         tableView?.register(PhotoDetailViewCell.nib, forCellReuseIdentifier: PhotoDetailViewCell.identifier)
         tableView?.register(HeaderPlaceViewCell.nib, forCellReuseIdentifier: HeaderPlaceViewCell.identifier)
@@ -42,6 +49,9 @@ class PlaceDetailsViewController: UIViewController{
         tableView?.register(PhoneViewCell.nib, forCellReuseIdentifier: PhoneViewCell.identifier)
         tableView?.register(LocationViewCell.nib, forCellReuseIdentifier: LocationViewCell.identifier)
         tableView?.register(MapViewCell.nib, forCellReuseIdentifier: MapViewCell.identifier)
+    }
+    
+    func initFavoriteButton(){
         //инициализируем кнопку добавления в Избранное
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
@@ -118,7 +128,7 @@ class PlaceDetailsViewController: UIViewController{
     //Открытие галереи
     func showMailGallery(){
         let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
-        let headerView = CounterView(frame: frame, currentIndex: 0, count: imagesUrl.count)
+        let headerView = CounterView(frame: frame, currentIndex: 0, count: (viewModel?.place.photos?.count)!)
         let galleryViewController = GalleryViewController(startIndex: 0, itemsDataSource: self, configuration: galleryConfiguration())
         
         galleryViewController.headerView = headerView
@@ -126,9 +136,9 @@ class PlaceDetailsViewController: UIViewController{
         galleryViewController.closedCompletion = { print("CLOSED") }
         galleryViewController.swipedToDismissCompletion = { print("SWIPE-DISMISSED") }
         
-        galleryViewController.landedPageAtIndexCompletion = { index in
+        galleryViewController.landedPageAtIndexCompletion = { [weak self ] index in
             print("LANDED AT INDEX: \(index)")
-            headerView.count = self.imagesUrl.count
+            headerView.count = (self?.viewModel?.place.photos?.count)!
             headerView.currentIndex = index
         }
 

@@ -17,7 +17,6 @@
 		9533A2161F9810510054214F /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533A2151F9810510054214F /* CounterView.swift */; };
 		9533A2181F9811260054214F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533A2171F9811260054214F /* UIImageViewExtension.swift */; };
 		953C22731F98D04500F31BA0 /* YandexMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C22721F98D04500F31BA0 /* YandexMapViewController.swift */; };
-		953C22781F993FDA00F31BA0 /* PlaceDetailVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C22771F993FDA00F31BA0 /* PlaceDetailVCExtension.swift */; };
 		953C227B1F99468400F31BA0 /* FirstCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */; };
 		953C227D1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */; };
 		955C1A0D1F9276B7007A5EDC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A0C1F9276B7007A5EDC /* Network.swift */; };
@@ -58,6 +57,10 @@
 		95F1E66B1F9D45F2005F0482 /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */; };
 		95F402B01F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402AF1F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift */; };
 		95F402B21F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */; };
+		95F402B41F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B31F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift */; };
+		95F402B61F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B51F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift */; };
+		95F402B81F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B71F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift */; };
+		95F402BA1F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402B91F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -108,7 +111,6 @@
 		9533A2151F9810510054214F /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		9533A2171F9811260054214F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		953C22721F98D04500F31BA0 /* YandexMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexMapViewController.swift; sourceTree = "<group>"; };
-		953C22771F993FDA00F31BA0 /* PlaceDetailVCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailVCExtension.swift; sourceTree = "<group>"; };
 		953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegue.swift; sourceTree = "<group>"; };
 		953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegueUnwind.swift; sourceTree = "<group>"; };
 		955C1A0C1F9276B7007A5EDC /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -151,6 +153,10 @@
 		95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
 		95F402AF1F9E2E8000DFCD52 /* PlaceListViewControllerPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerPicker.swift; sourceTree = "<group>"; };
 		95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerTable.swift; sourceTree = "<group>"; };
+		95F402B31F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailsViewControllerGallery.swift; path = cells/PlaceDetailsViewControllerGallery.swift; sourceTree = "<group>"; };
+		95F402B51F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailsViewControllerTable.swift; path = cells/PlaceDetailsViewControllerTable.swift; sourceTree = "<group>"; };
+		95F402B71F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexMapViewControllerYMKDelegate.swift; sourceTree = "<group>"; };
+		95F402B91F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerUITextFieldDelegate.swift; sourceTree = "<group>"; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		C556BDF31F798CAC00651DE1 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -260,8 +266,9 @@
 			isa = PBXGroup;
 			children = (
 				9533A2101F97F4680054214F /* cells */,
-				953C22771F993FDA00F31BA0 /* PlaceDetailVCExtension.swift */,
 				956886AA1F955517002F002C /* PlaceDetailsViewController.swift */,
+				95F402B31F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift */,
+				95F402B51F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -313,6 +320,7 @@
 			children = (
 				95EB53AE1F9A7E04004CAC56 /* PointAnnotation.swift */,
 				953C22721F98D04500F31BA0 /* YandexMapViewController.swift */,
+				95F402B71F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -357,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				95B341B91F94DF6900AF43F4 /* LoginViewController.swift */,
+				95F402B91F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -715,7 +724,7 @@
 				95EBB5101F95291F00711C03 /* PrimaryKeyAware.swift in Sources */,
 				956886AD1F95566C002F002C /* DetailsViewModel.swift in Sources */,
 				95EBB5141F95360800711C03 /* Converter.swift in Sources */,
-				953C22781F993FDA00F31BA0 /* PlaceDetailVCExtension.swift in Sources */,
+				95F402BA1F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift in Sources */,
 				956886AB1F955517002F002C /* PlaceDetailsViewController.swift in Sources */,
 				95B341BA1F94DF6900AF43F4 /* LoginViewController.swift in Sources */,
 				95F1E65E1F9D3941005F0482 /* LoadingIndicatorView.swift in Sources */,
@@ -738,6 +747,8 @@
 				955C1A4A1F9298CB007A5EDC /* HeaderPlaceViewCell.swift in Sources */,
 				C5DB4FE51F7A59AF0000600E /* CategoryRealm.swift in Sources */,
 				95EBB50E1F9524CA00711C03 /* DbHelper.swift in Sources */,
+				95F402B61F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift in Sources */,
+				95F402B41F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift in Sources */,
 				C5D61B191F7807B200D9142F /* PlaceTableViewCell.swift in Sources */,
 				95EBB5171F954DD200711C03 /* TimeTableViewCell.swift in Sources */,
 				9533A2181F9811260054214F /* UIImageViewExtension.swift in Sources */,
@@ -753,6 +764,7 @@
 				C5D61B1F1F781B8100D9142F /* Category.swift in Sources */,
 				9533A2071F97D6A10054214F /* PhotoDetailViewCell.swift in Sources */,
 				C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */,
+				95F402B81F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift in Sources */,
 				955C1A111F927987007A5EDC /* PlaceService.swift in Sources */,
 				C58A2D1C1F7BE72400382855 /* PlaceManager.swift in Sources */,
 				95C370CB1F8F605B00EF9245 /* FavoriteControl.swift in Sources */,

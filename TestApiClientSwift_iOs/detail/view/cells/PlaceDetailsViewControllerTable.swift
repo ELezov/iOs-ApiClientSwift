@@ -1,47 +1,10 @@
 //
-//  PlaceDetailVCExtension.swift
+//  PlaceDetailsViewControllerTable.swift
 //  TestApiClientSwift_iOs
 //
-//  Created by Nikolay on 19.10.17.
+//  Created by Nikolay on 23.10.17.
 //  Copyright © 2017 KODE. All rights reserved.
 //
-
-import Foundation
-import ImageViewer
-import Kingfisher
-
-extension PlaceDetailsViewController: GalleryItemsDataSource{
-    
-    func itemCount() -> Int {
-        
-        return imagesUrl.count
-    }
-    
-    func provideGalleryItem(_ index: Int) -> GalleryItem {
-        let url = URL(string: BASE_URL_API + self.imagesUrl[index])
-        let placeholder = UIImage(named: "crown_light")
-        return GalleryItem.image{ callback in
-            KingfisherManager.shared.retrieveImage(with: url!, options: [], progressBlock: nil, completionHandler: { (image, error, cacheType, url) in
-                if error == nil{
-                    callback(image)
-                }
-                else {
-                    callback(placeholder)
-                }
-            })
-        }
-    }
-    
-    func galleryConfiguration() -> GalleryConfiguration {
-        
-        return [
-            GalleryConfigurationItem.deleteButtonMode(.none),
-            GalleryConfigurationItem.thumbnailsButtonMode(.none),
-            GalleryConfigurationItem.swipeToDismissMode(.vertical),
-            GalleryConfigurationItem.overlayBlurStyle(.extraLight),
-        ]
-    }
-}
 
 extension PlaceDetailsViewController: UITableViewDataSource, UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,8 +18,8 @@ extension PlaceDetailsViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel?.items[indexPath.section]
         let type = item?.type
-       switch type!{
-       case .placePhoto:
+        switch type!{
+        case .placePhoto:
             if let cell = tableView.dequeueReusableCell(withIdentifier: PhotoDetailViewCell.identifier, for: indexPath) as? PhotoDetailViewCell{
                 cell.item = item
                 cell.selectionStyle = .none
@@ -113,14 +76,14 @@ extension PlaceDetailsViewController: UITableViewDataSource, UITableViewDelegate
         let item = viewModel?.items[indexPath.section]
         let type = item?.type
         switch (type!){
-            case .placePhoto:
-                showMailGallery()
-            case .phoneView:
-                makeCallPhone()
-            case .map:
-                openYandexMapView()
-            default:
-                break
+        case .placePhoto:
+            showMailGallery()
+        case .phoneView:
+            makeCallPhone()
+        case .map:
+            openYandexMapView()
+        default:
+            break
         }
     }
     

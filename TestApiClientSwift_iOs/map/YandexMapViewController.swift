@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YandexMapViewController: UIViewController, YMKMapViewDelegate {
+class YandexMapViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     
     var placeAnnotation = PointAnnotation()
@@ -16,42 +16,19 @@ class YandexMapViewController: UIViewController, YMKMapViewDelegate {
     static let idSegueShow = "showMapCustom"
     static let idSegueShowUnwind = "showMapCustomUnwind"
     
+    @IBOutlet weak var yandexMapView: YMKMapView!
+    var latitude = 54.709400
+    var longitude = 20.427640
+    
+    
     @IBAction func closeButtonAction(_ sender: UIButton) {
         self.performSegue(withIdentifier: YandexMapViewController.idSegueShowUnwind , sender: self)
     }
-    
-    @IBOutlet weak var yandexMapView: YMKMapView!
-    
-    var latitude = 54.709400
-    var longitude = 20.427640
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureMapView()
         self.configureAndInstallAnnotations()
-    }
-    
-    func mapView(_ mapView: YMKMapView!, viewFor annotation: YMKAnnotation!) -> YMKAnnotationView! {
-        let id = "pointAnnotation"
-        var point: YMKPinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id) as! YMKPinAnnotationView
-        if (point == nil){
-            point = YMKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
-            point.canShowCallout = true
-        }
-        
-        return point
-    }
-    
-    func mapView(_ mapView: YMKMapView!, calloutViewFor annotation: YMKAnnotation!) -> YMKCalloutView! {
-        let id = "pointCallout"
-        var callout: YMKDefaultCalloutView = mapView.dequeueReusableCalloutView(withIdentifier: id) as! YMKDefaultCalloutView
-        if (callout == nil){
-            callout = YMKDefaultCalloutView.init(reuseIdentifier: id)
-        }
-        callout.annotation = annotation
-        //let rightButton: UIButton = UIButton(type: .detailDisclosure)
-        //callout.rightView = rightButton
-        return callout
     }
     
     override func viewWillAppear(_ animated: Bool) {
