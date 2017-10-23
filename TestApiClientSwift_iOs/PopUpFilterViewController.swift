@@ -20,7 +20,6 @@ class PopUpFilterViewController: UIViewController, UITableViewDataSource, UITabl
     
     var viewModel: FilterViewModel!
    
-    var selectedRows = [Int]()
     var delegate: DataFromFilterDelegate?
     
     override func viewDidLoad() {
@@ -41,17 +40,12 @@ class PopUpFilterViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.register(nib, forCellReuseIdentifier: FilterTableViewCell.id)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(self.viewModel.numberOfPlaces())
         return self.viewModel.numberOfPlaces()
     }
     
@@ -59,7 +53,7 @@ class PopUpFilterViewController: UIViewController, UITableViewDataSource, UITabl
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FilterTableViewCell.id, for: indexPath) as? FilterTableViewCell else {
             fatalError("FilterTableViewCell doesn't exist")
         }
-        if selectedRows.contains(indexPath.row){
+        if self.viewModel.selectedRows.contains(indexPath.row){
             cell.accessoryType = .checkmark
         }
         cell.selectionStyle = .none
@@ -71,13 +65,13 @@ class PopUpFilterViewController: UIViewController, UITableViewDataSource, UITabl
         
         if let cell = tableView.cellForRow(at: indexPath){
             if cell.accessoryType == .checkmark{
-                let row = selectedRows.index(of: indexPath.row)
-                selectedRows.remove(at: row!)
+                let row = viewModel.selectedRows.index(of: indexPath.row)
+                self.viewModel.selectedRows.remove(at: row!)
                 cell.accessoryType = .none
             }
             else{
                 cell.accessoryType = .checkmark
-                self.selectedRows.append(indexPath.row)
+                self.viewModel.selectedRows.append(indexPath.row)
             }
         }
     }
@@ -85,13 +79,13 @@ class PopUpFilterViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
             if cell.accessoryType == .checkmark{
-                let row = selectedRows.index(of: indexPath.row)
-                selectedRows.remove(at: row!)
+                let row = self.viewModel.selectedRows.index(of: indexPath.row)
+                self.viewModel.selectedRows.remove(at: row!)
                 cell.accessoryType = .none
             }
             else{
                 cell.accessoryType = .checkmark
-                self.selectedRows.append(indexPath.row)
+                self.viewModel.selectedRows.append(indexPath.row)
             }
 
         }
@@ -99,7 +93,7 @@ class PopUpFilterViewController: UIViewController, UITableViewDataSource, UITabl
 
     
     @IBAction func confirmAction(_ sender: UIButton) {
-        delegate?.getDataFromPopUpFilter(rows: selectedRows)
+        delegate?.getDataFromPopUpFilter(rows: self.viewModel.selectedRows)
         self.view.removeFromSuperview()
     }
 }

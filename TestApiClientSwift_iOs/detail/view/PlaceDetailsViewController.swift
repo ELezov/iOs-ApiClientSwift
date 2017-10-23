@@ -16,7 +16,6 @@ class PlaceDetailsViewController: UIViewController{
     var isFavorite = false
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var tableView: UITableView?
-    static let idSegueShow = "ShowDetail"
     static let id = "PlaceDetailsViewController"
     
     override func viewDidLoad() {
@@ -111,6 +110,17 @@ class PlaceDetailsViewController: UIViewController{
     //функция совершения мобильного вызова
     func makeCallPhone(){
         if let url = URL(string: "tel://\(viewModel?.place.phone)"), UIApplication.shared.canOpenURL(url){
+            if #available(iOS 10, *){
+                UIApplication.shared.open(url)
+            }else {
+                UIApplication.shared.openURL(url)
+            }
+            print("1",url.description)
+        }
+    }
+    
+    func makeRoute(){
+        if let url = URL(string: "yandexmaps://build_route_on_map/?lat_from=54.709400&lon_from=20.427640&lat_to=\(viewModel?.place.latitude)&lon_to=\(viewModel?.place.longitude)"), UIApplication.shared.canOpenURL(url){
             if #available(iOS 10, *){
                 UIApplication.shared.open(url)
             }else {

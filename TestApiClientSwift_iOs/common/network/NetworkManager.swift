@@ -1,6 +1,5 @@
 import ObjectMapper
 import Alamofire
-import Toast_Swift
 
 
 class NetworkManager{
@@ -10,7 +9,7 @@ class NetworkManager{
             response in
             if response.result.isSuccess {
                 let baseresult = Mapper<ApiBaseResult>().map(JSONObject: response.result.value)
-                saveDataByRealm(places: (baseresult?.places)!, categories: (baseresult?.categories)!)
+                //saveDataByRealm(places: (baseresult?.places)!, categories: (baseresult?.categories)!)
                 completion(baseresult?.places,baseresult?.categories, nil)
             } else{
                 

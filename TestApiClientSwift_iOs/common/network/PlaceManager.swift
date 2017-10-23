@@ -2,7 +2,6 @@ import Foundation
 import RealmSwift
 import Alamofire
 import AlamofireObjectMapper
-import Toast_Swift
 
 class PlaceManager{
     func getPlaces(_ completion:@escaping ([Place]?, [Category]?, String?) -> Void) {

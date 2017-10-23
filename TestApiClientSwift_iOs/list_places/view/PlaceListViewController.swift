@@ -11,14 +11,11 @@ import AMScrollingNavbar
 
 class PlaceListViewController: UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBOutlet weak var imageError: UIImageView!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var textErrorLabel: UILabel!
-    
-    var selectedRows = [Int]()
     
     static let id = "PlaceListViewController"
     
@@ -60,11 +57,11 @@ class PlaceListViewController: UIViewController {
     }
     
     @IBAction func filterAction(_ sender: UIBarButtonItem) {
-        let categories = self.viewModel.categoriesArray
+        //let categories = self.viewModel.categoriesArray
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
         let vc = mainStoryBoard.instantiateViewController(withIdentifier: PopUpFilterViewController.id) as! PopUpFilterViewController
-        vc.viewModel = FilterViewModel(categories: categories!)
-        vc.selectedRows = selectedRows
+        vc.viewModel = viewModel.getFilterNewModel()
+        //vc.selectedRows = viewModel.selectedRows
         vc.delegate = self
         self.addChildViewController(vc)
         vc.view.frame = self.view.frame
@@ -86,12 +83,6 @@ class PlaceListViewController: UIViewController {
                 self?.showError()
             } else {
                 self?.hideError()
-                self?.selectedRows = [Int]()
-                let categories = self?.viewModel.categoriesArray
-                let count = (categories?.count)! - 1
-                for index in 0...count{
-                    self?.selectedRows.append(index)
-                }
                 self?.tableView.reloadData()
             }
         }

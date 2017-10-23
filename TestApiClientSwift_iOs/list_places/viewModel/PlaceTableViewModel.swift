@@ -8,13 +8,21 @@ class PlaceTableViewModel{
     var categoriesArray: [Category]!
     var detailsNewViewModel: DetailsViewModel!
     var error: String?
-
+    var selectedRows = [Int]()
+    
     //Обращаемся за получением списка мест
     func updatePlace(_ completion:@escaping () -> Void){
         cellsArray.removeAll()
         placeManager.getPlaces{ [weak self] (placeArray, categoriesArray, error) -> Void in
             self?.placeArray = placeArray
             self?.categoriesArray = categoriesArray
+            self?.selectedRows = [Int]()
+            
+            let count = (self?.categoriesArray.count)! - 1
+            for index in 0...count{
+                self?.selectedRows.append(index)
+            }
+            
             self?.error = error
             if self?.error == nil{
                 for placeObject in placeArray!{
@@ -54,7 +62,7 @@ class PlaceTableViewModel{
     }
     
     func getFilterNewModel() -> FilterViewModel{
-        let filterViewModel = FilterViewModel(categories: self.categoriesArray)
+        let filterViewModel = FilterViewModel(categories: self.categoriesArray, selectedRows: self.selectedRows)
         return filterViewModel
     }
 

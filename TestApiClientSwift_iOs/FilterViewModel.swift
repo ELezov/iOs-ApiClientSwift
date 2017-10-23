@@ -10,9 +10,11 @@ import Foundation
 class FilterViewModel{
     fileprivate var cellsArray = [FilterTableCellViewModel]()
     var categories : [Category]!
+    var selectedRows: [Int]!
 
-    init(categories: [Category]){
+    init(categories: [Category], selectedRows: [Int]){
         self.categories = categories
+        self.selectedRows = selectedRows
         for category in self.categories{
             self.cellsArray.append(FilterTableCellViewModel(category: category))
         }
