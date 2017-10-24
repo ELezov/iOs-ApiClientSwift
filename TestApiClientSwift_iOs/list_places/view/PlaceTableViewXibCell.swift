@@ -16,6 +16,8 @@ class PlaceTableViewXibCell: UITableViewCell {
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeDescriptionLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    
+    @IBOutlet weak var headerVeiw: UIView!
     static let id = "PlaceTableViewCellXib"
     
     weak var viewModel: PlaceTableCellViewModel! {
@@ -28,6 +30,13 @@ class PlaceTableViewXibCell: UITableViewCell {
             if viewModel.saleString == "0" {
                 self.saleLabel.isHidden = true
                 self.saleBackground.isHidden = true
+//                categoryNameLabel.removeConstraints(categoryNameLabel.constraints)
+//                categoryNameLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 21.0).isActive = true
+//                categoryNameLabel.rightAnchor.constraint(equalTo: headerVeiw.rightAnchor, constant: 16.0).isActive = true
+//                categoryNameLabel.leftAnchor.constraint(equalTo: categoryImg.rightAnchor, constant: 16.0).isActive = true
+//                categoryNameLabel.topAnchor.constraint(equalTo: headerVeiw.topAnchor, constant: 3.0).isActive = true
+//                categoryNameLabel.bottomAnchor.constraint(equalTo: headerVeiw.bottomAnchor, constant: 3.0).isActive = true
+                
             }
             else{
                 self.saleLabel.text = viewModel.saleString
@@ -37,6 +46,14 @@ class PlaceTableViewXibCell: UITableViewCell {
         }
     }
     
+    func initConstraint(){
+        categoryNameLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 21.0).isActive = true
+        categoryNameLabel.rightAnchor.constraint(equalTo: saleBackground.leftAnchor, constant: 16.0).isActive = true
+        categoryNameLabel.leftAnchor.constraint(equalTo: categoryImg.rightAnchor, constant: 16.0).isActive = true
+        categoryNameLabel.topAnchor.constraint(equalTo: headerVeiw.topAnchor, constant: 3.0).isActive = true
+        categoryNameLabel.bottomAnchor.constraint(equalTo: headerVeiw.bottomAnchor, constant: 3.0).isActive = true
+    }
+    
     func initView(){
         self.categoryNameLabel.text = ""
         self.placeNameLabel.text = ""
@@ -44,6 +61,7 @@ class PlaceTableViewXibCell: UITableViewCell {
         self.saleLabel.text = ""
         self.saleLabel.isHidden = false
         self.saleBackground.isHidden = false
+        //initConstraint()
     }
     
     

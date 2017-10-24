@@ -20,9 +20,11 @@ class PlaceTableViewModel{
             self?.categoriesArray = categoriesArray
             self?.selectedRows = [Int]()
             
-            let count = (self?.categoriesArray.count)! - 1
-            for index in 0...count{
-                self?.selectedRows.append(index)
+            if categoriesArray != nil {
+                let count = (self?.categoriesArray.count)! - 1
+                for index in 0...count{
+                    self?.selectedRows.append(index)
+                }
             }
             
             self?.error = error

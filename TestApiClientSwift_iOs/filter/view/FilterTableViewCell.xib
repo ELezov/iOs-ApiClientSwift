@@ -27,10 +27,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD7-l3-tRw">
-                        <rect key="frame" x="56" y="20" width="211" height="25"/>
+                        <rect key="frame" x="56" y="20" width="269" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="5Aw-fr-4G5"/>
-                            <constraint firstAttribute="width" constant="211" id="O1x-zp-OLQ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -38,6 +37,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="pD7-l3-tRw" secondAttribute="trailing" constant="50" id="BZS-uo-PcV"/>
                     <constraint firstItem="pD7-l3-tRw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="SjO-Kg-41E"/>
                     <constraint firstItem="pD7-l3-tRw" firstAttribute="leading" secondItem="KPC-CJ-IcS" secondAttribute="trailing" constant="16" id="eAi-jH-0mU"/>
                     <constraint firstItem="KPC-CJ-IcS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="paK-T0-CQP"/>

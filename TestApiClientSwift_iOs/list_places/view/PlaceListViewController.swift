@@ -32,16 +32,18 @@ class PlaceListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
-        
+        initLocationManager()
+        let placeManager = PlaceManager()
+        let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
+        self.viewModel = placeTableViewModel
+    }
+    
+    func initLocationManager(){
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.delegate = self
         locationManager.distanceFilter = 50.0
         locationManager.pausesLocationUpdatesAutomatically = true
         locationManager.requestWhenInUseAuthorization()
-        
-        let placeManager = PlaceManager()
-        let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
-        self.viewModel = placeTableViewModel
     }
     
     func initTableView(){
@@ -104,6 +106,8 @@ class PlaceListViewController: UIViewController {
     }
     
     func showError(){
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.tableView.reloadData()
         self.imageError.isHidden = false
         self.textErrorLabel.isHidden = false
         self.tryAgainButton.isHidden = false
@@ -111,6 +115,7 @@ class PlaceListViewController: UIViewController {
     }
     
     func hideError(){
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         self.imageError.isHidden = true
         self.textErrorLabel.isHidden = true
         self.filterButton.isEnabled = true

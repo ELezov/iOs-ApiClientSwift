@@ -45,7 +45,7 @@
                         <color key="textColor" red="0.48235294222831726" green="0.49803921580314636" blue="0.5058823823928833" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLh-M5-bM1" customClass="RatingView" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLh-M5-bM1" customClass="RatingView" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
                         <rect key="frame" x="271" y="28" width="80" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="2bc-Ps-ti6"/>

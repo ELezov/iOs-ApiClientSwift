@@ -158,8 +158,8 @@
 		95F1E6691F9D4355005F0482 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
 		95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerTable.swift; sourceTree = "<group>"; };
-		95F402B31F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailsViewControllerGallery.swift; path = PlaceDetailsViewControllerGallery.swift; sourceTree = "<group>"; };
-		95F402B51F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDetailsViewControllerTable.swift; path = PlaceDetailsViewControllerTable.swift; sourceTree = "<group>"; };
+		95F402B31F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewControllerGallery.swift; sourceTree = "<group>"; };
+		95F402B51F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewControllerTable.swift; sourceTree = "<group>"; };
 		95F402B71F9E442200DFCD52 /* YandexMapViewControllerYMKDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexMapViewControllerYMKDelegate.swift; sourceTree = "<group>"; };
 		95F402B91F9E44D600DFCD52 /* LoginViewControllerUITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerUITextFieldDelegate.swift; sourceTree = "<group>"; };
 		95F402BC1F9E4AA600DFCD52 /* PopUpFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpFilterViewController.swift; sourceTree = "<group>"; };
@@ -325,7 +325,6 @@
 				953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */,
 				953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */,
 			);
-			name = animation;
 			path = animation;
 			sourceTree = "<group>";
 		};
@@ -397,7 +396,6 @@
 				95F402C81F9E632300DFCD52 /* view */,
 				95F402C91F9E632900DFCD52 /* viewModel */,
 			);
-			name = filter;
 			path = filter;
 			sourceTree = "<group>";
 		};
@@ -409,7 +407,6 @@
 				95F402BC1F9E4AA600DFCD52 /* PopUpFilterViewController.swift */,
 				95F402CC1F9EBA4F00DFCD52 /* PopUpFilterViewControllerTable.swift */,
 			);
-			name = view;
 			path = view;
 			sourceTree = "<group>";
 		};
@@ -419,7 +416,6 @@
 				95F402C21F9E50C700DFCD52 /* FilterTableCellViewModel.swift */,
 				95F402C41F9E52AA00DFCD52 /* FilterViewModel.swift */,
 			);
-			name = viewModel;
 			path = viewModel;
 			sourceTree = "<group>";
 		};
@@ -992,6 +988,7 @@
 					"$(PROJECT_DIR)/**",
 				);
 				INFOPLIST_FILE = TestApiClientSwift_iOs/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1065,6 +1062,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WNZNG5YT8F;
 				INFOPLIST_FILE = TestApiClientSwift_iOs/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
