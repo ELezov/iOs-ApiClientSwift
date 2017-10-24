@@ -164,6 +164,7 @@ Altes Haus — Hufen</string>
             <connections>
                 <outlet property="categoryImg" destination="ZYE-b3-zXZ" id="kvi-qC-KYP"/>
                 <outlet property="categoryNameLabel" destination="5uk-gW-ZKc" id="Aj8-P4-oNp"/>
+                <outlet property="distanceLabel" destination="cjY-pT-Y93" id="JEW-Wq-47h"/>
                 <outlet property="placeDescriptionLabel" destination="9RH-Eq-4xW" id="Elg-g1-dio"/>
                 <outlet property="placeNameLabel" destination="X9q-Bh-z9h" id="keZ-MG-frE"/>
                 <outlet property="saleBackground" destination="XY2-qL-e7D" id="Ya5-DD-RFn"/>

@@ -19,7 +19,7 @@ class LocationViewCell: UITableViewCell {
             guard  let item = item as? DetailsViewModelLocationItem else {
                 return
             }
-            
+            self.AddressLabel.text = getStringDistance(distance: item.distance) + "  "
             let myLocation = CLLocation(latitude: item.latitude , longitude: item.longitude)
             getPlaceMark(forLocation: myLocation){
                 (originPlaceMark, error) in
@@ -39,7 +39,7 @@ class LocationViewCell: UITableViewCell {
                     if placemark.subThoroughfare != nil{
                         address += " " + placemark.subThoroughfare!
                     }
-                    self.AddressLabel.text = address
+                    self.AddressLabel.text = self.AddressLabel.text! + address
                 }
             }
             

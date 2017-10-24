@@ -22,6 +22,8 @@ public class Place: Mappable{
     public var minPeople : String?
     public var maxPeople : String?
     public var photos : Array<String>?
+    
+    var distance: Int = 0
 
     required public init?(map:Map){
 

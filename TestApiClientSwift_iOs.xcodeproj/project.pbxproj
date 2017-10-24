@@ -51,6 +51,8 @@
 		95EBB5141F95360800711C03 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB5131F95360800711C03 /* Converter.swift */; };
 		95EBB5171F954DD200711C03 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB5151F954DD200711C03 /* TimeTableViewCell.swift */; };
 		95EBB5181F954DD200711C03 /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB5161F954DD200711C03 /* TimeTableViewCell.xib */; };
+		95ECB2E61F9F677200A535A0 /* PlaceListViewControllerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECB2E51F9F677200A535A0 /* PlaceListViewControllerLocation.swift */; };
+		95ECB2E81F9F6B1B00A535A0 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ECB2E71F9F6B1B00A535A0 /* Calculate.swift */; };
 		95F1E64D1F9CCACD005F0482 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95F1E64F1F9CCACD005F0482 /* Localizable.strings */; };
 		95F1E6561F9CECBE005F0482 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E6551F9CECBE005F0482 /* BaseTableViewCell.swift */; };
 		95F1E65E1F9D3941005F0482 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1E65D1F9D3941005F0482 /* LoadingIndicatorView.swift */; };
@@ -145,6 +147,8 @@
 		95EBB5131F95360800711C03 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		95EBB5151F954DD200711C03 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		95EBB5161F954DD200711C03 /* TimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
+		95ECB2E51F9F677200A535A0 /* PlaceListViewControllerLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerLocation.swift; sourceTree = "<group>"; };
+		95ECB2E71F9F6B1B00A535A0 /* Calculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		95F1E6501F9CCAD5005F0482 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95F1E6551F9CECBE005F0482 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		95F1E65D1F9D3941005F0482 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 				95F1E66A1F9D45F2005F0482 /* PlaceListViewController.swift */,
 				95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */,
 				95F402C61F9E613900DFCD52 /* PlaceListViewControllerFilter.swift */,
+				95ECB2E51F9F677200A535A0 /* PlaceListViewControllerLocation.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				9533A2171F9811260054214F /* UIImageViewExtension.swift */,
 				95F1E65D1F9D3941005F0482 /* LoadingIndicatorView.swift */,
 				95F402CA1F9EB5DE00DFCD52 /* UIViewExtension.swift */,
+				95ECB2E71F9F6B1B00A535A0 /* Calculate.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -576,6 +582,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WNZNG5YT8F;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					C5D61B081F77E58200D9142F = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -761,6 +772,7 @@
 				95B341BA1F94DF6900AF43F4 /* LoginViewController.swift in Sources */,
 				95F1E65E1F9D3941005F0482 /* LoadingIndicatorView.swift in Sources */,
 				C5DB4FE71F7A5A640000600E /* PlaceRealm.swift in Sources */,
+				95ECB2E81F9F6B1B00A535A0 /* Calculate.swift in Sources */,
 				C5DB4FE91F7A8F980000600E /* CategoryListRealm.swift in Sources */,
 				956886A41F954FD8002F002C /* VisitingPriceCell.swift in Sources */,
 				955C1A161F9285B9007A5EDC /* realm.swift in Sources */,
@@ -775,6 +787,7 @@
 				C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */,
 				C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */,
 				955C1A131F9283C9007A5EDC /* NetworkManager.swift in Sources */,
+				95ECB2E61F9F677200A535A0 /* PlaceListViewControllerLocation.swift in Sources */,
 				95EB53AF1F9A7E04004CAC56 /* PointAnnotation.swift in Sources */,
 				955C1A4A1F9298CB007A5EDC /* HeaderPlaceViewCell.swift in Sources */,
 				C5DB4FE51F7A59AF0000600E /* CategoryRealm.swift in Sources */,

@@ -1,5 +1,7 @@
 import Foundation
 import RealmSwift
+import CoreLocation
+
 
 class PlaceTableViewModel{
     var placeManager: PlaceManager!
@@ -46,6 +48,19 @@ class PlaceTableViewModel{
             completion()
         }
     }
+    
+    //обновляем расстояния до точек
+    func updateDistanceToPlaces(latitude: Double, longitude: Double, _ completion:@escaping () -> Void){
+        cellsArray.removeAll()
+        for place in self.placeArray{
+            place.distance = getDistance(lat1: latitude, lon1: longitude, lat2: place.latitude!, lon2: place.longitude!)
+        }
+        self.placeArray = self.placeArray.sorted(by: { $0.distance < $1.distance })
+        for place in self.placeArray{
+            self.cellsArray.append(PlaceTableCellViewModel(place: place, categories: self.categoriesArray))
+        }
+        completion()
+    }
 
     func numberOfPlaces() -> Int{
         return cellsArray.count
@@ -69,4 +84,6 @@ class PlaceTableViewModel{
     required init(placeManager: PlaceManager){
         self.placeManager = placeManager
     }
+
 }
+

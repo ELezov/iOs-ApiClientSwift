@@ -18,6 +18,8 @@ class PlaceListViewController: UIViewController {
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var textErrorLabel: UILabel!
     
+    var locationManager: CLLocationManager = CLLocationManager()
+    
     static let id = "PlaceListViewController"
     
     var viewModel : PlaceTableViewModel!
@@ -30,6 +32,13 @@ class PlaceListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager.delegate = self
+        locationManager.distanceFilter = 50.0
+        locationManager.pausesLocationUpdatesAutomatically = true
+        locationManager.requestWhenInUseAuthorization()
+        
         let placeManager = PlaceManager()
         let placeTableViewModel = PlaceTableViewModel(placeManager: placeManager)
         self.viewModel = placeTableViewModel
@@ -74,10 +83,12 @@ class PlaceListViewController: UIViewController {
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         let prefs = UserDefaults.standard
         prefs.removeObject(forKey:userToken)
+        self.locationManager.stopUpdatingLocation()
         self.navigationController?.popViewController(animated: true)
     }
     
     func updateData(){
+        locationManager.stopUpdatingLocation()
         LoadingIndicatorView.show("Loading")
         viewModel.updatePlace { [weak self] () in
             LoadingIndicatorView.hide()
@@ -86,6 +97,8 @@ class PlaceListViewController: UIViewController {
             } else {
                 self?.hideError()
                 self?.tableView.reloadData()
+                self?.locationManager.startUpdatingLocation()
+                //self?.initLocation()
             }
         }
     }

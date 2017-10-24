@@ -15,8 +15,6 @@ extension PlaceService: Endpoint{
             resultToken += token
         }
         
-        print("Token",resultToken)
-        
         return ["Authorization" : resultToken]
     }
     

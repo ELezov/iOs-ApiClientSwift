@@ -18,7 +18,9 @@ extension PlaceListViewController: DataFromFilterDelegate{
             ids.append(viewModel.categoriesArray[row].id!)
         }
         viewModel.selectedRows = selectedRows
+        locationManager.stopUpdatingLocation()
         viewModel.updateFilter(ids: ids){ [weak self] () in
+            self?.locationManager.startUpdatingLocation()
             self?.filterButton.isEnabled = true
             self?.logOutButton.isEnabled = true
             self?.tableView.reloadData()

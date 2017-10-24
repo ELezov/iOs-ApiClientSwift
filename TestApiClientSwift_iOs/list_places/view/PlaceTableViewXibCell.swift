@@ -15,6 +15,7 @@ class PlaceTableViewXibCell: UITableViewCell {
     @IBOutlet weak var saleBackground: UIImageView!
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeDescriptionLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     static let id = "PlaceTableViewCellXib"
     
     weak var viewModel: PlaceTableCellViewModel! {
@@ -31,6 +32,7 @@ class PlaceTableViewXibCell: UITableViewCell {
             else{
                 self.saleLabel.text = viewModel.saleString
             }
+            distanceLabel.text = viewModel.distance
             
         }
     }

@@ -1927,8 +1927,8 @@
                   symbolName = "TestApiClientSwift_iOs.PlaceDetailsViewController.tableView.getter : weak Swift.Optional&lt;__ObjC.UITableView&gt;"
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nikolay/Desktop/git/iOs-ApiClientSwift/TestApiClientSwift_iOs/detail/view/PlaceDetailsViewController.swift"
-                  timestampString = "530499141.428745"
+                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/detail/view/PlaceDetailsViewController.swift"
+                  timestampString = "530548581.804106"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -1942,8 +1942,8 @@
                   symbolName = "TestApiClientSwift_iOs.PlaceDetailsViewController.tableView.setter : weak Swift.Optional&lt;__ObjC.UITableView&gt;"
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nikolay/Desktop/git/iOs-ApiClientSwift/TestApiClientSwift_iOs/detail/view/PlaceDetailsViewController.swift"
-                  timestampString = "530499141.430144"
+                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/detail/view/PlaceDetailsViewController.swift"
+                  timestampString = "530548581.805537"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -1957,8 +1957,8 @@
                   symbolName = "TestApiClientSwift_iOs.PlaceDetailsViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; TestApiClientSwift_iOs.PlaceDetailsViewController"
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nikolay/Desktop/git/iOs-ApiClientSwift/TestApiClientSwift_iOs/detail/view/PlaceDetailsViewController.swift"
-                  timestampString = "530499141.431385"
+                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/detail/view/PlaceDetailsViewController.swift"
+                  timestampString = "530548581.807014"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -1972,8 +1972,8 @@
                   symbolName = "TestApiClientSwift_iOs.PlaceDetailsViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;TestApiClientSwift_iOs.PlaceDetailsViewController&gt;"
                   moduleName = "TestApiClientSwift_iOs"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nikolay/Desktop/git/iOs-ApiClientSwift/TestApiClientSwift_iOs/detail/view/PlaceDetailsViewController.swift"
-                  timestampString = "530499141.43261"
+                  urlString = "file:///Users/nikolay/Desktop/syn/iOs-ApiClientSwift/TestApiClientSwift_iOs/detail/view/PlaceDetailsViewController.swift"
+                  timestampString = "530548581.808304"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -2006,28 +2006,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
-            timestampString = "530495902.946006"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "filterAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
-            timestampString = "530495903.369409"
+            timestampString = "530544262.597471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "filterAction(_:)"
+            landmarkName = "initViews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2038,13 +2022,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
-            timestampString = "530495903.794044"
+            timestampString = "530544262.597471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "filterAction(_:)"
-            landmarkType = "7">
+            landmarkName = "PlaceListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2054,12 +2038,74 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
-            timestampString = "530495904.633434"
+            timestampString = "530544262.597471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "filterAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
+            timestampString = "530544262.597471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "filterAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewControllerLocation.swift"
+            timestampString = "530540409.26079"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/common/utils/Calculate.swift"
+            timestampString = "530541818.867072"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "getDistance(lat1:lon1:lat2:lon2:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/list_places/view/PlaceListViewController.swift"
+            timestampString = "530548208.167351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "logOut(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

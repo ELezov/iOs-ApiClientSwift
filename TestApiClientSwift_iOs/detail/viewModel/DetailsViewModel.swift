@@ -64,7 +64,7 @@ class DetailsViewModel: NSObject {
             items.append(phoneItem)
         }
         
-        let locationItem = DetailsViewModelLocationItem(latitude: place.latitude!, longitude: place.longitude!)
+        let locationItem = DetailsViewModelLocationItem(latitude: place.latitude!, longitude: place.longitude!, distance: place.distance)
         items.append(locationItem)
         
         let mapItem = DetailsViewModelMapItem(latitude: place.latitude!, longitude: place.longitude!)
@@ -154,13 +154,14 @@ class DetailsViewModelLocationItem: DetailsViewModelItem{
     var type: DetailsViewModelItemType{
         return .location
     }
-    
+    var distance: Int
     var latitude: Double
     var longitude: Double
     
-    init(latitude: Double,longitude: Double) {
+    init(latitude: Double,longitude: Double, distance: Int) {
         self.latitude = latitude
         self.longitude = longitude
+        self.distance = distance
     }
 }
 
