@@ -965,17 +965,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/AMScrollingNavbar\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Agrume\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/AlamofireObjectMapper\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/CZPicker\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/ImageViewer\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Kingfisher\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/RealmSwift\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/SkyFloatingLabelTextField\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Toast-Swift\"",
 					"$(PROJECT_DIR)/**",
 				);
 				INFOPLIST_FILE = TestApiClientSwift_iOs/Resources/Info.plist;

@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Agrume.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>AlamofireObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CZPicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -59,6 +69,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Toast-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -67,12 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>401D5031755A3A6183E656E0E75A9E3E</key>
+		<key>381C27BBC87BF2DC50ACFB4929864E39</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DBFFD36208FF435FE56A5519FC22ED7</key>
+		<key>39D81D94A1AB8C9025D791F33B8B7F71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>706EB381E434C0613B8260F83A7F3533</key>
+		<key>709B37C87082FC138C02EA729A3F8D0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>725BACB7CD1086B4E4E476009D786B4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +127,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BFE2589E8B1FACD1FEE0B950705B1624</key>
+		<key>AD74932E7F3E62A309D9254D2DBC8447</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE690F37D3EE00739CDE2C26983C10ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>EE7265B4ADCAC4066E67E3C991987858</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD0EA4E3DD886BC6C7B27855C4BCD3EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

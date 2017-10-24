@@ -14,6 +14,10 @@ target 'TestApiClientSwift_iOs' do
   pod 'SkyFloatingLabelTextField', '3'
   pod 'YandexMapKit', '1.0.10'
   pod 'ImageViewer', '4.1.0'
+  #pod id not found
+  pod 'Agrume', '3.2.3'
+  pod 'Toast-Swift', '2'
+  pod 'CZPicker'
   # Pods for TestApiClientSwift_iOs
 
   target 'TestApiClientSwift_iOsTests' do
