@@ -48,4 +48,5 @@ class PopUpFilterViewController: UIViewController{
         delegate?.getDataFromPopUpFilter(rows: self.viewModel.selectedRows)
         self.view.removeFromSuperview()
     }
+    
 }
