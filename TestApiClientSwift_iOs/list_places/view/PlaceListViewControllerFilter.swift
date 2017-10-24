@@ -14,14 +14,14 @@ extension PlaceListViewController: DataFromFilterDelegate{
         var ids = [Int]()
         var selectedRows = [Int]()
         for row in rows {
-            if let row = row as? Int {
-                selectedRows.append(row)
-                ids.append(viewModel.categoriesArray[row].id!)
-            }
+            selectedRows.append(row)
+            ids.append(viewModel.categoriesArray[row].id!)
         }
         viewModel.selectedRows = selectedRows
-        viewModel.updateFilter(ids: ids){
-            self.tableView.reloadData()
+        viewModel.updateFilter(ids: ids){ [weak self] () in
+            self?.filterButton.isEnabled = true
+            self?.logOutButton.isEnabled = true
+            self?.tableView.reloadData()
         }
 
     }

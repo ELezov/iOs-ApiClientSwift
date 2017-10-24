@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
     }
     
     func showError(_ error: String){
-        var alert = UIAlertController(title: NSLocalizedString("CONNECTION_ERROR", comment: "Проблемы с подключение"), message: error, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: NSLocalizedString("CONNECTION_ERROR", comment: "Проблемы с подключение"), message: error, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancel"), style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

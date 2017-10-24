@@ -69,20 +69,15 @@ class MapViewCell: UITableViewCell, YMKMapViewDelegate {
     func mapView(_ mapView: YMKMapView!, viewFor annotation: YMKAnnotation!) -> YMKAnnotationView! {
         let id = "pointAnnotation"
         var point: YMKPinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id) as! YMKPinAnnotationView
-        if (point == nil){
-            point = YMKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
-            point.canShowCallout = true
-        }
-        
+        point = YMKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
+        point.canShowCallout = true
         return point
     }
     
     func mapView(_ mapView: YMKMapView!, calloutViewFor annotation: YMKAnnotation!) -> YMKCalloutView! {
         let id = "pointCallout"
         var callout: YMKDefaultCalloutView = mapView.dequeueReusableCalloutView(withIdentifier: id) as! YMKDefaultCalloutView
-        if (callout == nil){
-            callout = YMKDefaultCalloutView.init(reuseIdentifier: id)
-        }
+        callout = YMKDefaultCalloutView.init(reuseIdentifier: id)
         callout.annotation = annotation
         //let rightButton: UIButton = UIButton(type: .detailDisclosure)
         //callout.rightView = rightButton

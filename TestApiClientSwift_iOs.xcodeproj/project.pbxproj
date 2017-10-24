@@ -68,6 +68,8 @@
 		95F402C31F9E50C700DFCD52 /* FilterTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402C21F9E50C700DFCD52 /* FilterTableCellViewModel.swift */; };
 		95F402C51F9E52AA00DFCD52 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402C41F9E52AA00DFCD52 /* FilterViewModel.swift */; };
 		95F402C71F9E613900DFCD52 /* PlaceListViewControllerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402C61F9E613900DFCD52 /* PlaceListViewControllerFilter.swift */; };
+		95F402CB1F9EB5DE00DFCD52 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402CA1F9EB5DE00DFCD52 /* UIViewExtension.swift */; };
+		95F402CD1F9EBA4F00DFCD52 /* PopUpFilterViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F402CC1F9EBA4F00DFCD52 /* PopUpFilterViewControllerTable.swift */; };
 		C5545B911F783FC5001C5DEF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5545B901F783FC5001C5DEF /* Const.swift */; };
 		C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556BDF31F798CAC00651DE1 /* RatingControl.swift */; };
 		C58A2D181F7BE4C200382855 /* PlaceTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A2D171F7BE4C200382855 /* PlaceTableCellViewModel.swift */; };
@@ -162,6 +164,8 @@
 		95F402C21F9E50C700DFCD52 /* FilterTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableCellViewModel.swift; sourceTree = "<group>"; };
 		95F402C41F9E52AA00DFCD52 /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		95F402C61F9E613900DFCD52 /* PlaceListViewControllerFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewControllerFilter.swift; sourceTree = "<group>"; };
+		95F402CA1F9EB5DE00DFCD52 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		95F402CC1F9EBA4F00DFCD52 /* PopUpFilterViewControllerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpFilterViewControllerTable.swift; sourceTree = "<group>"; };
 		B93DA42F5FCA167956B8C3CB /* Pods-TestApiClientSwift_iOsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApiClientSwift_iOsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApiClientSwift_iOsTests/Pods-TestApiClientSwift_iOsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C12D2ECC291DFC773AE42657 /* Pods_TestApiClientSwift_iOsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApiClientSwift_iOsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5545B901F783FC5001C5DEF /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -366,6 +370,7 @@
 				9503EC381F8EB21A002C1C17 /* RatingView.swift */,
 				9533A2171F9811260054214F /* UIImageViewExtension.swift */,
 				95F1E65D1F9D3941005F0482 /* LoadingIndicatorView.swift */,
+				95F402CA1F9EB5DE00DFCD52 /* UIViewExtension.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				95F402BF1F9E4E0900DFCD52 /* FilterTableViewCell.xib */,
 				95F402BC1F9E4AA600DFCD52 /* PopUpFilterViewController.swift */,
 				95F402BE1F9E4E0900DFCD52 /* FilterTableViewCell.swift */,
+				95F402CC1F9EBA4F00DFCD52 /* PopUpFilterViewControllerTable.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -796,8 +802,10 @@
 				955C1A111F927987007A5EDC /* PlaceService.swift in Sources */,
 				C58A2D1C1F7BE72400382855 /* PlaceManager.swift in Sources */,
 				95C370CB1F8F605B00EF9245 /* FavoriteControl.swift in Sources */,
+				95F402CB1F9EB5DE00DFCD52 /* UIViewExtension.swift in Sources */,
 				9533A2001F9790320054214F /* MapViewCell.swift in Sources */,
 				953C22731F98D04500F31BA0 /* YandexMapViewController.swift in Sources */,
+				95F402CD1F9EBA4F00DFCD52 /* PopUpFilterViewControllerTable.swift in Sources */,
 				955C1A4E1F929E22007A5EDC /* DescriptionViewCell.swift in Sources */,
 				95EBB50A1F95228300711C03 /* LoginService.swift in Sources */,
 				9533A2161F9810510054214F /* CounterView.swift in Sources */,
@@ -1033,6 +1041,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "./TestApiClientSwift_iOs/TestApiClientSwift_iOs-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1052,6 +1061,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "./TestApiClientSwift_iOs/TestApiClientSwift_iOs-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

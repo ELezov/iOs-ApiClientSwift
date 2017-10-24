@@ -11,8 +11,8 @@ import UIKit
 class FirstCustomSegue: UIStoryboardSegue {
     
     override func perform() {
-        var firstVCView = self.source.view as UIView!
-        var secondVCView = self.destination.view as UIView!
+        let firstVCView = self.source.view as UIView!
+        let secondVCView = self.destination.view as UIView!
         
         let screenWidth = UIScreen.main.bounds.size.width
         let screenHeigt = UIScreen.main.bounds.size.height

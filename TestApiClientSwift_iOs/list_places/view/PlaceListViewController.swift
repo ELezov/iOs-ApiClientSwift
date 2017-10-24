@@ -13,6 +13,7 @@ class PlaceListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterButton: UIBarButtonItem!
+    @IBOutlet weak var logOutButton: UIBarButtonItem!
     @IBOutlet weak var imageError: UIImageView!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var textErrorLabel: UILabel!
@@ -61,12 +62,13 @@ class PlaceListViewController: UIViewController {
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
         let vc = mainStoryBoard.instantiateViewController(withIdentifier: PopUpFilterViewController.id) as! PopUpFilterViewController
         vc.viewModel = viewModel.getFilterNewModel()
-        //vc.selectedRows = viewModel.selectedRows
         vc.delegate = self
         self.addChildViewController(vc)
         vc.view.frame = self.view.frame
         self.view.addSubview(vc.view)
         vc.didMove(toParentViewController: self)
+        filterButton.isEnabled = false
+        logOutButton.isEnabled = false
     }
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
