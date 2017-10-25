@@ -30,8 +30,6 @@ class MapViewCell: UITableViewCell, YMKMapViewDelegate {
         }
     }
     
-   
-    
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
@@ -51,18 +49,18 @@ class MapViewCell: UITableViewCell, YMKMapViewDelegate {
         // Configure the view for the selected state
     }
     
-    func configureMapView(){
+    func configureMapView() {
         self.yandexMapView.showsUserLocation = false
         self.yandexMapView.showTraffic = false
         self.yandexMapView.setCenter(YMKMapCoordinateMake(latitude!, longitude!), atZoomLevel: 15, animated: false)
     }
     
     func configureAndInstallAnnotations(){
+        self.yandexMapView.removeAnnotations(self.yandexMapView.annotations)
         let coordinate = YMKMapCoordinateMake(latitude!, longitude!)
         self.placeAnnotation = PointAnnotation()
         self.placeAnnotation?.setCoordinate(coordinate)
-        self.placeAnnotation?.setTitile("Metro")
-        self.placeAnnotation?.setSubTitle("станция Повелецкая")
+        //self.placeAnnotation = PointAnnotation(title: "Haha", subtitile: "Hoho", coordinate: coordinate)
         self.yandexMapView.addAnnotation(self.placeAnnotation)
     }
     
@@ -79,8 +77,6 @@ class MapViewCell: UITableViewCell, YMKMapViewDelegate {
         var callout: YMKDefaultCalloutView = mapView.dequeueReusableCalloutView(withIdentifier: id) as! YMKDefaultCalloutView
         callout = YMKDefaultCalloutView.init(reuseIdentifier: id)
         callout.annotation = annotation
-        //let rightButton: UIButton = UIButton(type: .detailDisclosure)
-        //callout.rightView = rightButton
         return callout
     }
     

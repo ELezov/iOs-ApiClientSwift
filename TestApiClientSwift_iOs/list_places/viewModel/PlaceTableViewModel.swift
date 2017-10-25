@@ -52,19 +52,19 @@ class PlaceTableViewModel{
     }
     
     //обновляем расстояния до точек
-    func updateDistanceToPlaces(latitude: Double, longitude: Double, _ completion:@escaping () -> Void){
+    func updateDistanceToPlaces(latitude: Double, longitude: Double, _ completion:@escaping () -> Void) {
         cellsArray.removeAll()
-        for place in self.placeArray{
+        for place in self.placeArray {
             place.distance = getDistance(lat1: latitude, lon1: longitude, lat2: place.latitude!, lon2: place.longitude!)
         }
         self.placeArray = self.placeArray.sorted(by: { $0.distance < $1.distance })
-        for place in self.placeArray{
+        for place in self.placeArray {
             self.cellsArray.append(PlaceTableCellViewModel(place: place, categories: self.categoriesArray))
         }
         completion()
     }
 
-    func numberOfPlaces() -> Int{
+    func numberOfPlaces() -> Int {
         return cellsArray.count
     }
 
@@ -73,19 +73,18 @@ class PlaceTableViewModel{
         return cellsArray[index]
     }
     
-    func getDetailsNewModel(_ index: Int) -> DetailsViewModel{
+    func getDetailsNewModel(_ index: Int) -> DetailsViewModel {
         self.detailsNewViewModel = DetailsViewModel(place: placeArray[index], categories: categoriesArray)
         return self.detailsNewViewModel
     }
     
-    func getFilterNewModel() -> FilterViewModel{
+    func getFilterNewModel() -> FilterViewModel {
         let filterViewModel = FilterViewModel(categories: self.categoriesArray, selectedRows: self.selectedRows)
         return filterViewModel
     }
 
-    required init(placeManager: PlaceManager){
+    required init(placeManager: PlaceManager) {
         self.placeManager = placeManager
     }
-
 }
 

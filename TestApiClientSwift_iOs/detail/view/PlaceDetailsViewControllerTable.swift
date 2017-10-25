@@ -75,7 +75,7 @@ extension PlaceDetailsViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = viewModel?.items[indexPath.section]
         let type = item?.type
-        switch (type!){
+        switch (type!) {
         case .placePhoto:
             showMailGallery()
         case .phoneView:

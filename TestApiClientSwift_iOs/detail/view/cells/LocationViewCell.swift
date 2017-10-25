@@ -10,61 +10,19 @@ import UIKit
 import CoreLocation
 
 class LocationViewCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var AddressLabel: UILabel!
-    
+    @IBOutlet weak var addressLabel: UILabel!
     var item: DetailsViewModelItem? {
         didSet {
             guard  let item = item as? DetailsViewModelLocationItem else {
                 return
             }
             let distance = getStringDistance(distance: item.distance) + " "
-            let myLocation = CLLocation(latitude: item.latitude , longitude: item.longitude)
-            getPlaceMark(forLocation: myLocation){
-                (originPlaceMark, error) in
-                if let err = error{
-                    print(err)
-                    self.AddressLabel.text = distance
-                } else if let placemark = originPlaceMark{
-                    var address = ""
-                    
-                    if placemark.locality != nil{
-                        address += placemark.locality!
-                    }
-                    
-                    if placemark.thoroughfare != nil{
-                        address += ", " + placemark.thoroughfare!
-                    }
-                    
-                    if placemark.subThoroughfare != nil{
-                        address += " " + placemark.subThoroughfare!
-                    }
-                    self.AddressLabel.text = distance + "| " + address
-                }
+            if (item.addressPlace == ""){
+                self.addressLabel.text = distance
+            } else {
+                self.addressLabel.text = distance + "| " + item.addressPlace
             }
-            
         }
-    }
-    
-    
-    func getPlaceMark(forLocation location: CLLocation, completionHandler: @escaping (CLPlacemark?, String?) -> ()) {
-        let geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(location, completionHandler: {
-            placeMarks, error in
-            if let err = error{
-                completionHandler(nil,err.localizedDescription)
-            } else if let placemarkArray = placeMarks{
-                if let placemark = placemarkArray.first{
-                    completionHandler(placemark, nil)
-                } else {
-                    completionHandler(nil,"Placemark was nil")
-                }
-            }else{
-                completionHandler(nil,"Unknown error")
-            }
-        })
-        
     }
     
     static var nib:UINib {
@@ -74,6 +32,7 @@ class LocationViewCell: UITableViewCell {
     static var identifier: String {
         return String(describing: self)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -84,5 +43,4 @@ class LocationViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

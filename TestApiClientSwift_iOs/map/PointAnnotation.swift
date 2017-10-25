@@ -8,28 +8,30 @@
 
 import Foundation
 
+
 class PointAnnotation: NSObject, YMKDraggableAnnotation {
-    public func coordinate() -> YMKMapCoordinate {
-        return coordinateObject
-    }
-    
-    private var title = ""
-    private var subtitle = ""
-    private var coordinateObject = YMKMapCoordinate()
-    
     public func setCoordinate(_ coordinate: YMKMapCoordinate) {
-        self.coordinateObject = coordinate
+        self.coordinateObj = coordinate
+    }
+
+    public func coordinate() -> YMKMapCoordinate {
+        return coordinateObj
+    }
+
+    var title: NSString! = nil
+    var subtitle: NSString! = nil
+    var coordinateObj: YMKMapCoordinate! = nil
+    
+    
+    override init() {
+        self.title = ""
+        self.subtitle = ""
+        self.coordinateObj = YMKMapCoordinate()
     }
     
-    public func setTitile(_ title:String){
+    init(title: NSString, subtitile: NSString, coordinate: YMKMapCoordinate) {
         self.title = title
-    }
-    
-    public func setSubTitle(_ subTitle: String){
-        self.subtitle = subTitle
-    }
-    
-    required override init() {
-        
+        self.subtitle = subtitile
+        self.coordinateObj = coordinate
     }
 }

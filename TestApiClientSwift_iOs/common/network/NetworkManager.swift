@@ -5,7 +5,7 @@ import Alamofire
 class NetworkManager{
     
     func getPlace(_ completion:@escaping ([Place]?, [Category]?, String?) -> Void) {
-        let request = Network.shared.request(endpoint: PlaceService.getPlaces){
+        _ = Network.shared.request(endpoint: PlaceService.getPlaces){
             response in
             if response.result.isSuccess {
                 let baseresult = Mapper<ApiBaseResult>().map(JSONObject: response.result.value)
@@ -19,7 +19,7 @@ class NetworkManager{
     }
     
     func  getInfoPlaceById(id: Int){
-        let request = Network.shared.request(endpoint: PlaceService.infoPlace(id: String(id))){
+        _ = Network.shared.request(endpoint: PlaceService.infoPlace(id: String(id))){
             response in
             if response.result.isSuccess {
                 let result = Mapper<Place>().map(JSONObject: response.result.value)
@@ -28,7 +28,7 @@ class NetworkManager{
     }
     
     func logIn(name: String, password: String, _ completion:@escaping (Bool, String) -> Void){
-        let request = Network.shared.request(endpoint: LoginService.logIn(name: name, password: password)){
+        _ = Network.shared.request(endpoint: LoginService.logIn(name: name, password: password)){
             response in
             switch(response.result){
             case .success(let value):

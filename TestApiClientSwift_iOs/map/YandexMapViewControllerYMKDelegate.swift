@@ -15,7 +15,7 @@ extension YandexMapViewController: YMKMapViewDelegate {
         var point: YMKPinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id) as! YMKPinAnnotationView
         point = YMKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
         point.canShowCallout = true
-        
+        self.configureAnnotationView(view: point)
         return point
     }
     
@@ -24,8 +24,8 @@ extension YandexMapViewController: YMKMapViewDelegate {
         var callout: YMKDefaultCalloutView = mapView.dequeueReusableCalloutView(withIdentifier: id) as! YMKDefaultCalloutView
         callout = YMKDefaultCalloutView.init(reuseIdentifier: id)
         callout.annotation = annotation
-        //let rightButton: UIButton = UIButton(type: .detailDisclosure)
-        //callout.rightView = rightButton
+        let rightButton: UIButton = UIButton(type: .detailDisclosure)
+        callout.rightView = rightButton
         return callout
     }
 }

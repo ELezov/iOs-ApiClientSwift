@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 import UIKit
 
 public enum DetailsViewModelItemType{
@@ -43,7 +44,9 @@ class DetailsViewModel: NSObject {
         let placePhotoItem = DetailsViewModelPlacePhotoItem(photo: (place.photos?.first)!)
         items.append(placePhotoItem)
         
-        let headerItem = DetailsViewModelHeaderItem(placeName: place.name!, categoryName: category.name!, categoryImgUrl: category.icon!)
+        let headerItem = DetailsViewModelHeaderItem(placeName: place.name!,
+                                    categoryName: category.name!,
+                                    categoryImgUrl: category.icon!)
         items.append(headerItem)
         
         let descriptionItem = DetailsViewModelDescriptionItem(description: place.description!)
@@ -64,7 +67,9 @@ class DetailsViewModel: NSObject {
             items.append(phoneItem)
         }
         
-        let locationItem = DetailsViewModelLocationItem(latitude: place.latitude!, longitude: place.longitude!, distance: place.distance)
+        let locationItem = DetailsViewModelLocationItem(latitude: place.latitude!,
+                                        longitude: place.longitude!,
+                                        distance: place.distance)
         items.append(locationItem)
         
         let mapItem = DetailsViewModelMapItem(latitude: place.latitude!, longitude: place.longitude!)
@@ -74,7 +79,7 @@ class DetailsViewModel: NSObject {
 
 //ViewModels для ячеек
 
-class DetailsViewModelPlacePhotoItem: DetailsViewModelItem{
+class DetailsViewModelPlacePhotoItem: DetailsViewModelItem {
     var type: DetailsViewModelItemType{
         return .placePhoto
     }
@@ -157,11 +162,48 @@ class DetailsViewModelLocationItem: DetailsViewModelItem{
     var distance: Int
     var latitude: Double
     var longitude: Double
+    var addressPlace: String
     
     init(latitude: Double,longitude: Double, distance: Int) {
         self.latitude = latitude
         self.longitude = longitude
         self.distance = distance
+        self.addressPlace = ""
+        let myLocation = CLLocation(latitude: latitude, longitude: longitude)
+        getPlaceMark(forLocation: myLocation) { (originPlaceMark, error) in
+            if let err = error {
+                print(err)
+            } else if let placemark = originPlaceMark {
+                var address = ""
+                if placemark.locality != nil {
+                    address += placemark.locality!
+                }
+                if placemark.thoroughfare != nil {
+                    address += ", " + placemark.thoroughfare!
+                }
+                if placemark.subThoroughfare != nil {
+                    address += " " + placemark.subThoroughfare!
+                }
+                self.addressPlace = address
+            }
+        }
+    }
+    
+    func getPlaceMark(forLocation location: CLLocation, completionHandler: @escaping (CLPlacemark?, String?) -> () ) {
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location, completionHandler: { (placeMarks, error) in
+            if let err = error {
+                completionHandler(nil, err.localizedDescription)
+            } else if let placemarkArray = placeMarks {
+                if let placemark = placemarkArray.first {
+                    completionHandler(placemark, nil)
+                } else {
+                    completionHandler(nil, "Placemark was nil")
+                }
+            } else {
+                completionHandler(nil, "Unknown error")
+            }
+        })
     }
 }
 

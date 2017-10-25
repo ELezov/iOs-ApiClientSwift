@@ -20,10 +20,10 @@ class PlaceDetailsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        InitViews()
+        initViews()
     }
     
-    func InitViews(){
+    func initViews(){
         initTable()
         registerXIBs()
         initFavoriteButton()
@@ -161,9 +161,7 @@ class PlaceDetailsViewController: UIViewController{
             guard let yandexMapVC = segue.destination as? YandexMapViewController  else {
                 fatalError("Unexpected destination:\(segue.destination)")
             }
-            
-            yandexMapVC.latitude = (viewModel?.place.latitude)!
-            yandexMapVC.longitude = (viewModel?.place.longitude)!
+            yandexMapVC.place = viewModel?.place
         default:
             fatalError("Global prepare Error in PlaceTableViewController")
         }

@@ -328,10 +328,10 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="59" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="58" y="166" width="259" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
-                                                <rect key="frame" x="252.5" y="19.5" width="6" height="6"/>
+                                                <rect key="frame" x="253" y="19" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="9H1-iz-47n"/>
@@ -339,7 +339,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOq-9O-h59">
-                                                <rect key="frame" x="0.0" y="19.5" width="6" height="6"/>
+                                                <rect key="frame" x="0.0" y="19" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="6" id="PnP-3j-pW8"/>
@@ -347,7 +347,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amber card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IND-CW-K0T">
-                                                <rect key="frame" x="18" y="0.0" width="222.5" height="44"/>
+                                                <rect key="frame" x="18" y="0.0" width="223" height="44"/>
                                                 <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="38"/>
                                                 <color key="textColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -457,12 +457,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="ake-9K-cmt"/>
                     <connections>
-                        <outlet property="SignInButton" destination="2mX-FM-lHy" id="72x-EL-CyZ"/>
                         <outlet property="leftPoint" destination="KOq-9O-h59" id="wwa-61-cmh"/>
                         <outlet property="mailTextField" destination="xPk-oJ-wkR" id="Xqu-qV-ziz"/>
                         <outlet property="passwordTextField" destination="Qxy-9y-tcl" id="pUx-sl-Wte"/>
                         <outlet property="rightPoint" destination="HpX-Zs-flE" id="SXH-Z3-JH5"/>
                         <outlet property="scrollView" destination="F0w-cy-wXx" id="bKs-qB-Tsy"/>
+                        <outlet property="signInButton" destination="2mX-FM-lHy" id="BCH-Wt-sXG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lt-UX-hN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -474,7 +474,7 @@
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

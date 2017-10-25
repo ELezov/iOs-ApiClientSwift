@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension PlaceListViewController : UITableViewDataSource, UITableViewDelegate{
+extension PlaceListViewController : UITableViewDataSource, UITableViewDelegate {
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {

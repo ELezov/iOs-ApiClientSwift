@@ -530,7 +530,7 @@
 				C5D61AF11F77E58200D9142F /* Sources */,
 				C5D61AF21F77E58200D9142F /* Frameworks */,
 				C5D61AF31F77E58200D9142F /* Resources */,
-				9536331D1F977C7300E323DC /* ShellScript */,
+				9536331D1F977C7300E323DC /* Run Script */,
 				794DD14F4CD22D7F80F2CFF9 /* [CP] Embed Pods Frameworks */,
 				4B1F9A738C621E7D6CE3F7DC /* [CP] Copy Pods Resources */,
 			);
@@ -681,18 +681,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestApiClientSwift_iOs/Pods-TestApiClientSwift_iOs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9536331D1F977C7300E323DC /* ShellScript */ = {
+		9536331D1F977C7300E323DC /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		970BAEC5071256582D6C1AEA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
