@@ -40,7 +40,6 @@ class NetworkManager{
                     } else{
                         completion(false, NSLocalizedString("USER_DATA_ERROR", comment: "Вы предоставили неверные данные. Попробуйте снова."))
                     }
-                    
                 } catch{
                     print(error)
                     completion(false, NSLocalizedString("UNKNOWN_ERROR", comment: "Неизвестная ошибка. Попробуйте позже."))

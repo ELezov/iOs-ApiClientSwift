@@ -6,7 +6,7 @@
 "USER_DATA_ERROR" = "Вы предоставили неверные данные. Попробуйте снова.";
 "UNKNOWN_ERROR" = "Неизвестная ошибка. Попробуйте позже.";
 "LOGIN_ERROR" = "Логин содержит менее 3 символов";
-"LOGIN_ENTER" = "Введите логин";
+"LOGIN_ENTER" = "Enter login";
 
 //ListPlace VC
 "SELECT_CATEGORIES" = "Select categories";
@@ -22,4 +22,4 @@
 "PASSWORD" = "Password";
 "EMAIL" = "E-mail";
 "CONNECTION_ERROR" = "Проблемы с подключение";
-"Login" = "Логин";
+"Login" = "Login";

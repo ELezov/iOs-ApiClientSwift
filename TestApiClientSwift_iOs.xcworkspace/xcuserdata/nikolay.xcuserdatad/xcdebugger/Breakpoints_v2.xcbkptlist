@@ -1990,7 +1990,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/login/LoginViewControllerUITextFieldDelegate.swift"
-            timestampString = "530579485.893816"
+            timestampString = "530651657.716566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -2028,22 +2028,6 @@
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "configureAndInstallAnnotations()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestApiClientSwift_iOs/map/YandexMapViewControllerYMKDelegate.swift"
-            timestampString = "530649957.698882"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "updateFetchingLocationUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
