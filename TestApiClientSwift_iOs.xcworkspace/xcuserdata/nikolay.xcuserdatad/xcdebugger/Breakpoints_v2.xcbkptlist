@@ -2006,12 +2006,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/map/YandexMapViewController.swift"
-            timestampString = "530637232.82075"
+            timestampString = "530649596.580503"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "configureAnnotationView(view:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApiClientSwift_iOs/map/YandexMapViewController.swift"
+            timestampString = "530649596.580503"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "configureAndInstallAnnotations()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2022,76 +2038,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestApiClientSwift_iOs/map/YandexMapViewControllerYMKDelegate.swift"
-            timestampString = "530629054.51096"
+            timestampString = "530649957.698882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "mapView(_:viewFor:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestApiClientSwift_iOs/map/PointAnnotation.swift"
-            timestampString = "530637232.82075"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "init()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TestApiClientSwift_iOs.PointAnnotation.init () -&gt; TestApiClientSwift_iOs.PointAnnotation"
-                  moduleName = "TestApiClientSwift_iOs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nikolay/Documents/test/iOs-ApiClientSwift/TestApiClientSwift_iOs/map/PointAnnotation.swift"
-                  timestampString = "530637139.486392"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TestApiClientSwift_iOs.PointAnnotation.__allocating_init () -&gt; TestApiClientSwift_iOs.PointAnnotation"
-                  moduleName = "TestApiClientSwift_iOs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nikolay/Documents/test/iOs-ApiClientSwift/TestApiClientSwift_iOs/map/PointAnnotation.swift"
-                  timestampString = "530637139.487729"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestApiClientSwift_iOs/map/YandexMapViewController.swift"
-            timestampString = "530636953.704112"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "configureAndInstallAnnotations()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "updateFetchingLocationUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

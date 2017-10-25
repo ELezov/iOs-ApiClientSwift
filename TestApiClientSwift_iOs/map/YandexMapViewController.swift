@@ -11,6 +11,12 @@ import UIKit
 class YandexMapViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     
+    @IBOutlet weak var zoomPlusBtn: UIButton!
+    @IBOutlet weak var zoomMinusBtn: UIButton!
+    @IBOutlet weak var locateMeBtn: UIButton!
+    @IBOutlet var locationFetcher: YMKLocationFetcher!
+    
+    
     var placeAnnotation: PointAnnotation?
     //Segue
     static let idSegueShow = "showMapCustom"
@@ -28,20 +34,23 @@ class YandexMapViewController: UIViewController {
         super.viewDidLoad()
         self.configureMapView()
         self.configureAndInstallAnnotations()
+        startMonitoringLocationFetching()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        self.yandexMapView.showsUserLocation = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
+        self.yandexMapView.showsUserLocation = false
+        stopMonitoringLocationFetching()
     }
 
     func configureMapView() {
-        self.yandexMapView.showsUserLocation = false
         self.yandexMapView.showTraffic = false
         self.yandexMapView.setCenter(YMKMapCoordinateMake((place?.latitude)!, (place?.longitude)!), atZoomLevel: 15, animated: false)
     }
@@ -55,5 +64,20 @@ class YandexMapViewController: UIViewController {
     func configureAnnotationView(view: YMKPinAnnotationView){
         view.pinColor = UInt(YMKPinAnnotationColorBlue)
     }
+    
+    @IBAction func zoomPlusAction(_ sender: UIButton) {
+        self.yandexMapView.zoomIn()
+    }
+    
+    @IBAction func zoomMinusAction(_ sender: UIButton) {
+        self.yandexMapView.zoomOut()
+    }
+    
+    @IBAction func locateMeAction(_ sender: UIButton) {
+        self.locationFetcher.acquireUserLocationFromMapView()
+    }
+    
+    
+    
 
 }

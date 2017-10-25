@@ -28,4 +28,12 @@ class PlaceManager{
             completion(places,categories,nil)
         }
     }
+    
+    func getFilterPlaces(ids: [Int], _ completion:@escaping ([Place]?, [Category]?) -> Void){
+        let dbHelper = DbHelper()
+        dbHelper.getPlacesByIdsCategory(ids: ids){ [weak self] (places, categories) -> Void in
+            completion(places, categories)
+        }
+    }
+    
 }

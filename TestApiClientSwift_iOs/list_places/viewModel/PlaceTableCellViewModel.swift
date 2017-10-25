@@ -14,15 +14,6 @@ class PlaceTableCellViewModel{
         self.placeDescription = place.description
         let category = categories.first(where: {$0.id == place.categoryId?[0]})
         self.categoryTitle = category?.name
-//        switch place.distance {
-//        case 0:
-//            self.distance = "..."
-//        case 1...999 :
-//            self.distance = String(place.distance) + " м"
-//        default:
-//            let dist = Double(place.distance) / 1000.0
-//            self.distance = String(Double(round(dist * 10) / 10)) + " км"
-//        }
         self.distance = getStringDistance(distance: place.distance)
         self.categoryImgUrl = category?.icon
         if ((place.discountMax == nil)||(place.discountMax==0)){

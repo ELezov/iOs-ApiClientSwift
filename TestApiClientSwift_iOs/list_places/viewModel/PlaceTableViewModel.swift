@@ -40,11 +40,10 @@ class PlaceTableViewModel{
     //обращаемся за получение фильтрованных данных
     func updateFilter(ids: [Int], _ completion:@escaping () -> Void){
         cellsArray.removeAll()
-        let dbHelper = DbHelper()
-        dbHelper.getPlacesByIdsCategory(ids: ids){ [weak self] (places, categories) -> Void in
+        placeManager.getFilterPlaces(ids: ids){ [weak self] (places, categories) -> Void in
             self?.placeArray = places
             self?.categoriesArray = categories
-            for place in places!{
+            for place in places! {
                 self?.cellsArray.append(PlaceTableCellViewModel(place: place, categories: categories!))
             }
             completion()

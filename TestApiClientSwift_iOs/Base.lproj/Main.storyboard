@@ -283,24 +283,68 @@
                                     <action selector="closeButtonAction:" destination="qQJ-gR-DIb" eventType="touchUpInside" id="wnZ-TH-eDr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKr-aF-jom">
+                                <rect key="frame" x="320" y="200" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="bt9-vE-mpa"/>
+                                    <constraint firstAttribute="height" constant="30" id="e6C-1z-R1v"/>
+                                </constraints>
+                                <state key="normal" image="ZoomMinus"/>
+                                <connections>
+                                    <action selector="zoomMinusAction:" destination="qQJ-gR-DIb" eventType="touchUpInside" id="dEX-14-5VS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-v4-hQm">
+                                <rect key="frame" x="320" y="150" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tWs-AK-rzf"/>
+                                    <constraint firstAttribute="width" constant="30" id="v09-aw-8M6"/>
+                                </constraints>
+                                <state key="normal" image="ZoomPlus"/>
+                                <connections>
+                                    <action selector="zoomPlusAction:" destination="qQJ-gR-DIb" eventType="touchUpInside" id="VjK-WY-hbO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbD-df-hSb">
+                                <rect key="frame" x="320" y="250" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5wr-0o-psz"/>
+                                    <constraint firstAttribute="width" constant="30" id="FLG-Fe-99R"/>
+                                </constraints>
+                                <state key="normal" image="LocateMe"/>
+                                <connections>
+                                    <action selector="locateMeAction:" destination="qQJ-gR-DIb" eventType="touchUpInside" id="u0S-FP-XqP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SKr-aF-jom" firstAttribute="top" secondItem="Lh8-v4-hQm" secondAttribute="bottom" constant="20" id="0O7-ot-NZQ"/>
                             <constraint firstItem="Cpp-Vo-O1n" firstAttribute="leading" secondItem="uNZ-k1-YMo" secondAttribute="leading" id="4eE-sX-YZP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lh8-v4-hQm" secondAttribute="trailing" constant="9" id="91w-1R-HBw"/>
                             <constraint firstItem="Cpp-Vo-O1n" firstAttribute="top" secondItem="uNZ-k1-YMo" secondAttribute="top" id="RyC-z1-h5w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SKr-aF-jom" secondAttribute="trailing" constant="9" id="Wfp-Xs-NGa"/>
                             <constraint firstItem="lkN-UE-GWr" firstAttribute="top" secondItem="Cpp-Vo-O1n" secondAttribute="bottom" id="YrX-aP-1zb"/>
                             <constraint firstAttribute="trailing" secondItem="Cpp-Vo-O1n" secondAttribute="trailing" id="as7-iZ-ohz"/>
                             <constraint firstItem="GbF-jh-XaT" firstAttribute="top" secondItem="uNZ-k1-YMo" secondAttribute="topMargin" constant="30" id="c1e-rB-AgK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gbD-df-hSb" secondAttribute="trailing" constant="9" id="fr0-On-gwr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GbF-jh-XaT" secondAttribute="trailing" constant="14" id="jA6-QP-kFF"/>
+                            <constraint firstItem="gbD-df-hSb" firstAttribute="top" secondItem="SKr-aF-jom" secondAttribute="bottom" constant="20" id="pvh-sy-ItM"/>
+                            <constraint firstItem="Lh8-v4-hQm" firstAttribute="top" secondItem="GbF-jh-XaT" secondAttribute="bottom" constant="80" id="yKx-Wd-cJk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="GbF-jh-XaT" id="ASp-3c-WWF"/>
+                        <outlet property="locateMeBtn" destination="gbD-df-hSb" id="VA2-Nj-IS6"/>
+                        <outlet property="locationFetcher" destination="FPm-I3-uGU" id="JVW-hp-hVL"/>
                         <outlet property="yandexMapView" destination="Cpp-Vo-O1n" id="dTP-xD-aGL"/>
+                        <outlet property="zoomMinusBtn" destination="SKr-aF-jom" id="ZiU-oq-vDv"/>
+                        <outlet property="zoomPlusBtn" destination="Lh8-v4-hQm" id="3aC-F2-5us"/>
                         <segue destination="wKn-vJ-aCt" kind="unwind" identifier="showMapCustomUnwind" customClass="FirstCustomSegueUnwind" customModule="TestApiClientSwift_iOs" customModuleProvider="target" unwindAction="returnFromSegueActionsWithSender:" id="Xrq-dx-jRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MiL-vV-pjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="FPm-I3-uGU" customClass="YMKLocationFetcher"/>
                 <exit id="wKn-vJ-aCt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1336.8" y="110.19490254872565"/>
@@ -328,10 +372,10 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="58" y="166" width="259" height="44"/>
+                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
-                                                <rect key="frame" x="253" y="19" width="6" height="6"/>
+                                                <rect key="frame" x="252.5" y="19" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="9H1-iz-47n"/>
@@ -347,7 +391,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amber card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IND-CW-K0T">
-                                                <rect key="frame" x="18" y="0.0" width="223" height="44"/>
+                                                <rect key="frame" x="18" y="0.0" width="222.5" height="44"/>
                                                 <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="38"/>
                                                 <color key="textColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -489,6 +533,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LocateMe" width="31" height="30"/>
+        <image name="ZoomMinus" width="45" height="45"/>
+        <image name="ZoomPlus" width="45" height="45"/>
         <image name="crown" width="146" height="95"/>
         <image name="delete_icon" width="50" height="50"/>
         <image name="filledFavorite" width="25" height="25"/>
