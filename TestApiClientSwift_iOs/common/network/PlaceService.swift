@@ -23,31 +23,31 @@ extension PlaceService: Endpoint{
     var baseURL: String{
         switch  self {
         case .getPlaces:
-            return "http://138.68.68.166:9999/api/1"
+            return HOST_URL_API
         case .infoPlace:
-            return "http://138.68.68.166:9999/api/1"
+            return HOST_URL_API
         case .addToFavorite:
-            return "http://138.68.68.166:9999/api/1"
+            return HOST_URL_API
         case .deleteFromFavorite:
-            return "http://138.68.68.166:9999/api/1"
+            return HOST_URL_API
         case .addToWish:
-            return "http://138.68.68.166:9999/api/1"
+            return HOST_URL_API
         case .deleteFromWish:
-            return "http://138.68.68.166:9999/api/1"
+            return HOST_URL_API
         case .addToVisited:
-            return "http://138.68.68.166:9999/api/1"
+            return HOST_URL_API
         }
     }
     
     var path: String{
         switch self{
-        case .getPlaces: return "/content"
-        case .infoPlace(let id): return "/point/\(id)"
-        case .addToFavorite(let id): return "/favorites/\(id)"
-        case .deleteFromFavorite(let id): return "/favorites/\(id)"
-        case .addToWish(let id): return "/wish/\(id)"
-        case .deleteFromWish(let id): return "/wish/\(id)"
-        case .addToVisited(let id): return "/visited/\(id)"
+        case .getPlaces: return PATH_CONTENT_URL
+        case .infoPlace(let id): return PATH_POINT_URL + "/\(id)"
+        case .addToFavorite(let id): return PATH_FAVORITES_URL + "/\(id)"
+        case .deleteFromFavorite(let id): return PATH_FAVORITES_URL + "/\(id)"
+        case .addToWish(let id): return PATH_WISH_URL + "\(id)"
+        case .deleteFromWish(let id): return PATH_WISH_URL + "/\(id)"
+        case .addToVisited(let id): return PATH_VISITED_URL + "/\(id)"
         }
         
     }

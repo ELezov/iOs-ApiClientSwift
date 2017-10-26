@@ -28,7 +28,7 @@ extension LoginService: Endpoint{
     internal var path: String {
         switch self {
         case .logIn:
-            return "/login"
+            return PATH_LOGIN_URL
         }
     }
     
@@ -46,7 +46,7 @@ extension LoginService: Endpoint{
     internal var baseURL: String {
         switch self {
         case .logIn:
-            return "http://138.68.68.166:9999/api/1"
+            return HOST_URL_API
         }
     }
 }

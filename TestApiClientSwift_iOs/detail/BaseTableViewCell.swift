@@ -9,17 +9,31 @@
 import UIKit
 
 class BaseTableViewCell: UITableViewCell {
+    
+    var baseTableViewModel: Any?
+    
+    static let id = "BaseTableViewCell"
 
-    override init(style: UITableViewCellStyle,reuseIdentifier: String?){
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.selectionStyle = .none
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setData(){
-        
+    func setData(item: DetailsViewModelItem){
+        let type = item.type
+        let a = "aga"
+        switch  type {
+        case .placePhoto:
+            print(a)
+        case .header:
+            print(a)
+        case .description:
+            self.baseTableViewModel = item as! DetailsViewModelDescriptionItem
+        case .timeTable:
+            print(a)
+        case .visitingPrice:
+            print(a)
+        case .phoneView:
+            print(a)
+        case .location:
+            print(a)
+        case .map:
+            print(a)
+        }
     }
 }

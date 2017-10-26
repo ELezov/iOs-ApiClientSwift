@@ -34,6 +34,7 @@ extension PlaceDetailsViewController: GalleryItemsDataSource{
     func galleryConfiguration() -> GalleryConfiguration {
         
         return [
+            GalleryConfigurationItem.closeLayout(.pinLeft(12, 12)),
             GalleryConfigurationItem.deleteButtonMode(.none),
             GalleryConfigurationItem.thumbnailsButtonMode(.none),
             GalleryConfigurationItem.swipeToDismissMode(.vertical),

@@ -112,25 +112,30 @@ class PlaceDetailsViewController: UIViewController{
         self.navigationItem.rightBarButtonItem = barButton
     }
     //функция совершения мобильного вызова
-    func makeCallPhone(){
-        if let url = URL(string: "tel://\(viewModel?.place.phone)"), UIApplication.shared.canOpenURL(url){
-            if #available(iOS 10, *){
-                UIApplication.shared.open(url)
-            }else {
-                UIApplication.shared.openURL(url)
+    func makeCallPhone() {
+        if let phone = viewModel?.place.phone {
+            if let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url){
+                if #available(iOS 10, *){
+                    UIApplication.shared.open(url)
+                }else {
+                    UIApplication.shared.openURL(url)
+                }
+                print("1",url.description)
             }
-            print("1",url.description)
         }
     }
     
     func makeRoute(){
-        if let url = URL(string: "yandexmaps://build_route_on_map/?lat_from=54.709400&lon_from=20.427640&lat_to=\(viewModel?.place.latitude)&lon_to=\(viewModel?.place.longitude)"), UIApplication.shared.canOpenURL(url){
-            if #available(iOS 10, *){
-                UIApplication.shared.open(url)
-            }else {
-                UIApplication.shared.openURL(url)
+        if let latitude = viewModel?.place.latitude,
+            let longitude = viewModel?.place.longitude {
+            if let url = URL(string: "yandexmaps://build_route_on_map/?lat_from=54.709400&lon_from=20.427640&lat_to=\(latitude)&lon_to=\(longitude)"), UIApplication.shared.canOpenURL(url){
+                if #available(iOS 10, *){
+                    UIApplication.shared.open(url)
+                }else {
+                    UIApplication.shared.openURL(url)
+                }
+                print("1",url.description)
             }
-            print("1",url.description)
         }
     }
     
@@ -142,21 +147,23 @@ class PlaceDetailsViewController: UIViewController{
     //Открытие галереи
     func showMailGallery(){
         let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
-        let headerView = CounterView(frame: frame, currentIndex: 0, count: (viewModel?.place.photos?.count)!)
-        let galleryViewController = GalleryViewController(startIndex: 0, itemsDataSource: self, configuration: galleryConfiguration())
-        
-        galleryViewController.headerView = headerView
-        galleryViewController.launchedCompletion = { print("LAUNCHED") }
-        galleryViewController.closedCompletion = { print("CLOSED") }
-        galleryViewController.swipedToDismissCompletion = { print("SWIPE-DISMISSED") }
-        
-        galleryViewController.landedPageAtIndexCompletion = { [weak self ] index in
-            print("LANDED AT INDEX: \(index)")
-            headerView.count = (self?.viewModel?.place.photos?.count)!
-            headerView.currentIndex = index
+        if let photos = viewModel?.place.photos?.count{
+            let headerView = CounterView(frame: frame, currentIndex: 0, count: (viewModel?.place.photos?.count)!)
+            let galleryViewController = GalleryViewController(startIndex: 0, itemsDataSource: self, configuration: galleryConfiguration())
+            
+            galleryViewController.headerView = headerView
+            galleryViewController.launchedCompletion = { print("LAUNCHED") }
+            galleryViewController.closedCompletion = { print("CLOSED") }
+            galleryViewController.swipedToDismissCompletion = { print("SWIPE-DISMISSED") }
+            
+            galleryViewController.landedPageAtIndexCompletion = { [weak self ] index in
+                print("LANDED AT INDEX: \(index)")
+                headerView.count = (self?.viewModel?.place.photos?.count)!
+                headerView.currentIndex = index
+            }
+            
+            self.presentImageGallery(galleryViewController)
         }
-
-        self.presentImageGallery(galleryViewController)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -27,7 +27,6 @@ public protocol DetailsViewModelItem{
 
 class DetailsViewModel: NSObject {
     var items = [DetailsViewModelItem]()
-    var placeImgUrl: [String]
     var place: Place
     var phoneCell = PhotoDetailViewCell()
     
@@ -39,7 +38,6 @@ class DetailsViewModel: NSObject {
         let index = categories.index(where: {$0.id == place.categoryId?.first})
         category = categories[index!]
         self.place = place
-        self.placeImgUrl = place.photos!
         
         let placePhotoItem = DetailsViewModelPlacePhotoItem(photo: (place.photos?.first)!)
         items.append(placePhotoItem)
