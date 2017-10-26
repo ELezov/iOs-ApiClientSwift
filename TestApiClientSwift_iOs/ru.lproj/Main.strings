@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "2mX-FM-lHy"; */
+"2mX-FM-lHy.normalTitle" = "Войти";
+
+/* Class = "UIBarButtonItem"; title = "Filter places"; ObjectID = "6Te-51-BoJ"; */
+"6Te-51-BoJ.title" = "Фильтровать места";
+
+/* Class = "UILabel"; text = "Скидки и акции для гостей Калининградской области"; ObjectID = "6fm-Hg-oMJ"; */
+"6fm-Hg-oMJ.text" = "Скидки и акции для гостей Калининградской области";
+
+/* Class = "UIButton"; normalTitle = "Try Again"; ObjectID = "9Pg-bb-LD4"; */
+"9Pg-bb-LD4.normalTitle" = "Попробовать снова";
+
+/* Class = "UIBarButtonItem"; title = "Выйти"; ObjectID = "FLF-nr-xXz"; */
+"FLF-nr-xXz.title" = "Выйти";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "GbF-jh-XaT"; */
+"GbF-jh-XaT.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Amber card"; ObjectID = "IND-CW-K0T"; */
+"IND-CW-K0T.text" = "Amber card";
+
+/* Class = "UILabel"; text = "Выберите категорию"; ObjectID = "sUh-bn-faK"; */
+"sUh-bn-faK.text" = "Выберите категорию";

@@ -133,7 +133,7 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAY-Wj-LQv">
                                         <rect key="frame" x="0.0" y="0.0" width="302" height="43"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Выберите категорию" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUh-bn-faK">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select categories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUh-bn-faK">
                                                 <rect key="frame" x="0.0" y="0.0" width="263" height="43"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -272,10 +272,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbF-jh-XaT">
-                                <rect key="frame" x="305" y="30" width="40" height="40"/>
+                                <rect key="frame" x="320" y="30" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="9e4-05-vh0"/>
-                                    <constraint firstAttribute="width" constant="40" id="kMM-w7-aVk"/>
+                                    <constraint firstAttribute="height" constant="30" id="9e4-05-vh0"/>
+                                    <constraint firstAttribute="width" constant="30" id="kMM-w7-aVk"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <state key="normal" title="Button" image="delete_icon"/>
@@ -320,17 +320,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SKr-aF-jom" firstAttribute="top" secondItem="Lh8-v4-hQm" secondAttribute="bottom" constant="20" id="0O7-ot-NZQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GbF-jh-XaT" secondAttribute="trailing" constant="9" id="2YA-4y-z57"/>
                             <constraint firstItem="Cpp-Vo-O1n" firstAttribute="leading" secondItem="uNZ-k1-YMo" secondAttribute="leading" id="4eE-sX-YZP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lh8-v4-hQm" secondAttribute="trailing" constant="9" id="91w-1R-HBw"/>
+                            <constraint firstItem="Lh8-v4-hQm" firstAttribute="top" secondItem="GbF-jh-XaT" secondAttribute="bottom" constant="90" id="IcS-tf-c9I"/>
+                            <constraint firstItem="GbF-jh-XaT" firstAttribute="top" secondItem="InF-ZP-taD" secondAttribute="bottom" constant="10" id="O1T-DE-h8h"/>
                             <constraint firstItem="Cpp-Vo-O1n" firstAttribute="top" secondItem="uNZ-k1-YMo" secondAttribute="top" id="RyC-z1-h5w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SKr-aF-jom" secondAttribute="trailing" constant="9" id="Wfp-Xs-NGa"/>
                             <constraint firstItem="lkN-UE-GWr" firstAttribute="top" secondItem="Cpp-Vo-O1n" secondAttribute="bottom" id="YrX-aP-1zb"/>
                             <constraint firstAttribute="trailing" secondItem="Cpp-Vo-O1n" secondAttribute="trailing" id="as7-iZ-ohz"/>
-                            <constraint firstItem="GbF-jh-XaT" firstAttribute="top" secondItem="uNZ-k1-YMo" secondAttribute="topMargin" constant="30" id="c1e-rB-AgK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gbD-df-hSb" secondAttribute="trailing" constant="9" id="fr0-On-gwr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GbF-jh-XaT" secondAttribute="trailing" constant="14" id="jA6-QP-kFF"/>
                             <constraint firstItem="gbD-df-hSb" firstAttribute="top" secondItem="SKr-aF-jom" secondAttribute="bottom" constant="20" id="pvh-sy-ItM"/>
-                            <constraint firstItem="Lh8-v4-hQm" firstAttribute="top" secondItem="GbF-jh-XaT" secondAttribute="bottom" constant="80" id="yKx-Wd-cJk"/>
                         </constraints>
                     </view>
                     <connections>
@@ -372,7 +372,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="59" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
                                                 <rect key="frame" x="252.5" y="19" width="6" height="6"/>
@@ -408,7 +408,7 @@
                                             <constraint firstItem="KOq-9O-h59" firstAttribute="leading" secondItem="55d-Ok-C9O" secondAttribute="leading" id="tRR-pV-087"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скидки и акции для гостей Калининградской области" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-Hg-oMJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special promotions and discounts for guests of Kaliningrad region" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-Hg-oMJ">
                                         <rect key="frame" x="54" y="228" width="268" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="C8k-3G-7kL"/>
@@ -518,7 +518,7 @@
             <objects>
                 <navigationController restorationIdentifier="ScrollingNavigationController" storyboardIdentifier="ScrollingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="jI4-vo-cJg" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSU-kA-BNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zSU-kA-BNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
