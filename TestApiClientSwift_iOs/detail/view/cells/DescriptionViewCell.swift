@@ -19,6 +19,7 @@ class DescriptionViewCell: UITableViewCell {
             }
             
             descriptionLabel.text = ""
+            descriptionLabel.textColor = UIColor.amberCardText
             descriptionLabel.text = item.descriptionText
         }
     }

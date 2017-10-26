@@ -32,7 +32,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siB-A5-qpd">
-                        <rect key="frame" x="0.0" y="16" width="375" height="28.5"/>
+                        <rect key="frame" x="0.0" y="16" width="375" height="29"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZYE-b3-zXZ">
                                 <rect key="frame" x="16" y="2" width="24" height="24"/>
@@ -84,7 +84,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eq4-IB-71N">
-                        <rect key="frame" x="0.0" y="44.5" width="375" height="104"/>
+                        <rect key="frame" x="0.0" y="45" width="375" height="104"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Музей показывает обстановку семейного быта семьи Густава и блаблабла бла бла бла бла бла" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-Eq-4xW">
                                 <rect key="frame" x="16" y="43" width="343" height="48"/>
@@ -169,6 +169,7 @@
                 <outlet property="categoryNameLabel" destination="5uk-gW-ZKc" id="Aj8-P4-oNp"/>
                 <outlet property="distanceLabel" destination="cjY-pT-Y93" id="JEW-Wq-47h"/>
                 <outlet property="headerVeiw" destination="siB-A5-qpd" id="YuX-gH-4vF"/>
+                <outlet property="locationIcon" destination="urD-Pn-Elz" id="hHh-lf-qKD"/>
                 <outlet property="placeDescriptionLabel" destination="9RH-Eq-4xW" id="Elg-g1-dio"/>
                 <outlet property="placeNameLabel" destination="X9q-Bh-z9h" id="keZ-MG-frE"/>
                 <outlet property="saleBackground" destination="XY2-qL-e7D" id="Ya5-DD-RFn"/>

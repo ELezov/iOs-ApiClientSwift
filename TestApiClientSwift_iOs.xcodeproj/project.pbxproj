@@ -42,6 +42,7 @@
 		95C370C71F8F54F100EF9245 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95C370C61F8F54DD00EF9245 /* OpenSans-Bold.ttf */; };
 		95C370C91F8F5B9900EF9245 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95C370C81F8F5B9300EF9245 /* OpenSans-Semibold.ttf */; };
 		95C370CB1F8F605B00EF9245 /* FavoriteControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C370CA1F8F605B00EF9245 /* FavoriteControl.swift */; };
+		95E7FD791FA20FBD005EC407 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7FD781FA20FBD005EC407 /* ColorExtension.swift */; };
 		95EB53AF1F9A7E04004CAC56 /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB53AE1F9A7E04004CAC56 /* PointAnnotation.swift */; };
 		95EBB50A1F95228300711C03 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB5091F95228300711C03 /* LoginService.swift */; };
 		95EBB50C1F9522F000711C03 /* RealmDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB50B1F9522F000711C03 /* RealmDAO.swift */; };
@@ -140,6 +141,7 @@
 		95C370C61F8F54DD00EF9245 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		95C370C81F8F5B9300EF9245 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		95C370CA1F8F605B00EF9245 /* FavoriteControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteControl.swift; sourceTree = "<group>"; };
+		95E7FD781FA20FBD005EC407 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		95EB53AE1F9A7E04004CAC56 /* PointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		95EBB5091F95228300711C03 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		95EBB50B1F9522F000711C03 /* RealmDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDAO.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				9503EC381F8EB21A002C1C17 /* RatingView.swift */,
 				9533A2171F9811260054214F /* UIImageViewExtension.swift */,
 				95F402CA1F9EB5DE00DFCD52 /* UIViewExtension.swift */,
+				95E7FD781FA20FBD005EC407 /* ColorExtension.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				955C1A4A1F9298CB007A5EDC /* HeaderPlaceViewCell.swift in Sources */,
 				C5DB4FE51F7A59AF0000600E /* CategoryRealm.swift in Sources */,
 				95EBB50E1F9524CA00711C03 /* DbHelper.swift in Sources */,
+				95E7FD791FA20FBD005EC407 /* ColorExtension.swift in Sources */,
 				95F402B61F9E413F00DFCD52 /* PlaceDetailsViewControllerTable.swift in Sources */,
 				95F402B41F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift in Sources */,
 				95EBB5171F954DD200711C03 /* TimeTableViewCell.swift in Sources */,

@@ -36,21 +36,6 @@ class RatingView: UIStackView {
     
     //Mark : Action
     
-//    func ratingButtonTapped(button: UIButton){
-//        guard let index = ratingButtons.index(of: button) else {
-//            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
-//        }
-//        
-//        let selectedRating = index + 1
-//        
-//        if selectedRating == rating {
-//            rating = 0
-//        } else {
-//            rating = selectedRating
-//        }
-//    }
-    
-    
     //Mark : Private Methods
     private func setupButtons() {
         for button in ratingButtons{
@@ -59,10 +44,11 @@ class RatingView: UIStackView {
         }
         ratingButtons.removeAll()
         let bundle = Bundle(for: type(of:self))
-        let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith : self.traitCollection)
+        var filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith : self.traitCollection)
         let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
         for index in 0..<starCount {
             let button = UIButton()
+            button.tintColor = UIColor.amberCardBlue
             button.setImage(emptyStar, for: .normal)
             button.setImage(filledStar, for: [.selected, .highlighted])
             button.setImage(filledStar, for: .selected)

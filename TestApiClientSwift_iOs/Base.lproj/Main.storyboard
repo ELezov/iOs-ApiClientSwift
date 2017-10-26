@@ -458,7 +458,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ScrollingNavigationController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mX-FM-lHy">
                                         <rect key="frame" x="16" y="488" width="343" height="48"/>
-                                        <color key="backgroundColor" red="0.92941176889999999" green="0.1411764771" blue="0.19607843459999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.92941176891326904" green="0.14117647707462311" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="03y-hW-cAN"/>
                                         </constraints>

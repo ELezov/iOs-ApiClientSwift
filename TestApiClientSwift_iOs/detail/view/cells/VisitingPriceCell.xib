@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksp-ke-vVu">
-                        <rect key="frame" x="24" y="12" width="327" height="21"/>
+                        <rect key="frame" x="24" y="0.0" width="327" height="35.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="K8U-zn-x5o"/>
                         </constraints>
@@ -35,10 +35,10 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ksp-ke-vVu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="5fD-l4-K6h"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ksp-ke-vVu" secondAttribute="trailing" constant="24" id="IzS-Kd-DIh"/>
+                    <constraint firstItem="ksp-ke-vVu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="M21-Hi-d4d"/>
                     <constraint firstItem="ksp-ke-vVu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="hSD-42-xgf"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="ksp-ke-vVu" secondAttribute="bottom" constant="18" id="otH-al-X3M"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ksp-ke-vVu" secondAttribute="bottom" constant="16" id="otH-al-X3M"/>
                 </constraints>
                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             </tableViewCellContentView>

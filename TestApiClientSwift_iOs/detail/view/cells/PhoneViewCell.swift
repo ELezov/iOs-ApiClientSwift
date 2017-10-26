@@ -11,12 +11,17 @@ import UIKit
 class PhoneViewCell: UITableViewCell {
 
     @IBOutlet weak var phoneDetailsLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var phoneIcon: UIImageView!
     
     var item: DetailsViewModelItem? {
         didSet {
             guard  let item = item as? DetailsViewModelPhoneItem else {
                 return
             }
+            separatorView.backgroundColor = UIColor.amberCardSeparator
+            phoneIcon.tintColor = UIColor.amberCardBlue
+            phoneDetailsLabel.textColor = UIColor.amberCardText
             phoneDetailsLabel.text = ""
             phoneDetailsLabel.text = item.phoneText
         }

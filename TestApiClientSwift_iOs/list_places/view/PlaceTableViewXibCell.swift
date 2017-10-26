@@ -17,6 +17,7 @@ class PlaceTableViewXibCell: UITableViewCell {
     @IBOutlet weak var placeDescriptionLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var headerVeiw: UIView!
+    @IBOutlet weak var locationIcon: UIImageView!
     static let id = "PlaceTableViewCellXib"
     
     weak var viewModel: PlaceTableCellViewModel! {
@@ -36,14 +37,6 @@ class PlaceTableViewXibCell: UITableViewCell {
         }
     }
     
-    func initConstraint() {
-        categoryNameLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 21.0).isActive = true
-        categoryNameLabel.rightAnchor.constraint(equalTo: saleBackground.leftAnchor, constant: 16.0).isActive = true
-        categoryNameLabel.leftAnchor.constraint(equalTo: categoryImg.rightAnchor, constant: 16.0).isActive = true
-        categoryNameLabel.topAnchor.constraint(equalTo: headerVeiw.topAnchor, constant: 3.0).isActive = true
-        categoryNameLabel.bottomAnchor.constraint(equalTo: headerVeiw.bottomAnchor, constant: 3.0).isActive = true
-    }
-    
     func initView() {
         self.categoryNameLabel.text = ""
         self.placeNameLabel.text = ""
@@ -51,6 +44,10 @@ class PlaceTableViewXibCell: UITableViewCell {
         self.saleLabel.text = ""
         self.saleLabel.isHidden = false
         self.saleBackground.isHidden = false
+        self.distanceLabel.textColor = UIColor.amberCardBlue
+        self.placeDescriptionLabel.textColor = UIColor.amberCardText
+        self.saleBackground.tintColor = UIColor.amberCardBlue
+        self.locationIcon.tintColor = UIColor.amberCardBlue
     }
     
     override func awakeFromNib() {

@@ -11,11 +11,17 @@ import CoreLocation
 
 class LocationViewCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var locationIcon: UIImageView!
+    
     var item: DetailsViewModelItem? {
         didSet {
             guard  let item = item as? DetailsViewModelLocationItem else {
                 return
             }
+            separatorView.backgroundColor = UIColor.amberCardSeparator
+            locationIcon.tintColor = UIColor.amberCardBlue
+            addressLabel.textColor = UIColor.amberCardText
             let distance = getStringDistance(distance: item.distance) + " "
             if (item.addressPlace == ""){
                 self.addressLabel.text = distance

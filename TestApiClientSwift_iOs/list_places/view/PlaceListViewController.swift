@@ -47,6 +47,7 @@ class PlaceListViewController: UIViewController {
     }
     
     func initTableView(){
+        tableView.separatorColor = UIColor.amberCardSeparator
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 215
         tableView.backgroundColor = UIColor.clear
@@ -59,6 +60,7 @@ class PlaceListViewController: UIViewController {
     
     func initViews(){
         initTableView()
+        filterButton.tintColor = UIColor.amberCardBlue
         self.imageError.image = UIImage(named: "ic_sad_cloud")
         let text = "Whoops!\n No Internet connetion found. Check your connection or try again."
         let errorAttrText = NSMutableAttributedString(string: text)

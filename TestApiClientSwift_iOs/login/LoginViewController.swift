@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     func initViews() {
         mailTextField.delegate = self
         mailTextField.errorColor = UIColor.red
+        signInButton.backgroundColor = UIColor.amberCardBlue
         passwordTextField.delegate = self
         leftPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
         rightPoint.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
