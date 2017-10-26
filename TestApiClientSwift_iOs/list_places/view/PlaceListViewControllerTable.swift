@@ -20,12 +20,19 @@ extension PlaceListViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewXibCell.id, for: indexPath) as? PlaceTableViewXibCell else {
-            fatalError("PlaceTableViewXibCell doesn't exist")
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: AmberCardTableViewCell.id, for: indexPath)
+            cell.selectionStyle = .none
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewXibCell.id, for: indexPath) as? PlaceTableViewXibCell else {
+                fatalError("PlaceTableViewXibCell doesn't exist")
+            }
+            cell.selectionStyle = .none
+            cell.viewModel = self.viewModel.cellViewModel(indexPath.row - 1)
+            return cell
         }
-        cell.selectionStyle = .none
-        cell.viewModel = self.viewModel.cellViewModel(indexPath.row)
-        return cell
+        //return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -38,10 +45,13 @@ extension PlaceListViewController : UITableViewDataSource, UITableViewDelegate {
         })
     }
     
+    //dalegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
-        let vc = mainStoryBoard.instantiateViewController(withIdentifier: PlaceDetailsViewController.id) as? PlaceDetailsViewController
-        vc?.viewModel = viewModel.getDetailsNewModel(indexPath.row)
-        self.navigationController?.pushViewController(vc!, animated: true)
+        if indexPath.row != 0{
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
+            let vc = mainStoryBoard.instantiateViewController(withIdentifier: PlaceDetailsViewController.id) as? PlaceDetailsViewController
+            vc?.viewModel = viewModel.getDetailsNewModel(indexPath.row - 1)
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
     }
 }

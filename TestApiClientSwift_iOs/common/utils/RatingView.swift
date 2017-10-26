@@ -44,7 +44,7 @@ class RatingView: UIStackView {
         }
         ratingButtons.removeAll()
         let bundle = Bundle(for: type(of:self))
-        var filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith : self.traitCollection)
+        let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith : self.traitCollection)
         let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
         for index in 0..<starCount {
             let button = UIButton()

@@ -23,15 +23,25 @@ class PlaceTableViewXibCell: UITableViewCell {
     weak var viewModel: PlaceTableCellViewModel! {
         didSet {
             initView()
-            self.categoryImg.kf.setImage(with: URL(string: BASE_URL_API+viewModel.categoryImgUrl!))
-            self.categoryNameLabel.text = viewModel.categoryTitle
-            self.placeNameLabel.text = viewModel.placeTitle
-            self.placeDescriptionLabel.text = viewModel.placeDescription
-            if viewModel.saleString == "0" {
-                self.saleLabel.isHidden = true
-                self.saleBackground.isHidden = true
-            } else {
-                self.saleLabel.text = viewModel.saleString
+            if let categoryImgUrl = viewModel.categoryImgUrl {
+                self.categoryImg.kf.setImage(with: URL(string: BASE_URL_API+categoryImgUrl))
+            }
+            if let categoryTitle = viewModel.categoryTitle {
+                self.categoryNameLabel.text = categoryTitle
+            }
+            if let placeTitle = viewModel.placeTitle {
+                self.placeNameLabel.text = placeTitle
+            }
+            if let placeDescription = viewModel.placeDescription {
+                self.placeDescriptionLabel.text = placeDescription
+            }
+            if let saleString = viewModel.saleString {
+                if saleString == "0" {
+                    self.saleLabel.isHidden = true
+                    self.saleBackground.isHidden = true
+                } else {
+                    self.saleLabel.text = saleString
+                }
             }
             distanceLabel.text = viewModel.distance
         }

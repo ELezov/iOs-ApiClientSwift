@@ -21,6 +21,8 @@
 		953C22731F98D04500F31BA0 /* YandexMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C22721F98D04500F31BA0 /* YandexMapViewController.swift */; };
 		953C227B1F99468400F31BA0 /* FirstCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */; };
 		953C227D1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */; };
+		9545A5A51FA272D800665492 /* AmberCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545A5A31FA272D800665492 /* AmberCardTableViewCell.swift */; };
+		9545A5A61FA272D800665492 /* AmberCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9545A5A41FA272D800665492 /* AmberCardTableViewCell.xib */; };
 		955C1A0D1F9276B7007A5EDC /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A0C1F9276B7007A5EDC /* Network.swift */; };
 		955C1A0F1F927775007A5EDC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A0E1F927775007A5EDC /* Endpoint.swift */; };
 		955C1A111F927987007A5EDC /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C1A101F927987007A5EDC /* PlaceService.swift */; };
@@ -118,6 +120,8 @@
 		953C22721F98D04500F31BA0 /* YandexMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexMapViewController.swift; sourceTree = "<group>"; };
 		953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegue.swift; sourceTree = "<group>"; };
 		953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegueUnwind.swift; sourceTree = "<group>"; };
+		9545A5A31FA272D800665492 /* AmberCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmberCardTableViewCell.swift; sourceTree = "<group>"; };
+		9545A5A41FA272D800665492 /* AmberCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmberCardTableViewCell.xib; sourceTree = "<group>"; };
 		955C1A0C1F9276B7007A5EDC /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		955C1A0E1F927775007A5EDC /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		955C1A101F927987007A5EDC /* PlaceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 				95F402B11F9E2EDE00DFCD52 /* PlaceListViewControllerTable.swift */,
 				95F1E65F1F9D3DE6005F0482 /* PlaceTableViewCell.xib */,
 				95F1E6611F9D3E1D005F0482 /* PlaceTableViewXibCell.swift */,
+				9545A5A31FA272D800665492 /* AmberCardTableViewCell.swift */,
+				9545A5A41FA272D800665492 /* AmberCardTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 				955C1A4F1F929E22007A5EDC /* DescriptionViewCell.xib in Resources */,
 				C5F60FDB1F7947DA00F84A53 /* Main.storyboard in Resources */,
 				955C1A4B1F9298CB007A5EDC /* HeaderPlaceViewCell.xib in Resources */,
+				9545A5A61FA272D800665492 /* AmberCardTableViewCell.xib in Resources */,
 				C5D61B031F77E58200D9142F /* LaunchScreen.storyboard in Resources */,
 				C5D61B001F77E58200D9142F /* Assets.xcassets in Resources */,
 				956886A51F954FD8002F002C /* VisitingPriceCell.xib in Resources */,
@@ -786,6 +793,7 @@
 				95EBB50C1F9522F000711C03 /* RealmDAO.swift in Sources */,
 				95F1E6621F9D3E1D005F0482 /* PlaceTableViewXibCell.swift in Sources */,
 				95F1E6561F9CECBE005F0482 /* BaseTableViewCell.swift in Sources */,
+				9545A5A51FA272D800665492 /* AmberCardTableViewCell.swift in Sources */,
 				95F402C51F9E52AA00DFCD52 /* FilterViewModel.swift in Sources */,
 				C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */,
 				C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */,

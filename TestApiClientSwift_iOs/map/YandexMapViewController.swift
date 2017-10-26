@@ -56,8 +56,22 @@ class YandexMapViewController: UIViewController {
     }
     
     func configureAndInstallAnnotations(){
+    
         let coordinate = YMKMapCoordinateMake((place?.latitude)!, (place?.longitude)!)
-        self.placeAnnotation = PointAnnotation(title: NSString(string: (place?.name)!), subtitile: NSString(string: (place?.description)!), coordinate: coordinate)
+        
+        if let name = place?.name {
+            if let description = place?.description {
+                self.placeAnnotation = PointAnnotation(title: NSString(string: name), subtitile: NSString(string: description), coordinate: coordinate)
+            } else {
+                self.placeAnnotation = PointAnnotation(title: NSString(string: name), subtitile: NSString(string: ""), coordinate: coordinate)
+            }
+        } else {
+            if let description = place?.description {
+                self.placeAnnotation = PointAnnotation(title: NSString(string: "Выбранная локация"), subtitile: NSString(string: description), coordinate: coordinate)
+            } else {
+                self.placeAnnotation = PointAnnotation(title: NSString(string: "Выбранная локация"), subtitile: NSString(string: ""), coordinate: coordinate)
+            }
+        }
         self.yandexMapView.addAnnotation(self.placeAnnotation)
     }
     
@@ -76,8 +90,4 @@ class YandexMapViewController: UIViewController {
     @IBAction func locateMeAction(_ sender: UIButton) {
         self.locationFetcher.acquireUserLocationFromMapView()
     }
-    
-    
-    
-
 }

@@ -112,9 +112,5 @@ class LoginViewController: UIViewController {
     
     func keyboardWillHide(notification: Notification) {
         // keyboard is dismissed/hidden from the screen
-        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
-        let keyboardRectangle = keyboardFrame.cgRectValue
-        let keyboardHeight = keyboardRectangle.height
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }}

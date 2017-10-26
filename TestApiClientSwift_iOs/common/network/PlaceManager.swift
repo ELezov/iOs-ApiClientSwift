@@ -18,7 +18,13 @@ class PlaceManager{
         //Если данные в базе данных отсутствуют, то делаем запрос данных из сети.
         if placesRealm.count == 0{
             print("Data From Network")
-            NetworkManager().getPlace(completion)
+            NetworkManager().getPlace() { (places, categories, error) -> Void in
+                if let placeList = places,
+                    let categoryList = categories {
+                    saveDataByRealm(places: placeList, categories: categoryList)
+                }
+                completion(places,categories,error)
+            }
         } else {
             var places = [Place]()
             var categories = [Category]()

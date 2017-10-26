@@ -9,8 +9,7 @@ class NetworkManager{
             response in
             if response.result.isSuccess {
                 let baseresult = Mapper<ApiBaseResult>().map(JSONObject: response.result.value)
-                saveDataByRealm(places: (baseresult?.places)!, categories: (baseresult?.categories)!)
-                completion(baseresult?.places,baseresult?.categories, nil)
+                completion(baseresult?.places,baseresult?.categories, nil)                
             } else {
                 completion(nil,nil, response.error?.localizedDescription)
             }

@@ -28,7 +28,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="183.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="183"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="siB-A5-qpd">
@@ -87,7 +87,7 @@
                         <rect key="frame" x="0.0" y="45" width="375" height="104"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Музей показывает обстановку семейного быта семьи Густава и блаблабла бла бла бла бла бла" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-Eq-4xW">
-                                <rect key="frame" x="16" y="43.5" width="343" height="48"/>
+                                <rect key="frame" x="16" y="44" width="343" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1vy-t0-Rga"/>
                                 </constraints>

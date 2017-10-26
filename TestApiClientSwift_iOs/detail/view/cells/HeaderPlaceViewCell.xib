@@ -86,6 +86,7 @@
                 <outlet property="categoryImg" destination="JC8-HZ-2KQ" id="kKf-Cm-Ngz"/>
                 <outlet property="categoryNameLabel" destination="yNp-Kx-Etm" id="PxW-kJ-CSK"/>
                 <outlet property="placeNameLabel" destination="V3S-bS-Snt" id="COz-xR-Vei"/>
+                <outlet property="ratingView" destination="VLh-M5-bM1" id="7O3-y2-ho7"/>
             </connections>
             <point key="canvasLocation" x="55.5" y="86"/>
         </tableViewCell>

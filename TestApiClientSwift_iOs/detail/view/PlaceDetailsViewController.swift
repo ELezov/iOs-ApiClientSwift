@@ -147,8 +147,8 @@ class PlaceDetailsViewController: UIViewController{
     //Открытие галереи
     func showMailGallery(){
         let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
-        if let photos = viewModel?.place.photos?.count{
-            let headerView = CounterView(frame: frame, currentIndex: 0, count: (viewModel?.place.photos?.count)!)
+        if let photos = viewModel?.place.photos{
+            let headerView = CounterView(frame: frame, currentIndex: 0, count: photos.count)
             let galleryViewController = GalleryViewController(startIndex: 0, itemsDataSource: self, configuration: galleryConfiguration())
             
             galleryViewController.headerView = headerView
@@ -156,9 +156,9 @@ class PlaceDetailsViewController: UIViewController{
             galleryViewController.closedCompletion = { print("CLOSED") }
             galleryViewController.swipedToDismissCompletion = { print("SWIPE-DISMISSED") }
             
-            galleryViewController.landedPageAtIndexCompletion = { [weak self ] index in
+            galleryViewController.landedPageAtIndexCompletion = { index in
                 print("LANDED AT INDEX: \(index)")
-                headerView.count = (self?.viewModel?.place.photos?.count)!
+                headerView.count = photos.count
                 headerView.currentIndex = index
             }
             

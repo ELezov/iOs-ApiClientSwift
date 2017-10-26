@@ -54,6 +54,8 @@ class PlaceListViewController: UIViewController {
         tableView.contentInset = UIEdgeInsets(top: 64.0, left: 0.0, bottom: 0.0, right: 0.0)
         let nib = UINib(nibName: "PlaceTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: PlaceTableViewXibCell.id)
+        let amberNib = UINib(nibName: AmberCardTableViewCell.id, bundle: nil)
+        tableView.register(amberNib, forCellReuseIdentifier: AmberCardTableViewCell.id)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -74,16 +76,18 @@ class PlaceListViewController: UIViewController {
     
     @IBAction func filterAction(_ sender: UIBarButtonItem) {
         //let categories = self.viewModel.categoriesArray
-        let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
-        let vc = mainStoryBoard.instantiateViewController(withIdentifier: PopUpFilterViewController.id) as! PopUpFilterViewController
-        vc.viewModel = viewModel.getFilterNewModel()
-        vc.delegate = self
-        self.addChildViewController(vc)
-        vc.view.frame = self.view.frame
-        self.view.addSubview(vc.view)
-        vc.didMove(toParentViewController: self)
-        filterButton.isEnabled = false
-        logOutButton.isEnabled = false
+        if let categories = self.viewModel.categoriesArray{
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
+            let vc = mainStoryBoard.instantiateViewController(withIdentifier: PopUpFilterViewController.id) as! PopUpFilterViewController
+            vc.viewModel = viewModel.getFilterNewModel()
+            vc.delegate = self
+            self.addChildViewController(vc)
+            vc.view.frame = self.view.frame
+            self.view.addSubview(vc.view)
+            vc.didMove(toParentViewController: self)
+            filterButton.isEnabled = false
+            logOutButton.isEnabled = false
+        }
     }
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {

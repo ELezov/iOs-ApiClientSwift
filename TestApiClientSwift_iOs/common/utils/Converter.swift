@@ -15,10 +15,19 @@ class Converter{
         var categoriesListRealm = [CategoryListRealm]()
         for category in categories{
             let categoryListRealm = CategoryListRealm()
-            categoryListRealm.id = category.id!
-            categoryListRealm.name = category.name!
-            categoryListRealm.icon = category.icon!
-            categoryListRealm.picture = category.picture!
+            if let name = category.name {
+                categoryListRealm.name = name
+            }
+            if let id = category.id {
+                categoryListRealm.id = id
+            }
+            if let icon = category.icon {
+                categoryListRealm.icon = icon
+            }
+            if let picture = category.picture {
+                categoryListRealm.picture = picture
+            }
+
             categoriesListRealm.append(categoryListRealm)
         }
         return categoriesListRealm
@@ -28,10 +37,18 @@ class Converter{
         var categoriesRealm = [CategoryRealm]()
         for category in categories{
             let categoryRealm = CategoryRealm()
-            categoryRealm.id = category.id!
-            categoryRealm.name = category.name!
-            categoryRealm.icon = category.icon!
-            categoryRealm.picture = category.picture!
+            if let name = category.name {
+                categoryRealm.name = name
+            }
+            if let id = category.id {
+                categoryRealm.id = id
+            }
+            if let icon = category.icon {
+                categoryRealm.icon = icon
+            }
+            if let picture = category.picture {
+                categoryRealm.picture = picture
+            }
             categoriesRealm.append(categoryRealm)
         }
         return categoriesRealm
@@ -69,33 +86,65 @@ class Converter{
         var placesRealm = [PlaceRealm]()
         for place in places{
             let placeRealm = PlaceRealm()
-            placeRealm.id = place.id!
-            placeRealm.name = place.name!
-            placeRealm.description1 = place.description!
-            placeRealm.rate = place.rate!
-            placeRealm.timeTable = place.timeTable!
-            placeRealm.phone = place.phone!
-            placeRealm.costText = place.costText!
-            placeRealm.discountMax = place.discountMax!
-            placeRealm.latitude = place.latitude!
-            placeRealm.longitude = place.longitude!
+            
+            if let id = place.id {
+                placeRealm.id = id
+            }
+            if let name = place.name {
+                placeRealm.name = name
+            }
+            if let description = place.description {
+                placeRealm.description1 = description
+            }
+            if let rate = place.rate {
+                placeRealm.rate = rate
+            }
+            if let timeTable = place.timeTable {
+                placeRealm.timeTable = timeTable
+            }
+            if let phone = place.phone {
+                placeRealm.phone = phone
+            }
+            if let costText = place.costText {
+                placeRealm.costText = costText
+            }
+            if let discountMax = place.discountMax {
+                placeRealm.discountMax = discountMax
+            }
+            if let latitude = place.latitude,
+                let longitude = place.longitude {
+                placeRealm.latitude = latitude
+                placeRealm.longitude = longitude
+            }
             let categoryListRealm = List<CategoryRealm>()
-            for item in place.categoryId!{
-                if let i = categories.index( where: {$0.id == item}){
-                    let category = categories[i]
-                    let categoryReal = CategoryRealm()
-                    categoryReal.name = category.name!
-                    categoryReal.id = category.id!
-                    categoryReal.icon = category.icon!
-                    categoryReal.picture = category.picture!
-                    categoryListRealm.append(categoryReal)
+            if let categoryId = place.categoryId {
+                for item in categoryId {
+                    if let i = categories.index( where: {$0.id == item}){
+                        let category = categories[i]
+                        let categoryReal = CategoryRealm()
+                        if let name = category.name {
+                            categoryReal.name = name
+                        }
+                        if let id = category.id {
+                            categoryReal.id = id
+                        }
+                        if let icon = category.icon {
+                            categoryReal.icon = icon
+                        }
+                        if let picture = category.picture {
+                            categoryReal.picture = picture
+                        }
+                        categoryListRealm.append(categoryReal)
+                    }
                 }
             }
             let photosRealm = List<StringObject>()
-            for photo in place.photos!{
-                let stringObject = StringObject()
-                stringObject.value = photo
-                photosRealm.append(stringObject)
+            if let photos = place.photos {
+                for photo in photos{
+                    let stringObject = StringObject()
+                    stringObject.value = photo
+                    photosRealm.append(stringObject)
+                }
             }
             placeRealm.photos = photosRealm
             placeRealm.categories = categoryListRealm

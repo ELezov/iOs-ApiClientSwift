@@ -14,7 +14,7 @@ extension PlaceService: Endpoint{
     
     internal var headers: HTTPHeaders{
         var resultToken = "Token "
-        if let token: String = UserDefaults.standard.string(forKey: "userToken") {
+        if let token: String = UserDefaults.standard.string(forKey: userToken) {
             resultToken += token
         }
         return ["Authorization": resultToken]

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="AmberCardTableViewCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="AmberCardTableViewCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ambercard" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-cF-JyZ">
+                        <rect key="frame" x="27" y="9" width="321" height="200"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="d7I-cF-JyZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="27" id="29V-jH-6eb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="d7I-cF-JyZ" secondAttribute="bottom" constant="10" id="3ZR-RY-Hix"/>
+                    <constraint firstItem="d7I-cF-JyZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="cLV-rD-iHX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="d7I-cF-JyZ" secondAttribute="trailing" constant="27" id="pfM-mN-Fix"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+            </tableViewCellContentView>
+            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+            <point key="canvasLocation" x="75.5" y="102"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ambercard" width="359" height="216"/>
+    </resources>
+</document>
