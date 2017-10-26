@@ -21,6 +21,10 @@ class PlaceDetailsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
+        let backImage = UIImage(named: "back")
+        self.navigationController?.navigationBar.backIndicatorImage = backImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     func initViews(){
@@ -166,6 +170,11 @@ class PlaceDetailsViewController: UIViewController{
             fatalError("Global prepare Error in PlaceTableViewController")
         }
     }
+    
+    @IBAction func backButtonAction(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
 }
 

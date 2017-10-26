@@ -238,6 +238,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A9M-8G-pgZ">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="WQM-w4-J4T">
+                            <color key="tintColor" red="0.16862745583057404" green="0.18039216101169586" blue="0.19607843458652496" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="hxG-3u-Q0o" id="2Wd-Xp-Jio"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="filledFavorite" id="SCt-7Z-Zgv">
                             <color key="tintColor" red="0.81568628549575806" green="0.81568628549575806" blue="0.81568628549575806" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -365,17 +371,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-rN-y7c">
-                                        <rect key="frame" x="131" y="66" width="112" height="67"/>
+                                        <rect key="frame" x="131.5" y="66" width="112" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="112" id="VDf-tT-dPI"/>
                                             <constraint firstAttribute="height" constant="67" id="gfq-Cj-RXl"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="59" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
-                                                <rect key="frame" x="252.5" y="19" width="6" height="6"/>
+                                                <rect key="frame" x="252.5" y="19.5" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="9H1-iz-47n"/>
@@ -383,7 +389,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOq-9O-h59">
-                                                <rect key="frame" x="0.0" y="19" width="6" height="6"/>
+                                                <rect key="frame" x="0.0" y="19.5" width="6" height="6"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="6" id="PnP-3j-pW8"/>
@@ -409,7 +415,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special promotions and discounts for guests of Kaliningrad region" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-Hg-oMJ">
-                                        <rect key="frame" x="54" y="228" width="268" height="44"/>
+                                        <rect key="frame" x="53.5" y="228" width="268" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="C8k-3G-7kL"/>
                                             <constraint firstAttribute="width" constant="268" id="su8-q5-3mL"/>
@@ -536,6 +542,7 @@
         <image name="LocateMe" width="31" height="30"/>
         <image name="ZoomMinus" width="45" height="45"/>
         <image name="ZoomPlus" width="45" height="45"/>
+        <image name="back" width="13" height="21"/>
         <image name="crown" width="146" height="95"/>
         <image name="delete_icon" width="50" height="50"/>
         <image name="filledFavorite" width="25" height="25"/>

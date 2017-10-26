@@ -24,15 +24,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceTableViewCellXib" rowHeight="211" id="KGk-i7-Jjw" customClass="PlaceTableViewXibCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceTableViewCellXib" rowHeight="187" id="KGk-i7-Jjw" customClass="PlaceTableViewXibCell" customModule="TestApiClientSwift_iOs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="209"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="183"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="siB-A5-qpd">
-                        <rect key="frame" x="0.0" y="16" width="375" height="27"/>
+                        <rect key="frame" x="0.0" y="16" width="375" height="28.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZYE-b3-zXZ">
                                 <rect key="frame" x="16" y="2" width="24" height="24"/>
@@ -59,12 +59,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SDGSDGSDGDSGS" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uk-gW-ZKc">
-                                <rect key="frame" x="56" y="3" width="243" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Категория" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uk-gW-ZKc">
+                                <rect key="frame" x="56" y="1" width="243" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="if6-Tu-ceZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="if6-Tu-ceZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="20"/>
                                 <color key="textColor" red="0.4823529411764706" green="0.49803921568627452" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -74,8 +74,8 @@
                             <constraint firstItem="ZYE-b3-zXZ" firstAttribute="top" secondItem="siB-A5-qpd" secondAttribute="top" constant="2" id="0hZ-YD-0qP"/>
                             <constraint firstItem="XY2-qL-e7D" firstAttribute="top" secondItem="siB-A5-qpd" secondAttribute="top" id="Imv-BY-3Np"/>
                             <constraint firstItem="XY2-qL-e7D" firstAttribute="leading" secondItem="5uk-gW-ZKc" secondAttribute="trailing" constant="4" id="QAK-oX-04w"/>
-                            <constraint firstItem="5uk-gW-ZKc" firstAttribute="top" secondItem="siB-A5-qpd" secondAttribute="top" constant="3" id="U5I-Zc-SIC"/>
-                            <constraint firstAttribute="bottom" secondItem="5uk-gW-ZKc" secondAttribute="bottom" priority="999" constant="2" id="WHa-L6-JNA"/>
+                            <constraint firstItem="5uk-gW-ZKc" firstAttribute="top" secondItem="siB-A5-qpd" secondAttribute="top" constant="1" id="U5I-Zc-SIC"/>
+                            <constraint firstAttribute="bottom" secondItem="5uk-gW-ZKc" secondAttribute="bottom" priority="999" id="WHa-L6-JNA"/>
                             <constraint firstItem="ZYE-b3-zXZ" firstAttribute="leading" secondItem="siB-A5-qpd" secondAttribute="leading" constant="16" id="XU8-gc-MHJ"/>
                             <constraint firstAttribute="trailing" secondItem="XY2-qL-e7D" secondAttribute="trailing" id="dVq-qi-EBV"/>
                             <constraint firstItem="1E0-0V-k5P" firstAttribute="top" secondItem="siB-A5-qpd" secondAttribute="top" constant="4" id="ibn-7W-9tJ"/>
@@ -84,43 +84,41 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eq4-IB-71N">
-                        <rect key="frame" x="0.0" y="43" width="375" height="130"/>
+                        <rect key="frame" x="0.0" y="44.5" width="375" height="104"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Музей показывает обстановку семейного быта семьи Густава" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-Eq-4xW">
-                                <rect key="frame" x="16" y="71" width="343" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Музей показывает обстановку семейного быта семьи Густава и блаблабла бла бла бла бла бла" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RH-Eq-4xW">
+                                <rect key="frame" x="16" y="43" width="343" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="1vy-t0-Rga"/>
+                                    <constraint firstAttribute="height" constant="48" id="1vy-t0-Rga"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.32156862745098042" green="0.33333333333333331" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9q-Bh-z9h">
-                                <rect key="frame" x="16" y="16" width="343" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9q-Bh-z9h">
+                                <rect key="frame" x="16" y="10" width="343" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="sM9-oS-5NK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="sM9-oS-5NK"/>
                                 </constraints>
-                                <string key="text">Музей-квартира 
-Altes Haus — Hufen</string>
-                                <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="YesevaOne" family="Yeseva One" pointSize="21"/>
                                 <color key="textColor" red="0.16862745098039217" green="0.1803921568627451" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="130" id="6R2-i4-2R0"/>
-                            <constraint firstItem="X9q-Bh-z9h" firstAttribute="top" secondItem="Eq4-IB-71N" secondAttribute="top" constant="16" id="DTa-x3-9yY"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="6R2-i4-2R0"/>
+                            <constraint firstItem="X9q-Bh-z9h" firstAttribute="top" secondItem="Eq4-IB-71N" secondAttribute="top" constant="10" id="DTa-x3-9yY"/>
                             <constraint firstItem="9RH-Eq-4xW" firstAttribute="top" secondItem="X9q-Bh-z9h" secondAttribute="bottom" constant="8" id="Dzg-pZ-JZl"/>
                             <constraint firstAttribute="trailing" secondItem="X9q-Bh-z9h" secondAttribute="trailing" constant="16" id="UDm-7f-jPL"/>
                             <constraint firstItem="9RH-Eq-4xW" firstAttribute="leading" secondItem="Eq4-IB-71N" secondAttribute="leading" constant="16" id="WYE-Hn-P07"/>
                             <constraint firstAttribute="trailing" secondItem="9RH-Eq-4xW" secondAttribute="trailing" constant="16" id="kBV-b3-sTL"/>
-                            <constraint firstAttribute="bottom" secondItem="9RH-Eq-4xW" secondAttribute="bottom" constant="15" id="lQd-eL-7yT"/>
+                            <constraint firstAttribute="bottom" secondItem="9RH-Eq-4xW" secondAttribute="bottom" constant="13" id="lQd-eL-7yT"/>
                             <constraint firstItem="X9q-Bh-z9h" firstAttribute="leading" secondItem="Eq4-IB-71N" secondAttribute="leading" constant="16" id="olb-3l-ut7"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZ9-ae-Aso">
-                        <rect key="frame" x="0.0" y="173" width="375" height="20"/>
+                        <rect key="frame" x="0.0" y="149" width="375" height="20"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="urD-Pn-Elz">
                                 <rect key="frame" x="16" y="0.0" width="20" height="20"/>
@@ -158,6 +156,7 @@ Altes Haus — Hufen</string>
                     <constraint firstItem="PZ9-ae-Aso" firstAttribute="top" secondItem="Eq4-IB-71N" secondAttribute="bottom" id="Nxc-DA-U8T"/>
                     <constraint firstItem="siB-A5-qpd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="O1k-oU-0Np"/>
                     <constraint firstItem="PZ9-ae-Aso" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="TMU-4T-UEp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="PZ9-ae-Aso" secondAttribute="bottom" constant="14" id="UNR-ln-Pze"/>
                     <constraint firstItem="siB-A5-qpd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="mvG-24-beN"/>
                     <constraint firstItem="Eq4-IB-71N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="qQf-rg-072"/>
                     <constraint firstItem="Eq4-IB-71N" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="uhX-Fb-qNx"/>
@@ -175,7 +174,7 @@ Altes Haus — Hufen</string>
                 <outlet property="saleBackground" destination="XY2-qL-e7D" id="Ya5-DD-RFn"/>
                 <outlet property="saleLabel" destination="1E0-0V-k5P" id="2Ig-46-s7i"/>
             </connections>
-            <point key="canvasLocation" x="32.5" y="89"/>
+            <point key="canvasLocation" x="32.5" y="76"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -47,6 +47,8 @@ class PlaceListViewController: UIViewController {
     }
     
     func initTableView(){
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 215
         tableView.backgroundColor = UIColor.clear
         tableView.contentInset = UIEdgeInsets(top: 64.0, left: 0.0, bottom: 0.0, right: 0.0)
         let nib = UINib(nibName: "PlaceTableViewCell", bundle: nil)
@@ -126,6 +128,9 @@ class PlaceListViewController: UIViewController {
         updateData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
 }
 
