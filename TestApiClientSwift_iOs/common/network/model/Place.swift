@@ -24,6 +24,7 @@ public class Place: Mappable{
     public var photos : Array<String>?
     
     var distance: Int = 0
+    var isFavorite: Bool = false
 
     required public init?(map:Map){
 

@@ -35,11 +35,36 @@ class PlaceManager{
         }
     }
     
+    func getPlacesFromDb(_ completion:@escaping ([Place]?, [Category]?) -> Void){
+        let dbHelper = DbHelper()
+        let converter = Converter()
+        let placesRealm = dbHelper.getPlaces()
+        let categoriesRealm = dbHelper.getCategoriesList()
+        let places = converter.arrayRealmPlaceToPlace(placesRealm: placesRealm)
+        let categories = converter.arrayRealmListCategoryToCategory(categoriesListRealm: categoriesRealm)
+        completion(places, categories)
+    }
+    
     func getFilterPlaces(ids: [Int], _ completion:@escaping ([Place]?, [Category]?) -> Void){
         let dbHelper = DbHelper()
-        dbHelper.getPlacesByIdsCategory(ids: ids){ [weak self] (places, categories) -> Void in
+        dbHelper.getPlacesByIdsCategory(ids: ids){(places, categories) -> Void in
             completion(places, categories)
         }
+    }
+    
+    func savePlace(place: Place, categories: [Category]){
+        let dbHelper = DbHelper()
+        let converter = Converter()
+        let placeRealm = converter.placeToRealmPlace(place: place, categories: categories)
+        dbHelper.savePlace(place: placeRealm)
+    }
+    
+    func getPlace(id: Int) -> Place {
+        let dbHelper = DbHelper()
+        let converter = Converter()
+        let placeRealm = dbHelper.getPlace(id: id)
+        let place = converter.placeRealmToPlace(placeRealm: placeRealm)
+        return place
     }
     
 }

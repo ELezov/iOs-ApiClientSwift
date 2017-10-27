@@ -16,12 +16,13 @@ class PlaceRealm: Object, PrimaryKeyAware{
     dynamic var site : String = ""
     dynamic var discountMax : Int = 0
     var photos = List<StringObject>()
+    dynamic var isFavorite : Bool = false
 
     override static func primaryKey() -> String?{
         return "id"
     }
 }
 
-class StringObject: Object{
+class StringObject: Object {
     dynamic var value = ""
 }

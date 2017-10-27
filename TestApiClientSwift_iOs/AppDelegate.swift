@@ -11,12 +11,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         YMKConfiguration.sharedInstance().apiKey = "1234567890"
         
         //Realm Migration
+//        let config = Realm.Configuration(
+//            schemaVersion: 1,
+//            migrationBlock: { migration, oldSchemaVersion in
+//                if  oldSchemaVersion < 1 {
+//                    migration.enumerate(PlaceRealm.className()) { oldObject, newObject in
+//                        newObject["isFavorite"] = setCount
+//                }
+//        }
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
         Realm.Configuration.defaultConfiguration = config
         return true
     }
+}
     
 
-}
+
 

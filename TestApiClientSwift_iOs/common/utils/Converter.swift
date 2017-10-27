@@ -9,7 +9,104 @@
 import Foundation
 import RealmSwift
 
-class Converter{
+class Converter {
+    
+    func placeRealmToPlace(placeRealm: PlaceRealm) -> Place {
+        let place = Place()
+        place.name = placeRealm.name
+        place.id = placeRealm.id
+        place.description = placeRealm.description1
+        place.rate = placeRealm.rate
+        place.timeTable = placeRealm.timeTable
+        place.costText = placeRealm.costText
+        place.phone = placeRealm.phone
+        place.discountMax = placeRealm.discountMax
+        place.latitude = placeRealm.latitude
+        place.longitude = placeRealm.longitude
+        place.isFavorite = placeRealm.isFavorite
+        var photos = [String]()
+        for photo in placeRealm.photos{
+            var photoUrl = ""
+            photoUrl = photo.value
+            photos.append(photoUrl)
+        }
+        place.photos = photos
+        
+        var categoryList = [Int]()
+        for category in placeRealm.categories{
+            categoryList.append(category.id)
+        }
+        place.categoryId = categoryList
+        return place
+    }
+    
+    func placeToRealmPlace(place: Place, categories: [Category]) -> PlaceRealm {
+        let placeRealm = PlaceRealm()
+        if let id = place.id {
+            placeRealm.id = id
+        }
+        if let name = place.name {
+            placeRealm.name = name
+        }
+        if let description = place.description {
+            placeRealm.description1 = description
+        }
+        if let rate = place.rate {
+            placeRealm.rate = rate
+        }
+        if let timeTable = place.timeTable {
+            placeRealm.timeTable = timeTable
+        }
+        if let phone = place.phone {
+            placeRealm.phone = phone
+        }
+        if let costText = place.costText {
+            placeRealm.costText = costText
+        }
+        if let discountMax = place.discountMax {
+            placeRealm.discountMax = discountMax
+        }
+        if let latitude = place.latitude,
+            let longitude = place.longitude {
+            placeRealm.latitude = latitude
+            placeRealm.longitude = longitude
+        }
+        placeRealm.isFavorite = place.isFavorite
+        
+        let categoryListRealm = List<CategoryRealm>()
+        if let categoryId = place.categoryId {
+            for item in categoryId {
+                if let i = categories.index( where: {$0.id == item}){
+                    let category = categories[i]
+                    let categoryReal = CategoryRealm()
+                    if let name = category.name {
+                        categoryReal.name = name
+                    }
+                    if let id = category.id {
+                        categoryReal.id = id
+                    }
+                    if let icon = category.icon {
+                        categoryReal.icon = icon
+                    }
+                    if let picture = category.picture {
+                        categoryReal.picture = picture
+                    }
+                    categoryListRealm.append(categoryReal)
+                }
+            }
+        }
+        let photosRealm = List<StringObject>()
+        if let photos = place.photos {
+            for photo in photos{
+                let stringObject = StringObject()
+                stringObject.value = photo
+                photosRealm.append(stringObject)
+            }
+        }
+        placeRealm.photos = photosRealm
+        placeRealm.categories = categoryListRealm
+        return placeRealm
+    }
     
     func arrayCategoryToRealmListCategory(categories: [Category]) -> [CategoryListRealm]{
         var categoriesListRealm = [CategoryListRealm]()
@@ -85,69 +182,7 @@ class Converter{
     func arrayPlaceToRealmPlace(places: [Place], categories: [Category]) -> [PlaceRealm] {
         var placesRealm = [PlaceRealm]()
         for place in places{
-            let placeRealm = PlaceRealm()
-            
-            if let id = place.id {
-                placeRealm.id = id
-            }
-            if let name = place.name {
-                placeRealm.name = name
-            }
-            if let description = place.description {
-                placeRealm.description1 = description
-            }
-            if let rate = place.rate {
-                placeRealm.rate = rate
-            }
-            if let timeTable = place.timeTable {
-                placeRealm.timeTable = timeTable
-            }
-            if let phone = place.phone {
-                placeRealm.phone = phone
-            }
-            if let costText = place.costText {
-                placeRealm.costText = costText
-            }
-            if let discountMax = place.discountMax {
-                placeRealm.discountMax = discountMax
-            }
-            if let latitude = place.latitude,
-                let longitude = place.longitude {
-                placeRealm.latitude = latitude
-                placeRealm.longitude = longitude
-            }
-            let categoryListRealm = List<CategoryRealm>()
-            if let categoryId = place.categoryId {
-                for item in categoryId {
-                    if let i = categories.index( where: {$0.id == item}){
-                        let category = categories[i]
-                        let categoryReal = CategoryRealm()
-                        if let name = category.name {
-                            categoryReal.name = name
-                        }
-                        if let id = category.id {
-                            categoryReal.id = id
-                        }
-                        if let icon = category.icon {
-                            categoryReal.icon = icon
-                        }
-                        if let picture = category.picture {
-                            categoryReal.picture = picture
-                        }
-                        categoryListRealm.append(categoryReal)
-                    }
-                }
-            }
-            let photosRealm = List<StringObject>()
-            if let photos = place.photos {
-                for photo in photos{
-                    let stringObject = StringObject()
-                    stringObject.value = photo
-                    photosRealm.append(stringObject)
-                }
-            }
-            placeRealm.photos = photosRealm
-            placeRealm.categories = categoryListRealm
+            let placeRealm = placeToRealmPlace(place: place, categories: categories)
             placesRealm.append(placeRealm)
         }
         return placesRealm
@@ -156,30 +191,7 @@ class Converter{
     func arrayRealmPlaceToPlace(placesRealm: [PlaceRealm]) -> [Place] {
         var places = [Place]()
         for item in placesRealm {
-            let place = Place()
-            place.name = item.name
-            place.id = item.id
-            place.description = item.description1
-            place.rate = item.rate
-            place.timeTable = item.timeTable
-            place.costText = item.costText
-            place.phone = item.phone
-            place.discountMax = item.discountMax
-            place.latitude = item.latitude
-            place.longitude = item.longitude
-            var photos = [String]()
-            for photo in item.photos{
-                var photoUrl = ""
-                photoUrl = photo.value
-                photos.append(photoUrl)
-            }
-            place.photos = photos
-            
-            var categoryList = [Int]()
-            for category in item.categories{
-                categoryList.append(category.id)
-            }
-            place.categoryId = categoryList
+            let place = placeRealmToPlace(placeRealm: item)
             places.append(place)
         }
         return places
