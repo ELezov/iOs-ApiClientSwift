@@ -54,17 +54,25 @@ class LoginViewController: UIViewController {
     // MARK: Action
     //производим авторизацию
     @IBAction func logIn(_ sender: UIButton) {
-        let networkManager = NetworkManager()
-        networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!) { [weak self] flag, error in
-            if flag == true {
-                //Сохраняем токен
-                let userDafaults = UserDefaults.standard
-                userDafaults.set(error, forKey: userToken)
-                userDafaults.synchronize()
-                //анимируемый переход на следущий экран
-                self?.pushAnimation()
-            } else {
-                self?.showError(error)
+        if passwordTextField.text?.characters.count != 0,
+            (mailTextField.text?.characters.count)! > 3 {
+            signInButton.isEnabled = false
+            LoadingIndicatorView.show()
+            let networkManager = NetworkManager()
+            networkManager.logIn(name: mailTextField.text!, password: passwordTextField.text!) { [weak self] flag, error in
+                LoadingIndicatorView.hide()
+                if flag == true {
+                    //Сохраняем токен
+                    let userDafaults = UserDefaults.standard
+                    userDafaults.set(error, forKey: userToken)
+                    userDafaults.synchronize()
+                    //анимируемый переход на следущий экран
+                    self?.signInButton.isEnabled = true
+                    self?.pushAnimation()
+                } else {
+                    self?.showError(error)
+                    self?.signInButton.isEnabled = true
+                }
             }
         }
     }
