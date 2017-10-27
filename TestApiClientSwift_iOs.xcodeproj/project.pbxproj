@@ -19,6 +19,7 @@
 		9533A2161F9810510054214F /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533A2151F9810510054214F /* CounterView.swift */; };
 		9533A2181F9811260054214F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533A2171F9811260054214F /* UIImageViewExtension.swift */; };
 		95377CB01FA37BC7000AAD11 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95377CAF1FA37BC7000AAD11 /* Localizator.swift */; };
+		95377CB21FA38477000AAD11 /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95377CB11FA38477000AAD11 /* LoginToken.swift */; };
 		953C22731F98D04500F31BA0 /* YandexMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C22721F98D04500F31BA0 /* YandexMapViewController.swift */; };
 		953C227B1F99468400F31BA0 /* FirstCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */; };
 		953C227D1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */; };
@@ -119,6 +120,7 @@
 		9533A2151F9810510054214F /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		9533A2171F9811260054214F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		95377CAF1FA37BC7000AAD11 /* Localizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
+		95377CB11FA38477000AAD11 /* LoginToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
 		953C22721F98D04500F31BA0 /* YandexMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexMapViewController.swift; sourceTree = "<group>"; };
 		953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegue.swift; sourceTree = "<group>"; };
 		953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegueUnwind.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				C5D61B201F781CDF00D9142F /* ApiBaseResult.swift */,
 				C5D61B1E1F781B8100D9142F /* Category.swift */,
 				C5D61B1C1F7818AD00D9142F /* Place.swift */,
+				95377CB11FA38477000AAD11 /* LoginToken.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				95F402B41F9E412400DFCD52 /* PlaceDetailsViewControllerGallery.swift in Sources */,
 				95EBB5171F954DD200711C03 /* TimeTableViewCell.swift in Sources */,
 				9533A2181F9811260054214F /* UIImageViewExtension.swift in Sources */,
+				95377CB21FA38477000AAD11 /* LoginToken.swift in Sources */,
 				C58A2D1A1F7BE6E900382855 /* PlaceTableViewModel.swift in Sources */,
 				C5545B911F783FC5001C5DEF /* Const.swift in Sources */,
 				956886B01F95759A002F002C /* LocationViewCell.swift in Sources */,

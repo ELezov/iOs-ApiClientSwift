@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
     //производим авторизацию
     @IBAction func logIn(_ sender: UIButton) {
         if passwordTextField.text?.characters.count != 0,
-            (mailTextField.text?.characters.count)! > 3 {
+            (mailTextField.text?.characters.count)! > 2 {
             signInButton.isEnabled = false
             LoadingIndicatorView.show()
             let networkManager = NetworkManager()

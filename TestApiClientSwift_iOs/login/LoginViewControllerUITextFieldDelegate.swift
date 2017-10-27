@@ -23,11 +23,12 @@ extension LoginViewController: UITextFieldDelegate {
         signInButton.isEnabled =  true
         if textField == mailTextField {
             if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
-                if (floatingLabelTextField.text?.characters.count)! < 3,
-                floatingLabelTextField.text?.characters.count != 0 {
-                    floatingLabelTextField.errorMessage = "LOGIN_ERROR".localized
-                } else {
-                    floatingLabelTextField.errorMessage = ""
+                if let count = floatingLabelTextField.text?.characters.count{
+                    if count < 3, count > 0 {
+                        floatingLabelTextField.errorMessage = "LOGIN_ERROR".localized
+                    } else {
+                        floatingLabelTextField.errorMessage = ""
+                    }
                 }
             }
         }

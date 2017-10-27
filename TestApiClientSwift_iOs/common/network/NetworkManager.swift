@@ -32,21 +32,22 @@ class NetworkManager{
             case .success(let value):
                 
                 do{
-                    let json = try JSONSerialization.jsonObject(with: response.data!) as? [String: Any]
-                    let token = json?["token"] as? String
-                    if  token != nil{
-                        completion(true, token!)
+                    //let json = try JSONSerialization.jsonObject(with: response.data!) as? [String: Any]
+                    //let token = json?["token"] as? String
+                    let result = Mapper<LoginToken>().map(JSONObject: response.result.value)
+                    if let token = result?.token {
+                        completion(true, token)
                     } else{
-                        completion(false, NSLocalizedString("USER_DATA_ERROR", comment: "Вы предоставили неверные данные. Попробуйте снова."))
+                        completion(false,"USER_DATA_ERROR".localized)
                     }
                 } catch{
                     print(error)
-                    completion(false, NSLocalizedString("UNKNOWN_ERROR", comment: "Неизвестная ошибка. Попробуйте позже."))
+                    completion(false, "UNKNOWN_ERROR".localized)
                 }
                 
             case .failure(let error):
                 print(error.localizedDescription)
-                completion(false, NSLocalizedString("INTERNET_ERROR", comment: "У вас отстутствует подключение к интернету. Включите интернет и попробуйте еще раз"))
+                completion(false, "INTERNET_ERROR".localized)
             }
         }
     }
