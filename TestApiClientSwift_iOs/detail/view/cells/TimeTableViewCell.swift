@@ -20,7 +20,7 @@ class TimeTableViewCell: BaseTableViewCell {
             
             timeTableLabel.text = ""
             timeTableLabel.textColor = UIColor.amberCardText
-            let timeTitleString = NSLocalizedString("TIME_TABLE", comment: "Opening hours: ")
+            let timeTitleString = "TIME_TABLE".localized
             let timeTableAttributedString = NSMutableAttributedString(string: timeTitleString + item.timeTable)
             timeTableAttributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: timeTitleString.characters.count))
             timeTableLabel.attributedText = timeTableAttributedString

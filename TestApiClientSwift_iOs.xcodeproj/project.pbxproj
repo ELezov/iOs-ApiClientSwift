@@ -18,6 +18,7 @@
 		9533A2081F97D6A10054214F /* PhotoDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9533A2061F97D6A10054214F /* PhotoDetailViewCell.xib */; };
 		9533A2161F9810510054214F /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533A2151F9810510054214F /* CounterView.swift */; };
 		9533A2181F9811260054214F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533A2171F9811260054214F /* UIImageViewExtension.swift */; };
+		95377CB01FA37BC7000AAD11 /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95377CAF1FA37BC7000AAD11 /* Localizator.swift */; };
 		953C22731F98D04500F31BA0 /* YandexMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C22721F98D04500F31BA0 /* YandexMapViewController.swift */; };
 		953C227B1F99468400F31BA0 /* FirstCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */; };
 		953C227D1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */; };
@@ -117,6 +118,7 @@
 		9533A2061F97D6A10054214F /* PhotoDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewCell.xib; sourceTree = "<group>"; };
 		9533A2151F9810510054214F /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		9533A2171F9811260054214F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		95377CAF1FA37BC7000AAD11 /* Localizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		953C22721F98D04500F31BA0 /* YandexMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexMapViewController.swift; sourceTree = "<group>"; };
 		953C227A1F99468400F31BA0 /* FirstCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegue.swift; sourceTree = "<group>"; };
 		953C227C1F994FEE00F31BA0 /* FirstCustomSegueUnwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegueUnwind.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				9533A2171F9811260054214F /* UIImageViewExtension.swift */,
 				95F402CA1F9EB5DE00DFCD52 /* UIViewExtension.swift */,
 				95E7FD781FA20FBD005EC407 /* ColorExtension.swift */,
+				95377CAF1FA37BC7000AAD11 /* Localizator.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				C5D61B211F781CDF00D9142F /* ApiBaseResult.swift in Sources */,
 				C556BDF41F798CAC00651DE1 /* RatingControl.swift in Sources */,
 				955C1A131F9283C9007A5EDC /* NetworkManager.swift in Sources */,
+				95377CB01FA37BC7000AAD11 /* Localizator.swift in Sources */,
 				95ECB2E61F9F677200A535A0 /* PlaceListViewControllerLocation.swift in Sources */,
 				95EB53AF1F9A7E04004CAC56 /* PointAnnotation.swift in Sources */,
 				955C1A4A1F9298CB007A5EDC /* HeaderPlaceViewCell.swift in Sources */,

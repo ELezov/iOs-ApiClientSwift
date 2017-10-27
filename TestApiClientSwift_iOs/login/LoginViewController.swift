@@ -78,18 +78,18 @@ class LoginViewController: UIViewController {
     }
     
     func showError(_ error: String) {
-        let alert = UIAlertController(title: NSLocalizedString("CONNECTION_ERROR", comment: "Проблемы с подключение"), message: error, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancel"), style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "CONNECTION_ERROR".localized, message: error, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "CANCEL".localized , style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func resetTextFields() {
         mailTextField.text = ""
-        mailTextField.placeholder = NSLocalizedString("LOGIN_ENTER", comment: "Enter login")
-        mailTextField.selectedTitle = NSLocalizedString("LOGIN", comment: "Login")
+        mailTextField.placeholder = "LOGIN_ENTER".localized
+        mailTextField.selectedTitle = "LOGIN".localized
         passwordTextField.text = ""
-        passwordTextField.placeholder = NSLocalizedString("PASSWORD_ENTER", comment: "Enter password")
-        passwordTextField.selectedTitle = NSLocalizedString("PASSWORD", comment: "Password")
+        passwordTextField.placeholder = "PASSWORD_ENTER".localized
+        passwordTextField.selectedTitle = "PASSWORD".localized
         mailTextField.errorMessage = ""
     }
     

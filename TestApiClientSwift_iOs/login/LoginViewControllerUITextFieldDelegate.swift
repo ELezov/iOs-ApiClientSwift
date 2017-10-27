@@ -25,7 +25,7 @@ extension LoginViewController: UITextFieldDelegate {
             if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
                 if (floatingLabelTextField.text?.characters.count)! < 3,
                 floatingLabelTextField.text?.characters.count != 0 {
-                    floatingLabelTextField.errorMessage = NSLocalizedString("LOGIN_ERROR", comment: "LOGIN_ERROR")
+                    floatingLabelTextField.errorMessage = "LOGIN_ERROR".localized
                 } else {
                     floatingLabelTextField.errorMessage = ""
                 }

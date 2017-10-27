@@ -19,7 +19,7 @@ class VisitingPriceCell: BaseTableViewCell {
             }
             visitingPriceLabel.text = ""
             visitingPriceLabel.textColor = UIColor.amberCardText
-            let costVisitTitle = NSLocalizedString("VISIT_COST", comment: "Cost of visit: ")
+            let costVisitTitle = "VISIT_COST".localized
             let costAttributedText = NSMutableAttributedString(string: costVisitTitle  + item.visitingPriceText)
             costAttributedText.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 17.0)!, range: NSRange(location: 0, length: costVisitTitle.characters.count))
             
