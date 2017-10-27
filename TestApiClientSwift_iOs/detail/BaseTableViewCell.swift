@@ -9,10 +9,6 @@
 import UIKit
 
 class BaseTableViewCell: UITableViewCell {
-    
-    var baseTableViewModel: Any?
-    
-    static let id = "BaseTableViewCell"
 
     func setData(item: DetailsViewModelItem) {
         

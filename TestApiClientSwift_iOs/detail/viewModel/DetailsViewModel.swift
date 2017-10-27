@@ -27,6 +27,7 @@ public protocol DetailsViewModelItem{
 
 class DetailsViewModel: NSObject {
     var items = [DetailsViewModelItem]()
+    var itemsId = [String]()
     var place: Place
     //var phoneCell = PhotoDetailViewCell()
     
@@ -43,6 +44,7 @@ class DetailsViewModel: NSObject {
             if let firstPhoto = photos.first{
                 let placePhotoItem = DetailsViewModelPlacePhotoItem(photo: firstPhoto)
                 items.append(placePhotoItem)
+                itemsId.append(PhotoDetailViewCell.identifier)
             }
         }
         
@@ -55,23 +57,27 @@ class DetailsViewModel: NSObject {
                                                             categoryName: nameCategory,
                                                             categoryImgUrl: categoryImg, rating: rating)
                 items.append(headerItem)
+                itemsId.append(HeaderPlaceViewCell.identifier)
             } else {
                 let headerItem = DetailsViewModelHeaderItem(placeName: namePlace,
                                                            categoryName: nameCategory,
                                                            categoryImgUrl: categoryImg, rating: 0)
                 items.append(headerItem)
+                itemsId.append(HeaderPlaceViewCell.identifier)
             }
         }
         
         if let description = place.description {
             let descriptionItem = DetailsViewModelDescriptionItem(description: description)
             items.append(descriptionItem)
+            itemsId.append(DescriptionViewCell.identifier)
         }
         
         if let timeTable = place.timeTable {
             if timeTable != "" {
                 let timeItem = DetailsViewModelTimeTableItem(timeTable: timeTable)
                 items.append(timeItem)
+                itemsId.append(TimeTableViewCell.identifier)
             }
         }
         
@@ -79,6 +85,7 @@ class DetailsViewModel: NSObject {
             if costText != "" {
                 let visitPrice = DetailsViewModelVisitPriceItem(visitingPrice: costText)
                 items.append(visitPrice)
+                itemsId.append(VisitingPriceCell.identifier)
             }
         }
         
@@ -86,6 +93,7 @@ class DetailsViewModel: NSObject {
             if phone != "" {
                 let phoneItem = DetailsViewModelPhoneItem(phoneText: phone)
                 items.append(phoneItem)
+                itemsId.append(PhoneViewCell.identifier)
             }
         }
         
@@ -93,9 +101,11 @@ class DetailsViewModel: NSObject {
             let longitude = place.longitude {
             let locationItem = DetailsViewModelLocationItem(latitude: latitude, longitude: longitude, distance: place.distance)
             items.append(locationItem)
+            itemsId.append(LocationViewCell.identifier)
             
             let mapItem = DetailsViewModelMapItem(latitude: latitude, longitude: longitude)
             items.append(mapItem)
+            itemsId.append(MapViewCell.identifier)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhoneViewCell: UITableViewCell {
+class PhoneViewCell: BaseTableViewCell {
 
     @IBOutlet weak var phoneDetailsLabel: UILabel!
     @IBOutlet weak var separatorView: UIView!
@@ -25,6 +25,10 @@ class PhoneViewCell: UITableViewCell {
             phoneDetailsLabel.text = ""
             phoneDetailsLabel.text = item.phoneText
         }
+    }
+    
+    override func setData(item: DetailsViewModelItem) {
+        self.item = item
     }
     
     static var nib:UINib {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VisitingPriceCell: UITableViewCell {
+class VisitingPriceCell: BaseTableViewCell {
 
     @IBOutlet weak var visitingPriceLabel: UILabel!
     
@@ -25,6 +25,10 @@ class VisitingPriceCell: UITableViewCell {
             
             visitingPriceLabel.attributedText = costAttributedText
         }
+    }
+    
+    override func setData(item: DetailsViewModelItem) {
+        self.item = item
     }
     
     static var nib:UINib {

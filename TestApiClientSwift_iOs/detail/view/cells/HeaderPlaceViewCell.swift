@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderPlaceViewCell: UITableViewCell {
+class HeaderPlaceViewCell: BaseTableViewCell {
 
     @IBOutlet weak var categoryImg: UIImageView!
     @IBOutlet weak var categoryNameLabel: UILabel!
@@ -33,6 +33,10 @@ class HeaderPlaceViewCell: UITableViewCell {
                 ratingView.isHidden = true
             }
         }
+    }
+    
+    override func setData(item: DetailsViewModelItem) {
+        self.item = item
     }
     
     static var nib: UINib{

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapViewCell: UITableViewCell, YMKMapViewDelegate {
+class MapViewCell: BaseTableViewCell, YMKMapViewDelegate {
 
     
     @IBOutlet weak var yandexMapView: YMKMapView!
@@ -28,6 +28,10 @@ class MapViewCell: UITableViewCell, YMKMapViewDelegate {
             self.configureMapView()
             self.configureAndInstallAnnotations()
         }
+    }
+    
+    override func setData(item: DetailsViewModelItem) {
+        self.item = item
     }
     
     static var nib:UINib {

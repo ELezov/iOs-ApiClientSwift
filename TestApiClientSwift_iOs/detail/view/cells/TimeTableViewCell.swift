@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimeTableViewCell: UITableViewCell {
+class TimeTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var timeTableLabel: UILabel!
     
@@ -26,6 +26,11 @@ class TimeTableViewCell: UITableViewCell {
             timeTableLabel.attributedText = timeTableAttributedString
         }
     }
+    
+    override func setData(item: DetailsViewModelItem) {
+        self.item = item
+    }
+    
     
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoDetailViewCell: UITableViewCell {
+class PhotoDetailViewCell: BaseTableViewCell {
     @IBOutlet weak var placeImageView: UIImageView!
     
     var item: DetailsViewModelItem? {
@@ -19,6 +19,10 @@ class PhotoDetailViewCell: UITableViewCell {
             let imagePlaceholder = UIImage(named: "crown_light")
             placeImageView.kf.setImage(with: URL(string: item.photoUrl), placeholder: imagePlaceholder)
         }
+    }
+    
+    override func setData(item: DetailsViewModelItem) {
+        self.item = item
     }
     
     static var nib:UINib {

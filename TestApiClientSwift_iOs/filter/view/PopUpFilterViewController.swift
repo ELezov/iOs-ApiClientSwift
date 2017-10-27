@@ -45,6 +45,14 @@ class PopUpFilterViewController: UIViewController{
     }
     
     @IBAction func confirmAction(_ sender: UIButton) {
+        if self.viewModel.selectedRows.count == 0{
+            if let categories = viewModel.categories {
+                let count = categories.count - 1
+                for index in 0...count{
+                    self.viewModel.selectedRows.append(index)
+                }
+            }
+        }
         delegate?.getDataFromPopUpFilter(rows: self.viewModel.selectedRows)
         self.view.removeFromSuperview()
     }

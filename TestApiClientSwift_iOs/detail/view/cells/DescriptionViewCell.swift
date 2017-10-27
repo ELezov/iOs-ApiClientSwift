@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DescriptionViewCell: UITableViewCell {
+class DescriptionViewCell: BaseTableViewCell {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     
@@ -22,6 +22,10 @@ class DescriptionViewCell: UITableViewCell {
             descriptionLabel.textColor = UIColor.amberCardText
             descriptionLabel.text = item.descriptionText
         }
+    }
+    
+    override func setData(item: DetailsViewModelItem) {
+        self.item = item
     }
     
     static var nib:UINib {

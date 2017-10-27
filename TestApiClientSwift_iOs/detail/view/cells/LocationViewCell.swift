@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class LocationViewCell: UITableViewCell {
+class LocationViewCell: BaseTableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var locationIcon: UIImageView!
@@ -29,6 +29,10 @@ class LocationViewCell: UITableViewCell {
                 self.addressLabel.text = distance + "| " + item.addressPlace
             }
         }
+    }
+    
+    override func setData(item: DetailsViewModelItem) {
+        self.item = item
     }
     
     static var nib:UINib {
