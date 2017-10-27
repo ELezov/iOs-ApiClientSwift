@@ -11,7 +11,6 @@ class PlaceTableViewModel{
     var detailsNewViewModel: DetailsViewModel!
     var error: String?
     var selectedRows = [Int]()
-    var amberCardShow: Bool = false
     
     //Обращаемся за получением списка мест
     func updatePlace(_ completion:@escaping () -> Void){
@@ -33,9 +32,6 @@ class PlaceTableViewModel{
                 for placeObject in placeArray!{
                     self?.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: categoriesArray!))
                 }
-                self?.amberCardShow = true
-            } else {
-                self?.amberCardShow = false
             }
             completion()
         }
@@ -71,12 +67,7 @@ class PlaceTableViewModel{
     }
 
     func numberOfPlaces() -> Int {
-        if amberCardShow {
-            return cellsArray.count + 1
-        } else {
-            return cellsArray.count
-        }
-        
+        return cellsArray.count
     }
 
     func cellViewModel(_ index: Int) -> PlaceTableCellViewModel? {

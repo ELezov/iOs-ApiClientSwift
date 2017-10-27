@@ -17,7 +17,8 @@ extension PlaceDetailsViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel?.items[indexPath.section]
-//        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.id, for: indexPath) as! BaseTableViewCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.id, for: indexPath)
+//        return cell
 //        cell.setData(item: item!)
         let type = item?.type
         switch type!{

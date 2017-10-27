@@ -33,6 +33,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVY-o3-sb3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="220"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ambercard" translatesAutoresizingMaskIntoConstraints="NO" id="2Cg-gr-MeR">
+                                        <rect key="frame" x="27" y="10" width="321" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Xzp-Gd-2Sw"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="2Cg-gr-MeR" firstAttribute="top" secondItem="cVY-o3-sb3" secondAttribute="top" constant="10" id="Erg-Yd-dgH"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Cg-gr-MeR" secondAttribute="trailing" constant="27" id="Kqa-kU-UMy"/>
+                                    <constraint firstItem="2Cg-gr-MeR" firstAttribute="leading" secondItem="cVY-o3-sb3" secondAttribute="leading" constant="27" id="RI7-aj-y0n"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Cg-gr-MeR" secondAttribute="bottom" constant="10" id="rBR-uX-fQX"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sad_cloud" translatesAutoresizingMaskIntoConstraints="NO" id="AnZ-tL-yuX">
                                 <rect key="frame" x="137" y="100" width="101" height="100"/>
                                 <constraints>
@@ -78,14 +97,17 @@
                             <constraint firstItem="AnZ-tL-yuX" firstAttribute="top" secondItem="LtF-U9-gsv" secondAttribute="bottom" constant="80" id="Cbb-T9-ZES"/>
                             <constraint firstItem="QXJ-CF-neQ" firstAttribute="top" secondItem="AnZ-tL-yuX" secondAttribute="bottom" constant="20" id="E00-JC-unp"/>
                             <constraint firstItem="9Pg-bb-LD4" firstAttribute="centerX" secondItem="Oq5-Tp-Vmc" secondAttribute="centerX" id="Loq-IV-kG3"/>
+                            <constraint firstItem="cVY-o3-sb3" firstAttribute="leading" secondItem="Oq5-Tp-Vmc" secondAttribute="leading" id="PLD-p6-3zW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AnZ-tL-yuX" secondAttribute="trailing" constant="121" id="Pmt-he-O2v"/>
                             <constraint firstAttribute="trailing" secondItem="Gb7-gv-Uun" secondAttribute="trailing" id="VQc-wl-HH3"/>
                             <constraint firstAttribute="trailing" secondItem="QXJ-CF-neQ" secondAttribute="trailing" constant="30" id="ZMa-RD-4A2"/>
                             <constraint firstItem="Gb7-gv-Uun" firstAttribute="top" secondItem="Oq5-Tp-Vmc" secondAttribute="top" id="e78-Tn-Jrd"/>
                             <constraint firstItem="Gb7-gv-Uun" firstAttribute="leading" secondItem="Oq5-Tp-Vmc" secondAttribute="leading" id="hKA-cg-rHr"/>
                             <constraint firstItem="tNz-qH-gkl" firstAttribute="top" secondItem="9Pg-bb-LD4" secondAttribute="bottom" constant="100" id="omO-vM-Pzr"/>
+                            <constraint firstItem="cVY-o3-sb3" firstAttribute="top" secondItem="Oq5-Tp-Vmc" secondAttribute="top" constant="64" id="plt-nm-7fb"/>
                             <constraint firstItem="AnZ-tL-yuX" firstAttribute="leading" secondItem="Oq5-Tp-Vmc" secondAttribute="leadingMargin" constant="121" id="sJC-rT-OGc"/>
                             <constraint firstItem="QXJ-CF-neQ" firstAttribute="leading" secondItem="Oq5-Tp-Vmc" secondAttribute="leading" constant="30" id="xG9-sI-vZK"/>
+                            <constraint firstAttribute="trailing" secondItem="cVY-o3-sb3" secondAttribute="trailing" id="za5-v0-FZs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Iw-h9-CVN">
@@ -103,6 +125,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="amberCardImageView" destination="2Cg-gr-MeR" id="KZw-g4-Mdf"/>
                         <outlet property="filterButton" destination="6Te-51-BoJ" id="XaT-UJ-IlZ"/>
                         <outlet property="imageError" destination="AnZ-tL-yuX" id="5Bt-Ca-fsw"/>
                         <outlet property="logOutButton" destination="FLF-nr-xXz" id="57p-bY-Q2r"/>
@@ -378,7 +401,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="59" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
                                                 <rect key="frame" x="252.5" y="19.5" width="6" height="6"/>
@@ -542,6 +565,7 @@
         <image name="LocateMe" width="31" height="30"/>
         <image name="ZoomMinus" width="45" height="45"/>
         <image name="ZoomPlus" width="45" height="45"/>
+        <image name="ambercard" width="359" height="216"/>
         <image name="back" width="13" height="21"/>
         <image name="crown" width="146" height="95"/>
         <image name="delete_icon" width="50" height="50"/>

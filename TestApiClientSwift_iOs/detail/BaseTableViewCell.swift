@@ -14,26 +14,8 @@ class BaseTableViewCell: UITableViewCell {
     
     static let id = "BaseTableViewCell"
 
-    func setData(item: DetailsViewModelItem){
-        let type = item.type
-        let a = "aga"
-        switch  type {
-        case .placePhoto:
-            print(a)
-        case .header:
-            print(a)
-        case .description:
-            self.baseTableViewModel = item as! DetailsViewModelDescriptionItem
-        case .timeTable:
-            print(a)
-        case .visitingPrice:
-            print(a)
-        case .phoneView:
-            print(a)
-        case .location:
-            print(a)
-        case .map:
-            print(a)
-        }
+    func setData(item: DetailsViewModelItem) {
+        
     }
+    
 }

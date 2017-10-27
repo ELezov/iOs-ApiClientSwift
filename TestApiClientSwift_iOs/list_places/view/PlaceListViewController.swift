@@ -17,6 +17,7 @@ class PlaceListViewController: UIViewController {
     @IBOutlet weak var imageError: UIImageView!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var textErrorLabel: UILabel!
+    @IBOutlet weak var amberCardImageView: UIImageView!
     
     var locationManager: CLLocationManager = CLLocationManager()
     
@@ -51,7 +52,7 @@ class PlaceListViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 215
         tableView.backgroundColor = UIColor.clear
-        tableView.contentInset = UIEdgeInsets(top: 64.0, left: 0.0, bottom: 0.0, right: 0.0)
+        tableView.contentInset = UIEdgeInsets(top: 284.0, left: 0.0, bottom: 0.0, right: 0.0)
         let nib = UINib(nibName: "PlaceTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: PlaceTableViewXibCell.id)
         let amberNib = UINib(nibName: AmberCardTableViewCell.id, bundle: nil)
@@ -64,6 +65,7 @@ class PlaceListViewController: UIViewController {
         initTableView()
         filterButton.tintColor = UIColor.amberCardBlue
         self.imageError.image = UIImage(named: "ic_sad_cloud")
+        self.amberCardImageView.isHidden = true
         let text = "Whoops!\n No Internet connetion found. Check your connection or try again."
         let errorAttrText = NSMutableAttributedString(string: text)
         errorAttrText.addAttribute(NSFontAttributeName, value: UIFont(name: "OpenSans-Semibold", size: 23.0)!, range: NSRange(location: 0, length: 7))
@@ -71,11 +73,11 @@ class PlaceListViewController: UIViewController {
         self.textErrorLabel.textAlignment = .center
         self.textErrorLabel.numberOfLines = 0;
         self.textErrorLabel.lineBreakMode = .byWordWrapping
+
         hideError()
     }
     
     @IBAction func filterAction(_ sender: UIBarButtonItem) {
-        //let categories = self.viewModel.categoriesArray
         if let categories = self.viewModel.categoriesArray{
             let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
             let vc = mainStoryBoard.instantiateViewController(withIdentifier: PopUpFilterViewController.id) as! PopUpFilterViewController
@@ -120,6 +122,7 @@ class PlaceListViewController: UIViewController {
         self.textErrorLabel.isHidden = false
         self.tryAgainButton.isHidden = false
         self.filterButton.isEnabled = false
+        self.amberCardImageView.isHidden = true
     }
     
     func hideError(){
@@ -128,6 +131,7 @@ class PlaceListViewController: UIViewController {
         self.textErrorLabel.isHidden = true
         self.filterButton.isEnabled = true
         self.tryAgainButton.isHidden = true
+        self.amberCardImageView.isHidden = false
     }
     
     @IBAction func tryAgainAction(_ sender: UIButton) {
