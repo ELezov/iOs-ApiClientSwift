@@ -104,5 +104,29 @@ class DbHelper: PlaceDAO, CategoryDAO{
         }
         completion(places, categories)
     }
+    
+    func updateOrSave(id: Int, place: PlaceRealm){
+        let storage = RealmStorage<PlaceRealm>()
+        if let oldObject = storage.getById(id: id) {
+            let newObject = PlaceRealm()
+            newObject.id = place.id
+            newObject.name = place.name
+            newObject.description1 = place.description1
+            newObject.categories = place.categories
+            newObject.rate = place.rate
+            newObject.discountMax = place.discountMax
+            newObject.timeTable = place.timeTable
+            newObject.latitude = place.latitude
+            newObject.longitude = place.longitude
+            newObject.costText = place.costText
+            newObject.phone = place.phone
+            newObject.photos = place.photos
+            newObject.site = place.site
+            newObject.isFavorite = oldObject.isFavorite
+            storage.save(newObject)
+        } else {
+            storage.save(place)
+        }
+    }
 
 }

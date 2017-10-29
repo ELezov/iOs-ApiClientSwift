@@ -39,6 +39,25 @@ class PlaceListViewController: UIViewController {
         self.viewModel = placeTableViewModel
     }
     
+    func doRefresh() {
+        print("Refresh")
+        LoadingIndicatorView.show()
+        self.locationManager.stopUpdatingLocation()
+        viewModel.pullToRefresh(){ [weak self] () in
+            LoadingIndicatorView.hide()
+            if self?.viewModel.error != nil{
+                self?.showError()
+                self?.tableView.refreshControl?.endRefreshing()
+            } else {
+                self?.hideError()
+                self?.tableView.refreshControl?.endRefreshing()
+                self?.tableView.reloadData()
+                self?.locationManager.startUpdatingLocation()
+                //self?.initLocation()
+            }
+        }
+    }
+    
     func initLocationManager(){
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.delegate = self
@@ -78,7 +97,7 @@ class PlaceListViewController: UIViewController {
     }
     
     @IBAction func filterAction(_ sender: UIBarButtonItem) {
-        if let categories = self.viewModel.categoriesArray{
+        if let categories = self.viewModel.categoriesArray {
             let mainStoryBoard: UIStoryboard = UIStoryboard(name: nameMainStoryBoard, bundle: nil)
             let vc = mainStoryBoard.instantiateViewController(withIdentifier: PopUpFilterViewController.id) as! PopUpFilterViewController
             vc.viewModel = viewModel.getFilterNewModel()
@@ -108,11 +127,18 @@ class PlaceListViewController: UIViewController {
                 self?.showError()
             } else {
                 self?.hideError()
+                self?.initRefreshControl()
                 self?.tableView.reloadData()
                 self?.locationManager.startUpdatingLocation()
                 //self?.initLocation()
             }
         }
+    }
+    
+    func initRefreshControl(){
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(doRefresh), for: .valueChanged)
+        self.tableView.refreshControl = refreshControl
     }
     
     func showError(){

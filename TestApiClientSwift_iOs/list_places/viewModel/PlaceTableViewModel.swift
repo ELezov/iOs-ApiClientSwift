@@ -53,6 +53,31 @@ class PlaceTableViewModel{
         }
     }
     
+    func pullToRefresh(_ completion:@escaping () -> Void){
+        placeManager.getPullRefresh() { [weak self] (places, categories, error) -> Void in
+            self?.placeArray = places
+            self?.categoriesArray = categories
+            self?.selectedRows = [Int]()
+            
+            if let categories = self?.categoriesArray {
+                let count = categories.count - 1
+                for index in 0...count{
+                    self?.selectedRows.append(index)
+                }
+            }
+            print("Place count", self?.placeArray.count)
+            self?.error = error
+            self?.cellsArray.removeAll()
+            if self?.error == nil{
+                for placeObject in (self?.placeArray!)! {
+                    self?.cellsArray.append(PlaceTableCellViewModel(place: placeObject, categories: categories!))
+                }
+            }
+            print("Cell count", self?.cellsArray.count)
+            completion()
+        }
+    }
+    
     //обновляем расстояния до точек
     func updateDistanceToPlaces(latitude: Double, longitude: Double, _ completion:@escaping () -> Void) {
         cellsArray.removeAll()
