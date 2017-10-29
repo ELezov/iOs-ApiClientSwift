@@ -29,16 +29,18 @@ class DetailsViewModel: NSObject {
     var items = [DetailsViewModelItem]()
     var itemsId = [String]()
     var place: Place
-    //var phoneCell = PhotoDetailViewCell()
+    var categories : [Category]
+    var placeManager: PlaceManager
     
     init(place: Place, categories: [Category]) {
         
         //Подготавливаем данные для отображения в TableView
-        
+        placeManager = PlaceManager()
+        self.categories = categories
         let category : Category
         let index = categories.index(where: {$0.id == place.categoryId?.first})
         category = categories[index!]
-        self.place = place
+        self.place = placeManager.getPlaceFromDb(id: place.id!)
         
         if let photos = place.photos {
             if let firstPhoto = photos.first{
@@ -107,6 +109,10 @@ class DetailsViewModel: NSObject {
             items.append(mapItem)
             itemsId.append(MapViewCell.identifier)
         }
+    }
+    
+    func saveFavorite(){
+        placeManager.savePlace(place: self.place, categories: self.categories)
     }
 }
 

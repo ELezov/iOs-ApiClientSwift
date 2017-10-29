@@ -22,7 +22,7 @@ class DbHelper: PlaceDAO, CategoryDAO{
     func getPlace(id: Int) -> PlaceRealm {
         var placeRealm = PlaceRealm()
         let storage = RealmStorage<PlaceRealm>()
-        placeRealm = storage.getById(id: String(describing: id))!
+        placeRealm = storage.getById(id: id)!
         return placeRealm
     }
     
@@ -48,7 +48,7 @@ class DbHelper: PlaceDAO, CategoryDAO{
     func getCategory(id: Int) -> CategoryRealm {
         var categoryRealm = CategoryRealm()
         let storage = RealmStorage<CategoryRealm>()
-        categoryRealm = storage.getById(id: String(describing: id))!
+        categoryRealm = storage.getById(id: id)!
         return categoryRealm
     }
     
@@ -72,7 +72,7 @@ class DbHelper: PlaceDAO, CategoryDAO{
     func getCategoryList(id: Int) -> CategoryListRealm {
         var categoryRealm = CategoryListRealm()
         let storage = RealmStorage<CategoryListRealm>()
-        categoryRealm = storage.getById(id: String(describing: id))!
+        categoryRealm = storage.getById(id: id)!
         return categoryRealm
     }
     

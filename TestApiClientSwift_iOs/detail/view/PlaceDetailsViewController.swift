@@ -13,7 +13,6 @@ import Kingfisher
 
 class PlaceDetailsViewController: UIViewController{
     var viewModel: DetailsViewModel?
-    var isFavorite = false
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var tableView: UITableView?
     static let id = "PlaceDetailsViewController"
@@ -21,16 +20,20 @@ class PlaceDetailsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
-        let backImage = UIImage(named: "back")
-        self.navigationController?.navigationBar.backIndicatorImage = backImage
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     func initViews(){
         initTable()
         registerXIBs()
         initFavoriteButton()
+        initBackButton()
+    }
+    
+    func initBackButton(){
+        let backImage = UIImage(named: "back")
+        self.navigationController?.navigationBar.backIndicatorImage = backImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     func initTable(){
@@ -58,7 +61,11 @@ class PlaceDetailsViewController: UIViewController{
         //инициализируем кнопку добавления в Избранное
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        button.setImage(UIImage(named: "emptyFavorite"), for: .normal)
+        if !(viewModel?.place.isFavorite)! {
+             button.setImage(UIImage(named: "emptyFavorite"), for: .normal)
+        } else {
+            button.setImage(UIImage(named: "filledFavorite"), for: .normal)
+        }
         button.addTarget(self, action: #selector(PlaceDetailsViewController.favoriteButtonAction), for: .touchUpInside)
         let barButton = UIBarButtonItem()
         barButton.customView = button
@@ -99,12 +106,14 @@ class PlaceDetailsViewController: UIViewController{
     func favoriteButtonAction() {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        if isFavorite {
+        if (viewModel?.place.isFavorite)! {
             button.setImage(UIImage(named: "emptyFavorite"), for: .normal)
-            isFavorite = false
-        }else{
+            viewModel?.place.isFavorite = false
+            viewModel?.saveFavorite()
+        } else {
            button.setImage(UIImage(named: "filledFavorite"), for: .normal)
-            isFavorite = true
+            viewModel?.place.isFavorite = true
+            viewModel?.saveFavorite()
         }
         button.addTarget(self, action: #selector(PlaceDetailsViewController.favoriteButtonAction), for: .touchUpInside)
         let barButton = UIBarButtonItem()

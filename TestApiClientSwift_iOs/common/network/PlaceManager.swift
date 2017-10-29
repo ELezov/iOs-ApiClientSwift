@@ -19,11 +19,13 @@ class PlaceManager{
         if placesRealm.count == 0{
             print("Data From Network")
             NetworkManager().getPlace() { (places, categories, error) -> Void in
+                var placesResult = [Place]()
                 if let placeList = places,
                     let categoryList = categories {
                     saveDataByRealm(places: placeList, categories: categoryList)
+                    placesResult = converter.arrayRealmPlaceToPlace(placesRealm: dbHelper.getPlaces())
                 }
-                completion(places,categories,error)
+                completion(placesResult,categories,error)
             }
         } else {
             var places = [Place]()
@@ -59,7 +61,7 @@ class PlaceManager{
         dbHelper.savePlace(place: placeRealm)
     }
     
-    func getPlace(id: Int) -> Place {
+    func getPlaceFromDb(id: Int) -> Place {
         let dbHelper = DbHelper()
         let converter = Converter()
         let placeRealm = dbHelper.getPlace(id: id)

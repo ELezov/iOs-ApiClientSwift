@@ -33,7 +33,7 @@ class RealmStorage<T: Object> where T: PrimaryKeyAware {
         return realm.objects(T.self)
     }
     
-    func getById(id: String) -> T? {
+    func getById(id: Int) -> T? {
         return realm.object(ofType: T.self, forPrimaryKey: id)
     }
     
