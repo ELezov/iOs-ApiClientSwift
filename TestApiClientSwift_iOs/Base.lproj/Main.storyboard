@@ -390,7 +390,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-cy-wXx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-cy-wXx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-rN-y7c">
@@ -401,7 +401,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55d-Ok-C9O">
-                                        <rect key="frame" x="58.5" y="166" width="258.5" height="44"/>
+                                        <rect key="frame" x="59" y="166" width="258.5" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-Zs-flE">
                                                 <rect key="frame" x="252.5" y="19.5" width="6" height="6"/>
@@ -512,6 +512,7 @@
                                     <constraint firstItem="Qxy-9y-tcl" firstAttribute="leading" secondItem="F0w-cy-wXx" secondAttribute="leading" constant="16" id="WWY-El-cge"/>
                                     <constraint firstAttribute="trailing" secondItem="2mX-FM-lHy" secondAttribute="trailing" constant="16" id="aEJ-Vi-7OQ"/>
                                     <constraint firstItem="2mX-FM-lHy" firstAttribute="top" secondItem="Qxy-9y-tcl" secondAttribute="bottom" constant="22" id="bzN-vY-G7H"/>
+                                    <constraint firstAttribute="bottom" secondItem="2mX-FM-lHy" secondAttribute="bottom" constant="67" id="j6A-eM-VPB"/>
                                     <constraint firstItem="xPk-oJ-wkR" firstAttribute="leading" secondItem="F0w-cy-wXx" secondAttribute="leading" constant="16" id="mlv-ep-5RK"/>
                                     <constraint firstItem="Qxy-9y-tcl" firstAttribute="top" secondItem="xPk-oJ-wkR" secondAttribute="bottom" constant="14" id="mlx-w6-lU4"/>
                                     <constraint firstAttribute="trailing" secondItem="Qxy-9y-tcl" secondAttribute="trailing" constant="16" id="up9-IM-iVs"/>
