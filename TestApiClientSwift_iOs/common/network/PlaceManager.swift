@@ -76,6 +76,7 @@ class PlaceManager{
         var categories = [Category]()
         NetworkManager().getPlace() { (placeList, categoryList, error) -> Void in
             if error == nil {
+                dbHelper.deleteAllStringObjects()
                 self.updateOrSaveData(dbHelper: dbHelper, converter: converter, places: placeList!, categories: categoryList!)
                 places = converter.arrayRealmPlaceToPlace(placesRealm: dbHelper.getPlaces())
                 categories = converter.arrayRealmListCategoryToCategory(categoriesListRealm: dbHelper.getCategoriesList())

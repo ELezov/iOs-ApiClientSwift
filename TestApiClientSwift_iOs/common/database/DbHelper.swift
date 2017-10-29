@@ -128,5 +128,16 @@ class DbHelper: PlaceDAO, CategoryDAO{
             storage.save(place)
         }
     }
+    
+    func  deleteAllStringObjects() {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.delete(realm.objects(StringObject.self))
+            }
+        } catch {
+            print(error)
+        }
+    }
 
 }
